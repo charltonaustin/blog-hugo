@@ -1,0 +1,105 @@
+baseurl = "https://charltonaustin.com"
+title = "Charlton Austin"
+theme = "hugo-theme-cactus-plus"
+languagecode = "en"
+defaultcontentlanguage = "en"
+
+paginate = 5
+canonifyurls = true
+
+pygmentsstyle = "bw"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+hasCJKLanguage = true
+
+googleAnalytics = "your_google_analytics_id"
+[params]
+    author = "Charlton Austin"
+	bio = "author biography"
+    info = "Full stack software engineer and executive"
+    description = "Charlton Austin's personal website"
+    keywords = "blog,developer,personal"
+    avatarurl = "images/avatar.jpg"
+
+    twitter = "charltonaustin"
+
+    favicon_32 = "/img/favicon-32x32.png"
+    favicon_16 = "/img/favicon-16x16.png"
+
+    footercontent = "Courage is an undervalued commodity."
+
+    hidecredits = false
+    hidecopyright = false
+    enableRSS = false
+    enableToc = true
+    enableDisqus = false
+
+    rtl = false
+    enableSummary = true
+    useDescriptionReplaceSummary = true
+
+    math = true
+    # Add custom assets with their paths relative to the static folder
+	customCSS = []
+	customJS  = []
+
+		# Navigation links
+	home = ""
+	about = ""
+	archive = ""
+	subscribe = ""
+
+	olderPosts = ""
+	newerPosts = ""
+	copyright = ""
+
+	# show latest posts in single page
+	showLatestPosts = false
+	readMore = ""
+
+	# Share
+	enableShare = true
+	tweet = ""
+	share = ""
+
+	# 404 page
+	title404 = ""
+	subtitle404 = ""
+
+	# Choose a font for the social icons in the footer. Either "mono-social" or "font-awesome"
+	iconFont = "font-awesome"
+    # The social icons can be styled differently if you use mono as font - circle, rounded, or empty
+    socialIconStyle = ""
+
+# Social links
+[[params.social]]
+    name = "Github"
+    icon = "fab fa-github fa-2x"
+    weight = 1
+    url = "https://github.com/charltonaustin/"
+[[params.social]]
+    name = "Gitlab"
+    icon = "fab fa-gitlab fa-2x"
+    weight = 2
+    url = "https://gitlab.com/charlie_tuesday_company"
+[[params.social]]
+    name = "Twitter"
+    icon = "fab fa-twitter fa-2x"
+    weight = 3
+    url = "https://twitter.com/charltonaustin/"
+
+# Add additional social link entries underneath
+[social]
+	twitter-square = "https://www.twitter.com/charltonaustin"
+	github-square = "https://www.github.com/charltonaustin"
+
+# Menu links
+[[menu.main]]
+    name = "Blog"
+    weight = 1
+    url  = "/posts/"
+[[menu.main]]
+    name = "About"
+    weight = 2
+    url = "/about/"
+
