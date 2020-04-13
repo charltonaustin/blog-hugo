@@ -2,6 +2,9 @@
 title: Pomodoro On Os X Updated
 date: 2018-03-29T09:03:54-04:00
 draft: false
+tags: [
+    "pomodoro",
+]
 ---
 ### Pomodoro Expanded
 Previously I had created [a post](/2016/11/03/pomodoro-on-os-x) where I talked about using the pomodoro technique on mac OSX. 

@@ -2,6 +2,12 @@
 title: Leaders In An Array In Clojure Basic Algorithms Part Four
 date: 2016-08-17T09:03:54-04:00
 draft: false
+tags: [
+    "clojure",
+    "toy problems",
+    "development",
+    "functional programming",   
+]
 ---
 ### The problem
 

@@ -2,6 +2,12 @@
 title: Permutations Of A String In Clojure Basic Algorithms Part Two
 date: 2016-07-27T09:03:54-04:00
 draft: false
+tags: [
+    "clojure",
+    "functional programming",
+    "development",
+    "permutations",
+]
 ---
 ### The problem
 

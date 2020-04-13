@@ -2,6 +2,11 @@
 title: Frank Cucumber
 date: 2013-02-17T09:03:54-04:00
 draft: false
+tags: [
+    "ruby",
+    "devops",
+    "development",
+]
 ---
 Starting my blog again. So my blog has hopelessly become out of date. Since the last time I posted I've started working for ThoughtWorks, gone to India, moved to San Francisco, and finally been put onto my client. Great so now what. Since things are finally starting to settle and since my thoughts have changed on maintaining a blog I've decided it's time to start blogging again. Not that anyone has read anything yet. My goal is to do it once or twice a week depending on time constraints and travel. So lets get started.
 

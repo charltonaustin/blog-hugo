@@ -2,6 +2,11 @@
 title: Developing Your Team
 date: 2018-06-04T09:03:54-04:00
 draft: false
+tags: [
+    "management",
+    "team building",
+]
+
 ---
 ### The problem
 You want to encourage people on your team to be the best they can be.

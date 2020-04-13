@@ -2,6 +2,12 @@
 title: Euler Problem 009
 date: 2019-03-06T09:03:54-04:00
 draft: false
+tags: [
+    "javascript",
+    "toy problems",
+    "development",
+    "euler",   
+]
 ---
 ### The problem
 A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,

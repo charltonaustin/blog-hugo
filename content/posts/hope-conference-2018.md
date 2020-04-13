@@ -2,6 +2,9 @@
 title: Hope Conference 2018
 date: 2018-08-01T09:03:54-04:00
 draft: false
+tags: [
+    "conferences",
+]
 ---
 ### Context
 This weekend I had the joy of going to the [Hope Conference](http://xii.hope.net/index.html).

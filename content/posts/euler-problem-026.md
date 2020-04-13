@@ -2,6 +2,12 @@
 title: Euler Problem 026
 date: 2019-08-19T09:03:54-04:00
 draft: false
+tags: [
+    "javascript",
+    "toy problems",
+    "development",
+    "euler",   
+]
 ---
 ### The problem
 A unit fraction contains 1 in the numerator. The decimal representation of the unit fractions with denominators 2 to 10 are given:

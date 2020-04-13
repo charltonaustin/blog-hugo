@@ -2,6 +2,10 @@
 title: Load And Performance Testing With Flask
 date: 2018-11-13T09:03:54-04:00
 draft: false
+tags: [
+    "testing",
+    "development",
+]
 ---
 
 ## The problem

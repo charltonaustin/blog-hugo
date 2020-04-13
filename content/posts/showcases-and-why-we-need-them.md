@@ -2,6 +2,11 @@
 title: Showcases And Why We Need Them
 date: 2016-08-27T09:03:54-04:00
 draft: false
+tags: [
+    "showcases",
+    "development",
+]
+
 ---
 ### The problem
 So my students are mostly awesome.

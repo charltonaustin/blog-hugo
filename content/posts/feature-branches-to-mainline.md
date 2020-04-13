@@ -2,6 +2,10 @@
 title: Feature Branches To Mainline
 date: 2015-10-10T09:03:54-04:00
 draft: false
+tags: [
+    "branch by abstraction",
+    "development",
+]
 ---
 Recently at [my current company](http://intentmedia.com/) my team has been struggling to move from a feature branch workflow to a mainline workflow.  I'm going to define what the feature branches and mainline workflows are. Then I'm going to talk about the costs and benefits of both models. Finally I'm going to talk about why people should use the mainline workflow.
 

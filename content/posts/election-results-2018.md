@@ -2,6 +2,12 @@
 title: Election Results 2018
 date: 2018-12-10T09:03:54-04:00
 draft: false
+tags: [
+    "Tuesday Company",
+    "scaling",
+    "development",
+]
+
 ---
 ## Election 2018
 [The Tuesday Company](https://www.tuesdaycompany.com/) had the honor to work on many races over the [midterm elections](https://www.tuesdaycompany.com/midterms/).

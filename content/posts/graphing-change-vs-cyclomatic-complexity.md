@@ -2,6 +2,9 @@
 title: Graphing Change Vs Cyclomatic Complexity
 date: 2019-06-10T09:03:54-04:00
 draft: false
+tags: [
+    "development",
+]
 ---
 ### The problem
 

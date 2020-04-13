@@ -2,6 +2,7 @@
 title: Moving From Blogger To Clojure
 date: 2016-08-09T09:03:54-04:00
 draft: false
+
 ---
 Recently I had a problem with [my old blog](http://charltonaustin.blogspot.com/) where writing new blog posts would be buggy. Things like code formatting wouldn't be consistent and so I moved to images of code. Which is so silly considering that it is just text. I've always had a bit of a problem with blogspot. I disliked the lack of control over how things are displayed and served up content. I knew that I wanted to move to HTTPS and that I was tired of working within the confines of WYSIWYG editors. So I took the plunge and decided to create a new clojure app and bought some hosting on [Digital Ocean](https://www.digitalocean.com/).
 

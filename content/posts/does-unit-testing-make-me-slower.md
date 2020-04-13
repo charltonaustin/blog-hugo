@@ -2,6 +2,11 @@
 title: Does Unit Testing Make Me Slower
 date: 2016-04-12T09:03:54-04:00
 draft: false
+tags: [
+    "tdd",
+    "development",
+]
+
 ---
 ### Say What?
 

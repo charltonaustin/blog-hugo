@@ -2,6 +2,11 @@
 title: Creating A Web Api With Golang
 date: 2016-09-10T09:03:54-04:00
 draft: false
+tags: [
+    "golang",
+    "development",
+]
+
 ---
 I had a chance for the first time in a while to write some Go.
 I was writing a simple web API that allowed a user to login with JWT.

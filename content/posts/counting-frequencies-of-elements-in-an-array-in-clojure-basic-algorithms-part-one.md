@@ -2,6 +2,12 @@
 title: Counting Frequencies Of Elements In An Array In Clojure Basic Algorithms Part One
 date: 2016-07-20T09:03:54-04:00
 draft: false
+tags: [
+    "clojure",
+    "functional programming",
+    "development",
+]
+
 ---
 So I'm not a CS guy. I went to school for math and I became a programmer pretty late. I also never had the obligatory algorithms class. So I'm going to start a series where I explore some algorithms coding problems.
 The problem

@@ -2,6 +2,10 @@
 title: Starting A Company
 date: 2018-03-26T09:03:54-04:00
 draft: false
+tags: [
+    "entrepreneur",
+]
+
 ---
 ## Why I've been missing for almost a year
 In November 2016 some friends of mine were devastated by the Trump and Clinton presidential election.

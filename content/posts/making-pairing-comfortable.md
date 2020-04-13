@@ -2,6 +2,11 @@
 title: Making Pairing Comfortable
 date: 2015-09-26T09:03:54-04:00
 draft: false
+tags: [
+    "pairing",
+    "eXtreme programming",
+    "development",
+]
 ---
 There are effectively (to me anyways) an infinite number of blog posts about the benefits and costs of pairing and what pairing is and isn't. So I'm not going to talk about the good and bad of pairing. I'm going to assume that, like me, you want to pair and you see the benefits and costs. Instead today I'm going to talk about how I started experimenting with pairing at my most recent [job](http://intentmedia.com/). For people who would like a run down of pairing see [this](http://guide.agilealliance.org/guide/pairing.html), [this](http://anh.cs.luc.edu/170/Kindergarten.html), or Google it. 
 

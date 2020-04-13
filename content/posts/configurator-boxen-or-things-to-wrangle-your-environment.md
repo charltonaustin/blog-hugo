@@ -2,6 +2,10 @@
 title: Configurator Boxen Or Things To Wrangle Your Environment
 date: 2015-09-19T09:03:54-04:00
 draft: false
+tags: [
+    "devops",
+]
+
 ---
 ### The problem 
 

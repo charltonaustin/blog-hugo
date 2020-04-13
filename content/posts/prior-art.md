@@ -2,6 +2,9 @@
 title: Prior Art
 date: 2019-02-18T09:03:54-04:00
 draft: false
+tags: [
+    "prior art",
+]
 ---
 ## The Problem
 Sometimes there is the "right way" and other times there is "how it is done in the codebase".

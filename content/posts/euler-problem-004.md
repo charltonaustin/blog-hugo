@@ -2,6 +2,12 @@
 title: Euler Problem 004
 date: 2017-03-27T09:03:54-04:00
 draft: false
+tags: [
+    "javascript",
+    "toy problems",
+    "development",
+    "euler",   
+]
 ---
 ### The problem
 

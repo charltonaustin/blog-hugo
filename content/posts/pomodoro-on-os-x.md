@@ -2,6 +2,9 @@
 title: Pomodoro On Os X
 date: 2016-11-03T09:03:54-04:00
 draft: false
+tags: [
+    "pomodoro",
+]
 ---
 ### Pomodoro
 If you haven't ever used the [pomodoro technique](http://pomodorotechnique.com/) then you are missing out.

@@ -2,6 +2,11 @@
 title: Pairing Vs Code Review
 date: 2018-03-27T09:03:54-04:00
 draft: false
+tags: [
+    "pairing",
+    "code review",
+    "development",
+]
 ---
 ##### Note This was written mostly immediately after I joined CoreOS and then updated this last week.
 I recently started working at [CoreOS](https://coreos.com/) and one thing that they do there for every change of code is a code review.

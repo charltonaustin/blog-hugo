@@ -2,6 +2,10 @@
 title: Python Source Code Gems
 date: 2016-04-04T09:03:54-04:00
 draft: false
+tags: [
+    "python",
+    "development",
+]
 ---
 So fairly regularly I read about and dip into the python source code. For some reason there seems to be a great deal of beautiful and interesting code in both the c and the standard libraries and tests for python. The other day I was doing some reading about [generators](https://docs.python.org/2/howto/functional.html#passing-values-into-a-generator) (I was thinking about how to marry the ideas of functional and object oriented programming) and I came across something that I found fascinating as well beautiful so I decided I should share it here on this silly little blog. It's a full implementation of a generator built [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) in test_generators.py.   If you are writing python and you aren't using generators regularly then you are probably missing something.
 

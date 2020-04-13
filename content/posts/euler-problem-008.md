@@ -2,6 +2,12 @@
 title: Euler Problem 008
 date: 2018-04-02T09:03:54-04:00
 draft: false
+tags: [
+    "javascript",
+    "toy problems",
+    "development",
+    "euler",   
+]
 ---
 ### The problem
 The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.

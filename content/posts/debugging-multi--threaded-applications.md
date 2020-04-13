@@ -2,6 +2,12 @@
 title: Debugging Multi  Threaded Applications
 date: 2015-10-24T09:03:54-04:00
 draft: false
+tags: [
+    "java",
+    "multi threaded",
+    "development",
+]
+
 ---
 Recently I had debug a multithreaded application with some surprising results. Seeing as this can be a particularly tricky task for people that haven't done it before I thought  I would write about some lessons I learned from the experience.
 

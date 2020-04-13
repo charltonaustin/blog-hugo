@@ -2,6 +2,10 @@
 title: Repo Scripts And Autoupdates
 date: 2020-02-26T09:03:54-04:00
 draft: false
+tags: [
+    "automation",
+    "development",
+]
 ---
 ## The problem
 You really want to make sure that unit tests are run every time someone commits.

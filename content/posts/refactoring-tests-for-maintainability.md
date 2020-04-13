@@ -2,6 +2,11 @@
 title: Refactoring Tests For Maintainability
 date: 2015-01-28T09:03:54-04:00
 draft: false
+tags: [
+    "testing",
+    "development",
+    "java",
+]
 ---
 I just began working at Intent Media  and I've been spending some time getting to know the code base. I spent the other day pairing with another guy on the team to add a new feature. We needed to change one of the data models by adding a new field. So we wrote some tests specifying how we thought the new data field should work. Next we got them passing. After that we ran all the unit tests. Oh man were we in trouble. We had twenty-five test failures. I was a little surprised since we had made a pretty small change in the production code.
 

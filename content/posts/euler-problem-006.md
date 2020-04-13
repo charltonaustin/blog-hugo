@@ -2,6 +2,12 @@
 title: Euler Problem 006
 date: 2018-03-23T09:03:54-04:00
 draft: false
+tags: [
+    "javascript",
+    "toy problems",
+    "development",
+    "euler",   
+]
 ---
 ### The problem
 The sum of the squares of the first ten natural numbers is,

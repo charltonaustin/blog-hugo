@@ -2,6 +2,9 @@
 title: Problems With Cucumber And Chef
 date: 2013-03-06T09:03:54-04:00
 draft: false
+tags: [
+    "devops",
+]
 ---
 So I've been working on getting some cucumber functional tests to run on a remote server lately and had tons of problems. The setup included using Electric Commander to run a gradle task, which in turn ran cucumber using jruby. It was lots of fun. Let me say.
 

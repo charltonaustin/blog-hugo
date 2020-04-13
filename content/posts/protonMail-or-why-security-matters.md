@@ -2,6 +2,9 @@
 title: Protonmail Or Why Security Matters
 date: 2015-11-11T09:03:54-04:00
 draft: false
+tags: [
+    "security",
+]
 ---
 Recently [ProtonMail](https://protonmail.com/) came under a [DDoS](http://techcrunch.com/2015/11/07/protonmail-on-battling-a-sustained-ddos-attack/) attack. I was unfortunately one of the people that was affected by this. A few years back after the [Snowden revelations I made a concerted effort to move away from services that cooperated with the NSA. That included companies like Google and Facebook. At the time ProtonMail popped up and I decided to try it out.
 
