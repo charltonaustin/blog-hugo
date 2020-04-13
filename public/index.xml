@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Charlton Austin</title>
+    <link>https://charltonaustin.com/</link>
+    <description>Recent content on Charlton Austin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 25 Mar 2020 09:03:54 -0400</lastBuildDate>
+    
+	<atom:link href="https://charltonaustin.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Applications Integrating On The Database</title>
+      <link>https://charltonaustin.com/posts/applications-integrating-on-the-database/</link>
+      <pubDate>Wed, 25 Mar 2020 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/applications-integrating-on-the-database/</guid>
+      <description>The problem You shouldn&amp;rsquo;t do it. You&amp;rsquo;ve read it before. Don&amp;rsquo;t integrate applications on the database. The advice is relatively straightforward, but it can often be difficult to understand. My first piece of advice is that when you have a new process it should have it&amp;rsquo;s own database. While the overhead is often real, it is minimal compared to the pain caused when you want to pull the two processes apart later.</description>
+    </item>
+    
+    <item>
+      <title>Repo Scripts And Autoupdates</title>
+      <link>https://charltonaustin.com/posts/repo-scripts-and-autoupdates/</link>
+      <pubDate>Wed, 26 Feb 2020 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/repo-scripts-and-autoupdates/</guid>
+      <description>The problem You really want to make sure that unit tests are run every time someone commits.
+The solution Three simple scripts. The first should be run by all engineers that join the team. It should do most of the installs for environment dependencies. The second should be a pre-commit script. This script should run your tests and anything else that you want to have happen. The third script should be an update script.</description>
+    </item>
+    
+    <item>
+      <title>Bugs In Software</title>
+      <link>https://charltonaustin.com/posts/bugs-in-software/</link>
+      <pubDate>Tue, 14 Jan 2020 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/bugs-in-software/</guid>
+      <description>The Architecture of Open Source Applications If you haven&amp;rsquo;t seen or read The Architecture of Open Source Applications then you are missing out. Sure, it is a bit long. Also, each section is written by a different writer making it slightly inconsistent. But, there are gems throughout the book that make it worth the read.
+One of the gems Here&amp;rsquo;s an example of one of the gems from the Berkeley DB section.</description>
+    </item>
+    
+    <item>
+      <title>The Importance Of History</title>
+      <link>https://charltonaustin.com/posts/the-importance-of-history/</link>
+      <pubDate>Tue, 10 Dec 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/the-importance-of-history/</guid>
+      <description>History, what is it good for? When I interview someone I often ask, &amp;ldquo;Where did object oriented programming (OOP) come from?&amp;rdquo; There generally isn&amp;rsquo;t a right or wrong answer to this in the interview. You can go look up whether a particular answer is consistent with what&amp;rsquo;s on the internet. However you could give several answers that would all be right. You might say, &amp;ldquo;it was pioneered in Sketchpad.&amp;rdquo; Or you might say, &amp;ldquo;it came out of the atom in LISP.</description>
+    </item>
+    
+    <item>
+      <title>The Telegram Problem</title>
+      <link>https://charltonaustin.com/posts/the-telegram-problem/</link>
+      <pubDate>Fri, 15 Nov 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/the-telegram-problem/</guid>
+      <description>The problem Write a program that takes a number w, then accepts lines of text and outputs lines of text, where the output lines have as many words as possible but are never longer than w characters. Words may not be split, but you may assume that no single word is too long for a line. Source
+Solution This is a straightforward problem when it comes down to it, but it takes some thinking to get there.</description>
+    </item>
+    
+    <item>
+      <title>Using Checklist In Software Development</title>
+      <link>https://charltonaustin.com/posts/using-checklist-in-software-development/</link>
+      <pubDate>Mon, 09 Sep 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/using-checklist-in-software-development/</guid>
+      <description>The dream For some time I have been wanting to incorporate checklist into the development project. My initial inspiration came from The Checklist Manifesto. The book which was initially published in 2009 sent me frantically searching for checklists in software development. At the time I couldn&amp;rsquo;t find any. Today I use the treasure trove of checklists from Code Complete Two by Steve McConnell. This blog post will describe the use of checklists at my company.</description>
+    </item>
+    
+    <item>
+      <title>Euler Problem 026</title>
+      <link>https://charltonaustin.com/posts/euler-problem-026/</link>
+      <pubDate>Mon, 19 Aug 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/euler-problem-026/</guid>
+      <description>The problem A unit fraction contains 1 in the numerator. The decimal representation of the unit fractions with denominators 2 to 10 are given:
+1/2	= 0.5 1/3	= 0.(3) 1/4	= 0.25 1/5	= 0.2 1/6	= 0.1(6) 1/7	= 0.(142857) 1/8	= 0.125 1/9	= 0.(1) 1/10	= 0.1  Where 0.1(6) means 0.166666&amp;hellip;, and has a 1-digit recurring cycle. It can be seen that 1/7 has a 6-digit recurring cycle.</description>
+    </item>
+    
+    <item>
+      <title>Euler Problem 023</title>
+      <link>https://charltonaustin.com/posts/euler-problem-023/</link>
+      <pubDate>Wed, 31 Jul 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/euler-problem-023/</guid>
+      <description>The problem A perfect number is a number for which the sum of its proper divisors is exactly equal to the number. For example, the sum of the proper divisors of 28 would be 1 + 2 + 4 + 7 + 14 = 28, which means that 28 is a perfect number.
+A number n is called deficient if the sum of its proper divisors is less than n and it is called abundant if this sum exceeds n.</description>
+    </item>
+    
+    <item>
+      <title>Graphing Change Vs Cyclomatic Complexity</title>
+      <link>https://charltonaustin.com/posts/graphing-change-vs-cyclomatic-complexity/</link>
+      <pubDate>Mon, 10 Jun 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/graphing-change-vs-cyclomatic-complexity/</guid>
+      <description>The problem You want to know where you should be refactoring, and you are not sure where to start. Or, you would like to better understand why you have more bugs in one part of the code than another.
+One approach One thing that I like to look at when this happens is cyclomatic complexity. That often isn&amp;rsquo;t enough to get the full picture of what is happening with code. Another place I like to look is how often a file is changing.</description>
+    </item>
+    
+    <item>
+      <title>Sudoku Using Go Lang</title>
+      <link>https://charltonaustin.com/posts/sudoku-using-go-lang/</link>
+      <pubDate>Wed, 01 May 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/sudoku-using-go-lang/</guid>
+      <description>Algorithms A friend of mine recently started looking for work and we were talking about the interview process. She brought up the fact that often coding every day as a professional looks nothing like the toy problems in interviews. This got me thinking about a surprise question that I had during an interview. I was asked to create a Sudoku solver. At the time I was pretty vexed. I&amp;rsquo;ve never worked as a game programmer.</description>
+    </item>
+    
+    <item>
+      <title>Euler Problem 010</title>
+      <link>https://charltonaustin.com/posts/euler-problem-010/</link>
+      <pubDate>Fri, 19 Apr 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/euler-problem-010/</guid>
+      <description>The problem The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.
+73167176531330624919225119674426574742355349194934 96983520312774506326239578318016984801869478851843 85861560789112949495459501737958331952853208805511 12540698747158523863050715693290963295227443043557 66896648950445244523161731856403098711121722383113 62229893423380308135336276614282806444486645238749 30358907296290491560440772390713810515859307960866 70172427121883998797908792274921901699720888093776 65727333001053367881220235421809751254540594752243 52584907711670556013604839586446706324415722155397 53697817977846174064955149290862569321978468622482 83972241375657056057490261407972968652414535100474 82166370484403199890008895243450658541227588666881 16427171479924442928230863465674813919123162824586 17866458359124566529476545682848912883142607690042 24219022671055626321111109370544217506941658960408 07198403850962455444362981230987879927244284909188 84580156166097919133875499200524063689912560717606 05886116467109405077541002256983155200055935729725 71636269561882670428252483600823257530420752963450
+Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
+Solution This guy is a straightforward fun warm up for the day.</description>
+    </item>
+    
+    <item>
+      <title>Euler Problem 009</title>
+      <link>https://charltonaustin.com/posts/euler-problem-009/</link>
+      <pubDate>Wed, 06 Mar 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/euler-problem-009/</guid>
+      <description>The problem A Pythagorean triplet is a set of three natural numbers, a &amp;lt; b &amp;lt; c, for which, a^2 + b^2 = c^2
+For example, 32 + 42 = 9 + 16 = 25 = 52.
+There exists exactly one Pythagorean triplet for which a + b + c = 1000. Find the product abc.
+Solution This solution is straight forward. We satisfy the constraint that a &amp;lt; b &amp;lt; c by incrementing up by one in each variable and then we search for the solution.</description>
+    </item>
+    
+    <item>
+      <title>Prior Art</title>
+      <link>https://charltonaustin.com/posts/prior-art/</link>
+      <pubDate>Mon, 18 Feb 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/prior-art/</guid>
+      <description>The Problem Sometimes there is the &amp;ldquo;right way&amp;rdquo; and other times there is &amp;ldquo;how it is done in the codebase&amp;rdquo;. I would argue that a majority of the time the &amp;ldquo;right way&amp;rdquo; is the &amp;ldquo;how it is done in the codebase&amp;rdquo;. This might seem surprising, but generally I think consistency is incredibly important in a codebase. So while at first glance a practice might not be the accepted best practice, you shouldn&amp;rsquo;t change the codebase unless you can change everything over to the best practice.</description>
+    </item>
+    
+    <item>
+      <title>Blameless Postmortems</title>
+      <link>https://charltonaustin.com/posts/blameless-postmortems/</link>
+      <pubDate>Mon, 14 Jan 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/blameless-postmortems/</guid>
+      <description>Subject Why should we have blameless postmortems?
+Context I recently read a blog post about blameless postmortems from Etsy. In it there was a simple question about why software engineers shouldn&amp;rsquo;t be punished:
+ Why shouldn’t they be punished or reprimanded? Because an engineer who thinks they’re going to be reprimanded are disincentivized to give the details necessary to get an understanding of the mechanism, pathology, and operation of the failure.</description>
+    </item>
+    
+    <item>
+      <title>Election Results 2018</title>
+      <link>https://charltonaustin.com/posts/election-results-2018/</link>
+      <pubDate>Mon, 10 Dec 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/election-results-2018/</guid>
+      <description>Election 2018 The Tuesday Company had the honor to work on many races over the midterm elections. The team worked incredibly hard and managed to help in over 118 different races. We had a chance to scale our technology on a national level and managed to have no production issues despite having an large magnitude of increased traffic. We also learned some valuable lessons about what it means for a team to grow; both in the number of developers and in the number of users.</description>
+    </item>
+    
+    <item>
+      <title>Load And Performance Testing With Flask</title>
+      <link>https://charltonaustin.com/posts/load-and-performance-testing-with-flask/</link>
+      <pubDate>Tue, 13 Nov 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/load-and-performance-testing-with-flask/</guid>
+      <description>The problem At my current gig, we&amp;rsquo;ve spent some time building out our initial product. Things have been going well, and we have been growing. These days we started to notice that some over our API endpoints weren&amp;rsquo;t as responsive as before. We&amp;rsquo;ve also started to increase our number of users significantly. To that end, it was time for us to start measuring our requests and fixing them if necessary.</description>
+    </item>
+    
+    <item>
+      <title>Hope Conference 2018</title>
+      <link>https://charltonaustin.com/posts/hope-conference-2018/</link>
+      <pubDate>Wed, 01 Aug 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/hope-conference-2018/</guid>
+      <description>Context This weekend I had the joy of going to the Hope Conference. I&amp;rsquo;ve been going to this conference for a few years and (as usual) I had a wonderful time. Generally speaking, the conference is filled with people who love to create, take things apart, and are curious.
+The Good Some of the highlights of the conference included a talk on SecureDrop, a talk by Steven Rambam about privacy, and a talk about legislation and privacy by Richard Stallman.</description>
+    </item>
+    
+    <item>
+      <title>What Does It Mean To Write Ethical Code</title>
+      <link>https://charltonaustin.com/posts/what-does-it-mean-to-write-ethical-code/</link>
+      <pubDate>Mon, 09 Jul 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/what-does-it-mean-to-write-ethical-code/</guid>
+      <description>Recently I read a report from the 2018 stack overflow survey, here.
+From the survey:
+ Only tiny fractions of developers say that they would write unethical code or that they have no obligation to consider the ethical implications of code, but beyond that, respondents see a lot of ethical gray.
+ Given the recent investigation into Facebook. I thought it might be prudent to do a little thinking and writing about what it means to write code ethically.</description>
+    </item>
+    
+    <item>
+      <title>Developing Your Team</title>
+      <link>https://charltonaustin.com/posts/developing-your-team/</link>
+      <pubDate>Mon, 04 Jun 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/developing-your-team/</guid>
+      <description>The problem You want to encourage people on your team to be the best they can be.
+Some thoughts I&amp;rsquo;m a big reader. So the first thing I did when I came across this problem was to start a search on Amazon. Admittedly I only read a few books. I&amp;rsquo;m no guru. I don&amp;rsquo;t even think I&amp;rsquo;m that experienced. But I do think I&amp;rsquo;ve found a few strategies that have worked so far.</description>
+    </item>
+    
+    <item>
+      <title>Branch By Abstraction</title>
+      <link>https://charltonaustin.com/posts/branch-by-abstraction/</link>
+      <pubDate>Mon, 07 May 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/branch-by-abstraction/</guid>
+      <description>The problem I want to write code that is consistently shared with the rest of the team, but I also want trunk based development.
+What is branch by abstraction Paul Hammant a friend and mentor of mine, has two great articles explaining branch by abstraction here and here. The basic concept is pretty easy. Instead of having long lived branches in your version control system, you simply create an abstraction that allows you to change the behavior with only a few minor changes.</description>
+    </item>
+    
+    <item>
+      <title>Euler Problem 008</title>
+      <link>https://charltonaustin.com/posts/euler-problem-008/</link>
+      <pubDate>Mon, 02 Apr 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/euler-problem-008/</guid>
+      <description>The problem The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.
+73167176531330624919225119674426574742355349194934 96983520312774506326239578318016984801869478851843 85861560789112949495459501737958331952853208805511 12540698747158523863050715693290963295227443043557 66896648950445244523161731856403098711121722383113 62229893423380308135336276614282806444486645238749 30358907296290491560440772390713810515859307960866 70172427121883998797908792274921901699720888093776 65727333001053367881220235421809751254540594752243 52584907711670556013604839586446706324415722155397 53697817977846174064955149290862569321978468622482 83972241375657056057490261407972968652414535100474 82166370484403199890008895243450658541227588666881 16427171479924442928230863465674813919123162824586 17866458359124566529476545682848912883142607690042 24219022671055626321111109370544217506941658960408 07198403850962455444362981230987879927244284909188 84580156166097919133875499200524063689912560717606 05886116467109405077541002256983155200055935729725 71636269561882670428252483600823257530420752963450 Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
+Solution This guy is a pretty fun warm up for the day.</description>
+    </item>
+    
+    <item>
+      <title>Pomodoro On Os X Updated</title>
+      <link>https://charltonaustin.com/posts/pomodoro-on-os-x-updated/</link>
+      <pubDate>Thu, 29 Mar 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/pomodoro-on-os-x-updated/</guid>
+      <description>Pomodoro Expanded Previously I had created a post where I talked about using the pomodoro technique on mac OSX. Well today I want to show how I have expanded on my original idea. First I created this:
+#! /bin/sh at now + $1 minutes &amp;lt;&amp;lt;&amp;lt; $2 Which is a small script to run a bash command at some time in the future. Then I created this:
+#!/bin/bash x=`/usr/bin/osascript &amp;lt;&amp;lt;EOT tell application &amp;#34;Finder&amp;#34; activate set myReply to text returned of (display dialog &amp;#34;Start 25 mins: Please put in task&amp;#34; default button 1 buttons {&amp;#34;OK&amp;#34;} default answer &amp;#34;&amp;#34; with icon 1) end tell EOT` echo &amp;#39;Text is: &amp;#39;$x if [[ -z &amp;#34;$x&amp;#34; ]]; then echo &amp;#34;Done for the day&amp;#34; else mkdir -p $HOME/work touch $HOME/work/daily_pomodoro.</description>
+    </item>
+    
+    <item>
+      <title>Euler Problem 007</title>
+      <link>https://charltonaustin.com/posts/euler-problem-007/</link>
+      <pubDate>Wed, 28 Mar 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/euler-problem-007/</guid>
+      <description>The problem By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+What is the 10001 prime number?
+Solution Interestingly my first attempt was the good old Sieve of Eratosthenes. However I kept getting an out of memory error from JavaScript. I was using NPM 3.10.3 and would get a no free memory error after GC. My next attempt included going piece by piece and only keeping in memory as many of the composite numbers as necessary and re walking the primes.</description>
+    </item>
+    
+    <item>
+      <title>Pairing Vs Code Review</title>
+      <link>https://charltonaustin.com/posts/pairing-vs-code-review/</link>
+      <pubDate>Tue, 27 Mar 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/pairing-vs-code-review/</guid>
+      <description>Note This was written mostly immediately after I joined CoreOS and then updated this last week. I recently started working at CoreOS and one thing that they do there for every change of code is a code review. I have never had code reviews before. I&amp;rsquo;ve mostly worked in environments where I have paired directly with people. So I wanted to do a quick review on the differences between the two methods.</description>
+    </item>
+    
+    <item>
+      <title>Starting A Company</title>
+      <link>https://charltonaustin.com/posts/starting-a-company/</link>
+      <pubDate>Mon, 26 Mar 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/starting-a-company/</guid>
+      <description>Why I&amp;rsquo;ve been missing for almost a year In November 2016 some friends of mine were devastated by the Trump and Clinton presidential election. No one had expected Trump to win, and the day after the election Josh Bouy and Jordan Birnholtz got together for breakfast in order to think about what they could do to impact future elections. At that breakfast Jordan realized that he knew someone who was also passionate about the recent election.</description>
+    </item>
+    
+    <item>
+      <title>Euler Problem 006</title>
+      <link>https://charltonaustin.com/posts/euler-problem-006/</link>
+      <pubDate>Fri, 23 Mar 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/euler-problem-006/</guid>
+      <description>The problem The sum of the squares of the first ten natural numbers is,
+1^2 + 2^2 + &amp;hellip; + 10^2 = 385 The square of the sum of the first ten natural numbers is,
+(1 + 2 + &amp;hellip; + 10)^2 = 552 = 3025 Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 − 385 = 2640.</description>
+    </item>
+    
+    <item>
+      <title>Euler Problem 005</title>
+      <link>https://charltonaustin.com/posts/euler-problem-005/</link>
+      <pubDate>Thu, 22 Mar 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/euler-problem-005/</guid>
+      <description>The problem 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+Solution Now this guy is a higher order, functional dream. I first create a function that returns a function to see if a number is divisible by another number.</description>
+    </item>
+    
+    <item>
+      <title>Using Quay With Multiple Dockerfiles</title>
+      <link>https://charltonaustin.com/posts/using-quay-with-multiple-dockerfiles/</link>
+      <pubDate>Sat, 08 Apr 2017 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/using-quay-with-multiple-dockerfiles/</guid>
+      <description>The problem Let&amp;rsquo;s say you have the following folder layout:
+app1/ app2/ shared-infra-resources/ continuous-integration/ app1/ app1.Dockerfile app2/ app2.Dockerfile And you would like to build app1.Dockerfile and app2.Dockerfile in your Docker registry.
+The Solution If you are using DockerHub. Then you already can&amp;rsquo;t. DockerHub doesn&amp;rsquo;t allow you to specify a context separate from your Dockerfile location. At least they did not as of April 8, 2017. So you can&amp;rsquo;t specify use the continuous-integration/app2/app2.</description>
+    </item>
+    
+    <item>
+      <title>Euler Problem 004</title>
+      <link>https://charltonaustin.com/posts/euler-problem-004/</link>
+      <pubDate>Mon, 27 Mar 2017 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/euler-problem-004/</guid>
+      <description>The problem A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+Find the largest palindrome made from the product of two 3-digit numbers.
+Solution Now this guy is your daily warm up kind of easy. I created two functions. The first one simply checks a number to see if it is a palindrome. The second one accepts a number finds the largest multiplication combination that is a palindrome.</description>
+    </item>
+    
+    <item>
+      <title>Euler Problem 003</title>
+      <link>https://charltonaustin.com/posts/euler-problem-003/</link>
+      <pubDate>Sat, 18 Mar 2017 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/euler-problem-003/</guid>
+      <description>The problem The prime factors of 13195 are 5, 7, 13 and 29.
+What is the largest prime factor of the number 600851475143 ?
+Solution This one took a bit longer than I expected. My fist attempt was pretty naive. The idea was generate all the primes less than the number and then check if the number is divisible by the prime. At the end we simple return the largest prime number that divides the number evenly.</description>
+    </item>
+    
+    <item>
+      <title>Euler Problem 002</title>
+      <link>https://charltonaustin.com/posts/euler-problem-002/</link>
+      <pubDate>Fri, 17 Mar 2017 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/euler-problem-002/</guid>
+      <description>The problem Each new term in the Fibonacci sequence is generated by adding the previous two terms. By starting with 1 and 2, the first 10 terms will be:
+1, 2, 3, 5, 8, 13, 21, 34, 55, 89, &amp;hellip;
+By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
+Solution This is a pretty straight forward problem. We generate the the Fibonacci number and as we go we can check if it isEven keeping track of the sum.</description>
+    </item>
+    
+    <item>
+      <title>Euler Problem 001</title>
+      <link>https://charltonaustin.com/posts/euler-problem-001/</link>
+      <pubDate>Mon, 13 Mar 2017 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/euler-problem-001/</guid>
+      <description>The problem If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+Find the sum of all the multiples of 3 or 5 below 1000.
+Solution The first algorithm is super straightforward. We want to simply loop over each number between the start and the end checking if the number is a multiple of 3 or 5 and then adding that to the sum.</description>
+    </item>
+    
+    <item>
+      <title>Pomodoro On Os X</title>
+      <link>https://charltonaustin.com/posts/pomodoro-on-os-x/</link>
+      <pubDate>Thu, 03 Nov 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/pomodoro-on-os-x/</guid>
+      <description>Pomodoro If you haven&amp;rsquo;t ever used the pomodoro technique then you are missing out. It is a great way to stay focused on one task at a time. It is also a good way to get yourself moving regularly. There is just one thing I don&amp;rsquo;t like about it. In order to have a good timer you usually have to have something that bothers your neighbor at work. For a while I was using my phone timer which worked okay, but I&amp;rsquo;m pretty sure my work mates hated me.</description>
+    </item>
+    
+    <item>
+      <title>A Review Of Test Driven Development With Go</title>
+      <link>https://charltonaustin.com/posts/a-review-of-test-driven-development-with-go/</link>
+      <pubDate>Mon, 12 Sep 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/a-review-of-test-driven-development-with-go/</guid>
+      <description>In a previous blog entry I talk about my recent technical challenge with CoreOS. I enjoyed my interview there so much that I started doing some reading about Go. Here&amp;rsquo;s a second book that I read that I would like to write a review about. It&amp;rsquo;s called Test-Driven Development With Go written by Yigal Duppen. You can find it on leanpub and it costs $0-14.99. I was tempted when I came across it to pay for it, but I thought maybe I&amp;rsquo;ll give it a read before I pay the author (authors have to eat too).</description>
+    </item>
+    
+    <item>
+      <title>Creating A Web Api With Golang</title>
+      <link>https://charltonaustin.com/posts/creating-a-web-api-with-golang/</link>
+      <pubDate>Sat, 10 Sep 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/creating-a-web-api-with-golang/</guid>
+      <description>I had a chance for the first time in a while to write some Go. I was writing a simple web API that allowed a user to login with JWT. This blog post is going to be about some of the challenges I faced along the way. I also want to give some shout outs to other blogs that helped me get it written.
+The IDE First let&amp;rsquo;s start with the IDE.</description>
+    </item>
+    
+    <item>
+      <title>A Review Of An Introduction To Programming In Go</title>
+      <link>https://charltonaustin.com/posts/a-review-of-an-introduction-to-programming-in-go/</link>
+      <pubDate>Fri, 02 Sep 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/a-review-of-an-introduction-to-programming-in-go/</guid>
+      <description>Recently I had a chance to write some Go code for the first time in a few years as part of the interview process at CoreOS. The challenge was actually really fun, but so as not to ruin surprise I won&amp;rsquo;t be talking about what I did during the challenge. Suffice it to say that I had a great experience, and whether or not I get the job at CoreOS I definitely enjoyed the interview process.</description>
+    </item>
+    
+    <item>
+      <title>Showcases And Why We Need Them</title>
+      <link>https://charltonaustin.com/posts/showcases-and-why-we-need-them/</link>
+      <pubDate>Sat, 27 Aug 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/showcases-and-why-we-need-them/</guid>
+      <description>The problem So my students are mostly awesome. We have come a long way. When we started most of them had not written any JavaScript. In the last few weeks they have been working on their final projects You can see them here, here, here, and here. One thing that they haven&amp;rsquo;t had a lot of experience with is how to put a whole project together. So we broke them into team and they are coming up with their own product to show future employers.</description>
+    </item>
+    
+    <item>
+      <title>Leaders In An Array In Clojure Basic Algorithms Part Four</title>
+      <link>https://charltonaustin.com/posts/leaders-in-an-array-in-clojure-basic-algorithms-part-four/</link>
+      <pubDate>Wed, 17 Aug 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/leaders-in-an-array-in-clojure-basic-algorithms-part-four/</guid>
+      <description>The problem Given an array of integers, print the leaders in the array. A leader is an element which is larger than all the elements in the array to its right.
+Solution Is was my first attempt at coming up with a solution. Naturally I used recursion and simply walked down the array seeing if every element after it was the same.
+The time complexity of this is O( n^2 ) which isn&amp;rsquo;t great.</description>
+    </item>
+    
+    <item>
+      <title>Moving From Blogger To Clojure</title>
+      <link>https://charltonaustin.com/posts/moving-from-blogger-to-clojure/</link>
+      <pubDate>Tue, 09 Aug 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/moving-from-blogger-to-clojure/</guid>
+      <description>Recently I had a problem with my old blog where writing new blog posts would be buggy. Things like code formatting wouldn&amp;rsquo;t be consistent and so I moved to images of code. Which is so silly considering that it is just text. I&amp;rsquo;ve always had a bit of a problem with blogspot. I disliked the lack of control over how things are displayed and served up content. I knew that I wanted to move to HTTPS and that I was tired of working within the confines of WYSIWYG editors.</description>
+    </item>
+    
+    <item>
+      <title>The Importance Of Toy Problems</title>
+      <link>https://charltonaustin.com/posts/the-importance-of-toy-problems/</link>
+      <pubDate>Sat, 06 Aug 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/the-importance-of-toy-problems/</guid>
+      <description>As a software engineer I find that I rarely get to practice the fundamentals of computer science. I also rarely get a chance to practice the kinds of problems at work. At the school that I&amp;rsquo;m currently teaching one thing that the students have been doing every day is called &amp;lsquo;toy problems&amp;rsquo;. Toy problems are a pretty straight forward concept. They are problems that should make you think a bit, shouldn&amp;rsquo;t take too long, and let you exercise your programming muscles.</description>
+    </item>
+    
+    <item>
+      <title>Binary Search Of Sorted Array In Clojure Basic Algorithms Part Three</title>
+      <link>https://charltonaustin.com/posts/binary-search-of-sorted-array-in-clojure-basic-algorithms-part-three/</link>
+      <pubDate>Wed, 03 Aug 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/binary-search-of-sorted-array-in-clojure-basic-algorithms-part-three/</guid>
+      <description>The problem Find an element in a sorted array using binary search
+The solution The solution is pretty straight forward. I added in some printlns to get a sense of how we drill down in the recursion to find the element.
+(defn binary-search [v value] (loop [low 0 high (dec (count v)) depth 0] (let [half-way (quot (+ high low) 2)] (do (println (str &amp;#34;half-way is &amp;#34; half-way)) (println (str &amp;#34;low is &amp;#34; low)) (println (str &amp;#34;high is &amp;#34; high)) (println (str &amp;#34;depth is &amp;#34; depth)) (if (&amp;lt;= high (inc low)) (cond (= value (v low)) low (= value (v high)) high :else nil) (let [middle (quot (+ low high) 2)] (if (&amp;lt; (v middle) value) (recur (inc middle) high (inc depth)) (recur low middle (inc depth))))))))) You can call the function like this:</description>
+    </item>
+    
+    <item>
+      <title>Permutations Of A String In Clojure Basic Algorithms Part Two</title>
+      <link>https://charltonaustin.com/posts/permutations-of-a-string-in-clojure-basic-algorithms-part-two/</link>
+      <pubDate>Wed, 27 Jul 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/permutations-of-a-string-in-clojure-basic-algorithms-part-two/</guid>
+      <description>The problem Find all permutations of a string
+The solution My first solution is comes from Java and is a recursive solution.
+(defn- perms [pre v] (let [n (count v)] (if (zero? n) nil (loop [i 0] (if (&amp;lt; i n) (do (perms (conj pre (nth v i)) (into [] (concat(first (split-at i v)) (second (split-at (inc i) v))))) (recur (inc i))) nil))))) It has some problems. It is recursive so vulnerable to stack overflow errors, but more than that it is pretty slow and not very idiomatic Clojure.</description>
+    </item>
+    
+    <item>
+      <title>Counting Frequencies Of Elements In An Array In Clojure Basic Algorithms Part One</title>
+      <link>https://charltonaustin.com/posts/counting-frequencies-of-elements-in-an-array-in-clojure-basic-algorithms-part-one/</link>
+      <pubDate>Wed, 20 Jul 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/counting-frequencies-of-elements-in-an-array-in-clojure-basic-algorithms-part-one/</guid>
+      <description>So I&amp;rsquo;m not a CS guy. I went to school for math and I became a programmer pretty late. I also never had the obligatory algorithms class. So I&amp;rsquo;m going to start a series where I explore some algorithms coding problems. The problem
+So the coding challenge is given an array with N numbers m such that m &amp;lt; N and m is a natural number count the occurrences of m.</description>
+    </item>
+    
+    <item>
+      <title>Quitting Finance And Trying To Give Back</title>
+      <link>https://charltonaustin.com/posts/quitting-finance-and-trying-to-give-back/</link>
+      <pubDate>Tue, 10 May 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/quitting-finance-and-trying-to-give-back/</guid>
+      <description>I took a leap this week and quit my job at HedgeServ to work for a non-profit called RBK. I moved (May 2016) to Jordan to help teach Syrian refugees how to write software. It&amp;rsquo;s a bit of a scary plan. I packed all of my stuff up, put it in storage and to take a short break from American corporate career business. The last time I made a decision like this was when I was 17 and full of craziness and I decided to join the military.</description>
+    </item>
+    
+    <item>
+      <title>Top Down Vs Bottom Up Api Design In Clojure Part One</title>
+      <link>https://charltonaustin.com/posts/top-down-vs-bottom-up-api-design-in-clojure-part-one/</link>
+      <pubDate>Tue, 26 Apr 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/top-down-vs-bottom-up-api-design-in-clojure-part-one/</guid>
+      <description>Recently in my last post&amp;hellip; Recently I posted about the difference between top down vs bottom up design in Clojure, if you haven&amp;rsquo;t read it then you should. This post is the second part about the differences in both code quality and experience between tope down and bottom up approaches. You can see the commits here.
+First impressions It took me 14 functions using the outside-in method vs 15 functions with the inside-out method.</description>
+    </item>
+    
+    <item>
+      <title>Clojure Sieve Of Eratosthenes</title>
+      <link>https://charltonaustin.com/posts/clojure-sieve-of-eratosthenes/</link>
+      <pubDate>Sun, 24 Apr 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/clojure-sieve-of-eratosthenes/</guid>
+      <description>I was recently watching a video on Haskell that was showing how you would write a functional form of the Sieve of Eratosthenes. I personally love this algorithm and was interested in what it looked like in Clojure. So I wrote this:
+(defn sieve [number xs] (if (= 0 number) xs (conj (sieve (dec number) (filter #(not= 0 (mod % (first xs))) (rest xs))) (first xs)))) This works, but Clojure doesn&amp;rsquo;t have tail call optimization (TCO) by default which means you can get a stack StackOverflowError.</description>
+    </item>
+    
+    <item>
+      <title>The Count Down Problem</title>
+      <link>https://charltonaustin.com/posts/the-count-down-problem/</link>
+      <pubDate>Wed, 20 Apr 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/the-count-down-problem/</guid>
+      <description>Recently I&amp;rsquo;ve been watching a wonderful set of videos about Haskell during my lunch break. If you are interested in Haskell and functional programming I would definitely recommend the videos.
+I found lecture 11 particularly interesting because of a paper that was written about the content here.
+The paper is interesting because it shows how you can write a proof for an implementation of a problem in Haskell, then create transformations that speed up that implementation and prove that those transformations are also correct.</description>
+    </item>
+    
+    <item>
+      <title>Top Down Vs Bottom Up Api Design In Clojure Part Zero</title>
+      <link>https://charltonaustin.com/posts/top-down-vs-bottom-up-api-design-in-clojure-part-zero/</link>
+      <pubDate>Wed, 20 Apr 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/top-down-vs-bottom-up-api-design-in-clojure-part-zero/</guid>
+      <description>Intro I saw a lot of presentations at Clojure/conj 2015. Most of them were really great, but one of them I was particularly interested in seeing didn&amp;rsquo;t really do it for me. It was called Bottom Up vs Top Down Design in Clojure by Mark Bastian. I thought his presentation was interesting, but it failed to touch on a couple of points that I was interested in. In an effort to learn a bit, I figured I would write post about what I was hoping the talk would actually address.</description>
+    </item>
+    
+    <item>
+      <title>Unit Testing With Higher Order Functions</title>
+      <link>https://charltonaustin.com/posts/unit-testing-with-higher-order-functions/</link>
+      <pubDate>Wed, 13 Apr 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/unit-testing-with-higher-order-functions/</guid>
+      <description>Recently I was writing an interesting bit of Python software that had a couple of layers. There were some high level objects that dealt with some domain logic and then some lower level objects that did more of the nitty gritty interactions with the operating system. When I first started thinking about writing the lower level interface, I was a little afraid that writing the unit tests was going to be difficult.</description>
+    </item>
+    
+    <item>
+      <title>Does Unit Testing Make Me Slower</title>
+      <link>https://charltonaustin.com/posts/does-unit-testing-make-me-slower/</link>
+      <pubDate>Tue, 12 Apr 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/does-unit-testing-make-me-slower/</guid>
+      <description>Say What? Recently I asked a coworker if a new application we were working to get into production had unit tests. His response was interesting. He said, &amp;ldquo;No, but it&amp;rsquo;s too early to have unit tests. The code hasn&amp;rsquo;t really settled and unit tests slow you down.&amp;rdquo;
+My initial reaction in my head was &amp;ldquo;Whoa that&amp;rsquo;s silly&amp;rdquo;. But after some consideration and thinking about how code can be written, I&amp;rsquo;m beginning to see his point.</description>
+    </item>
+    
+    <item>
+      <title>Writing Distributed Test Reduction</title>
+      <link>https://charltonaustin.com/posts/writing-distributed-test-reduction/</link>
+      <pubDate>Thu, 07 Apr 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/writing-distributed-test-reduction/</guid>
+      <description>The Problem I recently joined HedgeServ a fintech company and one of my first tasks at the new job has been dealing with how long it takes tests to run. The company has some great end to end test coverage, but the testing time can be rather long (think hours).
+The solution Paul Hammant, my mentor of sorts wrote a blog post about only running tests that actually need to be run when you change a source code set.</description>
+    </item>
+    
+    <item>
+      <title>Python Source Code Gems</title>
+      <link>https://charltonaustin.com/posts/python-source-code-gems/</link>
+      <pubDate>Mon, 04 Apr 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/python-source-code-gems/</guid>
+      <description>So fairly regularly I read about and dip into the python source code. For some reason there seems to be a great deal of beautiful and interesting code in both the c and the standard libraries and tests for python. The other day I was doing some reading about generators (I was thinking about how to marry the ideas of functional and object oriented programming) and I came across something that I found fascinating as well beautiful so I decided I should share it here on this silly little blog.</description>
+    </item>
+    
+    <item>
+      <title>The Expression Problem</title>
+      <link>https://charltonaustin.com/posts/the-expression-problem/</link>
+      <pubDate>Thu, 03 Mar 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/the-expression-problem/</guid>
+      <description>What is the expression problem? The expression problem is the idea that it is easy to add new functions for simple data types without changing the data types, while it is hard to add data types without changing all the functions. At the same time it is easy to add data types with objects (complex data types), while it is hard to add functions without changing all the objects.
+Some great descriptions of this include chapter 6 of Uncle Bob&amp;rsquo;s book Clean Code.</description>
+    </item>
+    
+    <item>
+      <title>Protonmail Or Why Security Matters</title>
+      <link>https://charltonaustin.com/posts/protonmail-or-why-security-matters/</link>
+      <pubDate>Wed, 11 Nov 2015 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/protonmail-or-why-security-matters/</guid>
+      <description>Recently ProtonMail came under a DDoS attack. I was unfortunately one of the people that was affected by this. A few years back after the [Snowden revelations I made a concerted effort to move away from services that cooperated with the NSA. That included companies like Google and Facebook. At the time ProtonMail popped up and I decided to try it out.
+Now I&amp;rsquo;m no security expert, but a lot of the claims made by ProtonMail do seem a bit crazy.</description>
+    </item>
+    
+    <item>
+      <title>Structual Type Systems</title>
+      <link>https://charltonaustin.com/posts/structual-type-systems/</link>
+      <pubDate>Sat, 07 Nov 2015 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/structual-type-systems/</guid>
+      <description>I was talking recently to a friend about programming languages and how they affect what kinds of software we write when we got on the subject of Golang. He&amp;rsquo;s a successful vice president of engineering at a ruby shop and I&amp;rsquo;m a lowly java software engineer, and yet we both agreed on one thing: what people really want is a flexible type system that allows them to rapidly write software. Him coming from the Ruby world wistfully looked off in the distance wishing he didn&amp;rsquo;t have to worry about runtime type production errors, while basking in the glory of how rapidly and concisely his team could get out code.</description>
+    </item>
+    
+    <item>
+      <title>Debugging Multi  Threaded Applications</title>
+      <link>https://charltonaustin.com/posts/debugging-multi-threaded-applications/</link>
+      <pubDate>Sat, 24 Oct 2015 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/debugging-multi-threaded-applications/</guid>
+      <description>Recently I had debug a multithreaded application with some surprising results. Seeing as this can be a particularly tricky task for people that haven&amp;rsquo;t done it before I thought I would write about some lessons I learned from the experience.
+logging Logging LOGGING and MORE LOGGING Log to understand the problem. This one is hard to set up retroactively, but it is well worth the effort. Strive for logs that are meaningful, and that give you checkpoints.</description>
+    </item>
+    
+    <item>
+      <title>Feature Branches To Mainline</title>
+      <link>https://charltonaustin.com/posts/feature-branches-to-mainline/</link>
+      <pubDate>Sat, 10 Oct 2015 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/feature-branches-to-mainline/</guid>
+      <description>Recently at my current company my team has been struggling to move from a feature branch workflow to a mainline workflow. I&amp;rsquo;m going to define what the feature branches and mainline workflows are. Then I&amp;rsquo;m going to talk about the costs and benefits of both models. Finally I&amp;rsquo;m going to talk about why people should use the mainline workflow.
+Feature Branch Workflow So what is the feature branch workflow (at least at IntentMedia).</description>
+    </item>
+    
+    <item>
+      <title>Making Pairing Comfortable</title>
+      <link>https://charltonaustin.com/posts/making-pairing-comfortable/</link>
+      <pubDate>Sat, 26 Sep 2015 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/making-pairing-comfortable/</guid>
+      <description>There are effectively (to me anyways) an infinite number of blog posts about the benefits and costs of pairing and what pairing is and isn&amp;rsquo;t. So I&amp;rsquo;m not going to talk about the good and bad of pairing. I&amp;rsquo;m going to assume that, like me, you want to pair and you see the benefits and costs. Instead today I&amp;rsquo;m going to talk about how I started experimenting with pairing at my most recent job.</description>
+    </item>
+    
+    <item>
+      <title>Configurator Boxen Or Things To Wrangle Your Environment</title>
+      <link>https://charltonaustin.com/posts/configurator-boxen-or-things-to-wrangle-your-environment/</link>
+      <pubDate>Sat, 19 Sep 2015 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/configurator-boxen-or-things-to-wrangle-your-environment/</guid>
+      <description>The problem One thing that I keep seeing consistently regardless of whether I&amp;rsquo;m working as a full time employee or as consultant, and that I&amp;rsquo;ve literally seen from coast to coast is developers and testers trying to simplify their local environments. Increasingly, companies are using multiple services that allow for more module pieces of software (think micro-services). This is nice because it can often simplify coding complexity and dependency graphs, but the flip side is that deployments can become more complex.</description>
+    </item>
+    
+    <item>
+      <title>Refactoring Tests For Maintainability</title>
+      <link>https://charltonaustin.com/posts/refactoring-tests-for-maintainability/</link>
+      <pubDate>Wed, 28 Jan 2015 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/refactoring-tests-for-maintainability/</guid>
+      <description>I just began working at Intent Media and I&amp;rsquo;ve been spending some time getting to know the code base. I spent the other day pairing with another guy on the team to add a new feature. We needed to change one of the data models by adding a new field. So we wrote some tests specifying how we thought the new data field should work. Next we got them passing. After that we ran all the unit tests.</description>
+    </item>
+    
+    <item>
+      <title>Problems With Cucumber And Chef</title>
+      <link>https://charltonaustin.com/posts/problems-with-cucumber-and-chef/</link>
+      <pubDate>Wed, 06 Mar 2013 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/problems-with-cucumber-and-chef/</guid>
+      <description>So I&amp;rsquo;ve been working on getting some cucumber functional tests to run on a remote server lately and had tons of problems. The setup included using Electric Commander to run a gradle task, which in turn ran cucumber using jruby. It was lots of fun. Let me say.
+This post is basically because cucumber put out a misleading &amp;ldquo;error&amp;rdquo; which when I searched google I couldn&amp;rsquo;t get any help. So for anyone else who finds themselves in some similar situation.</description>
+    </item>
+    
+    <item>
+      <title>Clojure Web Scraper</title>
+      <link>https://charltonaustin.com/posts/clojure-web-scraper/</link>
+      <pubDate>Fri, 01 Mar 2013 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/clojure-web-scraper/</guid>
+      <description>Okay so another thing that I did this week was go to a clojure meet up. I really enjoyed it. There I met some really cool people like Anthony from WalmartLabs. In the end we created a hacker news scraper from scratch in a couple of hours. So here is a brief tutorial on how we did it. (Note I&amp;rsquo;m not that great with Clojure yet thought I do think it is rather awesome.</description>
+    </item>
+    
+    <item>
+      <title>Vagrant Chef Fun</title>
+      <link>https://charltonaustin.com/posts/vagrant-chef-fun/</link>
+      <pubDate>Wed, 27 Feb 2013 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/vagrant-chef-fun/</guid>
+      <description>A couple of days ago I got a chance to see some friends of mine (Matt Urbanski and Jinwoo Baek) give a presentation on chef. It was fantastic. Afterward we had a sort of impromptu demo session on using Vagrant and Chef to get an apache server up and running. So this is going to be a quick tutorial on how to use Vagrant and Chef to get a functioning apache server up and running on a vm.</description>
+    </item>
+    
+    <item>
+      <title>Frank Cucumber</title>
+      <link>https://charltonaustin.com/posts/frank-cucumber/</link>
+      <pubDate>Sun, 17 Feb 2013 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/frank-cucumber/</guid>
+      <description>Starting my blog again. So my blog has hopelessly become out of date. Since the last time I posted I&amp;rsquo;ve started working for ThoughtWorks, gone to India, moved to San Francisco, and finally been put onto my client. Great so now what. Since things are finally starting to settle and since my thoughts have changed on maintaining a blog I&amp;rsquo;ve decided it&amp;rsquo;s time to start blogging again. Not that anyone has read anything yet.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://charltonaustin.com/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://charltonaustin.com/about/</guid>
+      <description>A Blog to Help Software Engineers Grow This blog is a labor of love meant to give back to tech community which has helped me grow so much. If you find tech or tech management interesting hopefully you find this blog interesting. I believe that security, education, and software can come together to make the world a better place.
+The Tuesday Company I&amp;rsquo;m proud to have started a civic technology company that&amp;rsquo;s reimagining political engagement for the digital age.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://charltonaustin.com/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://charltonaustin.com/contact/</guid>
+      <description> Please see my other work at GitHub Also feel free to reach out to me via email at me at charltonaustin dot com You can also reach me through LinkedIn Or you can learn more about The Tuesday Company here  </description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>https://charltonaustin.com/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://charltonaustin.com/projects/</guid>
+      <description>Nothing to see here&amp;hellip; Move along!</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Charlton Austin">
+		<meta name="description" content="Charlton Austin&#39;s personal website">
+		<meta name="generator" content="Hugo 0.64.1" />
+		<title>Clojure Sieve Of Eratosthenes &middot; Charlton Austin</title>
+		<link rel="shortcut icon" href="https://charltonaustin.comimages/favicon.ico">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/style.css">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://charltonaustin.comcss/font-awesome.min.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://charltonaustin.com'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://charltonaustin.composts'>Archive</a>
+	<a href='https://charltonaustin.comtags'>Tags</a>
+	<a href='https://charltonaustin.comabout'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Clojure Sieve Of Eratosthenes
+                    </h1>
+                    <h2 class="headline">
+                    Apr 24, 2016 09:03
+                    · 305 words
+                    · 2 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents"></nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    <p>I was recently watching a video on Haskell that was showing how you would write a functional form of the <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">Sieve of Eratosthenes</a>. I personally love this algorithm and was interested in what it looked like in Clojure. So I wrote this:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="font-weight:bold">defn </span>sieve [number xs]
+  (<span style="font-weight:bold">if </span>(= 0 number)
+    xs
+    (conj (sieve (dec number)
+                 (filter #(not= 0 (mod % (first xs))) (rest xs)))
+          (first xs))))
+</code></pre></div><p>This works, but Clojure doesn&rsquo;t have tail call optimization (TCO) by default which means you can get a stack StackOverflowError. So I decided to rewrite it to use the loop and recur construct to remove the StackOverflowError. It looks like this:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="font-weight:bold">defn </span>sieve [number xs]
+  (<span style="font-weight:bold">loop </span>[number number
+         xs xs
+         return-value nil]
+    (<span style="font-weight:bold">if </span>(= 0 number)
+      return-value
+      (recur (dec number)
+             (filter #(not= 0 (mod % (first xs))) (rest xs))
+             (conj return-value (first xs))))))
+</code></pre></div><p>Which can be called like this:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(sieve 1000 (iterate inc 2))
+</code></pre></div><p>I like this implementation, but I wanted to see what would happen when I pushed it towards it&rsquo;s limit. So I went ahead and I ran:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(sieve 10000 (iterate inc 2))
+</code></pre></div><p>At which point I promptly got;</p>
+<p>StackOverflowError   clojure.lang.Numbers.inc (Numbers.java:112)</p>
+<p>A little sad and perplexed, it wasn&rsquo;t immediately obvious to me why I was getting a stack overflow. Well it turns out that recur can&rsquo;t use TCO on lazy lists. In particular;</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(filter #(not= 0 (mod % (first xs))) (rest xs))
+</code></pre></div><p>Doesn&rsquo;t work, but if we change the implementation to:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="font-weight:bold">defn </span>sieve [number xs]
+  (<span style="font-weight:bold">loop </span>[number number
+         xs xs
+         return-value nil]
+    (<span style="font-weight:bold">if </span>(= 0 number)
+      return-value
+      (recur (dec number)
+             (doall (filter #(not= 0 (mod % (first xs))) (rest xs)))
+             (conj return-value (first xs))))))
+
+</code></pre></div><p>and we call it as</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(sieve 10000 (range 2 1000000))
+</code></pre></div><p>While it takes some time, the above does come back without a StackOverflowError, but at the cost of losing the lazy evaluation.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2fclojure-sieve-of-eratosthenes%2f - Clojure%20Sieve%20Of%20Eratosthenes by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/charltonaustin">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/charltonaustin">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://charltonaustin.comjs/jquery-3.3.1.min.js"></script>
+<script src="https://charltonaustin.comjs/main.js"></script>
+<script src="https://charltonaustin.comjs/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

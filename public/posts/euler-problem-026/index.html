@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Charlton Austin">
+		<meta name="description" content="Charlton Austin&#39;s personal website">
+		<meta name="generator" content="Hugo 0.64.1" />
+		<title>Euler Problem 026 &middot; Charlton Austin</title>
+		<link rel="shortcut icon" href="https://charltonaustin.comimages/favicon.ico">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/style.css">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://charltonaustin.comcss/font-awesome.min.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://charltonaustin.com'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://charltonaustin.composts'>Archive</a>
+	<a href='https://charltonaustin.comtags'>Tags</a>
+	<a href='https://charltonaustin.comabout'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Euler Problem 026
+                    </h1>
+                    <h2 class="headline">
+                    Aug 19, 2019 09:03
+                    · 370 words
+                    · 2 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#the-problem">The problem</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    <h3 id="the-problem">The problem</h3>
+<p>A unit fraction contains 1 in the numerator. The decimal representation of the unit fractions with denominators 2 to 10 are given:</p>
+<pre><code>1/2	= 	0.5
+1/3	= 	0.(3)
+1/4	= 	0.25
+1/5	= 	0.2
+1/6	= 	0.1(6)
+1/7	= 	0.(142857)
+1/8	= 	0.125
+1/9	= 	0.(1)
+1/10	= 	0.1 
+</code></pre>
+<p>Where 0.1(6) means 0.166666&hellip;, and has a 1-digit recurring cycle. It can be seen that 1/7 has a 6-digit recurring cycle.</p>
+<p>Find the value of d &lt; 1000 for which 1/d contains the longest recurring cycle in its decimal fraction part.</p>
+<h4 id="solution-">Solution</h4>
+<p>The problem is an interesting one. My initial thoughts lead me down the path of seeing if I could find cycles using JavaScript division, but I realized that it wasn&rsquo;t necessary. I&rsquo;m not particularly proud of my solution to this problem. There are a number of things that I&rsquo;m still a little shaky on. First I only find the longest non terminating decimal sequence. That is I don&rsquo;t remove any leading digits that might not be a part of the cycle. For instance in my algorithm 1/6 = 0.1(6) should have a cycle of 1 but I give it a length of two. This doesn&rsquo;t actually matter because 1/983 has the longest cycle regardless, but this might not work for other number ranges. In any case here is my solution. I could do some more optimizations, but it runs rather quickly (<code>Finished in 0.046 seconds</code>).</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="font-weight:bold">var</span> findNum = (num, den) =&gt;{
+  <span style="font-weight:bold">while</span>(den &gt; num){
+    num = num * 10;
+  }
+  <span style="font-weight:bold">return</span> num;
+}
+ 
+<span style="font-weight:bold">var</span> findRepeatingNumerator = (den) =&gt; {
+  <span style="font-weight:bold">var</span> count = 0;
+  <span style="font-weight:bold">var</span> num = 1;
+  <span style="font-weight:bold">var</span> nums = {};
+  <span style="font-weight:bold">while</span>(<span style="font-weight:bold">true</span>){
+    count++;
+    num = findNum(num, den);
+    <span style="font-weight:bold">if</span>(nums[num]){
+      <span style="font-weight:bold">return</span> count;
+    }
+    nums[num] = <span style="font-weight:bold">true</span>;
+    <span style="font-weight:bold">var</span> remainder = num % den;
+    <span style="font-weight:bold">if</span>(remainder === 0){
+      <span style="font-weight:bold">return</span> 0;
+    }
+    num = remainder;
+  }
+}
+
+<span style="font-weight:bold">var</span> findLargest = () =&gt; {
+  <span style="font-weight:bold">var</span> largest = 0;
+  <span style="font-weight:bold">var</span> largestI = 0;
+  <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 2; i &lt; 1001; i++){
+    <span style="font-weight:bold">var</span> current = findRepeatingNumerator(i);
+    <span style="font-weight:bold">if</span>(current &gt; largest){
+      largest = current;
+      largestI = i;
+    }
+  }
+  <span style="font-weight:bold">return</span> largestI;
+}
+</code></pre></div><p>If you&rsquo;d like to see the full code please see my daily <a href="https://github.com/charltonaustin/toy-problems/">toy problem</a> exercises that I&rsquo;ve been working on. It includes tests and a README.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2feuler-problem-026%2f - Euler%20Problem%20026 by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/charltonaustin">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/charltonaustin">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://charltonaustin.comjs/jquery-3.3.1.min.js"></script>
+<script src="https://charltonaustin.comjs/main.js"></script>
+<script src="https://charltonaustin.comjs/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

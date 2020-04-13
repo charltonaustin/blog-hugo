@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Charlton Austin">
+		<meta name="description" content="Charlton Austin&#39;s personal website">
+		<meta name="generator" content="Hugo 0.64.1" />
+		<title>Frank Cucumber &middot; Charlton Austin</title>
+		<link rel="shortcut icon" href="https://charltonaustin.comimages/favicon.ico">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/style.css">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://charltonaustin.comcss/font-awesome.min.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://charltonaustin.com'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://charltonaustin.composts'>Archive</a>
+	<a href='https://charltonaustin.comtags'>Tags</a>
+	<a href='https://charltonaustin.comabout'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Frank Cucumber
+                    </h1>
+                    <h2 class="headline">
+                    Feb 17, 2013 09:03
+                    · 452 words
+                    · 3 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#things-you-are-going-to-need-or-i-expect-to-be-installed">Things you are going to need (or I expect to be installed):</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    <p>Starting my blog again. So my blog has hopelessly become out of date. Since the last time I posted I&rsquo;ve started working for ThoughtWorks, gone to India, moved to San Francisco, and finally been put onto my client. Great so now what. Since things are finally starting to settle and since my thoughts have changed on maintaining a blog I&rsquo;ve decided it&rsquo;s time to start blogging again. Not that anyone has read anything yet. My goal is to do it once or twice a week depending on time constraints and travel. So lets get started.</p>
+<p>For my first post back I&rsquo;m going to talk about frank-cucumber which is a ruby gem maintained by a co-worker of mine. Recently I got a chance to see a sneak peak to a presentation that Pete Hodgson is going to be giving over the importance of iOS user acceptance testing at <a href="http://www.mdevcon.com/">mdevcon</a>.</p>
+<p>This is a short tutorial on how to set up a frank-cucumber project over a working iOS app.</p>
+<h3 id="things-you-are-going-to-need-or-i-expect-to-be-installed">Things you are going to need (or I expect to be installed):</h3>
+<ol>
+<li>Ruby 1.9.x  (I would suggest using <a href="https://rvm.io/">rvm</a>. <a href="http://stackoverflow.com/questions/3696564/how-to-update-ruby-to-1-9-x-on-mac">Here</a> is a post to help with the install)</li>
+<li>xcode</li>
+<li>the xcode command line tools</li>
+<li>svn</li>
+</ol>
+<p>First I would like to say that I&rsquo;ve actually done very little iOS programming myself. Mostly I&rsquo;ve been doing Java programming for work these days (with a healthy mix of Chef/Cucumber/Gradle/MongoDB/Knockout.js and a couple of other technologies) while learning Scala on the side. That said the presentation was fantastic and I learned a couple of things which I would like to talk about.</p>
+<p>If you go to the frank-cucumber <a href="http://testingwithfrank.com/">homepage</a> you will see that frank is a way to execute cucumber tests against an iOS app. Now what does this mean.</p>
+<p>First we are going to need an iOS app to work with.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$: svn checkout http://countitout.googlecode.com/svn/trunk/ countitout-read-only
+</code></pre></div><p>Now cd into the directory.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$:cd countitout-read-only/
+</code></pre></div><p>Next you want to install frank and cucumber.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$:gem install frank-cucumber
+
+$:gem install cucumber
+</code></pre></div><p>Then you need to run frank build to create a frank structure for your iOS app.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$:frank build
+</code></pre></div><p>This should create the basic frank structure. Next to get the app running with frank simple run frank launch. Now you have an instance with frank running with it, but even better is to use something like frank inspect. This brings up a webpage with symbiote and chance for you to see elements in which you can select on in your cucumber tests.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$:frank inspect
+</code></pre></div><p>Finally if you would like to see the a basic set of tests run then run cucumber (close down the iOS Simulator first).</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$:cucumber Frank/features
+</code></pre></div><p>Now you are ready to start exploring cucumber testing for your iOS app. :)</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2ffrank-cucumber%2f - Frank%20Cucumber by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/charltonaustin">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/charltonaustin">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://charltonaustin.comjs/jquery-3.3.1.min.js"></script>
+<script src="https://charltonaustin.comjs/main.js"></script>
+<script src="https://charltonaustin.comjs/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

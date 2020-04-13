@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Charlton Austin">
+		<meta name="description" content="Charlton Austin&#39;s personal website">
+		<meta name="generator" content="Hugo 0.64.1" />
+		<title>Euler Problem 003 &middot; Charlton Austin</title>
+		<link rel="shortcut icon" href="https://charltonaustin.comimages/favicon.ico">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/style.css">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://charltonaustin.comcss/font-awesome.min.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://charltonaustin.com'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://charltonaustin.composts'>Archive</a>
+	<a href='https://charltonaustin.comtags'>Tags</a>
+	<a href='https://charltonaustin.comabout'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Euler Problem 003
+                    </h1>
+                    <h2 class="headline">
+                    Mar 18, 2017 09:03
+                    · 450 words
+                    · 3 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#the-problem">The problem</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    <h3 id="the-problem">The problem</h3>
+<p>The prime factors of 13195 are 5, 7, 13 and 29.</p>
+<p>What is the largest prime factor of the number 600851475143 ?</p>
+<h6 id="solution-">Solution</h6>
+<p>This one took a bit longer than I expected. My fist attempt was pretty naive. The idea was generate all the primes less than the number and then check if the number is divisible by the prime. At the end we simple return the largest prime number that divides the number evenly. This works up until we get to 600851475143. Then we start getting out of memory errors and it takes too long. The first attempt looks like this.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="font-weight:bold">var</span> findPrimesLessThan = <span style="font-weight:bold">function</span>(number){
+  <span style="font-weight:bold">var</span> primes = [];
+  <span style="font-weight:bold">for</span> (<span style="font-weight:bold">var</span> i = 2; i &lt; number; i++){
+    primes.push(i);
+  }
+  <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 0; i &lt; Math.sqrt(primes.length); i++){
+    <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> j = i + 1; j &lt; primes.length; j++){
+      <span style="font-weight:bold">if</span>(primes[j] % primes[i] === 0){
+        primes.splice(j,1);
+      }
+    }
+  }
+  <span style="font-weight:bold">return</span> primes;
+}
+
+<span style="font-weight:bold">var</span> isPrimeFactor = <span style="font-weight:bold">function</span>(number, prime){
+  <span style="font-weight:bold">return</span> number % prime === 0;
+}
+
+<span style="font-weight:bold">var</span> findPrimeFactors = <span style="font-weight:bold">function</span>(number){
+  <span style="font-weight:bold">var</span> primes = findPrimesLessThan(number);
+  <span style="font-weight:bold">var</span> largestPrimeFactor = primes[0];
+  <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 0; i &lt; primes.length; i++){
+    <span style="font-weight:bold">if</span>(isPrimeFactor(number, primes[i]) &amp;&amp; primes[i] &gt; largestPrimeFactor){
+      largestPrimeFactor = primes[i];
+    }
+  }
+  <span style="font-weight:bold">return</span> largestPrimeFactor;
+}
+</code></pre></div><p>Now I could have done some optimizations to search backwards or to generate the largest number first, but I remembered Fermat factorization and figured this guy was odd so I would give another method a try. It looks something like this.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="font-weight:bold">var</span> findFermatFactorization = <span style="font-weight:bold">function</span>(a, number){
+  <span style="font-weight:bold">if</span>(number % 2 === 0){
+    <span style="font-weight:bold">return</span> 0;
+  }
+
+  <span style="font-weight:bold">var</span> bSquared = a * a - number;
+  <span style="font-weight:bold">while</span>(Math.sqrt(bSquared) % 1 !== 0 &amp;&amp; a &lt; number){
+    a += 1;
+    bSquared = a*a-number;
+  }
+  <span style="font-weight:bold">if</span>(Math.sqrt(bSquared) % 1 !== 0){
+    <span style="font-weight:bold">return</span> <span style="font-weight:bold">false</span>;
+  }
+  <span style="font-weight:bold">return</span> [a, Math.sqrt(bSquared)];
+}
+
+<span style="font-weight:bold">var</span> isPrimeNumber = <span style="font-weight:bold">function</span>(number){
+  <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 2; i &lt; number; i++){
+    <span style="font-weight:bold">if</span>(number % i === 0){
+      <span style="font-weight:bold">return</span> <span style="font-weight:bold">false</span>;
+    }
+  }
+  <span style="font-weight:bold">return</span> <span style="font-weight:bold">true</span>;
+}
+
+<span style="font-weight:bold">var</span> findPrimeNumber = <span style="font-weight:bold">function</span>(number){
+  <span style="font-weight:bold">var</span> factors = findFermatFactorization(Math.ceil(Math.sqrt(number)), number);
+  <span style="font-weight:bold">while</span>(factors){
+    <span style="font-weight:bold">var</span> addFactor = factors[0] + factors[1];
+    <span style="font-weight:bold">var</span> subFactor = factors[0] - factors[1];
+    console.log(<span style="font-style:italic">&#34;addFactor: &#34;</span>, addFactor)
+    console.log(<span style="font-style:italic">&#34;subFactor: &#34;</span>, subFactor)
+    <span style="font-weight:bold">if</span>(isPrimeNumber(addFactor)){
+      <span style="font-weight:bold">return</span> addFactor;
+    }
+    <span style="font-weight:bold">if</span>(isPrimeNumber(subFactor)){
+      <span style="font-weight:bold">return</span> subFactor;
+    }
+    factors = findFermatFactorization(factors[0]+1, number);
+  }
+
+  <span style="font-weight:bold">return</span> primes;
+}
+</code></pre></div><p>This guy works much faster and doesn&rsquo;t give out of memory errors, but it works on an assumption that admittedly I have not proven. That the first prime we find using Fermat Factorization is indeed the largest prime number that exists. Now I believe it to be true, but I&rsquo;m not sure how to prove it. I&rsquo;m just going to have to do a bit more research.</p>
+<p>If you&rsquo;d like to see the full code please see my daily <a href="https://github.com/charltonaustin/toy-problems/">toy problem</a> exercises that I&rsquo;ve been working on. It includes tests and a README.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2feuler-problem-003%2f - Euler%20Problem%20003 by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/charltonaustin">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/charltonaustin">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://charltonaustin.comjs/jquery-3.3.1.min.js"></script>
+<script src="https://charltonaustin.comjs/main.js"></script>
+<script src="https://charltonaustin.comjs/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

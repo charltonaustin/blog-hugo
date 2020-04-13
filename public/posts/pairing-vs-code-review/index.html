@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Charlton Austin">
+		<meta name="description" content="Charlton Austin&#39;s personal website">
+		<meta name="generator" content="Hugo 0.64.1" />
+		<title>Pairing Vs Code Review &middot; Charlton Austin</title>
+		<link rel="shortcut icon" href="https://charltonaustin.comimages/favicon.ico">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/style.css">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://charltonaustin.comcss/font-awesome.min.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://charltonaustin.com'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://charltonaustin.composts'>Archive</a>
+	<a href='https://charltonaustin.comtags'>Tags</a>
+	<a href='https://charltonaustin.comabout'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Pairing Vs Code Review
+                    </h1>
+                    <h2 class="headline">
+                    Mar 27, 2018 09:03
+                    · 817 words
+                    · 4 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+        <li><a href="#communication">Communication</a></li>
+        <li><a href="#code-quality">Code quality</a></li>
+        <li><a href="#speed">Speed</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    <h5 id="note-this-was-written-mostly-immediately-after-i-joined-coreos-and-then-updated-this-last-week">Note This was written mostly immediately after I joined CoreOS and then updated this last week.</h5>
+<p>I recently started working at <a href="https://coreos.com/">CoreOS</a> and one thing that they do there for every change of code is a code review.
+I have never had code reviews before.
+I&rsquo;ve mostly worked in environments where I have paired directly with people.
+So I wanted to do a quick review on the differences between the two methods.</p>
+<h3 id="communication">Communication</h3>
+<p>I think that programming is a team sport and people need a bunch of communication in order to get anything done.
+That said, I want to talk about communication between team members when you are pairing vs when you are doing code reviews.
+I think that the communication becomes incredibly slow when you are doing code reviews.
+There are couple of reasons for this happening.
+When you are pairing, you have to communicate for it to be effective.
+This means as disagreements come up, you naturally ask others for their opinions and you work through those differences to come up with a better implementation than would have occurred alone.
+It also means you don&rsquo;t have to wait for someone to give you feedback.
+You get it almost instantaneously as you are coding.
+It also means if you have a question about feedback you get can ask and have it answered immediately.
+When you are doing code reviews, this high throughput communication goes away.
+When you want to bounce an idea off of someone, it is more difficult because others don&rsquo;t have context.
+How could they?
+You have been coding without any input from them.
+It is also more difficult because often you go through asynchronous communication channels.
+For instance you might slack someone, or put a comment on Github.
+I think there are two main causes for this.
+Sometimes people are just busy.
+Sometimes, if people aren&rsquo;t busy it can be cumbersome to have to reach out to people about questions.</p>
+<h3 id="code-quality">Code quality</h3>
+<p>I don&rsquo;t think that code quality changes that much with some caveats.
+If you are bringing on new people, their code quality will definitely be lower than other experienced people (all other things being equal).
+There are a few reasons for this.
+Different teams have different coding conventions and It can take time to learn the new habits of one team or unlearn old habits from other teams.
+New employees have to read an awful lot and this can be a problem.
+Reading code is hard, and it only gets harder when the code is poorly written.
+People remember their own code and the code that I&rsquo;ve always known best is the code that I&rsquo;ve written myself.</p>
+<h3 id="speed">Speed</h3>
+<p>Speed definitely slows down when you do code reviews as compared to pair programming.
+I&rsquo;ve often heard people make the argument that in order to have the same output as two people working separately you have to go twice as fast.
+I have a couple of reasons why I think that&rsquo;s false.
+As you write code, it is easy to get stuck in a thought process, regardless of whether or not it is a good way to go.
+No one codes in a vacuum and people get distracted regularly during the course of their day.
+They spend a few minutes here on a social media platform.
+They spend a few minutes there on a social media platform.
+People are much less likely to interrupt a pair than they are to distract a single worker.
+Finally you can only hold so much in your brain at one time.
+Sharing what code you hold in your head eases the cognitive load which allows you to reuse more code or think of better solutions as you work.
+The flip side of this is while you are doing during code reviews there are often lots of time when the code is just sitting.
+To combat that stasis, I often see developers starting on their next story.
+This wouldn&rsquo;t be bad except the time it takes to context switch back and forth can be large.
+This is even more true if you require manual testing that might require database or external integration setup.
+However, sometimes when pairing you can&rsquo;t do certain tasks in parallel, and depending on your situation might mean it makes no sense at all.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>I still think that pairing is superior to code review.
+However just like almost any plan you make in life your actions should depend on the situation.
+It is best to either pair or have a code review than have no review at all even though neither system is foolproof.
+If you pair and someone isn&rsquo;t paying attention or if you review code and you aren&rsquo;t paying attention, bugs can creep into your code.
+Or maybe no matter what, bugs will creep into your code.
+The real question is do you have strategies to mitigate and remedy the negative effects?</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2fpairing-vs-code-review%2f - Pairing%20Vs%20Code%20Review by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/charltonaustin">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/charltonaustin">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://charltonaustin.comjs/jquery-3.3.1.min.js"></script>
+<script src="https://charltonaustin.comjs/main.js"></script>
+<script src="https://charltonaustin.comjs/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

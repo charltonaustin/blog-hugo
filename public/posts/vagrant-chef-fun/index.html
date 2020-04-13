@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Charlton Austin">
+		<meta name="description" content="Charlton Austin&#39;s personal website">
+		<meta name="generator" content="Hugo 0.64.1" />
+		<title>Vagrant Chef Fun &middot; Charlton Austin</title>
+		<link rel="shortcut icon" href="https://charltonaustin.comimages/favicon.ico">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/style.css">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://charltonaustin.comcss/font-awesome.min.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://charltonaustin.com'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://charltonaustin.composts'>Archive</a>
+	<a href='https://charltonaustin.comtags'>Tags</a>
+	<a href='https://charltonaustin.comabout'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Vagrant Chef Fun
+                    </h1>
+                    <h2 class="headline">
+                    Feb 27, 2013 09:03
+                    · 417 words
+                    · 2 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    <p>A couple of days ago I got a chance to see some friends of mine (Matt Urbanski and Jinwoo Baek) give a presentation on chef. It was fantastic. Afterward we had a sort of impromptu demo session on using Vagrant and Chef to get an apache server up and running. So this is going to be a quick tutorial on how to use Vagrant and Chef to get a functioning apache server up and running on a vm.</p>
+<h4 id="things-you-are-going-to-need-or-i-expect-to-be-installed">Things you are going to need (or I expect to be installed):</h4>
+<ol>
+<li>Ruby 2.x.x or 1.9.x</li>
+<li>Git</li>
+<li>xcode and xcode command line tools (if you have mac os)</li>
+<li>Virtual box</li>
+</ol>
+<p>I would suggest using <a href="https://rvm.io/">rvm</a> to manage Ruby. <a href="http://stackoverflow.com/questions/3696564/how-to-update-ruby-to-1-9-x-on-mac">Here</a> is a post to help with the install.
+Download and install <a href="https://www.virtualbox.org/wiki/Downloads">virtual box</a>.</p>
+<p>Now make a test directory and cd into it.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkdir test &amp;&amp; cd test 
+</code></pre></div><p>Install vagrant</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ gem install vagrant
+</code></pre></div><p>Create a new vagrant file.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ vagrant init
+</code></pre></div><p>Next open up the vagrant file and make it look like this:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">  # Every Vagrant virtual environment requires a box to build off of.
+
+  config.vm.box = &#34;ubuntu&#34;
+
+
+
+  # Forward a port from the guest to the host, which allows for outside
+
+  # computers to access the VM, whereas host only networking does not.
+
+  config.vm.forward_port 80, 8080
+
+
+
+
+
+  # Enable provisioning with chef solo, specifying a cookbooks path, roles
+
+  # path, and data_bags path (all relative to this Vagrantfile), and adding 
+
+  # some recipes and/or roles.
+
+  #
+
+  config.vm.provision :chef_solo do |chef|
+
+     chef.cookbooks_path = &#34;./cookbooks&#34;
+
+     chef.add_recipe &#34;apache2::default&#34;
+
+  end
+
+end
+</code></pre></div><p>Next download a public base box with Ubuntu on it.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ vagrant box add ubuntu http://files.vagrantup.com/lucid64.box  
+</code></pre></div><p>Now clone a copy of the apache2 opscode cookbook into a directory for cookbooks.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkdir cookbooks &amp;&amp; cd cookbooks 
+$ git clone https://github.com/opscode-cookbooks/apache2.git
+</code></pre></div><p>Okay next you need to modify some of the source code for the cookbooks.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim recipes/default.rb 
+</code></pre></div><p>Then add this to the default.rb file just below the comments. (Because the version of ubuntu I downloaded needed an apt-get update in order for the package install to work.)</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">bash &#34;apt-get update&#34; do
+  user &#34;root&#34;
+  code &lt;&lt;-EOH
+  sudo apt-get update
+  EOH
+end
+</code></pre></div><p>Finally use vagrant to start the server up.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ vagrant up
+</code></pre></div><p>Now we should be able to hit the url in your browser simply hit localhost:8080.  This should give you a 404 from Apache Server at localhost port 8080.</p>
+<p>I think it is nothing short of amazing how easy it is to get a virtual machine up and running with an Apache server.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2fvagrant-chef-fun%2f - Vagrant%20Chef%20Fun by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/charltonaustin">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/charltonaustin">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://charltonaustin.comjs/jquery-3.3.1.min.js"></script>
+<script src="https://charltonaustin.comjs/main.js"></script>
+<script src="https://charltonaustin.comjs/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

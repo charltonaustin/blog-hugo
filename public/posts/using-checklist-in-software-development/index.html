@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Charlton Austin">
+		<meta name="description" content="Charlton Austin&#39;s personal website">
+		<meta name="generator" content="Hugo 0.64.1" />
+		<title>Using Checklist In Software Development &middot; Charlton Austin</title>
+		<link rel="shortcut icon" href="https://charltonaustin.comimages/favicon.ico">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/style.css">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://charltonaustin.comcss/font-awesome.min.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://charltonaustin.com'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://charltonaustin.composts'>Archive</a>
+	<a href='https://charltonaustin.comtags'>Tags</a>
+	<a href='https://charltonaustin.comabout'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Using Checklist In Software Development
+                    </h1>
+                    <h2 class="headline">
+                    Sep 9, 2019 09:03
+                    · 826 words
+                    · 4 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-dream">The dream</a></li>
+    <li><a href="#our-initial-checklists">Our initial checklists</a></li>
+    <li><a href="#the-checklist-manifesto">The Checklist Manifesto</a></li>
+    <li><a href="#code-complete-two">Code Complete Two</a></li>
+    <li><a href="#most-important-things-i-have-learned">Most important things I have learned</a></li>
+  </ul>
+</nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    <h2 id="the-dream">The dream</h2>
+<p>For some time I have been wanting to incorporate checklist into the development project.
+My initial inspiration came from <a href="http://atulgawande.com/book/the-checklist-manifesto/">The Checklist Manifesto</a>.
+The book which was initially published in 2009 sent me frantically searching for checklists in software development.
+At the time I couldn&rsquo;t find any.
+Today I use the treasure trove of checklists from <a href="https://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670">Code Complete Two</a> by <a href="https://stevemcconnell.com/books/">Steve McConnell</a>.
+This blog post will describe the use of checklists at my <a href="https://www.tuesdaycompany.com/">company</a>.
+Today I will set out to do a few things:</p>
+<ol>
+<li>Describe the checklists that I have created in the intervening years</li>
+<li>Talk about The Checklist Manifesto and it&rsquo;s effect on the checklists I have created</li>
+<li>Talk about the checklists in Code Complete Two and their effect on our checklists</li>
+<li>Summarize my thinking on the most important things I have learned from executing the ideas in these two books</li>
+</ol>
+<h2 id="our-initial-checklists">Our initial checklists</h2>
+<p>The Tuesday Company began with checklists in our QA.
+I&rsquo;m a big believer that almost all QA should be automated, but you have to be <em>very</em> smart in how you do that.
+The first was just a complete checklist of all the essential features and questions to ask before you releasing something.
+The second one was a list of possible kinds of features and the things that commonly go wrong with them.</p>
+<h2 id="the-checklist-manifesto">The Checklist Manifesto</h2>
+<p>The number one thing that The Checklist Manifesto changed was how much thought went into the creation of checklist.
+Originally, I couldn&rsquo;t find any writing about checklists in software.
+If you go to the <a href="https://en.wikipedia.org/wiki/Code_Complete">code complete wiki</a> today though, you can find a pdf version of their checklists.
+So really I just sat down with my QA analysts and worked for a few days coming up with two checklists.
+After reading the Checklist Manifesto I began to do more reading about what makes a good checklist.
+I also sought information about the various kinds of checklists.
+I took the things I learned and incorporated them into our checklists to improve their quality.
+The second thing that the Checklist Manifesto really influenced was how to help adoption.
+One of the things the book does incredibly well is describe how, where, when, and why checklists did (and did not) work.
+You should constantly be experimenting with the checklists to see what is effective and what isn&rsquo;t.
+If you find that your engineers are always doing everything on a checklist, you should probably not use that checklist.
+Likewise, you should regularly review problems that come up in your software.
+I prefer the postmortem method, but you can use anything similar.
+The idea is to move effective checks for revealed failures earlier into the development process.</p>
+<h2 id="code-complete-two">Code Complete Two</h2>
+<p>Code Complete Two gave us a set of templates to start with so we could create our own checklists.
+One of the most time consuming parts of checklists is creating a base and then really getting them into the culture.
+It took us a several days to create our first QA checklist.
+It then took a few weeks of me following up with our QA engineer to verify that it was being used.
+I also helped to modify it when there were problems or when it was impractical.
+The checklists from Code Complete are useful in providing a starting point for having more in-depth conversation.
+They are often either too large in scope or too specific to a particular task for me to use them.
+I&rsquo;ve been searching for, and trying to develop, a pull request checklist that is effective in most situations.
+We currently use two lists, our own checklists with ideas taken from Code Complete Two.</p>
+<h2 id="most-important-things-i-have-learned">Most important things I have learned</h2>
+<p>Checklists don&rsquo;t work out of the gate.
+You have to test and refine them.
+They are most effective when they are living documents.
+They should change as we see new and different problems.
+I often create various representations of checklists.
+I usually have a word document for ones that I am not going to audit.
+I have a form for ones that will have a paper trail or will be generating statistics.
+Currently, every time a PR is finished today engineers fill out two surveys.
+One for each of the two checklists that we have developed.
+Those are then audited weekly for two reasons.
+The first is to make sure that we catch any glaring mistakes.
+The second is to look for questions that are not useful.
+Next after all prod failures we have a postmortem.
+That postmortem is then taken and the checklists are reviewed with an eye for adding in new items that could help.
+Both of these processes are essential to making the checklists effective.
+Also checklists cannot tell someone how to do their job.
+If you find when you are starting to create a checklist that it is overly long, or too specific, you might be falling into that trap.
+Checklists are meant to help people do the right thing every time.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2fusing-checklist-in-software-development%2f - Using%20Checklist%20In%20Software%20Development by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/charltonaustin">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/charltonaustin">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://charltonaustin.comjs/jquery-3.3.1.min.js"></script>
+<script src="https://charltonaustin.comjs/main.js"></script>
+<script src="https://charltonaustin.comjs/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

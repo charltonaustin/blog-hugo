@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Charlton Austin">
+		<meta name="description" content="Charlton Austin&#39;s personal website">
+		<meta name="generator" content="Hugo 0.64.1" />
+		<title>Writing Distributed Test Reduction &middot; Charlton Austin</title>
+		<link rel="shortcut icon" href="https://charltonaustin.comimages/favicon.ico">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/style.css">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://charltonaustin.comcss/font-awesome.min.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://charltonaustin.com'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://charltonaustin.composts'>Archive</a>
+	<a href='https://charltonaustin.comtags'>Tags</a>
+	<a href='https://charltonaustin.comabout'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Writing Distributed Test Reduction
+                    </h1>
+                    <h2 class="headline">
+                    Apr 7, 2016 09:03
+                    · 747 words
+                    · 4 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#the-problem">The Problem</a></li>
+        <li><a href="#the-solution">The solution</a></li>
+        <li><a href="#the-devils-in-the-details">The devil&rsquo;s in the details</a></li>
+        <li><a href="#some-considerations">Some considerations</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    <h3 id="the-problem">The Problem</h3>
+<p>I recently joined <a href="https://www.hedgeserv.com/restricted/get/index.html">HedgeServ</a> a fintech company and one of my first tasks at the new job has been dealing with how long it takes tests to run. The company has some great end to end test coverage, but the testing time can be rather long (think hours).</p>
+<h3 id="the-solution">The solution</h3>
+<p>Paul Hammant, my mentor of sorts wrote a <a href="http://paulhammant.com/2015/01/11/reducing-test-times-by-only-running-impacted-tests/">blog post</a> about only running tests that actually need to be run when you change a source code set. So my job was to implement a solution that took a set of source files that were touched and only run required tests. This would mean that developers can run only tests that are affected by their source code changes.</p>
+<h3 id="the-devils-in-the-details">The devil&rsquo;s in the details</h3>
+<h4 id="design-considerations">Design Considerations</h4>
+<p>When I was tasked to build this application the first thing I did was start to break the problem down. There is the mapping over the test code to the source code (for each test we need a list of touched source code). Then we must map the source code to the test code (i.e. each source code has a list of test classes that touched it). Finally there must be some way of consuming that data. Paul&rsquo;s post does a pretty good job of describing a proof of concept for how we create the mappings and then consume them. The tricky (and I think most interesting) bit that is not described by Paul is how to do this in a parallel fashion. In Paul&rsquo;s example he run&rsquo;s each test sequentially updating the mapping at each step, but for the real world example at HedgeServ this isn&rsquo;t possible.</p>
+<h4 id="real-world-problems">Real world problems</h4>
+<p>If you try and run all the tests sequentially the test time explodes. Right now the tests run in a couple of hours because we can run many of them in parallel. However transforming the test code to source code mapping into a source code to test code mapping isn&rsquo;t really something you can do in parallel. What you can do in parallel is run the tests and create just the test code to source code mapping.</p>
+<h4 id="theory-to-the-rescue">Theory to the rescue</h4>
+<p>The solution is to think of this problem in terms of mapping and then reducing over that mapped data. In other words we run multiple tests in parallel where each tests creates a list of source code that it touches. Then after all tests have created their mapping have a second job that comes along and transforms all that data to the second mapping. There are a couple of benefits to thinking in terms of two tasks. The tests take much longer than the simple data transforms, so you can reduce the time (think mins) to run the tests by scaling up the number of machines that run the tests. Since transforming the test code to source code map into the source code to test code map is much faster than actually running the tests, you can fairly trivially recreate the second map on demand.</p>
+<h3 id="some-considerations">Some considerations</h3>
+<p>Some things to keep in mind about creating this kind of tool. First your tests must be independent. This means shared resources should be kept to a minimum. In my case that meant writing environment scripts that automated the (previously) hand driven creation of environments for each set of tests that I ran in parallel. This had some great second order effects as well. We can now scale the number of tests that are run concurrently according to the number of servers we have to run them. Second it can be tricky to deal with data setup and tear down. In our case the source code is used to create the data and to remove the data from the database before and after each test. To deal with this we have to note source code that is touched by every test. This can be accomplished by running the data creation/deletion by itself, then looking over the map of source code to test code and removing the mappings that are shared by everyone. This isn&rsquo;t perfect since a test can traverse the same source code multiple times and you would incorrectly remove it from a particular test, but it should be fairly accurate and the times it isn&rsquo;t should be protected by failures in your data creation and deletion. The cleanest way would be to not have source code involved in the creation and deletion of data, but this can sometimes be impractical.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2fwriting-distributed-test-reduction%2f - Writing%20Distributed%20Test%20Reduction by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/charltonaustin">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/charltonaustin">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://charltonaustin.comjs/jquery-3.3.1.min.js"></script>
+<script src="https://charltonaustin.comjs/main.js"></script>
+<script src="https://charltonaustin.comjs/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

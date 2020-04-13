@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Charlton Austin">
+		<meta name="description" content="Charlton Austin&#39;s personal website">
+		<meta name="generator" content="Hugo 0.64.1" />
+		<title>Configurator Boxen Or Things To Wrangle Your Environment &middot; Charlton Austin</title>
+		<link rel="shortcut icon" href="https://charltonaustin.comimages/favicon.ico">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/style.css">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://charltonaustin.comcss/font-awesome.min.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://charltonaustin.com'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://charltonaustin.composts'>Archive</a>
+	<a href='https://charltonaustin.comtags'>Tags</a>
+	<a href='https://charltonaustin.comabout'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Configurator Boxen Or Things To Wrangle Your Environment
+                    </h1>
+                    <h2 class="headline">
+                    Sep 19, 2015 09:03
+                    · 892 words
+                    · 5 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#the-problem">The problem</a></li>
+        <li><a href="#the-three-ways">The Three Ways</a></li>
+        <li><a href="#first-what-do-they-all-have-in-common">First what do they all have in common?</a></li>
+        <li><a href="#boxen-way">Boxen Way</a></li>
+        <li><a href="#vagrant-way">Vagrant Way</a></li>
+        <li><a href="#docker-way">Docker Way</a></li>
+        <li><a href="#combination-way">Combination Way</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    <h3 id="the-problem">The problem</h3>
+<p>One thing that I keep seeing consistently regardless of whether I&rsquo;m working as a full time employee or as consultant, and that I&rsquo;ve literally seen from coast to coast is developers and testers trying to simplify their local environments.  Increasingly, companies are using multiple services that allow for more module pieces of software (think micro-services).  This is nice because it can often simplify coding complexity and dependency graphs, but the flip side is that deployments can become more complex.</p>
+<p>This increasing deployment complexity comes at a cost. I&rsquo;ve had to maintain environments with multiple instance of redis, mongo, mysql, memcachd, plus my microservices all up and running and not conflicting on any ports. This can lead to developers and testers finding it more and more difficult to setup their local environment to run an application. Now on the whole I&rsquo;m not a fan of manual testing, but sometimes it can be prohibitively expense to automate a test. I&rsquo;ll probably write a post about seams and how people should use contract tests and stubs on either side of an integration, but for now let us just assume you can&rsquo;t always get away with a simple development environment.</p>
+<h3 id="the-three-ways">The Three Ways</h3>
+<p>So what do you do. I&rsquo;ve seen three basic approaches to solving this problem. The first is the boxen solution.  Boxen is a layer between puppet and OSX which allows you to automate the set up of a developer/tester machine. The second approach is the Vagrant way or creating virtual environments of your production environment and allowing developers and testers some way of deploying your applications to the virtualized environment. The final way is the docker way, or containerizing you applications and running that inside the development environment. Obviously you can have some overlap of all three methods.</p>
+<h3 id="first-what-do-they-all-have-in-common">First what do they all have in common?</h3>
+<p>Each of these ultimately makes it easier to stand up an application and see what it does. All of them have their own pluses and minuses.</p>
+<h3 id="boxen-way">Boxen Way</h3>
+<p>First lets talk about boxen (note I have also done this by convincing people that all developers should have an ubuntu box and then using puppet). Basically boxen uses puppet to set up a development environment.  It should include app dependencies like MySql as well as source things like the source code, and build tools. The nice thing about this approach is if you are interested in pair programming then this really simplifies pair rotation. All development machines are the same and you can keep the development environment management scripts in version control and ultimately only solve development environment issues one time. The drawback is if your development environment isn&rsquo;t exactly like your production environment then guess what you don&rsquo;t deploy the same way and you have to maintain several different environment management scripts. Also developers don&rsquo;t like to give up control over their dev machines. It is definitely a team over the individual sort of situation.</p>
+<h3 id="vagrant-way">Vagrant Way</h3>
+<p>Next lets talk about the Vagrant method. This doesn&rsquo;t have to use Vagrant or VirtualBox.  You can basically use any kind of virtualization.  You simply create a virtualized replica of your production environment and distribute that to developers. This is great because you can use your configuration management scripts like you would in production. Also developers have control over their local machines. Which means they don&rsquo;t really have to install anything other than the virtualization software. The downside is there can be a lot of waiting. Waiting for the base box to download. Waiting for virtualized machines to come up. Waiting for your application to respond. Also there are a thousand glitches that happen with a virtual machines that don&rsquo;t happen with the host. If you have multiple applications that need multiple virtual machines the networking and system requirements to run them all at once can become prohibitively expense.</p>
+<h3 id="docker-way">Docker Way</h3>
+<p>This brings us to our final method. What I call the docker method. This is different from the Vagrant method in that you containerize your app rather than the environment. It somewhat suffers from the same problems as above in the sense that it can be complicated to wire together all your docker containers, however some things aren&rsquo;t as bad. For instance a docker container can start a lot faster than a VirtualBox image. It also consumes a lot less resources. There are some other benefits as well. You can often set up the deployment of docker containers to use the same scripts no matter what environment you are deploying too. The biggest drawback of this method however is docker doesn&rsquo;t run natively on OSX so if most of your developers use a mac it can get frustrating quickly.</p>
+<h3 id="combination-way">Combination Way</h3>
+<p>Finally I have seen a combination of these three methods. At my current company, <a href="http://intentmedia.com/">IntentMedia</a> we dockerized many of our applications and their dependencies and then use virtual box so we can deploy the containerized apps to production like images. We also created an app called configurator that simplifies the deployment and maintenance of the different apps and environments. It&rsquo;s nice because the cognitive load when an upstream application changes is a lot less, but I&rsquo;ve also sat around waiting while a VirtualBox image was been turned off and re-provisioned by Vagrant, and it can be difficult to keep up with changes in the configurator app.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2fconfigurator-boxen-or-things-to-wrangle-your-environment%2f - Configurator%20Boxen%20Or%20Things%20To%20Wrangle%20Your%20Environment by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/charltonaustin">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/charltonaustin">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://charltonaustin.comjs/jquery-3.3.1.min.js"></script>
+<script src="https://charltonaustin.comjs/main.js"></script>
+<script src="https://charltonaustin.comjs/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Charlton Austin">
+		<meta name="description" content="Charlton Austin&#39;s personal website">
+		<meta name="generator" content="Hugo 0.64.1" />
+		<title>Structual Type Systems &middot; Charlton Austin</title>
+		<link rel="shortcut icon" href="https://charltonaustin.comimages/favicon.ico">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/style.css">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://charltonaustin.comcss/font-awesome.min.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://charltonaustin.com'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://charltonaustin.composts'>Archive</a>
+	<a href='https://charltonaustin.comtags'>Tags</a>
+	<a href='https://charltonaustin.comabout'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Structual Type Systems
+                    </h1>
+                    <h2 class="headline">
+                    Nov 7, 2015 09:03
+                    · 522 words
+                    · 3 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#what-is-a-structural-type-system">What is a structural type system?</a></li>
+        <li><a href="#what-does-this-mean-for-me-practically">What does this mean for me practically?</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    <p>I was talking recently to a friend about programming languages and how they affect what kinds of software we write when we got on the subject of Golang. He&rsquo;s a successful vice president of engineering at a ruby shop and I&rsquo;m a lowly java software engineer, and yet we both agreed on one thing: what people really want is a flexible type system that allows them to rapidly write software. Him coming from the Ruby world wistfully looked off in the distance wishing he didn&rsquo;t have to worry about runtime type production errors, while basking in the glory of how rapidly and concisely his team could get out code. Me on the other hand tired of slaving away writing so many extra lines of code, while sleeping comfortably with the knowledge that I was unlikely to break any servers in production through type errors.</p>
+<h3 id="what-is-a-structural-type-system">What is a structural type system?</h3>
+<p>A structural type system is a type system based on properties rather than names. In other words if two types have the same properties they are equal. <a href="https://en.wikipedia.org/wiki/Structural_type_system">Here</a> is a more comprehensive explanation. In the case of Golang a particular type is considered compatible with an interface if it satisfies that interface. <a href="http://jordanorelli.com/post/32665860244/how-to-use-interfaces-in-go">Here</a> is a quick explanation and example of Golang interfaces. The icing on the cake is this is checked at compile time unlike duck type checking.</p>
+<h3 id="what-does-this-mean-for-me-practically">What does this mean for me practically?</h3>
+<p>Well it means that in some sense you get to have your cake and eat it too. You don&rsquo;t have to annotate your struct with the interface name you can simply create an interface for a given function and then later create structs that conform to this interface. Or you can create structs that make sense in your domain and notice that many structs have similar properties and then refactor out interfaces from the structs. In other words you have the flexibility to design interfaces up front where it makes sense or create interfaces after the fact without having to change source code of the structs. Further if you change an interface things break at compile time rather than at run time. Contrast this with Java or Ruby. In Ruby if a library changes what methods are called on an object you might get a NoMethodError exception at runtime (in production if your testing is bad). In Java if you wanted to pull out an interface after you see the pattern you would have to update all classes that implement it to have the interface annotation. Further if you don&rsquo;t have access to the source code, but you see a good abstraction that makes sense for your methods you can&rsquo;t easily create an interface that accepts an object from the source code you don&rsquo;t have access to. In Golang on the other hand if the struct satisfies your interface no worries. Since you don&rsquo;t have to have access to the source code this applies equally well to library code. Later if the designer of the library or api makes a breaking change you don&rsquo;t have to worry that it will break in production since it won&rsquo;t compile.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2fstructual-type-systems%2f - Structual%20Type%20Systems by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/charltonaustin">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/charltonaustin">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://charltonaustin.comjs/jquery-3.3.1.min.js"></script>
+<script src="https://charltonaustin.comjs/main.js"></script>
+<script src="https://charltonaustin.comjs/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

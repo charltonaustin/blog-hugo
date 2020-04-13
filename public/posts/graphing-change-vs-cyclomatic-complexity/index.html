@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Charlton Austin">
+		<meta name="description" content="Charlton Austin&#39;s personal website">
+		<meta name="generator" content="Hugo 0.64.1" />
+		<title>Graphing Change Vs Cyclomatic Complexity &middot; Charlton Austin</title>
+		<link rel="shortcut icon" href="https://charltonaustin.comimages/favicon.ico">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/style.css">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://charltonaustin.comcss/font-awesome.min.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://charltonaustin.com'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://charltonaustin.composts'>Archive</a>
+	<a href='https://charltonaustin.comtags'>Tags</a>
+	<a href='https://charltonaustin.comabout'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Graphing Change Vs Cyclomatic Complexity
+                    </h1>
+                    <h2 class="headline">
+                    Jun 10, 2019 09:03
+                    · 1012 words
+                    · 5 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#the-problem">The problem</a></li>
+      </ul>
+    </li>
+    <li><a href="#one-approach">One approach</a></li>
+    <li><a href="#some-theory">Some theory</a></li>
+    <li><a href="#the-process-for-git">The process for git</a></li>
+    <li><a href="#the-process-for-python">The process for python</a></li>
+    <li><a href="#the-process-for-js">The process for JS</a></li>
+    <li><a href="#graphing-all-of-this">Graphing all of this</a></li>
+    <li><a href="#what-does-it-all-mean">What does it all mean</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    <h3 id="the-problem">The problem</h3>
+<p>You want to know where you should be refactoring, and you are not sure where to start.
+Or, you would like to better understand why you have more bugs in one part of the code than another.</p>
+<h2 id="one-approach">One approach</h2>
+<p>One thing that I like to look at when this happens is cyclomatic complexity.
+That often isn&rsquo;t enough to get the full picture of what is happening with code.
+Another place I like to look is how often a file is changing.</p>
+<h2 id="some-theory">Some theory</h2>
+<p>There are many good tools out in most languages where you can measure the cyclomatic complexity of your source code.
+At the Tuesday Company with our python code we use <a href="https://pypi.org/project/radon/">radon</a>.
+For our JS code we use <a href="https://github.com/es-analysis/plato">plato</a>
+These are just two options in an ocean of different static analysis tools that you can find with a quick Google search.
+I like to use cyclomatic complexity, but there are benefits and drawbacks to using it as a tool for measuring complexity.
+I would suggest reading articles like this <a href="https://www.cqse.eu/en/blog/mccabe-cyclomatic-complexity/">one</a>.
+Or articles like this <a href="https://www.softwareyoga.com/cyclomatic-complexity/">one</a>.
+They should help give you some background understanding if you don&rsquo;t already have it.
+I like it because while it is an imperfect measure, I find it a good starting place for conversations about coding quality.
+I believe though you could do this exercise with any number of measurements in a variety of ways.
+You could find some way to condense multiple measurements to a single value like the <a href="https://radon.readthedocs.io/en/latest/intro.html#maintainability-index">maintainability index</a> or you could simply have a multidimensional graph.
+I personal like to keep things visual and simple so I use cyclomatic complexity with all of it&rsquo;s flaws as a single measure.
+I then take that measure and graph it how often code changes.
+To measure that, I again use an imperfect approximation.
+In particular since I use git for version control so I use the number of commits to a file as a rough approximation.</p>
+<h2 id="the-process-for-git">The process for git</h2>
+<p>To get a useful measure from git I general use a command like this one.
+<code>git log --name-only --pretty=format: | grep &lt;folder name&gt; | sort | uniq -c | sort -nr &gt; changes.txt</code>
+This produces an output with something like the following:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">100 &lt;folder name&gt;/path/to/file/a.py
+40 &lt;folder name&gt;/path/to/file/b.py
+10 &lt;folder name&gt;/path/to/file/c.py
+2 &lt;folder name&gt;/path/to/file/d.py
+1 &lt;folder name&gt;/path/to/file/e.py
+...
+</code></pre></div><p>The first column is the number of times a commit has been made to that file and the second column is the file name.</p>
+<h2 id="the-process-for-python">The process for python</h2>
+<p>For python I would do something like this.
+<code>radon cc -s -j ./* | jq 'with_entries(.value |= .[].complexity)' | jq 'to_entries' | jq '.[]' | jq '&quot;\(.value) \(.key)&quot;' |  tr -d '&quot;' | sort -rn &gt; cc.txt</code>
+This produces a file with something like the following:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">26 &lt;folder name&gt;/path/to/file/a.py
+24 &lt;folder name&gt;/path/to/file/b.py
+20 &lt;folder name&gt;/path/to/file/c.py
+19 &lt;folder name&gt;/path/to/file/d.py
+</code></pre></div><p>Here the first column is the cyclomatic complexity and the second column is the file name.</p>
+<h2 id="the-process-for-js">The process for JS</h2>
+<p>For JavaScript I like the plato tool which gives me a directory with a bunch of information.
+I simply process the JSON that it produces and do something very similar.
+<code>rm -rf report &amp;&amp; plato -r -d report app &amp;&amp; cat report/files/**/report.json | jq '&quot;\(.complexity.methodAggregate.cyclomatic) \(.info.file)&quot;' | tr -d '&quot;' | sort -rn &gt; cc.txt</code>
+This produces a file with something like the previous output just JS instead of PY.</p>
+<h2 id="graphing-all-of-this">Graphing all of this</h2>
+<p>Finally I take the out puts and I create graphs for them with the following script.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-weight:bold">import</span> <span style="font-weight:bold">os</span>
+<span style="font-weight:bold">import</span> <span style="font-weight:bold">sys</span>
+
+<span style="font-weight:bold">import</span> <span style="font-weight:bold">matplotlib.pyplot</span> <span style="font-weight:bold">as</span> <span style="font-weight:bold">plt</span>
+<span style="font-weight:bold">import</span> <span style="font-weight:bold">mplcursors</span>
+
+base_dir = os.environ.get(<span style="font-style:italic"></span><span style="font-style:italic">&#39;</span><span style="font-style:italic">PROJECT_HOME</span><span style="font-style:italic">&#39;</span>)
+<span style="font-weight:bold">if</span> <span style="font-weight:bold">not</span> base_dir:
+  <span style="font-weight:bold">print</span>(<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">Please set PROJECT_HOME environment variable</span><span style="font-style:italic">&#34;</span>)
+
+project_name = sys.argv[1]
+changes_file_name = f<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">{base_dir}/{project_name}/changes.txt</span><span style="font-style:italic">&#34;</span>
+cc_file_name = f<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">{base_dir}/{project_name}/cc.txt</span><span style="font-style:italic">&#34;</span>
+
+
+<span style="font-weight:bold">def</span> get_data(file_name_):
+  data = {}
+  names = set()
+  <span style="font-weight:bold">with</span> open(file_name_, <span style="font-style:italic"></span><span style="font-style:italic">&#39;</span><span style="font-style:italic">r</span><span style="font-style:italic">&#39;</span>) <span style="font-weight:bold">as</span> file:
+    <span style="font-weight:bold">for</span> cnt, line <span style="font-weight:bold">in</span> enumerate(file):
+      <span style="font-weight:bold">try</span>:
+        d, name = line.strip().split(<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic"> </span><span style="font-style:italic">&#34;</span>)
+        data[name] = d
+        names.add(name)
+      <span style="font-weight:bold">except</span> <span style="font-weight:bold">ValueError</span>:
+        <span style="font-weight:bold">print</span>(f<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">skipping line</span><span style="font-weight:bold;font-style:italic">\n</span><span style="font-style:italic"> {line}</span><span style="font-style:italic">&#34;</span>)
+  <span style="font-weight:bold">return</span> data, names
+
+
+ccs, ccs_keys = get_data(cc_file_name)
+changes, change_keys = get_data(changes_file_name)
+file_names = change_keys.intersection(ccs_keys)
+x = []
+y = []
+labels = []
+fig, ax = plt.subplots()
+<span style="font-weight:bold">for</span> file_name <span style="font-weight:bold">in</span> file_names:
+  x.append(float(ccs[file_name]))
+  y.append(float(changes[file_name]))
+  labels.append(file_name)
+
+lines = plt.plot(x, y, <span style="font-style:italic"></span><span style="font-style:italic">&#39;</span><span style="font-style:italic">bo</span><span style="font-style:italic">&#39;</span>)
+cursor = mplcursors.cursor(hover=True)
+cursor.connect(<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">add</span><span style="font-style:italic">&#34;</span>, <span style="font-weight:bold">lambda</span> sel: sel.annotation.set_text(labels[sel.target.index]))
+plt.xlabel(<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">complexity</span><span style="font-style:italic">&#34;</span>)
+plt.ylabel(<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">number of times changed</span><span style="font-style:italic">&#34;</span>)
+plt.title(f<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">complexity vs churn {project_name}</span><span style="font-style:italic">&#34;</span>)
+plt.show()
+</code></pre></div><p>Now, none of this graphing code really depends on the project.
+All you really need are two files that are named cc.txt and changes.txt.
+It reads those and then creates a graph where the x label comes from cc.txt and the y label comes from changes.txt.
+It only really depends on <a href="https://matplotlib.org/">matplotlib</a> and <a href="https://mplcursors.readthedocs.io/en/stable/">mplcursors</a>
+You could easily do this in any language that you prefer.</p>
+<h2 id="what-does-it-all-mean">What does it all mean</h2>
+<p>This graph can quickly and fairly easily track down possible trouble spots in your code.
+The graph that is produced breaks into 4 quadrants.
+The lower left hand has files that have low cyclomatic complexity and that rarely change these guys are the good files.
+The lower right side has files that have high cyclomatic complexity and they rarely change these. These may be fixed by reducing complexity, but aren&rsquo;t high priority.
+The upper left side has low cyclomatic complexity and the files change frequently these can maybe be fixed by breaking them into smaller pieces, but aren&rsquo;t high priority.
+The upper right side has files that have high cyclomatic complexity and the files change frequently.  These guys are my red flags.
+I tend to see if I can break them up so that they change less and/or I look for ways to reduce the complexity.</p>
+<h2 id="references">References</h2>
+<p>I definitely don&rsquo;t want to give the wrong impression.
+I read about this on the internet and decided to give it a go some time ago.
+Since then I have used it in every project that I have been on to understand the code better.
+If you would like to see where I got these ideas please read <a href="https://www.stickyminds.com/article/getting-empirical-about-refactoring">here</a>
+There was also another article that helped me a great deal, but I couldn&rsquo;t find it for this blog post.
+So if you are out there please let me know so I can show my references.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2fgraphing-change-vs-cyclomatic-complexity%2f - Graphing%20Change%20Vs%20Cyclomatic%20Complexity by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/charltonaustin">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/charltonaustin">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://charltonaustin.comjs/jquery-3.3.1.min.js"></script>
+<script src="https://charltonaustin.comjs/main.js"></script>
+<script src="https://charltonaustin.comjs/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

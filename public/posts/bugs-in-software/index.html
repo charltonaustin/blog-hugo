@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Charlton Austin">
+		<meta name="description" content="Charlton Austin&#39;s personal website">
+		<meta name="generator" content="Hugo 0.64.1" />
+		<title>Bugs In Software &middot; Charlton Austin</title>
+		<link rel="shortcut icon" href="https://charltonaustin.comimages/favicon.ico">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/style.css">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://charltonaustin.comcss/font-awesome.min.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://charltonaustin.com'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://charltonaustin.composts'>Archive</a>
+	<a href='https://charltonaustin.comtags'>Tags</a>
+	<a href='https://charltonaustin.comabout'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Bugs In Software
+                    </h1>
+                    <h2 class="headline">
+                    Jan 14, 2020 09:03
+                    · 522 words
+                    · 3 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-architecture-of-open-source-applications">The Architecture of Open Source Applications</a></li>
+    <li><a href="#one-of-the-gems">One of the gems</a></li>
+    <li><a href="#what-to-do-with-this-little-gem">What to do with this little gem</a></li>
+  </ul>
+</nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    <h2 id="the-architecture-of-open-source-applications">The Architecture of Open Source Applications</h2>
+<p>If you haven&rsquo;t seen or read <a href="http://aosabook.org/en/intro1.html">The Architecture of Open Source Applications</a> then you are missing out.
+Sure, it is a bit long.
+Also, each section is written by a different writer making it slightly inconsistent.
+But, there are gems throughout the book that make it worth the read.</p>
+<h2 id="one-of-the-gems">One of the gems</h2>
+<p>Here&rsquo;s an example of one of the gems from the <a href="http://aosabook.org/en/bdb.html">Berkeley DB</a> section.</p>
+<blockquote>
+<p>Design Lesson 13: &ldquo;There is rarely such thing as an unimportant bug. Sure, there&rsquo;s a typo now and then, but usually a bug implies somebody didn&rsquo;t fully understand what they were doing and implemented the wrong thing. When you fix a bug, don&rsquo;t look for the symptom: look for the underlying cause, the misunderstanding, if you will, because that leads to a better understanding of the program&rsquo;s architecture as well as revealing fundamental underlying flaws in the design itself.&rdquo;</p>
+</blockquote>
+<p>This quote is incredible because of how true it is.
+The one thing I would argue against is it&rsquo;s assumption that all engineers are good at what they do.
+Most of the time bugs come from a misunderstanding of requirements.
+Occasionally, they come from lack of foresight.
+On the latter occasions the code is wrong not because of requirements.
+The code is wrong because of a lack of analysis (of the code).
+Assuming you have hired the right people, this last error should be rare.
+We can assume then that a bug is from either a typo or a misunderstanding.</p>
+<h2 id="what-to-do-with-this-little-gem">What to do with this little gem</h2>
+<p>Once convinced that a bug comes from a typo or a misunderstanding, bug management becomes easier.
+If it is a typo then your job is pretty easy.
+Find a static analysis tool to help with the problem.
+If it is a misunderstanding, things become more interesting.
+Most of software is built as a giant game of telephone.
+(Usually) there is an end user who talks to customer service.
+Customer service relays the information to a product person.
+The product person talks with some kind of engineer.
+Now there might be some extra people, or occasionally the names change.
+For instance; someone from business development might be talking to an end user.
+Or instead of a product person talking to an engineer, it might be an engineering manager.
+Rarely do you see end users talking directly to engineers though.
+When you have a giant game of telephone, communication tends to be the failure.
+I have the following three part system to be effective.
+First, and key, is to think critically about where information is lost.
+Create procedures to help eliminate loss of information.
+Finally, verify that the procedure works.
+If things do not work, repeat from step one.
+Occasionally, upon analysis of the situation, you find the problem isn&rsquo;t communication.
+When this happens a thorough understanding of &lsquo;why&rsquo; is important.
+Here applying the <a href="https://en.wikipedia.org/wiki/5_Whys">five whys technique</a> is good.
+For instance you might find that it has to do with language.
+This is where other techniques become vitally important.
+If you find that language is often a barrier then you should review <a href="https://en.wikipedia.org/wiki/Domain-driven_design">domain driven design</a> practices.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2fbugs-in-software%2f - Bugs%20In%20Software by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/charltonaustin">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/charltonaustin">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://charltonaustin.comjs/jquery-3.3.1.min.js"></script>
+<script src="https://charltonaustin.comjs/main.js"></script>
+<script src="https://charltonaustin.comjs/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

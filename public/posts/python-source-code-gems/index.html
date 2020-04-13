@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Charlton Austin">
+		<meta name="description" content="Charlton Austin&#39;s personal website">
+		<meta name="generator" content="Hugo 0.64.1" />
+		<title>Python Source Code Gems &middot; Charlton Austin</title>
+		<link rel="shortcut icon" href="https://charltonaustin.comimages/favicon.ico">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/style.css">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://charltonaustin.comcss/font-awesome.min.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://charltonaustin.com'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://charltonaustin.composts'>Archive</a>
+	<a href='https://charltonaustin.comtags'>Tags</a>
+	<a href='https://charltonaustin.comabout'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Python Source Code Gems
+                    </h1>
+                    <h2 class="headline">
+                    Apr 4, 2016 09:03
+                    · 240 words
+                    · 2 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents"></nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    <p>So fairly regularly I read about and dip into the python source code. For some reason there seems to be a great deal of beautiful and interesting code in both the c and the standard libraries and tests for python. The other day I was doing some reading about <a href="https://docs.python.org/2/howto/functional.html#passing-values-into-a-generator">generators</a> (I was thinking about how to marry the ideas of functional and object oriented programming) and I came across something that I found fascinating as well beautiful so I decided I should share it here on this silly little blog. It&rsquo;s a full implementation of a generator built <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">Sieve of Eratosthenes</a> in test_generators.py.   If you are writing python and you aren&rsquo;t using generators regularly then you are probably missing something.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Build up to a recursive Sieve of Eratosthenes generator.
+
+
+&gt;&gt;&gt; <span style="font-weight:bold">def</span> firstn(g, n):
+
+...     <span style="font-weight:bold">return</span> [g.next() <span style="font-weight:bold">for</span> i <span style="font-weight:bold">in</span> range(n)]
+
+
+&gt;&gt;&gt; <span style="font-weight:bold">def</span> intsfrom(i):
+
+...     <span style="font-weight:bold">while</span> 1:
+
+...         <span style="font-weight:bold">yield</span> i
+
+...         i += 1
+
+
+&gt;&gt;&gt; firstn(intsfrom(5), 7)
+
+[5, 6, 7, 8, 9, 10, 11]
+
+
+&gt;&gt;&gt; <span style="font-weight:bold">def</span> exclude_multiples(n, ints):
+
+...     <span style="font-weight:bold">for</span> i <span style="font-weight:bold">in</span> ints:
+
+...         <span style="font-weight:bold">if</span> i % n:
+
+...             <span style="font-weight:bold">yield</span> i
+
+
+&gt;&gt;&gt; firstn(exclude_multiples(3, intsfrom(1)), 6)
+
+[1, 2, 4, 5, 7, 8]
+
+
+&gt;&gt;&gt; <span style="font-weight:bold">def</span> sieve(ints):
+
+...     prime = ints.next()
+
+...     <span style="font-weight:bold">yield</span> prime
+
+...     not_divisible_by_prime = exclude_multiples(prime, ints)
+
+...     <span style="font-weight:bold">for</span> p <span style="font-weight:bold">in</span> sieve(not_divisible_by_prime):
+
+...         <span style="font-weight:bold">yield</span> p
+
+
+&gt;&gt;&gt; primes = sieve(intsfrom(2))
+
+&gt;&gt;&gt; firstn(primes, 20)
+
+[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]
+</code></pre></div>
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2fpython-source-code-gems%2f - Python%20Source%20Code%20Gems by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/charltonaustin">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/charltonaustin">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://charltonaustin.comjs/jquery-3.3.1.min.js"></script>
+<script src="https://charltonaustin.comjs/main.js"></script>
+<script src="https://charltonaustin.comjs/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

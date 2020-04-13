@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Charlton Austin">
+		<meta name="description" content="Charlton Austin&#39;s personal website">
+		<meta name="generator" content="Hugo 0.64.1" />
+		<title>Permutations Of A String In Clojure Basic Algorithms Part Two &middot; Charlton Austin</title>
+		<link rel="shortcut icon" href="https://charltonaustin.comimages/favicon.ico">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/style.css">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://charltonaustin.comcss/font-awesome.min.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://charltonaustin.com'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://charltonaustin.composts'>Archive</a>
+	<a href='https://charltonaustin.comtags'>Tags</a>
+	<a href='https://charltonaustin.comabout'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Permutations Of A String In Clojure Basic Algorithms Part Two
+                    </h1>
+                    <h2 class="headline">
+                    Jul 27, 2016 09:03
+                    · 720 words
+                    · 4 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#the-problem">The problem</a></li>
+        <li><a href="#the-solution">The solution</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    <h3 id="the-problem">The problem</h3>
+<p>Find all permutations of a string</p>
+<h3 id="the-solution">The solution</h3>
+<p>My first solution is comes from Java and is a recursive solution.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="font-weight:bold">defn- </span>perms [pre v]
+  (<span style="font-weight:bold">let </span>[n (count v)]
+    (<span style="font-weight:bold">if </span>(zero? n)
+      nil      
+      (<span style="font-weight:bold">loop </span>[i 0]
+        (<span style="font-weight:bold">if </span>(&lt; i n)
+          (<span style="font-weight:bold">do </span>(perms (conj pre (nth v i))
+              (into [] (concat(first (split-at i v))
+                              (second (split-at (inc i) v)))))
+            (recur (inc i)))
+          nil)))))
+</code></pre></div><p>It has some problems. It is recursive so vulnerable to stack overflow errors, but more than that it is pretty slow and not very idiomatic Clojure. So I went in search of a better more idiomatic implementation of this problem and I found this.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="font-weight:bold">defn- </span>iter-perm [v]                                            
+  (<span style="font-weight:bold">let </span>[len (count v)
+        j (<span style="font-weight:bold">loop </span>[i (- len 2)]
+            (cond (= i -1) nil (&lt; (v i) (v (inc i))) i
+                  <span style="font-style:italic">:else</span> (recur (dec i))))]
+    (when j
+      (<span style="font-weight:bold">let </span>[vj (v j)
+            l (<span style="font-weight:bold">loop </span>[i (dec len)]
+                (<span style="font-weight:bold">if </span>(&lt; vj (v i)) i (recur (dec i))))]
+        (<span style="font-weight:bold">loop </span>[v (assoc v j (v l) l vj) k (inc j) l (dec len)]
+
+          (<span style="font-weight:bold">if </span>(&lt; k l)
+            (recur (assoc v k (v l) l (v k)) (inc k) (dec l))
+            v))))))
+
+(<span style="font-weight:bold">defn- </span>vec-lex-permutations [v]
+  (when v (cons v (lazy-seq (vec-lex-permutations (iter-perm v))))))
+
+(<span style="font-weight:bold">defn </span>lex-permutations
+  <span style="font-style:italic">&#34;Fast lexicographic permutation generator for a sequence of numbers&#34;</span>  [c]
+  (lazy-seq    (<span style="font-weight:bold">let </span>[vec-sorted (vec (sort c))]
+      (<span style="font-weight:bold">if </span>(zero? (count vec-sorted))
+        (list [])
+        (vec-lex-permutations vec-sorted)))))
+
+(<span style="font-weight:bold">defn </span>permutations
+  <span style="font-style:italic">&#34;All the permutations of items, lexicographic by index&#34;</span>  [items]
+  (<span style="font-weight:bold">let </span>[v (vec items)]
+    (map #(map v %) (lex-permutations (range (count v) )))))
+</code></pre></div><p>This comes from the combinatorics library and I think it is instructive to walk through each function to see what is going on.</p>
+<p>Permutations simply creates a new vector the size of the original vector. Then passes that off to lex-permutations which returns all the permutations of that new vector [1..N]. It then takes the original elements and maps those over the permutations to return the elements.</p>
+<p>Lex-permutations in our case doesn&rsquo;t do much. We already have a sorted vector so it just passes the vector to vec-lex-permutations.</p>
+<p>Vec-lex-permutations starts with [1..N] and then builds a new vector [[1..N]..[N..1]] by repeatedly calling iter-perm. Iter-perm will return a permutations of [1..N] until it gets to [N..1] and then it will return a nil which will end the iteration.</p>
+<p>Finally we come to the iter-perm function. This guys is where most of the work happens. I think it is instructive to walk through and example with [1 2] as the input to vec-lex-permutations and see what happens. Before we do that though on a high level this function takes in sequence [1..N] goes through permutations until it gets to [N..1] and then outputs nil after that. This nil is what signals the stop of vec-lex-permutations gives you the sequence of permutations [[1..N]..[N..1]].</p>
+<p>So what happens with [1 2] well in iter-perm we have.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="font-weight:bold">defn- </span>iter-perm [v]                                        <span style="font-style:italic">; 1.  v = [1 2]</span>
+  (<span style="font-weight:bold">let </span>[len (count v)                                       <span style="font-style:italic">; 2.  len = 2</span>
+        j (<span style="font-weight:bold">loop </span>[i (- len 2)]                               <span style="font-style:italic">; 3.  j = 0 ; i = 0</span>
+            (cond (= i -1) nil                              <span style="font-style:italic">; 4.  i != -1</span>
+                  (&lt; (v i) (v (inc i))) i                   <span style="font-style:italic">; 5.  return i (0)</span>
+                  <span style="font-style:italic">:else</span> (recur (dec i))))]                  <span style="font-style:italic">; 6.  skip</span>
+    (when j                                                 <span style="font-style:italic">; 7.  j  = 0</span>
+      (<span style="font-weight:bold">let </span>[vj (v j)                                        <span style="font-style:italic">; 8.  vj = 1</span>
+            l (<span style="font-weight:bold">loop </span>[i (dec len)]                           <span style="font-style:italic">; 8.  l  = 1 ; i = 1</span>
+                (<span style="font-weight:bold">if </span>(&lt; vj (v i)) i (recur (dec i))))]       <span style="font-style:italic">; 10. 1 &lt; 2 =&gt; i = 1</span>
+     (<span style="font-weight:bold">loop </span>[v (assoc v j (v l) l vj) k (inc j) l (dec len)] <span style="font-style:italic">; 11. v = [2 1] ; k = 1 ; l = 1</span>
+          (<span style="font-weight:bold">if </span>(&lt; k l)                                       <span style="font-style:italic">; 12. 1 &lt; 1 != True</span>
+          (recur (assoc v k (v l) l (v k)) (inc k) (dec l)) <span style="font-style:italic">; 13. skip</span>
+            v))))))                                         <span style="font-style:italic">; 14. return v ([2 1])</span>
+</code></pre></div><p>The right hand steps show what happens, but basically on the first invocation we find the first permutation [1..N] is [1 2] and the second is [N..1] which is [2 1] and the next call will give us nil which stops the sequence and passes back up the stack [[1 2][2 1]] which is all the permutations of our two element vector.</p>
+<p>This was definitely an interesting problem and I&rsquo;m glad to see the clojure implementation.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2fpermutations-of-a-string-in-clojure-basic-algorithms-part-two%2f - Permutations%20Of%20A%20String%20In%20Clojure%20Basic%20Algorithms%20Part%20Two by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/charltonaustin">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/charltonaustin">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://charltonaustin.comjs/jquery-3.3.1.min.js"></script>
+<script src="https://charltonaustin.comjs/main.js"></script>
+<script src="https://charltonaustin.comjs/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

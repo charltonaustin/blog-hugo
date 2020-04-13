@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Charlton Austin">
+		<meta name="description" content="Charlton Austin&#39;s personal website">
+		<meta name="generator" content="Hugo 0.64.1" />
+		<title>Counting Frequencies Of Elements In An Array In Clojure Basic Algorithms Part One &middot; Charlton Austin</title>
+		<link rel="shortcut icon" href="https://charltonaustin.comimages/favicon.ico">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/style.css">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://charltonaustin.comcss/font-awesome.min.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://charltonaustin.com'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://charltonaustin.composts'>Archive</a>
+	<a href='https://charltonaustin.comtags'>Tags</a>
+	<a href='https://charltonaustin.comabout'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Counting Frequencies Of Elements In An Array In Clojure Basic Algorithms Part One
+                    </h1>
+                    <h2 class="headline">
+                    Jul 20, 2016 09:03
+                    · 383 words
+                    · 2 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents"></nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    <p>So I&rsquo;m not a CS guy. I went to school for math and I became a programmer pretty late. I also never had the obligatory algorithms class. So I&rsquo;m going to start a series where I explore some algorithms coding problems.
+The problem</p>
+<p>So the coding challenge is given an array with N numbers m such that m &lt; N and m is a natural number count the occurrences of m.
+Solution</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="font-weight:bold">defn </span>count-freq [array counts]
+  (<span style="font-weight:bold">if </span>(empty? array)
+    counts
+    (<span style="font-weight:bold">let </span>[number (peek array)]
+      (count-freq (pop array) (update counts number (fnil inc 0))))))
+</code></pre></div><p>This is a pretty straightforward implementation. It takes roughly O(n) time. It is called like so:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(deftest count-freq-test
+  (testing    (is (= {2 2 3 2 5 1} (count-freq [2 3 3 2 5] {})))
+    (is (= {2 5} (count-freq [2 2 2 2 2] {})))
+    (is (= {} (count-freq [] {})))
+    ))
+</code></pre></div><p>I call it using a map, but you could use a properly initialized array if you wanted. This guy still has the StackOverflowError problem since no tail call optimization is employed. That would look like:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="font-weight:bold">defn </span>count-freq [array counts]
+  (<span style="font-weight:bold">loop </span>[array array
+         counts counts]
+    (<span style="font-weight:bold">if </span>(empty? array)
+      counts
+      (<span style="font-weight:bold">let </span>[number (peek array)]
+        (recur (pop array) (update counts number (fnil inc 0)))))))
+</code></pre></div><p>I decided to take a look at the core implementation of frequencies to get a feel for the differences in the implementations. For the record here it is.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="font-weight:bold">defn </span>frequencies
+  <span style="font-style:italic">&#34;Returns a map from distinct items in coll to the number of times  they appear.&#34;</span>  
+  [coll]
+  (persistent!   
+    (reduce (<span style="font-weight:bold">fn </span>[counts x] (assoc! counts x (inc (get counts x 0))))
+            (transient {}) coll)))
+</code></pre></div><p>The largest differences come in the lack of recursion and the use of transient data structures. Transient data structures are meant for speed while abstracting away the messy details of mutability and keeping with the Clojure model.</p>
+<blockquote>
+<p>Furthermore, there are no guards against accidentally sharing or aliasing the mutable data structure, especially if you need to call helper functions to do the work. In short, it would be a shame if you had to leave Clojure’s model in order to speed up a piece of code like this. Transient data structures are a solution to this optimization problem that integrates with the Clojure model and provides the same thread safety guarantees you expect of Clojure.</p>
+</blockquote>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2fcounting-frequencies-of-elements-in-an-array-in-clojure-basic-algorithms-part-one%2f - Counting%20Frequencies%20Of%20Elements%20In%20An%20Array%20In%20Clojure%20Basic%20Algorithms%20Part%20One by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/charltonaustin">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/charltonaustin">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://charltonaustin.comjs/jquery-3.3.1.min.js"></script>
+<script src="https://charltonaustin.comjs/main.js"></script>
+<script src="https://charltonaustin.comjs/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

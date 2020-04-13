@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Charlton Austin">
+		<meta name="description" content="Charlton Austin&#39;s personal website">
+		<meta name="generator" content="Hugo 0.64.1" />
+		<title>The Telegram Problem &middot; Charlton Austin</title>
+		<link rel="shortcut icon" href="https://charltonaustin.comimages/favicon.ico">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/style.css">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://charltonaustin.comcss/font-awesome.min.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://charltonaustin.com'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://charltonaustin.composts'>Archive</a>
+	<a href='https://charltonaustin.comtags'>Tags</a>
+	<a href='https://charltonaustin.comabout'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        The Telegram Problem
+                    </h1>
+                    <h2 class="headline">
+                    Nov 15, 2019 09:03
+                    · 323 words
+                    · 2 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#the-problem">The problem</a></li>
+        <li><a href="#solution">Solution</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    <h3 id="the-problem">The problem</h3>
+<p>Write a program that takes a number w, then accepts lines of text and outputs lines of text, where the output lines have as many words as possible but are never longer than w characters.
+Words may not be split, but you may assume that no single word is too long for a line.
+<a href="http://c2.com/cgi/wiki?TelegramProblem">Source</a></p>
+<h3 id="solution">Solution</h3>
+<p>This is a straightforward problem when it comes down to it, but it takes some thinking to get there.
+We need to work through the different edge cases to figure out exactly how to make this work.
+I would like to create a solution that deals with channels allowing users to send delete characters and such.
+I think it would be an interesting problem in itself.
+That being said, my solution starts out by initializing the output and current output so that we don&rsquo;t have special cases in our for-loop.
+It also sanitizes and formats the information that we will be walking over.
+Next it loops through and checks to see if the line will grow to long.
+If it won&rsquo;t, we add to the current line output; if it will, we save the current line output to the total output and then initialize the next line output.
+Finally, on our way out, we flush the last partial line.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="font-weight:bold">var</span> createWriter = <span style="font-weight:bold">function</span>(w){
+  <span style="font-weight:bold">var</span> writer = <span style="font-weight:bold">function</span>(lines){
+
+    <span style="font-weight:bold">var</span> output = <span style="font-style:italic">&#34;&#34;</span>;
+    <span style="font-weight:bold">var</span> words = lines.replace(<span style="font-style:italic">&#34;\n&#34;</span>, <span style="font-style:italic">&#34; &#34;</span>).split(<span style="font-style:italic">&#34; &#34;</span>)
+    <span style="font-weight:bold">var</span> currentOutput = words[0];
+    <span style="font-weight:bold">var</span> currentLineLength = words[0].length;
+    
+    <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 1; i&lt; words.length; i++){
+      
+      <span style="font-weight:bold">var</span> word = words[i];
+      
+      <span style="font-weight:bold">if</span>(currentLineLength + word.length + 1 &gt; w){
+        output += currentOutput + <span style="font-style:italic">&#34;\n&#34;</span>;
+        currentOutput = word;
+        currentLineLength = word.length;
+      } <span style="font-weight:bold">else</span> {
+        currentOutput += <span style="font-style:italic">&#34; &#34;</span> + word;
+        currentLineLength += word.length + 1;
+      }
+    
+    }
+    
+    output+= currentOutput;
+    
+    <span style="font-weight:bold">return</span> output;
+  }
+  
+  <span style="font-weight:bold">return</span> writer;
+}
+</code></pre></div><p>If you&rsquo;d like to see the full code please see my daily <a href="https://github.com/charltonaustin/toy-problems/tree/master/telegram-problem">toy problem</a> exercises that I&rsquo;ve been working on.
+It includes tests and a README.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2fthe-telegram-problem%2f - The%20Telegram%20Problem by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/charltonaustin">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/charltonaustin">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://charltonaustin.comjs/jquery-3.3.1.min.js"></script>
+<script src="https://charltonaustin.comjs/main.js"></script>
+<script src="https://charltonaustin.comjs/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

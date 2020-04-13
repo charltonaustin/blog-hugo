@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Charlton Austin">
+		<meta name="description" content="Charlton Austin&#39;s personal website">
+		<meta name="generator" content="Hugo 0.64.1" />
+		<title>Creating A Web Api With Golang &middot; Charlton Austin</title>
+		<link rel="shortcut icon" href="https://charltonaustin.comimages/favicon.ico">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/style.css">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://charltonaustin.comcss/font-awesome.min.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://charltonaustin.com'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://charltonaustin.composts'>Archive</a>
+	<a href='https://charltonaustin.comtags'>Tags</a>
+	<a href='https://charltonaustin.comabout'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Creating A Web Api With Golang
+                    </h1>
+                    <h2 class="headline">
+                    Sep 10, 2016 09:03
+                    · 563 words
+                    · 3 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#the-ide">The IDE</a></li>
+        <li><a href="#the-documentation">The documentation</a></li>
+        <li><a href="#writing-a-web-service-in-go">Writing a web service in Go</a></li>
+        <li><a href="#one-nice-little-perk-from-the-project">One nice little perk from the project</a></li>
+        <li><a href="#wrap-up">Wrap up</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    <p>I had a chance for the first time in a while to write some Go.
+I was writing a simple web API that allowed a user to login with JWT.
+This blog post is going to be about some of the challenges I faced along the way.
+I also want to give some shout outs to other blogs that helped me get it written.</p>
+<h3 id="the-ide">The IDE</h3>
+<p>First let&rsquo;s start with the IDE.
+Golang has a great page with all the IDEs that it uses <a href="https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins">here</a>.
+I choose <a href="https://github.com/visualfc/liteide">LiteIDE</a> because I remembered using it before and it being full featured as well as simple.
+I can not stress how refreshing it&rsquo;s simplicity is.
+I could run tests, compile, and do most things pretty much with push button out of the box.
+And to boot it is all open source and cross platform compatible.
+Considering my experiences recently with trying to find a good IDE for JavaScript with built in debugging and test running capabilities this invigorated me.
+The one thing that I wished happened better was documentation, code navigation, and code completion.
+Anyone that has used IntelliJ for Java can attest to how powerful the tooling can be in Java.
+Golang is a strongly typed language with great documentation.
+I can only imagine that Google has some incredible tools for dealing with with these problems.</p>
+<h3 id="the-documentation">The documentation</h3>
+<p>If you haven&rsquo;t had a chance to use Go before you are in luck.
+The <a href="https://golang.org/doc/">documentation</a> and the community are both great.
+One problem that I was trying to solve was finding a good protocol for encrypting and decrypting passwords.
+A quick google search showed some great results including <a href="https://astaxie.gitbooks.io/build-web-application-with-golang/content/en/09.5.html">this</a> and <a href="https://github.com/dgrijalva/jwt-go">this</a>.
+Both led to a pretty seamless password storage process that I felt comfortable with.</p>
+<h3 id="writing-a-web-service-in-go">Writing a web service in Go</h3>
+<p>Writing the web service reminded me of writing a web server in NodeJS.
+The syntax is clean.
+You can switch between a functional and procedural style pretty easily.
+The one thing that can be a blessing or a curse is the types.
+The types are better than Scala, but still they are types.
+After spending some time writing web services in Node you get comfortable without types.
+Don&rsquo;t get me wrong.
+Types are great if not essential for big projects and teams.
+But there has been interesting work in Clojure and JavaScript for types that are optional and only there when you need them.</p>
+<h3 id="one-nice-little-perk-from-the-project">One nice little perk from the project</h3>
+<p>One thing that I did that I found easier than most projects was write a full end to end test for the web server.
+The basic script was as follows.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go get
+go build -o /tmp/app
+/tmp/app &amp;
+PID=$!
+go test
+echo <span style="font-style:italic">&#34;</span><span style="font-style:italic">killing the app pid: </span>$PID<span style="font-style:italic">&#34;</span>
+kill $PID
+</code></pre></div><p>Now here go shines beautifully.
+The test would simply fire up an http client make some requests on a health_check URL I built into the API.
+The output looked like this.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ time ./build.sh test
+testing the app
+2016/08/27 14:15:40 listening on 0.0.0.0:8080
+PASS
+ok      _/path/to/app   0.003s
+killing the app pid: 32440
+./build.sh test  1.26s user 0.15s system 124% cpu 1.136 total
+</code></pre></div><p>It was pretty nice to have a full stack test that ran so quickly.
+Notice that the 1.26s comes from starting up the app.
+The tests ran rather quickly.</p>
+<h3 id="wrap-up">Wrap up</h3>
+<p>Overall I rather enjoyed Go.
+I&rsquo;m definitely going to explore it more.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2fcreating-a-web-api-with-golang%2f - Creating%20A%20Web%20Api%20With%20Golang by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/charltonaustin">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/charltonaustin">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://charltonaustin.comjs/jquery-3.3.1.min.js"></script>
+<script src="https://charltonaustin.comjs/main.js"></script>
+<script src="https://charltonaustin.comjs/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

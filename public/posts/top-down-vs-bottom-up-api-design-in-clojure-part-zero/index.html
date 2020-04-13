@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Charlton Austin">
+		<meta name="description" content="Charlton Austin&#39;s personal website">
+		<meta name="generator" content="Hugo 0.64.1" />
+		<title>Top Down Vs Bottom Up Api Design In Clojure Part Zero &middot; Charlton Austin</title>
+		<link rel="shortcut icon" href="https://charltonaustin.comimages/favicon.ico">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/style.css">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://charltonaustin.comcss/font-awesome.min.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://charltonaustin.com'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://charltonaustin.composts'>Archive</a>
+	<a href='https://charltonaustin.comtags'>Tags</a>
+	<a href='https://charltonaustin.comabout'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Top Down Vs Bottom Up Api Design In Clojure Part Zero
+                    </h1>
+                    <h2 class="headline">
+                    Apr 20, 2016 09:03
+                    · 471 words
+                    · 3 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#intro">Intro</a></li>
+        <li><a href="#personal-experience">Personal Experience</a></li>
+        <li><a href="#what-i-wish-i-had-seen">What I wish I had seen</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    <h3 id="intro">Intro</h3>
+<p>I saw a lot of presentations at <a href="http://clojure-conj.org/">Clojure/conj</a> 2015. Most of them were really great, but one of them I was particularly interested in seeing didn&rsquo;t really do it for me. It was called <a href="https://www.youtube.com/watch?v=Tb823aqgX_0&amp;index=13&amp;list=PLZdCLR02grLrl5ie970A24kvti21hGiOf">Bottom Up vs Top Down Design</a> in Clojure by <a href="https://github.com/markbastian">Mark Bastian</a>.  I thought his presentation was interesting, but it failed to touch on a couple of points that I was interested in. In an effort to learn a bit, I figured I would write post about what I was hoping the talk would actually address.</p>
+<h3 id="personal-experience">Personal Experience</h3>
+<p>My personal experience has been that working from the top down leads to best API design. I also find that it makes it easier for writing well tested object oriented code. That&rsquo;s because you can pretty easily know when you are going to have dependent behavior and mock that out on the layer below whatever you are writing. This helps to identify and segregate the dependencies early. Something that doesn&rsquo;t always happen when you are coming from the bottom up. What I find often happens when I&rsquo;m designing from the bottom up is that I don&rsquo;t realize I need to split a class until after I have started using it in the layer above. That said when you are writing properly functional code without side effects collaboration often looks somewhat different then when you are writing collaborating object.</p>
+<h3 id="what-i-wish-i-had-seen">What I wish I had seen</h3>
+<p>I&rsquo;ve spent most of my programming career professionally programming in an object oriented style. I&rsquo;ve only spent a year or so writing truly functional code in Scala, in finance for a trading application. The rest of the time I&rsquo;ve spent writing in Java, JavaScript, Python, and Ruby in an object oriented style. Half of the time I&rsquo;ve spent staring at the bottom. Writing a small unit test for a method in a class and slowly building up from there. At a few companies I have had the chance to start with a functional test before working my way down to the class level and unit tests.</p>
+<p>All programming I&rsquo;ve ever done in Clojure has been of the first kind. I&rsquo;ve found it easier to build up more complex functions from simpler functions.  I was hoping that someone with more experience would show what outside in design of software would look like in Clojure. So I think I&rsquo;m going to have a multi part post about building a tic-tac-toe game in Clojure in two different ways. First from the bottom up and second from the top down. I&rsquo;m also using a TDD only approach to the project. I&rsquo;ll try and keep the commits relatively clean and done after each test. You can see the code <a href="https://github.com/charltonaustin/inside_out_ouside_in">here</a>.</p>
+<p>I think it will be interesting and instructive to compare the two different code bases after I have them written.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2ftop-down-vs-bottom-up-api-design-in-clojure-part-zero%2f - Top%20Down%20Vs%20Bottom%20Up%20Api%20Design%20In%20Clojure%20Part%20Zero by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/charltonaustin">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/charltonaustin">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://charltonaustin.comjs/jquery-3.3.1.min.js"></script>
+<script src="https://charltonaustin.comjs/main.js"></script>
+<script src="https://charltonaustin.comjs/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

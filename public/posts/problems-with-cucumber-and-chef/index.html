@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Charlton Austin">
+		<meta name="description" content="Charlton Austin&#39;s personal website">
+		<meta name="generator" content="Hugo 0.64.1" />
+		<title>Problems With Cucumber And Chef &middot; Charlton Austin</title>
+		<link rel="shortcut icon" href="https://charltonaustin.comimages/favicon.ico">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/style.css">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://charltonaustin.comcss/font-awesome.min.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://charltonaustin.com'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://charltonaustin.composts'>Archive</a>
+	<a href='https://charltonaustin.comtags'>Tags</a>
+	<a href='https://charltonaustin.comabout'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Problems With Cucumber And Chef
+                    </h1>
+                    <h2 class="headline">
+                    Mar 6, 2013 09:03
+                    · 379 words
+                    · 2 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents"></nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    <p>So I&rsquo;ve been working on getting some cucumber functional tests to run on a remote server lately and had tons of problems. The setup included using Electric Commander to run a gradle task, which in turn ran cucumber using jruby. It was lots of fun. Let me say.</p>
+<p>This post is basically because cucumber put out a misleading &ldquo;error&rdquo; which when I searched google I couldn&rsquo;t get any help.  So for anyone else who finds themselves in some similar situation. Even if there is only one of you. I hope it helps. So this is what gradle was actually running.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jruby -S cucumber -v -t @api -f html -o/path/to/report/report.html
+</code></pre></div><p>Which was giving me the output</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Failed to load <span style="font-style:italic">&#39;yml&#39;</span> programming language <span style="font-weight:bold">for</span> file support/data/ap_atom_success.yml: 
+
+no such file to load -- cucumber/yml_support/yml_language * support/.../*.yml [NOT SUPPORTED]
+
+Failed to load <span style="font-style:italic">&#39;json&#39;</span> programming language <span style="font-weight:bold">for</span> file support/data/.../*.json: 
+
+no such file to load -- cucumber/json_support/json_language  
+
+* support/data/.../*.json [NOT SUPPORTED]
+</code></pre></div><p>All of this of course was with an exit value of 1.</p>
+<p>This of course left me scratching my head. I assumed that my tests weren&rsquo;t getting run. And that the failure was because I couldn&rsquo;t load &lsquo;yml&rsquo; or &lsquo;json&rsquo; programming language.  After a couple of searches on the internet I couldn&rsquo;t find anything useful.  So I left it for a bit and started asking around.  It turns out this has nothing to do with my failure. After looking in the report.html I saw that I there was actually a functional test failing and that despite the misleading cucumber output nothing was wrong with my cucumber run at all. I was getting the message because I was using -v. I&rsquo;m not sure why -v would give that output.  According to cucumber &ndash;help verbose is supposed to show the files and features loaded. In any case. I switched gradle command to actually execute.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jruby -S cucumber -f pretty -t @api -f html -o/path/to/report/report.html
+</code></pre></div><p>Which put out the failing test to the console (because I added -f pretty) as well as the report and got rid of the misleading error message (because I removed the -v).  Again I know this was just a silly problem, but that&rsquo;s why I made this post. I hope no one has to go through the pain I did ever again.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2fproblems-with-cucumber-and-chef%2f - Problems%20With%20Cucumber%20And%20Chef by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/charltonaustin">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/charltonaustin">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://charltonaustin.comjs/jquery-3.3.1.min.js"></script>
+<script src="https://charltonaustin.comjs/main.js"></script>
+<script src="https://charltonaustin.comjs/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

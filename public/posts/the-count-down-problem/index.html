@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Charlton Austin">
+		<meta name="description" content="Charlton Austin&#39;s personal website">
+		<meta name="generator" content="Hugo 0.64.1" />
+		<title>The Count Down Problem &middot; Charlton Austin</title>
+		<link rel="shortcut icon" href="https://charltonaustin.comimages/favicon.ico">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/style.css">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://charltonaustin.comcss/font-awesome.min.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://charltonaustin.com'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://charltonaustin.composts'>Archive</a>
+	<a href='https://charltonaustin.comtags'>Tags</a>
+	<a href='https://charltonaustin.comabout'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        The Count Down Problem
+                    </h1>
+                    <h2 class="headline">
+                    Apr 20, 2016 09:03
+                    · 422 words
+                    · 2 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#how-do-we-know-the-if-the-proof-is-correct">How do we know the if the proof is correct?</a></li>
+        <li><a href="#is-this-better-than-a-test-if-so-why-if-not-why-not">Is this better than a test? If so, why? If not, why not?</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    <p>Recently I&rsquo;ve been watching a wonderful <a href="https://channel9.msdn.com/Series/C9-Lectures-Erik-Meijer-Functional-Programming-Fundamentals/Lecture-Series-Erik-Meijer-Functional-Programming-Fundamentals-Chapter-1">set of videos</a> about Haskell during my lunch break. If you are interested in Haskell and functional programming I would definitely recommend the videos.</p>
+<p>I found lecture 11 particularly interesting because of a paper that was written about the content <a href="http://www.cs.nott.ac.uk/~pszgmh/countdown.pdf">here</a>.</p>
+<p>The paper is interesting because it shows how you can write a proof for an implementation of a problem in Haskell, then create transformations that speed up that implementation and prove that those transformations are also correct.</p>
+<p>I find the question of whether or not an implementation is correct an interesting one. How do we know that the proof is correct? Is that better than a test? If so, why is it better than a test? If not, why not?</p>
+<h3 id="how-do-we-know-the-if-the-proof-is-correct">How do we know the if the proof is correct?</h3>
+<p>This is a difficult one. I&rsquo;m a math guy. I went to the <a href="http://www.uchicago.edu/">University of Chicago</a> and studied applied math for my undergraduate degree. When I was presented with a proof I believed it because most of them had been seen by numerous people that were far smarter than myself. When reading the proof about the countdown problem proof for instance I don&rsquo;t know (but I definitely imagine) that there are fewer people that have looked at this proof. And if I were going to write my own proof then I would imagine only the people personally interested in the software would have read it. So the only way to know if a proof is correct would be to prove it to myself with my own (fallible) sense of reason.</p>
+<h3 id="is-this-better-than-a-test-if-so-why-if-not-why-not">Is this better than a test? If so, why? If not, why not?</h3>
+<p>This one I&rsquo;m not sure on. It is definitely not easier than writing some tests, but in some sense it is more complete than writing test cases. Examples of something working are definitely not proofs that an implementation works correctly. In the pathological case you can hand write every case, but one in an implementation. On the other hand, whether or not the proof is correct can be difficult to know for certain as well. The number of &ldquo;proofs&rdquo; that I wrote that were incorrect at UChicago was astounding. Both the proof and the tests are simply evidence that the software is correct. There is no way to be certain that either are bullet proof. Perhaps neither is really better. Yet the paper is pretty cool and writing a formal proof is an interesting, if not esoteric, tool in the tool bag.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2fthe-count-down-problem%2f - The%20Count%20Down%20Problem by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/charltonaustin">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/charltonaustin">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://charltonaustin.comjs/jquery-3.3.1.min.js"></script>
+<script src="https://charltonaustin.comjs/main.js"></script>
+<script src="https://charltonaustin.comjs/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Charlton Austin">
+		<meta name="description" content="Charlton Austin&#39;s personal website">
+		<meta name="generator" content="Hugo 0.64.1" />
+		<title>Load And Performance Testing With Flask &middot; Charlton Austin</title>
+		<link rel="shortcut icon" href="https://charltonaustin.comimages/favicon.ico">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/style.css">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://charltonaustin.comcss/font-awesome.min.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://charltonaustin.com'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://charltonaustin.composts'>Archive</a>
+	<a href='https://charltonaustin.comtags'>Tags</a>
+	<a href='https://charltonaustin.comabout'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Load And Performance Testing With Flask
+                    </h1>
+                    <h2 class="headline">
+                    Nov 13, 2018 09:03
+                    · 480 words
+                    · 3 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-problem">The problem</a></li>
+    <li><a href="#types-of-performance-tests">Types of performance tests</a></li>
+    <li><a href="#load-vs-speed-vs-stress">Load vs. Speed vs. Stress</a></li>
+    <li><a href="#our-current-tech-stack">Our current tech stack</a></li>
+    <li><a href="#our-results">Our results</a></li>
+  </ul>
+</nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    <h2 id="the-problem">The problem</h2>
+<p>At my current gig, we&rsquo;ve spent some time building out our initial product.
+Things have been going well, and we have been growing.
+These days we started to notice that some over our API endpoints weren&rsquo;t as responsive as before.
+We&rsquo;ve also started to increase our number of users significantly.
+To that end, it was time for us to start measuring our requests and fixing them if necessary.</p>
+<h2 id="types-of-performance-tests">Types of performance tests</h2>
+<p>A quick google search will give you as many types of performance testing as you could want.
+Figuring out what you need to test is always the first step in improving your system.
+If you expect that you are going to have very spiky traffic, then you should probably do tests that will mimic this.
+This might mean that you measure how fast your system can scale up if you get massive amounts of traffics over a few minutes.
+At the Tuesday Company, since we are expecting more users and we are starting to see lag times in loading, we decided to test increased user loads and speed of endpoints.
+We also decided to stress test our system to see where our servers started to break down.</p>
+<h2 id="load-vs-speed-vs-stress">Load vs. Speed vs. Stress</h2>
+<p>Load in our case is the measure of response time while multiple clients connect to our API server.
+Speed, on the other hand, is the measure of how long a single endpoint takes to respond on average.
+Stress is how many concurrent users it takes for the server to start having error conditions.
+Those are our working definitions.</p>
+<h2 id="our-current-tech-stack">Our current tech stack</h2>
+<p>We are using python at the moment along with flask for our API server.
+After a little searching and thought we decided to use <a href="https://github.com/locustio/locust">Locust</a> to run our tests.
+Since we needed some way to measure where our bottlenecks were, we also decided to use the <a href="http://werkzeug.pocoo.org/docs/0.14/contrib/profiler/">Werkzeug profiler</a>
+Locust has some pretty good documentation, and it was straightforward creating a few scenarios that covered our most common use cases.
+Werkzeug was a bit more involved, but I followed <a href="http://www.alexandrejoseph.com/blog/2015-12-17-profiling-werkzeug-flask-app.html">this guide</a> and the profiler documentation and managed to muddle through.
+At the end of the day, I had to install <a href="http://brewformulas.org/Qcachegrind">qcachegrind</a> instead of <a href="https://kcachegrind.github.io/html/Home.html">kcachegrind</a> as recommended by the guide.
+Also when setting up the profiler, I had to use this configuration to get the output I needed.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">f = open(&#39;profiler.log&#39;, &#39;w&#39;)
+stream = MergeStream(sys.stdout, f)
+profiler = ProfilerMiddleware(app, stream, profile_dir=&#39;/where/to/save&#39;)
+</code></pre></div><h2 id="our-results">Our results</h2>
+<p>At the end of the day, we verified about three significant changes to our infrastructure and code.
+We managed to reduce the call time for two of our endpoints by half with code and database changes.
+We managed to increase the number of users we could handle by roughly double, while keeping performance at the previous level with an infrastructure change.
+We also managed to improve by an order of magnitude.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2fload-and-performance-testing-with-flask%2f - Load%20And%20Performance%20Testing%20With%20Flask by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/charltonaustin">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/charltonaustin">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://charltonaustin.comjs/jquery-3.3.1.min.js"></script>
+<script src="https://charltonaustin.comjs/main.js"></script>
+<script src="https://charltonaustin.comjs/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

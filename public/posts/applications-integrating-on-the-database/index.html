@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Charlton Austin">
+		<meta name="description" content="Charlton Austin&#39;s personal website">
+		<meta name="generator" content="Hugo 0.64.1" />
+		<title>Applications Integrating On The Database &middot; Charlton Austin</title>
+		<link rel="shortcut icon" href="https://charltonaustin.comimages/favicon.ico">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/style.css">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://charltonaustin.comcss/font-awesome.min.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://charltonaustin.com'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://charltonaustin.composts'>Archive</a>
+	<a href='https://charltonaustin.comtags'>Tags</a>
+	<a href='https://charltonaustin.comabout'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Applications Integrating On The Database
+                    </h1>
+                    <h2 class="headline">
+                    Mar 25, 2020 09:03
+                    · 985 words
+                    · 5 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-problem">The problem</a></li>
+    <li><a href="#software-language-column-purpose-and-process-ownership">Software language, column purpose, and process ownership</a></li>
+    <li><a href="#so-how-to-decide-when-to-stop-integrating-on-the-db">So how to decide when to stop integrating on the DB</a></li>
+    <li><a href="#how-does-the-database-that-you-choose-change-the-problem">How does the database that you choose change the problem</a></li>
+    <li><a href="#isnt-it-easier-to-do-it-later">Isn&rsquo;t it easier to do it later</a></li>
+  </ul>
+</nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    <h2 id="the-problem">The problem</h2>
+<p>You shouldn&rsquo;t do it.
+You&rsquo;ve read it before.
+Don&rsquo;t integrate applications on the database.
+The advice is relatively straightforward, but it can often be difficult to understand.
+My first piece of advice is that when you have a new process it should have it&rsquo;s own database.
+While the overhead is often real, it is minimal compared to the pain caused when you want to pull the two processes apart later.
+However, I find that people often fight against having two databases from the start.
+They see the immediate pain, and either don&rsquo;t know (or can&rsquo;t see) the pain of the future.
+If they know and then discount the immediate pain, they may be overly discounting future pain.
+There is a name for this sort of bias, it is called <a href="https://en.wikipedia.org/wiki/Hyperbolic_discounting">hyperbolic discounting</a>.
+Regardless, sometimes you decide that you are going to have a single database for multiple processes.
+Maybe it is because recreating many data models isn&rsquo;t your idea of fun.
+Perhaps it is because figuring out how to broker the communication between two apps is no fun.
+So, you copy the models, or you pull them into a shared location.
+You allow the database to decide what consistency looks like.
+This runs smoothly for months (or even years).
+Then one day you realize you can&rsquo;t change one application without changing the other.
+You realize they are tightly coupled, practically speaking, even if they aren&rsquo;t conceptually speaking.</p>
+<h2 id="software-language-column-purpose-and-process-ownership">Software language, column purpose, and process ownership</h2>
+<p>If more than one system process uses a particular table/column then automatically the deployment of changes to that column/table must take that process into account.
+How it must take those changes into account depends on the how the services use the table/column.
+For instance; there are readable backwards compatible changes and writeable backwards compatible changes.
+These changes also depend on the language.
+One example may be as follows; <em>service A</em> reads and writes to column 1 and <em>service B</em> only reads from column 1.
+Both services are in python.
+Currently column 1 is a string enum.
+If you then were to expand that to a varchar or text field, you could only change <em>service A</em> provided that <em>service B</em> doesn&rsquo;t do anything based on the enum type.
+If it is just a reporting service then you are done.
+Let&rsquo;s look at the same scenario in Java.
+If your type reflects the enum type that comes from the database you are likely to have to change both services.
+This coupling likely started out because when you built <em>service A</em> and <em>service B</em> it was more straightforward for them to directly access the same database.
+To make these independent only one process should be allowed to read or write from a column.</p>
+<h2 id="so-how-to-decide-when-to-stop-integrating-on-the-db">So how to decide when to stop integrating on the DB</h2>
+<p>Let&rsquo;s assume that we have two modules using a database column.
+We can look for a few indications that it is time to separate out a process and a database.
+If <em>module B</em> is simple and doesn&rsquo;t need to be changed unless we are making changes to <em>module A</em>,
+then this is a good indication that it is time to create a separate column for a new <em>service B</em> based on <em>module B</em>.
+This change requires we weigh the complexity of deploying two services and coordinating data updates and communication vs the ability to work on each module independently.
+Once we start to break it down in these terms we can start to make strategic decisions.
+For instance, if <em>module A</em> and <em>module B</em> are developed by a single team and you don&rsquo;t expect many changes in the data model then the answer becomes clear -
+You should probably leave well enough alone.
+Likewise, if <em>module A</em> and <em>module B</em> are owned by two different teams or need drastically different deployment cycles then it becomes clear that you should probably separate out <em>service A</em> and <em>service B</em>.
+This means you have to deal with the overhead of communication between the services.</p>
+<h2 id="how-does-the-database-that-you-choose-change-the-problem">How does the database that you choose change the problem</h2>
+<p>Interestingly Google has been doing a lot of work around distributed databases.
+Most applications need to deal with distributed systems in order to manage scale.
+People end up sharding their MySQL database because a single large vertical instance can&rsquo;t meet or is too expensive for traffic levels.
+So in some sense the choice of database gives you another lever to pull in terms of where the complexity lives.
+In particular you can choose to model many small services with their own database if your data shards well.
+On the other hand you could decide to deal with eventual consistency on the application level so that you can have databases that span the globe.</p>
+<h2 id="isnt-it-easier-to-do-it-later">Isn&rsquo;t it easier to do it later</h2>
+<p>People like monoliths.
+Why?
+They are easy to work with.
+You have one place for everything.
+However, they aren&rsquo;t fun forever.
+Anyone that has worked at scale learns that there are limits to what you can do in a monolith.
+Eventually team structure or process needs require that you split up your monolith.
+So why would you want to start by splitting services on the database level?
+Why not decide that you don&rsquo;t know as much as you will tomorrow so you should wait until you have pain?
+There are two reasons I argue that you should split early.
+The first reason is that combining data models is generally easier than splitting them.
+The second reason is that large scale conceptual differences are fairly consistent markers that identify a need for a different process.
+This can work in reverse.
+If you are missing the large scale conceptual difference, then perhaps it makes sense to wait until you feel the pain.
+Though I would recommend that you &ldquo;up your pain meter&rdquo;, since it is generally very difficult to split data once it is used by two modules or processes.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2fapplications-integrating-on-the-database%2f - Applications%20Integrating%20On%20The%20Database by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/charltonaustin">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/charltonaustin">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://charltonaustin.comjs/jquery-3.3.1.min.js"></script>
+<script src="https://charltonaustin.comjs/main.js"></script>
+<script src="https://charltonaustin.comjs/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

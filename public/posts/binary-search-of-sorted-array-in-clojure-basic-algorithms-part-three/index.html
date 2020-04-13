@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Charlton Austin">
+		<meta name="description" content="Charlton Austin&#39;s personal website">
+		<meta name="generator" content="Hugo 0.64.1" />
+		<title>Binary Search Of Sorted Array In Clojure Basic Algorithms Part Three &middot; Charlton Austin</title>
+		<link rel="shortcut icon" href="https://charltonaustin.comimages/favicon.ico">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/style.css">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://charltonaustin.comcss/font-awesome.min.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://charltonaustin.com'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://charltonaustin.composts'>Archive</a>
+	<a href='https://charltonaustin.comtags'>Tags</a>
+	<a href='https://charltonaustin.comabout'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Binary Search Of Sorted Array In Clojure Basic Algorithms Part Three
+                    </h1>
+                    <h2 class="headline">
+                    Aug 3, 2016 09:03
+                    · 580 words
+                    · 3 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#the-problem">The problem</a></li>
+        <li><a href="#the-solution">The solution</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    <h3 id="the-problem">The problem</h3>
+<p>Find an element in a sorted array using  binary search</p>
+<h3 id="the-solution">The solution</h3>
+<p>The solution is pretty straight forward. I added in some printlns to get a sense of how we drill down in the recursion to find the element.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="font-weight:bold">defn </span>binary-search [v value]
+  (<span style="font-weight:bold">loop </span>[low 0 high (dec (count v))
+         depth 0]
+    (<span style="font-weight:bold">let </span>[half-way (quot (+ high low)  2)]
+      (<span style="font-weight:bold">do </span>(println (str <span style="font-style:italic">&#34;half-way is &#34;</span> half-way))
+          (println (str <span style="font-style:italic">&#34;low is &#34;</span> low))
+          (println (str <span style="font-style:italic">&#34;high is &#34;</span> high))
+          (println (str <span style="font-style:italic">&#34;depth is &#34;</span> depth))
+          (<span style="font-weight:bold">if </span>(&lt;= high (inc low))
+            (cond (= value (v low)) low
+              (= value (v high)) high
+              <span style="font-style:italic">:else</span> nil)
+            (<span style="font-weight:bold">let </span>[middle (quot (+ low high) 2)]
+              (<span style="font-weight:bold">if </span>(&lt; (v middle) value)
+                (recur (inc middle) high (inc depth))
+                (recur low middle (inc depth)))))))))
+</code></pre></div><p>You can call the function like this:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(binary-search (vec (range 0 10)) 1000)
+</code></pre></div><p>Dialing up the range you can see how many steps it takes to get to the value.</p>
+<p>There&rsquo;s also a java implementation of binary search.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">java.util.Collections.binarySearch(List&lt;T&gt; list, T key, Comparator&lt;? <span style="font-weight:bold">super</span> T&gt; c).
+</code></pre></div><p>I decided to see compare the two implementations with a variety of elements in the collection while, looking for a random element. I took the average time over 100,000 runs to see how different the two implementations did.</p>
+<p>The two implementations that I ran were.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="font-weight:bold">defn </span>binary-search [v value]
+  (<span style="font-weight:bold">loop </span>[low 0 high (dec (count v))
+         depth 0]
+    (<span style="font-weight:bold">let </span>[half-way (quot (+ high low)  2)]
+      (<span style="font-weight:bold">if </span>(&lt;= high (inc low))
+        (cond  (= value (v low)) low
+          (= value (v high)) high
+          <span style="font-style:italic">:else</span> nil)
+        (<span style="font-weight:bold">let </span>[middle (quot (+ low high) 2)]
+          (<span style="font-weight:bold">if </span>(&lt; (v middle) value)
+            (recur (inc middle) high (inc depth))
+            (recur low middle (inc depth))))))))
+</code></pre></div><p>vs</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="font-weight:bold">defn </span>java-binary-search [v value]
+  (Collections/binarySearch v value compare))
+</code></pre></div><p>For 1000000 elements in the array using java-binary-search I got.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">{<span style="font-style:italic">:average</span> 30.04732094221115, <span style="font-style:italic">:std-deviation</span> 9.367210018023908}
+</code></pre></div><p>For 1000000 element in the array using binary-search I got.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">{<span style="font-style:italic">:average</span> 29.451808820724487, <span style="font-style:italic">:std-deviation</span> 9.199826118870515}
+</code></pre></div><p>Insanely they were basically the same. It took about 5 mins to get the results back for 10,000 runs. So I decided to dial up the number of elements to 10,000,000 and reduce the number of runs to 100.</p>
+<p>For java-binary-search I got</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">{<span style="font-style:italic">:average</span> 870.9942288208008, <span style="font-style:italic">:std-deviation</span> 705.2356880437546}
+</code></pre></div><p>For binary-search I got</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">{<span style="font-style:italic">:average</span> 728.1910227966308, <span style="font-style:italic">:std-deviation</span> 441.7981992776274}
+</code></pre></div><p>There is some difference here. The standard deviations show that java-binary-search has a slightly wider spread, which means it could be faster in some cases with some outliers as compared to binary search. Since I didn&rsquo;t I decided to look at the implementation of binarySearch within Java itself. For the record here it is.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="font-weight:bold">private</span> <span style="font-weight:bold">static</span> &lt;T&gt; <span style="">int</span> indexedBinarySearch(List&lt;? <span style="font-weight:bold">extends</span> T&gt; l, T key, Comparator&lt;? <span style="font-weight:bold">super</span> T&gt; c) {
+    <span style="">int</span> low = 0;
+    <span style="">int</span> high = l.size()-1;
+    <span style="font-weight:bold">while</span> (low &lt;= high) {
+        <span style="">int</span> mid = (low + high) &gt;&gt;&gt; 1;
+        T midVal = l.get(mid);
+        <span style="">int</span> cmp = c.compare(midVal, key);
+        <span style="font-weight:bold">if</span> (cmp &lt; 0)
+            low = mid + 1;
+        <span style="font-weight:bold">else</span> <span style="font-weight:bold">if</span> (cmp &gt; 0)
+            high = mid - 1;
+        <span style="font-weight:bold">else</span>
+            <span style="font-weight:bold">return</span> mid; <span style="font-style:italic">// key found
+</span><span style="font-style:italic"></span>    }
+
+    <span style="font-weight:bold">return</span> -(low + 1);  <span style="font-style:italic">// key not found
+</span><span style="font-style:italic"></span>}
+</code></pre></div><p>This is actually the indexed version of binary search, but since we are using a vector/array I figured this would be the one that was getting used from Clojure (though I didn&rsquo;t confirm this). I&rsquo;m not sure why the two implementations are so close together. I would love to see the byte code produced by each invocation. Maybe in a future post I will do exactly that. For now this will have to be good.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2fbinary-search-of-sorted-array-in-clojure-basic-algorithms-part-three%2f - Binary%20Search%20Of%20Sorted%20Array%20In%20Clojure%20Basic%20Algorithms%20Part%20Three by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/charltonaustin">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/charltonaustin">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://charltonaustin.comjs/jquery-3.3.1.min.js"></script>
+<script src="https://charltonaustin.comjs/main.js"></script>
+<script src="https://charltonaustin.comjs/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

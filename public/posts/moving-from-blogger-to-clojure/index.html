@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Charlton Austin">
+		<meta name="description" content="Charlton Austin&#39;s personal website">
+		<meta name="generator" content="Hugo 0.64.1" />
+		<title>Moving From Blogger To Clojure &middot; Charlton Austin</title>
+		<link rel="shortcut icon" href="https://charltonaustin.comimages/favicon.ico">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/style.css">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://charltonaustin.comcss/font-awesome.min.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://charltonaustin.com'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://charltonaustin.composts'>Archive</a>
+	<a href='https://charltonaustin.comtags'>Tags</a>
+	<a href='https://charltonaustin.comabout'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Moving From Blogger To Clojure
+                    </h1>
+                    <h2 class="headline">
+                    Aug 9, 2016 09:03
+                    · 511 words
+                    · 3 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#markdown-for-the-win">Markdown for the win</a></li>
+    <li><a href="#clojure-and-luminus">Clojure and Luminus</a></li>
+    <li><a href="#nginx-and-lets-encrypt">NGINX and Let&rsquo;s Encrypt</a></li>
+    <li><a href="#finally-its-all-updated">Finally it&rsquo;s all updated</a></li>
+  </ul>
+</nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    <p>Recently I had a problem with <a href="http://charltonaustin.blogspot.com/">my old blog</a> where writing new blog posts would be buggy. Things like code formatting wouldn&rsquo;t be consistent and so I moved to images of code. Which is so silly considering that it is just text. I&rsquo;ve always had a bit of a problem with blogspot. I disliked the lack of control over how things are displayed and served up content. I knew that I wanted to move to HTTPS and that I was tired of working within the confines of WYSIWYG editors. So I took the plunge and decided to create a new clojure app and bought some hosting on <a href="https://www.digitalocean.com/">Digital Ocean</a>.</p>
+<h2 id="markdown-for-the-win">Markdown for the win</h2>
+<p>I decided that I wanted to keep two repositories for my blog. One that was just the <a href="https://github.com/charltonaustin/blog-entries">content</a> and a second one a <a href="https://github.com/charltonaustin/blog">webpage</a> to display that content. I briefly toyed with the idea of using github pages, but in the end I decided against it because I was interested in keeping track of the number of visitors to my website and having a place for comments. It took some time to find the time to actually get everything moved over, but now that I&rsquo;ve moved it I&rsquo;m really happy with the solution. As it stands if I want to update the blog I simply update the content and within a few mins I see the updates on my webpage.</p>
+<h2 id="clojure-and-luminus">Clojure and Luminus</h2>
+<p>If you haven&rsquo;t had a chance to use <a href="http://www.luminusweb.net/">Luminus</a> before you should give it a spin. I&rsquo;ve written servers in everything Struts to Spring to Dropwizard and I like Luminus a lot. The docs are great and it has been a joy to write Clojure. Everything from actually writing the app to deploying was pretty smooth. The one thing that still drives me crazy in Clojure is debugging. Writing a Clojure app can be challenging depending on what editor or IDE you are using. The learning curve of emacs can be steep, but once you&rsquo;ve got it figured out debugging comes pretty easily and honestly writing code is a joy.</p>
+<h2 id="nginx-and-lets-encrypt">NGINX and Let&rsquo;s Encrypt</h2>
+<p>The webserver I&rsquo;m using is NGINX. Setting it up is pretty straightforward. There are some great docs both at <a href="https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-14-04-lts">Digital Ocean</a> and at <a href="http://www.luminusweb.net/docs/deployment.md#fronting_with_nginx">Luminus</a>. I also used certbot from the <a href="https://certbot.eff.org/">EFF</a>. I love that I can enforce HTTPS using <a href="https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security">HSTS</a>. While I do want to keep track of how many visitors I have I don&rsquo;t really care about their personal information and I think at this point every one pretty much agrees we should be using SSL for everything. One thing that I will probably blog about in the future is how to set up auto cert updates, but with certbot that might not be necessary as the instructions look pretty straight forward.</p>
+<h2 id="finally-its-all-updated">Finally it&rsquo;s all updated</h2>
+<p>Now that it is all updated I should get some of the back logged posts that I have out and start updating this thing more regularly. Also I really want to make some more blog posts about what I&rsquo;m teaching my students and JavaScript.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2fmoving-from-blogger-to-clojure%2f - Moving%20From%20Blogger%20To%20Clojure by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/charltonaustin">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/charltonaustin">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://charltonaustin.comjs/jquery-3.3.1.min.js"></script>
+<script src="https://charltonaustin.comjs/main.js"></script>
+<script src="https://charltonaustin.comjs/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

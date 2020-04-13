@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Charlton Austin">
+		<meta name="description" content="Charlton Austin&#39;s personal website">
+		<meta name="generator" content="Hugo 0.64.1" />
+		<title>Blameless Postmortems &middot; Charlton Austin</title>
+		<link rel="shortcut icon" href="https://charltonaustin.comimages/favicon.ico">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/style.css">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://charltonaustin.comcss/font-awesome.min.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://charltonaustin.com'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://charltonaustin.composts'>Archive</a>
+	<a href='https://charltonaustin.comtags'>Tags</a>
+	<a href='https://charltonaustin.comabout'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Blameless Postmortems
+                    </h1>
+                    <h2 class="headline">
+                    Jan 14, 2019 09:03
+                    · 501 words
+                    · 3 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#subject">Subject</a></li>
+        <li><a href="#context">Context</a></li>
+        <li><a href="#thoughts">Thoughts</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    <h3 id="subject">Subject</h3>
+<p>Why should we have blameless postmortems?</p>
+<h3 id="context">Context</h3>
+<p>I recently read <a href="https://codeascraft.com/2012/05/22/blameless-postmortems/">a blog post</a> about blameless postmortems from <a href="https://www.etsy.com/">Etsy</a>.
+In it there was a simple question about why software engineers shouldn&rsquo;t be punished:</p>
+<blockquote>
+<p>Why shouldn’t they be punished or reprimanded?
+Because an engineer who thinks they’re going to be reprimanded are disincentivized to give the details necessary to get an understanding of the mechanism, pathology, and operation of the failure.
+This lack of understanding of how the accident occurred all but guarantees that it will repeat.
+If not with the original engineer, another one in the future.</p>
+</blockquote>
+<h3 id="thoughts">Thoughts</h3>
+<p>I&rsquo;m a big person on why we do things, and in our team, we often have blameless postmortems.
+Recently I was talking with a friend about why and this quote came up.
+So I wanted to take some time to think about why we have blameless postmortems.
+In my mind, the above is a practical reason why people should avoid placing blame, but I have a more theoretical basis as well.
+Complex systems are well complex.
+They generally have several systems that interact with one another in sometimes unexpected ways.
+Wikipedia defines complex systems as systems that, &ldquo;have distinct properties that arise from these relationships, such as nonlinearity, emergence, spontaneous order, adaptation, and feedback loops, among others.&rdquo;
+The ability of someone to hold in their mind all the possible states where something can go wrong is impossible.
+These properties which are inherent in the systems guarantee that one person can not hold all places that something can go wrong in their mind.
+Let&rsquo;s take an example.
+Nonlinear in simple terms means that the change of output from a system is not proportional to the input to that system.
+Since a small change in input can cause such a large change in output even small mistakes in the input can cause huge problems.
+Further nonlinear systems can seem linear depending on the scale you are looking at.
+Just think of exponential growth early in the graph it is almost flat and you can approximate the system with a line very well.
+Later in the lifecycle though this model will fail and it can do it rather rapidly and with out much warning.
+This means people are likely to miss this kind of behavior and when they do there will be failures.
+Should we blame people for not being able to predict something that is essentially unpredictable?
+I would say no.
+Instead, we should deal with this, by encouraging people to build systems that recover quickly and can cope with failing.
+Further, unless there is gross negligence, we should take each failure as learning for the future.
+We want people to understand that we acknowledge that complex systems can be complicated and work to make them safe.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>Blame is a tricky beast and not only does it have practical bad effects like those mentioned in the Etsy article, but there are good reasons that we should not blame people from a more theoretical standpoint.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2fblameless-postmortems%2f - Blameless%20Postmortems by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/charltonaustin">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/charltonaustin">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://charltonaustin.comjs/jquery-3.3.1.min.js"></script>
+<script src="https://charltonaustin.comjs/main.js"></script>
+<script src="https://charltonaustin.comjs/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

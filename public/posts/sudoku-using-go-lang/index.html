@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Charlton Austin">
+		<meta name="description" content="Charlton Austin&#39;s personal website">
+		<meta name="generator" content="Hugo 0.64.1" />
+		<title>Sudoku Using Go Lang &middot; Charlton Austin</title>
+		<link rel="shortcut icon" href="https://charltonaustin.comimages/favicon.ico">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/style.css">
+		<link rel="stylesheet" href="https://charltonaustin.comcss/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://charltonaustin.comcss/font-awesome.min.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://charltonaustin.com'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://charltonaustin.composts'>Archive</a>
+	<a href='https://charltonaustin.comtags'>Tags</a>
+	<a href='https://charltonaustin.comabout'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Sudoku Using Go Lang
+                    </h1>
+                    <h2 class="headline">
+                    May 1, 2019 09:03
+                    · 966 words
+                    · 5 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#algorithms">Algorithms</a></li>
+    <li><a href="#the-code">The code</a></li>
+    <li><a href="#the-dirty-details">The dirty details</a></li>
+    <li><a href="#why-is-this-even-here">Why is this even here</a></li>
+    <li><a href="#next-steps">Next steps</a></li>
+  </ul>
+</nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    <h2 id="algorithms">Algorithms</h2>
+<p>A friend of mine recently started looking for work and we were talking about the interview process.
+She brought up the fact that often coding every day as a professional looks nothing like the toy problems in interviews.
+This got me thinking about a surprise question that I had during an interview.
+I was asked to create a Sudoku solver.
+At the time I was pretty vexed.
+I&rsquo;ve never worked as a game programmer.
+The position I was applying for was not a game programming position.
+It was a standard full stack web development position.
+Now I have a lot of thoughts on what interviews should look like and why.
+One of them is that the interview should look at the relevant skills that are going to be used on a daily basis.
+That is if you are going to be doing web development then the interview should be about well&hellip; web development.
+I wish I could say this is a post about hiring and interviews, but it isn&rsquo;t.
+Someday I&rsquo;ll come back and I&rsquo;ll write that post and probably gripe like an old man about hiring practices.
+How those hiring practices can affect the diversity and capabilities of a team and all that jazz.
+This post in a weird twist is actually about how I ended up finally writing that Sudoku solver.</p>
+<h2 id="the-code">The code</h2>
+<p><a href="https://github.com/charltonaustin/sudoku-solver">Here</a> is the finished Sudoku solver.
+There are some tests, but they are not super comprehensive.
+Mostly this was a chance to do a toy problem and talk about it with my friend that is looking for a job.
+I used the famed backtracking algorithm that is all over the internet.
+In particular I used this description from <a href="https://www.geeksforgeeks.org/sudoku-backtracking-7/">here</a></p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">  Find row, col of an unassigned cell
+  If there is none, return true
+  For digits from 1 to 9
+    a) If there is no conflict for digit at row, col assign digit to row, col and recursively try fill in rest of grid
+    b) If recursion successful, return true
+    c) Else, remove digit and try another
+  If all digits have been tried and nothing worked, return false
+</code></pre></div><p>I modified it slightly since in building the solution finder I was also interested in generating valid completed boards.</p>
+<h2 id="the-dirty-details">The dirty details</h2>
+<p>If we take a quick look at the algorithm you can see what I mean.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="font-weight:bold">func</span> backTrace(b *board.Board) <span style="">bool</span> {
+	<span style="font-weight:bold">for</span> x := 0; x &lt; 9; x++ {
+		<span style="font-weight:bold">for</span> y := 0; y &lt; 9; y++ {
+			value, err := b.Get(x, y)
+			<span style="font-weight:bold">if</span> err != <span style="font-weight:bold">nil</span> {
+				panic(err)
+			}
+			<span style="font-weight:bold">if</span> value == 0 {
+				<span style="font-weight:bold">for</span> _, number := <span style="font-weight:bold">range</span> randomNumbers() {
+					err := b.Update(x, y, number)
+					<span style="font-weight:bold">if</span> err != <span style="font-weight:bold">nil</span> {
+						panic(err)
+					}
+					<span style="font-weight:bold">if</span> b.IsValid() {
+						<span style="font-weight:bold">if</span> backTrace(b) {
+							<span style="font-weight:bold">return</span> <span style="font-weight:bold">true</span>
+						}
+						b.Update(x, y, 0)
+					} <span style="font-weight:bold">else</span> {
+						b.Update(x, y, 0)
+					}
+
+				}
+				<span style="font-weight:bold">return</span> <span style="font-weight:bold">false</span>
+			}
+		}
+	}
+	<span style="font-weight:bold">return</span> <span style="font-weight:bold">true</span>
+}
+</code></pre></div><p>Notice that I have a function called randomNumbers.
+It looks like this.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="font-weight:bold">func</span> randomNumbers() []<span style="">int</span> {
+	numbers := []<span style="">int</span>{1, 2, 3, 4, 5, 6, 7, 8, 9}
+	rand.Shuffle(len(numbers), <span style="font-weight:bold">func</span>(i, j <span style="">int</span>) { numbers[i], numbers[j] = numbers[j], numbers[i] })
+	<span style="font-weight:bold">return</span> numbers
+}
+</code></pre></div><p>I do that since when I was building the code I was actually interested in generating the board and so I needed to introduce some randomization in order to not get the same board repeatedly.
+If we break down the description from above you can create a 1-1 mapping from the description to the code.</p>
+<p>For instance, <code>Find row, col of an unassigned cell</code> directly maps to</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">	<span style="font-weight:bold">for</span> x := 0; x &lt; 9; x++ {
+		<span style="font-weight:bold">for</span> y := 0; y &lt; 9; y++ {
+			...
+		}
+	}
+</code></pre></div><p>While <code>If there is none, return true</code>, directly maps to the bottom return true.
+An easier way to see it might be to just add comments like this.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="font-weight:bold">func</span> backTrace(b *board.Board) <span style="">bool</span> {
+	<span style="font-weight:bold">for</span> x := 0; x &lt; 9; x++ {
+		<span style="font-weight:bold">for</span> y := 0; y &lt; 9; y++ { 
+			<span style="font-style:italic">// find empty square
+</span><span style="font-style:italic"></span>			value, err := b.Get(x, y)
+			<span style="font-weight:bold">if</span> err != <span style="font-weight:bold">nil</span> {
+				panic(err)
+			}
+			<span style="font-weight:bold">if</span> value == 0 { 
+				<span style="font-weight:bold">for</span> _, number := <span style="font-weight:bold">range</span> randomNumbers() {
+					<span style="font-style:italic">// go through digits 1 to 9
+</span><span style="font-style:italic"></span>					err := b.Update(x, y, number)
+					<span style="font-weight:bold">if</span> err != <span style="font-weight:bold">nil</span> {
+						panic(err)
+					}
+					<span style="font-style:italic">// If there is no conflict for digit at row,
+</span><span style="font-style:italic"></span>					<span style="font-weight:bold">if</span> b.IsValid() {
+					    <span style="font-style:italic">// col assign digit to row, col and recursively try fill in rest of grid
+</span><span style="font-style:italic"></span>						<span style="font-weight:bold">if</span> backTrace(b) { 
+						    <span style="font-style:italic">//If recursion successful, return true
+</span><span style="font-style:italic"></span>							<span style="font-weight:bold">return</span> <span style="font-weight:bold">true</span> 
+						}
+						<span style="font-style:italic">//Else, remove digit and try another
+</span><span style="font-style:italic"></span>						b.Update(x, y, 0) 
+					} <span style="font-weight:bold">else</span> {
+						<span style="font-style:italic">//Else, remove digit and try another (okay not exactly 1-1, but close)
+</span><span style="font-style:italic"></span>						b.Update(x, y, 0) 
+					}
+
+				}
+				<span style="font-style:italic">// If all digits have been tried and nothing worked, return false
+</span><span style="font-style:italic"></span>				<span style="font-weight:bold">return</span> <span style="font-weight:bold">false</span> 
+			}
+		}
+	}
+	<span style="font-style:italic">//If there is none, return true
+</span><span style="font-style:italic"></span>	<span style="font-weight:bold">return</span> <span style="font-weight:bold">true</span> 
+}
+</code></pre></div><h2 id="why-is-this-even-here">Why is this even here</h2>
+<p>For a few reasons.</p>
+<ol>
+<li>One if you are asked a random Sudoku question and you have read this hopefully it helps you to get through the interview</li>
+<li>I found writing this super relaxing and it started me on a completely different journey reading about algorithm design and such
+<ol>
+<li>If you want to know more I suggest you read a few articles</li>
+<li>I read <a href="https://www8.cs.umu.se/kurser/TDBA77/VT06/algorithms/BOOK/BOOK3/NODE124.HTM">this</a></li>
+<li>I also read <a href="https://algs4.cs.princeton.edu/home/">this</a></li>
+<li>Both are fascinating and helped me to put some long standing questions about algorithms I had in context</li>
+</ol>
+</li>
+<li>Finally it also sparked a weird journey that led me <a href="https://sites.math.washington.edu/~morrow/mcm/team2306.pdf">here</a>
+<ol>
+<li>Sudoku and games are fun</li>
+<li>Solving the problems they present are interesting in their own right</li>
+</ol>
+</li>
+</ol>
+<h2 id="next-steps">Next steps</h2>
+<p>Eventually I want to do something based on the paper about creating Sudoku boards.
+Mostly I&rsquo;m interested in modeling the problem as a set of rules or constraints with and option to brute force it so as to make all boards solvable.
+That&rsquo;s a different future blog post though.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2fsudoku-using-go-lang%2f - Sudoku%20Using%20Go%20Lang by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/charltonaustin">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/charltonaustin">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://charltonaustin.comjs/jquery-3.3.1.min.js"></script>
+<script src="https://charltonaustin.comjs/main.js"></script>
+<script src="https://charltonaustin.comjs/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>
