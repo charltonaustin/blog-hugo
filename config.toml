@@ -1,4 +1,4 @@
-baseurl = "https://charltonaustin.com"
+baseurl = "https://charltonaustin.com/"
 title = "Charlton Austin"
 theme = "hugo-theme-cactus-plus"
 languagecode = "en"
@@ -81,7 +81,7 @@ googleAnalytics = "your_google_analytics_id"
     name = "Gitlab"
     icon = "fab fa-gitlab fa-2x"
     weight = 2
-    url = "https://gitlab.com/charlie_tuesday_company"
+    url = "https://gitlab.com/charlie_tuesday_company/"
 [[params.social]]
     name = "Twitter"
     icon = "fab fa-twitter fa-2x"
