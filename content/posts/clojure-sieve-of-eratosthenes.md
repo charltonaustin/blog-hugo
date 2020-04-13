@@ -2,6 +2,13 @@
 title: Clojure Sieve Of Eratosthenes
 date: 2016-04-24T09:03:54-04:00
 draft: false
+tags: [
+    "clojure",
+    "functional programming",
+]
+categories : [
+    "development",
+]
 ---
 I was recently watching a video on Haskell that was showing how you would write a functional form of the [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes). I personally love this algorithm and was interested in what it looked like in Clojure. So I wrote this:
 

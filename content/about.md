@@ -1,3 +1,7 @@
++++
+title = "About"
+slug = "about"
++++
 # A Blog to Help Software Engineers Grow
 
 
@@ -18,3 +22,7 @@ I'm proud to have started a civic technology [company](https://www.tuesdaycompan
 - [ThoughtWorks](https://www.thoughtworks.com/) -- Consultant and Software Engineer
 - [University Of Chicago](https://www.uchicago.edu/) -- Applied Math Degree
 - [United States Marine Corps](https://www.marines.com) -- Sgt
+
+
+## Contact
+See my page [here](/contact)

@@ -2,6 +2,14 @@
 title: Clojure Web Scraper
 date: 2013-03-01T09:03:54-04:00
 draft: false
+tags: [
+    "clojure",
+    "functional programming",
+    "development",
+]
+categories : [
+    "development",
+]
 ---
 Okay so another thing that I did this week was go to a clojure meet up. I really enjoyed it. There I met some really cool people like Anthony from WalmartLabs. In the end we created a hacker news scraper from scratch in a couple of hours. So here is a brief tutorial on how we did it. (Note I'm not that great with Clojure yet thought I do think it is rather awesome. So most of this is because Anthony is a rock star.)
 

@@ -2,6 +2,13 @@
 title: Branch By Abstraction
 date: 2018-05-07T09:03:54-04:00
 draft: false
+tags: [
+    "branch by abstraction",
+    "development",
+]
+categories : [
+    "management",
+]
 ---
 ## The problem
 I want to write code that is consistently shared with the rest of the team, but I also want trunk based development.

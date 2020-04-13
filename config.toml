@@ -15,7 +15,7 @@ hasCJKLanguage = true
 googleAnalytics = "your_google_analytics_id"
 [params]
     author = "Charlton Austin"
-	bio = "author biography"
+	bio = ""
     info = "Full stack software engineer and executive"
     description = "Charlton Austin's personal website"
     keywords = "blog,developer,personal"

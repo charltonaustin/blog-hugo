@@ -2,6 +2,14 @@
 title: A Review Of An Introduction To Programming In Go
 date: 2016-09-02T09:03:54-04:00
 draft: false
+tags: [
+    "golang",
+    "development",
+    "books",
+]
+categories : [
+    "Development",
+]
 ---
 Recently I had a chance to write some [Go](https://golang.org/) code for the first time in a few years as part of the interview process at [CoreOS](https://coreos.com/).
 The challenge was actually really fun, but so as not to ruin surprise I won't be talking about what I did during the challenge.

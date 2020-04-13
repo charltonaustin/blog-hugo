@@ -2,6 +2,14 @@
 title: Binary Search Of Sorted Array In Clojure Basic Algorithms Part Three
 date: 2016-08-03T09:03:54-04:00
 draft: false
+tags: [
+    "clojure",
+    "development",
+    "algorithms",
+]
+categories : [
+    "Development",
+]
 ---
 ### The problem
 

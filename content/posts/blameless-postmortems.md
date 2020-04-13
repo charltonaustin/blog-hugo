@@ -2,6 +2,13 @@
 title: Blameless Postmortems
 date: 2019-01-14T09:03:54-04:00
 draft: false
+tags: [
+    "management",
+    "postmortems",
+]
+categories : [
+    "management",
+]
 ---
 ### Subject
 Why should we have blameless postmortems?

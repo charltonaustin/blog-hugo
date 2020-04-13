@@ -2,6 +2,14 @@
 title: A Review Of Test Driven Development With Go
 date: 2016-09-12T09:03:54-04:00
 draft: false
+tags: [
+    "tdd",
+    "testing",
+    "books",
+]
+categories : [
+    "Development",
+]
 ---
 In a [previous blog entry](2016/09/02/a-review-of-an-introduction-to-programming-in-go.md) I talk about my recent technical challenge with [CoreOS](https://coreos.com/).
 I enjoyed my interview there so much that I started doing some reading about Go.

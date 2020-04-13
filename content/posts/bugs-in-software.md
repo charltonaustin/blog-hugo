@@ -2,6 +2,14 @@
 title: Bugs In Software
 date: 2020-01-14T09:03:54-04:00
 draft: false
+tags: [
+    "testing",
+    "management",
+    "books",
+]
+categories : [
+    "management",
+]
 ---
 ## The Architecture of Open Source Applications
 If you haven't seen or read [The Architecture of Open Source Applications](http://aosabook.org/en/intro1.html) then you are missing out.

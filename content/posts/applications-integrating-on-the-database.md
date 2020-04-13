@@ -3,6 +3,14 @@ title: Applications Integrating On The Database
 date: 2020-03-25T09:03:54-04:00
 draft: false
 description: 
+tags: [
+    "databases",
+    "development",
+]
+categories : [
+    "Development",
+]
+menu : "main"
 ---
 ## The problem
 You shouldn't do it.
