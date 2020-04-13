@@ -8,7 +8,27 @@
   </url>
   
   <url>
+    <loc>https://charltonaustin.com/categories/</loc>
+    <lastmod>2020-03-25T09:03:54-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://charltonaustin.com/</loc>
+    <lastmod>2020-03-25T09:03:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://charltonaustin.com/tags/databases/</loc>
+    <lastmod>2020-03-25T09:03:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://charltonaustin.com/categories/development/</loc>
+    <lastmod>2020-03-25T09:03:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://charltonaustin.com/tags/development/</loc>
     <lastmod>2020-03-25T09:03:54-04:00</lastmod>
   </url>
   
@@ -18,12 +38,37 @@
   </url>
   
   <url>
+    <loc>https://charltonaustin.com/tags/</loc>
+    <lastmod>2020-03-25T09:03:54-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://charltonaustin.com/posts/repo-scripts-and-autoupdates/</loc>
     <lastmod>2020-02-26T09:03:54-04:00</lastmod>
   </url>
   
   <url>
+    <loc>https://charltonaustin.com/tags/books/</loc>
+    <lastmod>2020-01-14T09:03:54-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://charltonaustin.com/posts/bugs-in-software/</loc>
+    <lastmod>2020-01-14T09:03:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://charltonaustin.com/tags/management/</loc>
+    <lastmod>2020-01-14T09:03:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://charltonaustin.com/categories/management/</loc>
+    <lastmod>2020-01-14T09:03:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://charltonaustin.com/tags/testing/</loc>
     <lastmod>2020-01-14T09:03:54-04:00</lastmod>
   </url>
   
@@ -83,6 +128,11 @@
   </url>
   
   <url>
+    <loc>https://charltonaustin.com/tags/postmortems/</loc>
+    <lastmod>2019-01-14T09:03:54-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://charltonaustin.com/posts/election-results-2018/</loc>
     <lastmod>2018-12-10T09:03:54-04:00</lastmod>
   </url>
@@ -109,6 +159,11 @@
   
   <url>
     <loc>https://charltonaustin.com/posts/branch-by-abstraction/</loc>
+    <lastmod>2018-05-07T09:03:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://charltonaustin.com/tags/branch-by-abstraction/</loc>
     <lastmod>2018-05-07T09:03:54-04:00</lastmod>
   </url>
   
@@ -183,12 +238,22 @@
   </url>
   
   <url>
+    <loc>https://charltonaustin.com/tags/tdd/</loc>
+    <lastmod>2016-09-12T09:03:54-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://charltonaustin.com/posts/creating-a-web-api-with-golang/</loc>
     <lastmod>2016-09-10T09:03:54-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://charltonaustin.com/posts/a-review-of-an-introduction-to-programming-in-go/</loc>
+    <lastmod>2016-09-02T09:03:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://charltonaustin.com/tags/golang/</loc>
     <lastmod>2016-09-02T09:03:54-04:00</lastmod>
   </url>
   
@@ -213,7 +278,17 @@
   </url>
   
   <url>
+    <loc>https://charltonaustin.com/tags/algorithms/</loc>
+    <lastmod>2016-08-03T09:03:54-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://charltonaustin.com/posts/binary-search-of-sorted-array-in-clojure-basic-algorithms-part-three/</loc>
+    <lastmod>2016-08-03T09:03:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://charltonaustin.com/tags/clojure/</loc>
     <lastmod>2016-08-03T09:03:54-04:00</lastmod>
   </url>
   
@@ -239,6 +314,11 @@
   
   <url>
     <loc>https://charltonaustin.com/posts/clojure-sieve-of-eratosthenes/</loc>
+    <lastmod>2016-04-24T09:03:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://charltonaustin.com/tags/functional-programming/</loc>
     <lastmod>2016-04-24T09:03:54-04:00</lastmod>
   </url>
   
@@ -334,11 +414,6 @@
   
   <url>
     <loc>https://charltonaustin.com/about/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://charltonaustin.com/categories/</loc>
   </url>
   
   <url>
@@ -347,10 +422,6 @@
   
   <url>
     <loc>https://charltonaustin.com/projects/</loc>
-  </url>
-  
-  <url>
-    <loc>https://charltonaustin.com/tags/</loc>
   </url>
   
 </urlset>

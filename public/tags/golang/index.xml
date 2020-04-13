@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>golang on Charlton Austin</title>
+    <link>https://charltonaustin.com/tags/golang/</link>
+    <description>Recent content in golang on Charlton Austin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 02 Sep 2016 09:03:54 -0400</lastBuildDate>
+    
+	<atom:link href="https://charltonaustin.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A Review Of An Introduction To Programming In Go</title>
+      <link>https://charltonaustin.com/posts/a-review-of-an-introduction-to-programming-in-go/</link>
+      <pubDate>Fri, 02 Sep 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/a-review-of-an-introduction-to-programming-in-go/</guid>
+      <description>Recently I had a chance to write some Go code for the first time in a few years as part of the interview process at CoreOS. The challenge was actually really fun, but so as not to ruin surprise I won&amp;rsquo;t be talking about what I did during the challenge. Suffice it to say that I had a great experience, and whether or not I get the job at CoreOS I definitely enjoyed the interview process.</description>
+    </item>
+    
+  </channel>
+</rss>

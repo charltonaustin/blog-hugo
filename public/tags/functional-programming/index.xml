@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>functional programming on Charlton Austin</title>
+    <link>https://charltonaustin.com/tags/functional-programming/</link>
+    <description>Recent content in functional programming on Charlton Austin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 24 Apr 2016 09:03:54 -0400</lastBuildDate>
+    
+	<atom:link href="https://charltonaustin.com/tags/functional-programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Clojure Sieve Of Eratosthenes</title>
+      <link>https://charltonaustin.com/posts/clojure-sieve-of-eratosthenes/</link>
+      <pubDate>Sun, 24 Apr 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/clojure-sieve-of-eratosthenes/</guid>
+      <description>I was recently watching a video on Haskell that was showing how you would write a functional form of the Sieve of Eratosthenes. I personally love this algorithm and was interested in what it looked like in Clojure. So I wrote this:
+(defn sieve [number xs] (if (= 0 number) xs (conj (sieve (dec number) (filter #(not= 0 (mod % (first xs))) (rest xs))) (first xs)))) This works, but Clojure doesn&amp;rsquo;t have tail call optimization (TCO) by default which means you can get a stack StackOverflowError.</description>
+    </item>
+    
+    <item>
+      <title>Clojure Web Scraper</title>
+      <link>https://charltonaustin.com/posts/clojure-web-scraper/</link>
+      <pubDate>Fri, 01 Mar 2013 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/clojure-web-scraper/</guid>
+      <description>Okay so another thing that I did this week was go to a clojure meet up. I really enjoyed it. There I met some really cool people like Anthony from WalmartLabs. In the end we created a hacker news scraper from scratch in a couple of hours. So here is a brief tutorial on how we did it. (Note I&amp;rsquo;m not that great with Clojure yet thought I do think it is rather awesome.</description>
+    </item>
+    
+  </channel>
+</rss>

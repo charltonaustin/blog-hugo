@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>management on Charlton Austin</title>
+    <link>https://charltonaustin.com/tags/management/</link>
+    <description>Recent content in management on Charlton Austin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 14 Jan 2020 09:03:54 -0400</lastBuildDate>
+    
+	<atom:link href="https://charltonaustin.com/tags/management/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bugs In Software</title>
+      <link>https://charltonaustin.com/posts/bugs-in-software/</link>
+      <pubDate>Tue, 14 Jan 2020 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/bugs-in-software/</guid>
+      <description>The Architecture of Open Source Applications If you haven&amp;rsquo;t seen or read The Architecture of Open Source Applications then you are missing out. Sure, it is a bit long. Also, each section is written by a different writer making it slightly inconsistent. But, there are gems throughout the book that make it worth the read.
+One of the gems Here&amp;rsquo;s an example of one of the gems from the Berkeley DB section.</description>
+    </item>
+    
+    <item>
+      <title>Blameless Postmortems</title>
+      <link>https://charltonaustin.com/posts/blameless-postmortems/</link>
+      <pubDate>Mon, 14 Jan 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/blameless-postmortems/</guid>
+      <description>Subject Why should we have blameless postmortems?
+Context I recently read a blog post about blameless postmortems from Etsy. In it there was a simple question about why software engineers shouldn&amp;rsquo;t be punished:
+ Why shouldn’t they be punished or reprimanded? Because an engineer who thinks they’re going to be reprimanded are disincentivized to give the details necessary to get an understanding of the mechanism, pathology, and operation of the failure.</description>
+    </item>
+    
+  </channel>
+</rss>

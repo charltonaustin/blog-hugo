@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>development on Charlton Austin</title>
+    <link>https://charltonaustin.com/tags/development/</link>
+    <description>Recent content in development on Charlton Austin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 25 Mar 2020 09:03:54 -0400</lastBuildDate>
+    
+	<atom:link href="https://charltonaustin.com/tags/development/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Applications Integrating On The Database</title>
+      <link>https://charltonaustin.com/posts/applications-integrating-on-the-database/</link>
+      <pubDate>Wed, 25 Mar 2020 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/applications-integrating-on-the-database/</guid>
+      <description>The problem You shouldn&amp;rsquo;t do it. You&amp;rsquo;ve read it before. Don&amp;rsquo;t integrate applications on the database. The advice is relatively straightforward, but it can often be difficult to understand. My first piece of advice is that when you have a new process it should have it&amp;rsquo;s own database. While the overhead is often real, it is minimal compared to the pain caused when you want to pull the two processes apart later.</description>
+    </item>
+    
+    <item>
+      <title>Branch By Abstraction</title>
+      <link>https://charltonaustin.com/posts/branch-by-abstraction/</link>
+      <pubDate>Mon, 07 May 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/branch-by-abstraction/</guid>
+      <description>The problem I want to write code that is consistently shared with the rest of the team, but I also want trunk based development.
+What is branch by abstraction Paul Hammant a friend and mentor of mine, has two great articles explaining branch by abstraction here and here. The basic concept is pretty easy. Instead of having long lived branches in your version control system, you simply create an abstraction that allows you to change the behavior with only a few minor changes.</description>
+    </item>
+    
+    <item>
+      <title>A Review Of An Introduction To Programming In Go</title>
+      <link>https://charltonaustin.com/posts/a-review-of-an-introduction-to-programming-in-go/</link>
+      <pubDate>Fri, 02 Sep 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/a-review-of-an-introduction-to-programming-in-go/</guid>
+      <description>Recently I had a chance to write some Go code for the first time in a few years as part of the interview process at CoreOS. The challenge was actually really fun, but so as not to ruin surprise I won&amp;rsquo;t be talking about what I did during the challenge. Suffice it to say that I had a great experience, and whether or not I get the job at CoreOS I definitely enjoyed the interview process.</description>
+    </item>
+    
+    <item>
+      <title>Binary Search Of Sorted Array In Clojure Basic Algorithms Part Three</title>
+      <link>https://charltonaustin.com/posts/binary-search-of-sorted-array-in-clojure-basic-algorithms-part-three/</link>
+      <pubDate>Wed, 03 Aug 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/binary-search-of-sorted-array-in-clojure-basic-algorithms-part-three/</guid>
+      <description>The problem Find an element in a sorted array using binary search
+The solution The solution is pretty straight forward. I added in some printlns to get a sense of how we drill down in the recursion to find the element.
+(defn binary-search [v value] (loop [low 0 high (dec (count v)) depth 0] (let [half-way (quot (+ high low) 2)] (do (println (str &amp;#34;half-way is &amp;#34; half-way)) (println (str &amp;#34;low is &amp;#34; low)) (println (str &amp;#34;high is &amp;#34; high)) (println (str &amp;#34;depth is &amp;#34; depth)) (if (&amp;lt;= high (inc low)) (cond (= value (v low)) low (= value (v high)) high :else nil) (let [middle (quot (+ low high) 2)] (if (&amp;lt; (v middle) value) (recur (inc middle) high (inc depth)) (recur low middle (inc depth))))))))) You can call the function like this:</description>
+    </item>
+    
+    <item>
+      <title>Clojure Web Scraper</title>
+      <link>https://charltonaustin.com/posts/clojure-web-scraper/</link>
+      <pubDate>Fri, 01 Mar 2013 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/clojure-web-scraper/</guid>
+      <description>Okay so another thing that I did this week was go to a clojure meet up. I really enjoyed it. There I met some really cool people like Anthony from WalmartLabs. In the end we created a hacker news scraper from scratch in a couple of hours. So here is a brief tutorial on how we did it. (Note I&amp;rsquo;m not that great with Clojure yet thought I do think it is rather awesome.</description>
+    </item>
+    
+  </channel>
+</rss>

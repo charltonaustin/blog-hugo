@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>databases on Charlton Austin</title>
+    <link>https://charltonaustin.com/tags/databases/</link>
+    <description>Recent content in databases on Charlton Austin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 25 Mar 2020 09:03:54 -0400</lastBuildDate>
+    
+	<atom:link href="https://charltonaustin.com/tags/databases/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Applications Integrating On The Database</title>
+      <link>https://charltonaustin.com/posts/applications-integrating-on-the-database/</link>
+      <pubDate>Wed, 25 Mar 2020 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/applications-integrating-on-the-database/</guid>
+      <description>The problem You shouldn&amp;rsquo;t do it. You&amp;rsquo;ve read it before. Don&amp;rsquo;t integrate applications on the database. The advice is relatively straightforward, but it can often be difficult to understand. My first piece of advice is that when you have a new process it should have it&amp;rsquo;s own database. While the overhead is often real, it is minimal compared to the pain caused when you want to pull the two processes apart later.</description>
+    </item>
+    
+  </channel>
+</rss>

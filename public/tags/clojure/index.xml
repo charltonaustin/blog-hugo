@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>clojure on Charlton Austin</title>
+    <link>https://charltonaustin.com/tags/clojure/</link>
+    <description>Recent content in clojure on Charlton Austin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 03 Aug 2016 09:03:54 -0400</lastBuildDate>
+    
+	<atom:link href="https://charltonaustin.com/tags/clojure/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Binary Search Of Sorted Array In Clojure Basic Algorithms Part Three</title>
+      <link>https://charltonaustin.com/posts/binary-search-of-sorted-array-in-clojure-basic-algorithms-part-three/</link>
+      <pubDate>Wed, 03 Aug 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/binary-search-of-sorted-array-in-clojure-basic-algorithms-part-three/</guid>
+      <description>The problem Find an element in a sorted array using binary search
+The solution The solution is pretty straight forward. I added in some printlns to get a sense of how we drill down in the recursion to find the element.
+(defn binary-search [v value] (loop [low 0 high (dec (count v)) depth 0] (let [half-way (quot (+ high low) 2)] (do (println (str &amp;#34;half-way is &amp;#34; half-way)) (println (str &amp;#34;low is &amp;#34; low)) (println (str &amp;#34;high is &amp;#34; high)) (println (str &amp;#34;depth is &amp;#34; depth)) (if (&amp;lt;= high (inc low)) (cond (= value (v low)) low (= value (v high)) high :else nil) (let [middle (quot (+ low high) 2)] (if (&amp;lt; (v middle) value) (recur (inc middle) high (inc depth)) (recur low middle (inc depth))))))))) You can call the function like this:</description>
+    </item>
+    
+    <item>
+      <title>Clojure Sieve Of Eratosthenes</title>
+      <link>https://charltonaustin.com/posts/clojure-sieve-of-eratosthenes/</link>
+      <pubDate>Sun, 24 Apr 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/clojure-sieve-of-eratosthenes/</guid>
+      <description>I was recently watching a video on Haskell that was showing how you would write a functional form of the Sieve of Eratosthenes. I personally love this algorithm and was interested in what it looked like in Clojure. So I wrote this:
+(defn sieve [number xs] (if (= 0 number) xs (conj (sieve (dec number) (filter #(not= 0 (mod % (first xs))) (rest xs))) (first xs)))) This works, but Clojure doesn&amp;rsquo;t have tail call optimization (TCO) by default which means you can get a stack StackOverflowError.</description>
+    </item>
+    
+    <item>
+      <title>Clojure Web Scraper</title>
+      <link>https://charltonaustin.com/posts/clojure-web-scraper/</link>
+      <pubDate>Fri, 01 Mar 2013 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/clojure-web-scraper/</guid>
+      <description>Okay so another thing that I did this week was go to a clojure meet up. I really enjoyed it. There I met some really cool people like Anthony from WalmartLabs. In the end we created a hacker news scraper from scratch in a couple of hours. So here is a brief tutorial on how we did it. (Note I&amp;rsquo;m not that great with Clojure yet thought I do think it is rather awesome.</description>
+    </item>
+    
+  </channel>
+</rss>

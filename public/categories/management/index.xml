@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>management on Charlton Austin</title>
+    <link>https://charltonaustin.com/categories/management/</link>
+    <description>Recent content in management on Charlton Austin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 14 Jan 2020 09:03:54 -0400</lastBuildDate>
+    
+	<atom:link href="https://charltonaustin.com/categories/management/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bugs In Software</title>
+      <link>https://charltonaustin.com/posts/bugs-in-software/</link>
+      <pubDate>Tue, 14 Jan 2020 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/bugs-in-software/</guid>
+      <description>The Architecture of Open Source Applications If you haven&amp;rsquo;t seen or read The Architecture of Open Source Applications then you are missing out. Sure, it is a bit long. Also, each section is written by a different writer making it slightly inconsistent. But, there are gems throughout the book that make it worth the read.
+One of the gems Here&amp;rsquo;s an example of one of the gems from the Berkeley DB section.</description>
+    </item>
+    
+    <item>
+      <title>Blameless Postmortems</title>
+      <link>https://charltonaustin.com/posts/blameless-postmortems/</link>
+      <pubDate>Mon, 14 Jan 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/blameless-postmortems/</guid>
+      <description>Subject Why should we have blameless postmortems?
+Context I recently read a blog post about blameless postmortems from Etsy. In it there was a simple question about why software engineers shouldn&amp;rsquo;t be punished:
+ Why shouldn’t they be punished or reprimanded? Because an engineer who thinks they’re going to be reprimanded are disincentivized to give the details necessary to get an understanding of the mechanism, pathology, and operation of the failure.</description>
+    </item>
+    
+    <item>
+      <title>Branch By Abstraction</title>
+      <link>https://charltonaustin.com/posts/branch-by-abstraction/</link>
+      <pubDate>Mon, 07 May 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/branch-by-abstraction/</guid>
+      <description>The problem I want to write code that is consistently shared with the rest of the team, but I also want trunk based development.
+What is branch by abstraction Paul Hammant a friend and mentor of mine, has two great articles explaining branch by abstraction here and here. The basic concept is pretty easy. Instead of having long lived branches in your version control system, you simply create an abstraction that allows you to change the behavior with only a few minor changes.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>branch by abstraction on Charlton Austin</title>
+    <link>https://charltonaustin.com/tags/branch-by-abstraction/</link>
+    <description>Recent content in branch by abstraction on Charlton Austin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 07 May 2018 09:03:54 -0400</lastBuildDate>
+    
+	<atom:link href="https://charltonaustin.com/tags/branch-by-abstraction/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Branch By Abstraction</title>
+      <link>https://charltonaustin.com/posts/branch-by-abstraction/</link>
+      <pubDate>Mon, 07 May 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/branch-by-abstraction/</guid>
+      <description>The problem I want to write code that is consistently shared with the rest of the team, but I also want trunk based development.
+What is branch by abstraction Paul Hammant a friend and mentor of mine, has two great articles explaining branch by abstraction here and here. The basic concept is pretty easy. Instead of having long lived branches in your version control system, you simply create an abstraction that allows you to change the behavior with only a few minor changes.</description>
+    </item>
+    
+  </channel>
+</rss>

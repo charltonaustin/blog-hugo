@@ -6,9 +6,118 @@
     <description>Recent content in Tags on Charlton Austin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Wed, 25 Mar 2020 09:03:54 -0400</lastBuildDate>
     
 	<atom:link href="https://charltonaustin.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>databases</title>
+      <link>https://charltonaustin.com/tags/databases/</link>
+      <pubDate>Wed, 25 Mar 2020 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/databases/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>development</title>
+      <link>https://charltonaustin.com/tags/development/</link>
+      <pubDate>Wed, 25 Mar 2020 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>books</title>
+      <link>https://charltonaustin.com/tags/books/</link>
+      <pubDate>Tue, 14 Jan 2020 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/books/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>management</title>
+      <link>https://charltonaustin.com/tags/management/</link>
+      <pubDate>Tue, 14 Jan 2020 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>testing</title>
+      <link>https://charltonaustin.com/tags/testing/</link>
+      <pubDate>Tue, 14 Jan 2020 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/testing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>postmortems</title>
+      <link>https://charltonaustin.com/tags/postmortems/</link>
+      <pubDate>Mon, 14 Jan 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/postmortems/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>branch by abstraction</title>
+      <link>https://charltonaustin.com/tags/branch-by-abstraction/</link>
+      <pubDate>Mon, 07 May 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/branch-by-abstraction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tdd</title>
+      <link>https://charltonaustin.com/tags/tdd/</link>
+      <pubDate>Mon, 12 Sep 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/tdd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>https://charltonaustin.com/tags/golang/</link>
+      <pubDate>Fri, 02 Sep 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>algorithms</title>
+      <link>https://charltonaustin.com/tags/algorithms/</link>
+      <pubDate>Wed, 03 Aug 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/algorithms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>clojure</title>
+      <link>https://charltonaustin.com/tags/clojure/</link>
+      <pubDate>Wed, 03 Aug 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/clojure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>functional programming</title>
+      <link>https://charltonaustin.com/tags/functional-programming/</link>
+      <pubDate>Sun, 24 Apr 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/functional-programming/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

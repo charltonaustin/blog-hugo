@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tdd on Charlton Austin</title>
+    <link>https://charltonaustin.com/tags/tdd/</link>
+    <description>Recent content in tdd on Charlton Austin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 12 Sep 2016 09:03:54 -0400</lastBuildDate>
+    
+	<atom:link href="https://charltonaustin.com/tags/tdd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A Review Of Test Driven Development With Go</title>
+      <link>https://charltonaustin.com/posts/a-review-of-test-driven-development-with-go/</link>
+      <pubDate>Mon, 12 Sep 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/a-review-of-test-driven-development-with-go/</guid>
+      <description>In a previous blog entry I talk about my recent technical challenge with CoreOS. I enjoyed my interview there so much that I started doing some reading about Go. Here&amp;rsquo;s a second book that I read that I would like to write a review about. It&amp;rsquo;s called Test-Driven Development With Go written by Yigal Duppen. You can find it on leanpub and it costs $0-14.99. I was tempted when I came across it to pay for it, but I thought maybe I&amp;rsquo;ll give it a read before I pay the author (authors have to eat too).</description>
+    </item>
+    
+  </channel>
+</rss>
