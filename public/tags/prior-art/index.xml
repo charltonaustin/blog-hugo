@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>prior art on Charlton Austin</title>
+    <link>https://charltonaustin.com/tags/prior-art/</link>
+    <description>Recent content in prior art on Charlton Austin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 18 Feb 2019 09:03:54 -0400</lastBuildDate>
+    
+	<atom:link href="https://charltonaustin.com/tags/prior-art/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Prior Art</title>
+      <link>https://charltonaustin.com/posts/prior-art/</link>
+      <pubDate>Mon, 18 Feb 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/prior-art/</guid>
+      <description>The Problem Sometimes there is the &amp;ldquo;right way&amp;rdquo; and other times there is &amp;ldquo;how it is done in the codebase&amp;rdquo;. I would argue that a majority of the time the &amp;ldquo;right way&amp;rdquo; is the &amp;ldquo;how it is done in the codebase&amp;rdquo;. This might seem surprising, but generally I think consistency is incredibly important in a codebase. So while at first glance a practice might not be the accepted best practice, you shouldn&amp;rsquo;t change the codebase unless you can change everything over to the best practice.</description>
+    </item>
+    
+  </channel>
+</rss>

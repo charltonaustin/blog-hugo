@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on Charlton Austin</title>
+    <link>https://charltonaustin.com/tags/python/</link>
+    <description>Recent content in python on Charlton Austin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 04 Apr 2016 09:03:54 -0400</lastBuildDate>
+    
+	<atom:link href="https://charltonaustin.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python Source Code Gems</title>
+      <link>https://charltonaustin.com/posts/python-source-code-gems/</link>
+      <pubDate>Mon, 04 Apr 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/python-source-code-gems/</guid>
+      <description>So fairly regularly I read about and dip into the python source code. For some reason there seems to be a great deal of beautiful and interesting code in both the c and the standard libraries and tests for python. The other day I was doing some reading about generators (I was thinking about how to marry the ideas of functional and object oriented programming) and I came across something that I found fascinating as well beautiful so I decided I should share it here on this silly little blog.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>devops on Charlton Austin</title>
+    <link>https://charltonaustin.com/tags/devops/</link>
+    <description>Recent content in devops on Charlton Austin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 19 Sep 2015 09:03:54 -0400</lastBuildDate>
+    
+	<atom:link href="https://charltonaustin.com/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Configurator Boxen Or Things To Wrangle Your Environment</title>
+      <link>https://charltonaustin.com/posts/configurator-boxen-or-things-to-wrangle-your-environment/</link>
+      <pubDate>Sat, 19 Sep 2015 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/configurator-boxen-or-things-to-wrangle-your-environment/</guid>
+      <description>The problem One thing that I keep seeing consistently regardless of whether I&amp;rsquo;m working as a full time employee or as consultant, and that I&amp;rsquo;ve literally seen from coast to coast is developers and testers trying to simplify their local environments. Increasingly, companies are using multiple services that allow for more module pieces of software (think micro-services). This is nice because it can often simplify coding complexity and dependency graphs, but the flip side is that deployments can become more complex.</description>
+    </item>
+    
+    <item>
+      <title>Problems With Cucumber And Chef</title>
+      <link>https://charltonaustin.com/posts/problems-with-cucumber-and-chef/</link>
+      <pubDate>Wed, 06 Mar 2013 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/problems-with-cucumber-and-chef/</guid>
+      <description>So I&amp;rsquo;ve been working on getting some cucumber functional tests to run on a remote server lately and had tons of problems. The setup included using Electric Commander to run a gradle task, which in turn ran cucumber using jruby. It was lots of fun. Let me say.
+This post is basically because cucumber put out a misleading &amp;ldquo;error&amp;rdquo; which when I searched google I couldn&amp;rsquo;t get any help. So for anyone else who finds themselves in some similar situation.</description>
+    </item>
+    
+    <item>
+      <title>Frank Cucumber</title>
+      <link>https://charltonaustin.com/posts/frank-cucumber/</link>
+      <pubDate>Sun, 17 Feb 2013 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/frank-cucumber/</guid>
+      <description>Starting my blog again. So my blog has hopelessly become out of date. Since the last time I posted I&amp;rsquo;ve started working for ThoughtWorks, gone to India, moved to San Francisco, and finally been put onto my client. Great so now what. Since things are finally starting to settle and since my thoughts have changed on maintaining a blog I&amp;rsquo;ve decided it&amp;rsquo;s time to start blogging again. Not that anyone has read anything yet.</description>
+    </item>
+    
+  </channel>
+</rss>

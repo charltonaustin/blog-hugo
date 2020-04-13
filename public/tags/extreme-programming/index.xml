@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>eXtreme programming on Charlton Austin</title>
+    <link>https://charltonaustin.com/tags/extreme-programming/</link>
+    <description>Recent content in eXtreme programming on Charlton Austin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 26 Sep 2015 09:03:54 -0400</lastBuildDate>
+    
+	<atom:link href="https://charltonaustin.com/tags/extreme-programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Making Pairing Comfortable</title>
+      <link>https://charltonaustin.com/posts/making-pairing-comfortable/</link>
+      <pubDate>Sat, 26 Sep 2015 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/making-pairing-comfortable/</guid>
+      <description>There are effectively (to me anyways) an infinite number of blog posts about the benefits and costs of pairing and what pairing is and isn&amp;rsquo;t. So I&amp;rsquo;m not going to talk about the good and bad of pairing. I&amp;rsquo;m going to assume that, like me, you want to pair and you see the benefits and costs. Instead today I&amp;rsquo;m going to talk about how I started experimenting with pairing at my most recent job.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -30,6 +30,15 @@
     </item>
     
     <item>
+      <title>automation</title>
+      <link>https://charltonaustin.com/tags/automation/</link>
+      <pubDate>Wed, 26 Feb 2020 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>books</title>
       <link>https://charltonaustin.com/tags/books/</link>
       <pubDate>Tue, 14 Jan 2020 09:03:54 -0400</pubDate>
@@ -57,6 +66,42 @@
     </item>
     
     <item>
+      <title>euler</title>
+      <link>https://charltonaustin.com/tags/euler/</link>
+      <pubDate>Mon, 19 Aug 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/euler/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>https://charltonaustin.com/tags/javascript/</link>
+      <pubDate>Mon, 19 Aug 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>toy problems</title>
+      <link>https://charltonaustin.com/tags/toy-problems/</link>
+      <pubDate>Mon, 19 Aug 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/toy-problems/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>prior art</title>
+      <link>https://charltonaustin.com/tags/prior-art/</link>
+      <pubDate>Mon, 18 Feb 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/prior-art/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>postmortems</title>
       <link>https://charltonaustin.com/tags/postmortems/</link>
       <pubDate>Mon, 14 Jan 2019 09:03:54 -0400</pubDate>
@@ -66,11 +111,83 @@
     </item>
     
     <item>
+      <title>scaling</title>
+      <link>https://charltonaustin.com/tags/scaling/</link>
+      <pubDate>Mon, 10 Dec 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/scaling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tuesday Company</title>
+      <link>https://charltonaustin.com/tags/tuesday-company/</link>
+      <pubDate>Mon, 10 Dec 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/tuesday-company/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>conferences</title>
+      <link>https://charltonaustin.com/tags/conferences/</link>
+      <pubDate>Wed, 01 Aug 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/conferences/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>team building</title>
+      <link>https://charltonaustin.com/tags/team-building/</link>
+      <pubDate>Mon, 04 Jun 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/team-building/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>branch by abstraction</title>
       <link>https://charltonaustin.com/tags/branch-by-abstraction/</link>
       <pubDate>Mon, 07 May 2018 09:03:54 -0400</pubDate>
       
       <guid>https://charltonaustin.com/tags/branch-by-abstraction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pomodoro</title>
+      <link>https://charltonaustin.com/tags/pomodoro/</link>
+      <pubDate>Thu, 29 Mar 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/pomodoro/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>code review</title>
+      <link>https://charltonaustin.com/tags/code-review/</link>
+      <pubDate>Tue, 27 Mar 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/code-review/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pairing</title>
+      <link>https://charltonaustin.com/tags/pairing/</link>
+      <pubDate>Tue, 27 Mar 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/pairing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>entrepreneur</title>
+      <link>https://charltonaustin.com/tags/entrepreneur/</link>
+      <pubDate>Mon, 26 Mar 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/entrepreneur/</guid>
       <description></description>
     </item>
     
@@ -86,9 +203,36 @@
     <item>
       <title>golang</title>
       <link>https://charltonaustin.com/tags/golang/</link>
-      <pubDate>Fri, 02 Sep 2016 09:03:54 -0400</pubDate>
+      <pubDate>Sat, 10 Sep 2016 09:03:54 -0400</pubDate>
       
       <guid>https://charltonaustin.com/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>showcases</title>
+      <link>https://charltonaustin.com/tags/showcases/</link>
+      <pubDate>Sat, 27 Aug 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/showcases/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>clojure</title>
+      <link>https://charltonaustin.com/tags/clojure/</link>
+      <pubDate>Wed, 17 Aug 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/clojure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>functional programming</title>
+      <link>https://charltonaustin.com/tags/functional-programming/</link>
+      <pubDate>Wed, 17 Aug 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/functional-programming/</guid>
       <description></description>
     </item>
     
@@ -102,20 +246,83 @@
     </item>
     
     <item>
-      <title>clojure</title>
-      <link>https://charltonaustin.com/tags/clojure/</link>
-      <pubDate>Wed, 03 Aug 2016 09:03:54 -0400</pubDate>
+      <title>permutations</title>
+      <link>https://charltonaustin.com/tags/permutations/</link>
+      <pubDate>Wed, 27 Jul 2016 09:03:54 -0400</pubDate>
       
-      <guid>https://charltonaustin.com/tags/clojure/</guid>
+      <guid>https://charltonaustin.com/tags/permutations/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>functional programming</title>
-      <link>https://charltonaustin.com/tags/functional-programming/</link>
-      <pubDate>Sun, 24 Apr 2016 09:03:54 -0400</pubDate>
+      <title>life</title>
+      <link>https://charltonaustin.com/tags/life/</link>
+      <pubDate>Tue, 10 May 2016 09:03:54 -0400</pubDate>
       
-      <guid>https://charltonaustin.com/tags/functional-programming/</guid>
+      <guid>https://charltonaustin.com/tags/life/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://charltonaustin.com/tags/python/</link>
+      <pubDate>Mon, 04 Apr 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>security</title>
+      <link>https://charltonaustin.com/tags/security/</link>
+      <pubDate>Wed, 11 Nov 2015 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>java</title>
+      <link>https://charltonaustin.com/tags/java/</link>
+      <pubDate>Sat, 24 Oct 2015 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>multi threaded</title>
+      <link>https://charltonaustin.com/tags/multi-threaded/</link>
+      <pubDate>Sat, 24 Oct 2015 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/multi-threaded/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>eXtreme programming</title>
+      <link>https://charltonaustin.com/tags/extreme-programming/</link>
+      <pubDate>Sat, 26 Sep 2015 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/extreme-programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>devops</title>
+      <link>https://charltonaustin.com/tags/devops/</link>
+      <pubDate>Sat, 19 Sep 2015 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ruby</title>
+      <link>https://charltonaustin.com/tags/ruby/</link>
+      <pubDate>Sun, 17 Feb 2013 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/ruby/</guid>
       <description></description>
     </item>
     

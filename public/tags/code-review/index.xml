@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>code review on Charlton Austin</title>
+    <link>https://charltonaustin.com/tags/code-review/</link>
+    <description>Recent content in code review on Charlton Austin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 27 Mar 2018 09:03:54 -0400</lastBuildDate>
+    
+	<atom:link href="https://charltonaustin.com/tags/code-review/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pairing Vs Code Review</title>
+      <link>https://charltonaustin.com/posts/pairing-vs-code-review/</link>
+      <pubDate>Tue, 27 Mar 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/pairing-vs-code-review/</guid>
+      <description>Note This was written mostly immediately after I joined CoreOS and then updated this last week. I recently started working at CoreOS and one thing that they do there for every change of code is a code review. I have never had code reviews before. I&amp;rsquo;ve mostly worked in environments where I have paired directly with people. So I wanted to do a quick review on the differences between the two methods.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -22,12 +22,30 @@ One of the gems Here&amp;rsquo;s an example of one of the gems from the Berkeley
     </item>
     
     <item>
+      <title>Load And Performance Testing With Flask</title>
+      <link>https://charltonaustin.com/posts/load-and-performance-testing-with-flask/</link>
+      <pubDate>Tue, 13 Nov 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/load-and-performance-testing-with-flask/</guid>
+      <description>The problem At my current gig, we&amp;rsquo;ve spent some time building out our initial product. Things have been going well, and we have been growing. These days we started to notice that some over our API endpoints weren&amp;rsquo;t as responsive as before. We&amp;rsquo;ve also started to increase our number of users significantly. To that end, it was time for us to start measuring our requests and fixing them if necessary.</description>
+    </item>
+    
+    <item>
       <title>A Review Of Test Driven Development With Go</title>
       <link>https://charltonaustin.com/posts/a-review-of-test-driven-development-with-go/</link>
       <pubDate>Mon, 12 Sep 2016 09:03:54 -0400</pubDate>
       
       <guid>https://charltonaustin.com/posts/a-review-of-test-driven-development-with-go/</guid>
       <description>In a previous blog entry I talk about my recent technical challenge with CoreOS. I enjoyed my interview there so much that I started doing some reading about Go. Here&amp;rsquo;s a second book that I read that I would like to write a review about. It&amp;rsquo;s called Test-Driven Development With Go written by Yigal Duppen. You can find it on leanpub and it costs $0-14.99. I was tempted when I came across it to pay for it, but I thought maybe I&amp;rsquo;ll give it a read before I pay the author (authors have to eat too).</description>
+    </item>
+    
+    <item>
+      <title>Refactoring Tests For Maintainability</title>
+      <link>https://charltonaustin.com/posts/refactoring-tests-for-maintainability/</link>
+      <pubDate>Wed, 28 Jan 2015 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/refactoring-tests-for-maintainability/</guid>
+      <description>I just began working at Intent Media and I&amp;rsquo;ve been spending some time getting to know the code base. I spent the other day pairing with another guy on the team to add a new feature. We needed to change one of the data models by adding a new field. So we wrote some tests specifying how we thought the new data field should work. Next we got them passing. After that we ran all the unit tests.</description>
     </item>
     
   </channel>

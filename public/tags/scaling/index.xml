@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>scaling on Charlton Austin</title>
+    <link>https://charltonaustin.com/tags/scaling/</link>
+    <description>Recent content in scaling on Charlton Austin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 10 Dec 2018 09:03:54 -0400</lastBuildDate>
+    
+	<atom:link href="https://charltonaustin.com/tags/scaling/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Election Results 2018</title>
+      <link>https://charltonaustin.com/posts/election-results-2018/</link>
+      <pubDate>Mon, 10 Dec 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/election-results-2018/</guid>
+      <description>Election 2018 The Tuesday Company had the honor to work on many races over the midterm elections. The team worked incredibly hard and managed to help in over 118 different races. We had a chance to scale our technology on a national level and managed to have no production issues despite having an large magnitude of increased traffic. We also learned some valuable lessons about what it means for a team to grow; both in the number of developers and in the number of users.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>permutations on Charlton Austin</title>
+    <link>https://charltonaustin.com/tags/permutations/</link>
+    <description>Recent content in permutations on Charlton Austin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 27 Jul 2016 09:03:54 -0400</lastBuildDate>
+    
+	<atom:link href="https://charltonaustin.com/tags/permutations/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Permutations Of A String In Clojure Basic Algorithms Part Two</title>
+      <link>https://charltonaustin.com/posts/permutations-of-a-string-in-clojure-basic-algorithms-part-two/</link>
+      <pubDate>Wed, 27 Jul 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/permutations-of-a-string-in-clojure-basic-algorithms-part-two/</guid>
+      <description>The problem Find all permutations of a string
+The solution My first solution is comes from Java and is a recursive solution.
+(defn- perms [pre v] (let [n (count v)] (if (zero? n) nil (loop [i 0] (if (&amp;lt; i n) (do (perms (conj pre (nth v i)) (into [] (concat(first (split-at i v)) (second (split-at (inc i) v))))) (recur (inc i))) nil))))) It has some problems. It is recursive so vulnerable to stack overflow errors, but more than that it is pretty slow and not very idiomatic Clojure.</description>
+    </item>
+    
+  </channel>
+</rss>

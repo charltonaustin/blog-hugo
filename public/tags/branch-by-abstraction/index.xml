@@ -21,5 +21,15 @@
 What is branch by abstraction Paul Hammant a friend and mentor of mine, has two great articles explaining branch by abstraction here and here. The basic concept is pretty easy. Instead of having long lived branches in your version control system, you simply create an abstraction that allows you to change the behavior with only a few minor changes.</description>
     </item>
     
+    <item>
+      <title>Feature Branches To Mainline</title>
+      <link>https://charltonaustin.com/posts/feature-branches-to-mainline/</link>
+      <pubDate>Sat, 10 Oct 2015 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/feature-branches-to-mainline/</guid>
+      <description>Recently at my current company my team has been struggling to move from a feature branch workflow to a mainline workflow. I&amp;rsquo;m going to define what the feature branches and mainline workflows are. Then I&amp;rsquo;m going to talk about the costs and benefits of both models. Finally I&amp;rsquo;m going to talk about why people should use the mainline workflow.
+Feature Branch Workflow So what is the feature branch workflow (at least at IntentMedia).</description>
+    </item>
+    
   </channel>
 </rss>

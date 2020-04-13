@@ -20,5 +20,15 @@
       <description>In a previous blog entry I talk about my recent technical challenge with CoreOS. I enjoyed my interview there so much that I started doing some reading about Go. Here&amp;rsquo;s a second book that I read that I would like to write a review about. It&amp;rsquo;s called Test-Driven Development With Go written by Yigal Duppen. You can find it on leanpub and it costs $0-14.99. I was tempted when I came across it to pay for it, but I thought maybe I&amp;rsquo;ll give it a read before I pay the author (authors have to eat too).</description>
     </item>
     
+    <item>
+      <title>Does Unit Testing Make Me Slower</title>
+      <link>https://charltonaustin.com/posts/does-unit-testing-make-me-slower/</link>
+      <pubDate>Tue, 12 Apr 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/does-unit-testing-make-me-slower/</guid>
+      <description>Say What? Recently I asked a coworker if a new application we were working to get into production had unit tests. His response was interesting. He said, &amp;ldquo;No, but it&amp;rsquo;s too early to have unit tests. The code hasn&amp;rsquo;t really settled and unit tests slow you down.&amp;rdquo;
+My initial reaction in my head was &amp;ldquo;Whoa that&amp;rsquo;s silly&amp;rdquo;. But after some consideration and thinking about how code can be written, I&amp;rsquo;m beginning to see his point.</description>
+    </item>
+    
   </channel>
 </rss>

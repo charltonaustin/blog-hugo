@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pomodoro on Charlton Austin</title>
+    <link>https://charltonaustin.com/tags/pomodoro/</link>
+    <description>Recent content in pomodoro on Charlton Austin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 29 Mar 2018 09:03:54 -0400</lastBuildDate>
+    
+	<atom:link href="https://charltonaustin.com/tags/pomodoro/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pomodoro On Os X Updated</title>
+      <link>https://charltonaustin.com/posts/pomodoro-on-os-x-updated/</link>
+      <pubDate>Thu, 29 Mar 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/pomodoro-on-os-x-updated/</guid>
+      <description>Pomodoro Expanded Previously I had created a post where I talked about using the pomodoro technique on mac OSX. Well today I want to show how I have expanded on my original idea. First I created this:
+#! /bin/sh at now + $1 minutes &amp;lt;&amp;lt;&amp;lt; $2 Which is a small script to run a bash command at some time in the future. Then I created this:
+#!/bin/bash x=`/usr/bin/osascript &amp;lt;&amp;lt;EOT tell application &amp;#34;Finder&amp;#34; activate set myReply to text returned of (display dialog &amp;#34;Start 25 mins: Please put in task&amp;#34; default button 1 buttons {&amp;#34;OK&amp;#34;} default answer &amp;#34;&amp;#34; with icon 1) end tell EOT` echo &amp;#39;Text is: &amp;#39;$x if [[ -z &amp;#34;$x&amp;#34; ]]; then echo &amp;#34;Done for the day&amp;#34; else mkdir -p $HOME/work touch $HOME/work/daily_pomodoro.</description>
+    </item>
+    
+    <item>
+      <title>Pomodoro On Os X</title>
+      <link>https://charltonaustin.com/posts/pomodoro-on-os-x/</link>
+      <pubDate>Thu, 03 Nov 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/pomodoro-on-os-x/</guid>
+      <description>Pomodoro If you haven&amp;rsquo;t ever used the pomodoro technique then you are missing out. It is a great way to stay focused on one task at a time. It is also a good way to get yourself moving regularly. There is just one thing I don&amp;rsquo;t like about it. In order to have a good timer you usually have to have something that bothers your neighbor at work. For a while I was using my phone timer which worked okay, but I&amp;rsquo;m pretty sure my work mates hated me.</description>
+    </item>
+    
+  </channel>
+</rss>

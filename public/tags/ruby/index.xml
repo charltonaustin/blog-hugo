@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ruby on Charlton Austin</title>
+    <link>https://charltonaustin.com/tags/ruby/</link>
+    <description>Recent content in ruby on Charlton Austin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 17 Feb 2013 09:03:54 -0400</lastBuildDate>
+    
+	<atom:link href="https://charltonaustin.com/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Frank Cucumber</title>
+      <link>https://charltonaustin.com/posts/frank-cucumber/</link>
+      <pubDate>Sun, 17 Feb 2013 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/frank-cucumber/</guid>
+      <description>Starting my blog again. So my blog has hopelessly become out of date. Since the last time I posted I&amp;rsquo;ve started working for ThoughtWorks, gone to India, moved to San Francisco, and finally been put onto my client. Great so now what. Since things are finally starting to settle and since my thoughts have changed on maintaining a blog I&amp;rsquo;ve decided it&amp;rsquo;s time to start blogging again. Not that anyone has read anything yet.</description>
+    </item>
+    
+  </channel>
+</rss>

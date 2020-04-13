@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>java on Charlton Austin</title>
+    <link>https://charltonaustin.com/tags/java/</link>
+    <description>Recent content in java on Charlton Austin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 24 Oct 2015 09:03:54 -0400</lastBuildDate>
+    
+	<atom:link href="https://charltonaustin.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Debugging Multi  Threaded Applications</title>
+      <link>https://charltonaustin.com/posts/debugging-multi-threaded-applications/</link>
+      <pubDate>Sat, 24 Oct 2015 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/debugging-multi-threaded-applications/</guid>
+      <description>Recently I had debug a multithreaded application with some surprising results. Seeing as this can be a particularly tricky task for people that haven&amp;rsquo;t done it before I thought I would write about some lessons I learned from the experience.
+logging Logging LOGGING and MORE LOGGING Log to understand the problem. This one is hard to set up retroactively, but it is well worth the effort. Strive for logs that are meaningful, and that give you checkpoints.</description>
+    </item>
+    
+    <item>
+      <title>Refactoring Tests For Maintainability</title>
+      <link>https://charltonaustin.com/posts/refactoring-tests-for-maintainability/</link>
+      <pubDate>Wed, 28 Jan 2015 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/refactoring-tests-for-maintainability/</guid>
+      <description>I just began working at Intent Media and I&amp;rsquo;ve been spending some time getting to know the code base. I spent the other day pairing with another guy on the team to add a new feature. We needed to change one of the data models by adding a new field. So we wrote some tests specifying how we thought the new data field should work. Next we got them passing. After that we ran all the unit tests.</description>
+    </item>
+    
+  </channel>
+</rss>

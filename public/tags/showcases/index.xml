@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>showcases on Charlton Austin</title>
+    <link>https://charltonaustin.com/tags/showcases/</link>
+    <description>Recent content in showcases on Charlton Austin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 27 Aug 2016 09:03:54 -0400</lastBuildDate>
+    
+	<atom:link href="https://charltonaustin.com/tags/showcases/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Showcases And Why We Need Them</title>
+      <link>https://charltonaustin.com/posts/showcases-and-why-we-need-them/</link>
+      <pubDate>Sat, 27 Aug 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/showcases-and-why-we-need-them/</guid>
+      <description>The problem So my students are mostly awesome. We have come a long way. When we started most of them had not written any JavaScript. In the last few weeks they have been working on their final projects You can see them here, here, here, and here. One thing that they haven&amp;rsquo;t had a lot of experience with is how to put a whole project together. So we broke them into team and they are coming up with their own product to show future employers.</description>
+    </item>
+    
+  </channel>
+</rss>

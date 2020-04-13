@@ -6,10 +6,42 @@
     <description>Recent content in functional programming on Charlton Austin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 24 Apr 2016 09:03:54 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 17 Aug 2016 09:03:54 -0400</lastBuildDate>
     
 	<atom:link href="https://charltonaustin.com/tags/functional-programming/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Leaders In An Array In Clojure Basic Algorithms Part Four</title>
+      <link>https://charltonaustin.com/posts/leaders-in-an-array-in-clojure-basic-algorithms-part-four/</link>
+      <pubDate>Wed, 17 Aug 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/leaders-in-an-array-in-clojure-basic-algorithms-part-four/</guid>
+      <description>The problem Given an array of integers, print the leaders in the array. A leader is an element which is larger than all the elements in the array to its right.
+Solution Is was my first attempt at coming up with a solution. Naturally I used recursion and simply walked down the array seeing if every element after it was the same.
+The time complexity of this is O( n^2 ) which isn&amp;rsquo;t great.</description>
+    </item>
+    
+    <item>
+      <title>Permutations Of A String In Clojure Basic Algorithms Part Two</title>
+      <link>https://charltonaustin.com/posts/permutations-of-a-string-in-clojure-basic-algorithms-part-two/</link>
+      <pubDate>Wed, 27 Jul 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/permutations-of-a-string-in-clojure-basic-algorithms-part-two/</guid>
+      <description>The problem Find all permutations of a string
+The solution My first solution is comes from Java and is a recursive solution.
+(defn- perms [pre v] (let [n (count v)] (if (zero? n) nil (loop [i 0] (if (&amp;lt; i n) (do (perms (conj pre (nth v i)) (into [] (concat(first (split-at i v)) (second (split-at (inc i) v))))) (recur (inc i))) nil))))) It has some problems. It is recursive so vulnerable to stack overflow errors, but more than that it is pretty slow and not very idiomatic Clojure.</description>
+    </item>
+    
+    <item>
+      <title>Counting Frequencies Of Elements In An Array In Clojure Basic Algorithms Part One</title>
+      <link>https://charltonaustin.com/posts/counting-frequencies-of-elements-in-an-array-in-clojure-basic-algorithms-part-one/</link>
+      <pubDate>Wed, 20 Jul 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/counting-frequencies-of-elements-in-an-array-in-clojure-basic-algorithms-part-one/</guid>
+      <description>So I&amp;rsquo;m not a CS guy. I went to school for math and I became a programmer pretty late. I also never had the obligatory algorithms class. So I&amp;rsquo;m going to start a series where I explore some algorithms coding problems. The problem
+So the coding challenge is given an array with N numbers m such that m &amp;lt; N and m is a natural number count the occurrences of m.</description>
+    </item>
     
     <item>
       <title>Clojure Sieve Of Eratosthenes</title>
