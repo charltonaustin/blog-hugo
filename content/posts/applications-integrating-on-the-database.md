@@ -2,7 +2,7 @@
 title: Applications Integrating On The Database
 date: 2020-03-25T09:03:54-04:00
 draft: false
-description: "This post talks about the ins and outs of integrating on the database and why it might seem like a good idea, but isn't" 
+description: "This post talks about the ins and outs of integrating on the database and why it might seem like a good idea, but isn't." 
 tags: [
     "databases",
     "development",

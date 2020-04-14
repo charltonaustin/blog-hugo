@@ -2,6 +2,7 @@
 title: Bugs In Software
 date: 2020-01-14T09:03:54-04:00
 draft: false
+description: "How does the Architecture of Open Source Applications help to understand bugs better? Read this to know more."
 tags: [
     "testing",
     "management",

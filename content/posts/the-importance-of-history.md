@@ -2,6 +2,7 @@
 title: The Importance Of History
 date: 2019-12-10T09:03:54-04:00
 draft: false
+description: "Why you should be asking history questions during and interview."
 tags: [
     "management",
     "hiring",

@@ -2,6 +2,7 @@
 title: Repo Scripts And Autoupdates
 date: 2020-02-26T09:03:54-04:00
 draft: false
+description: "How to create a pre-commit script for the whole team that works locally."
 tags: [
     "automation",
     "development",
