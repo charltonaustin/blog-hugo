@@ -2,6 +2,10 @@
 title: The Expression Problem
 date: 2016-03-03T09:03:54-04:00
 draft: false
+tags: [
+    "java",
+    "development",
+]
 ---
 ###  What is the expression problem?
 

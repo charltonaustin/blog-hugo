@@ -2,6 +2,11 @@
 title: The Count Down Problem
 date: 2016-04-20T09:03:54-04:00
 draft: false
+tags: [
+    "algorithms",
+    "haskell",
+    "functional programming",
+]
 ---
 Recently I've been watching a wonderful [set of videos](https://channel9.msdn.com/Series/C9-Lectures-Erik-Meijer-Functional-Programming-Fundamentals/Lecture-Series-Erik-Meijer-Functional-Programming-Fundamentals-Chapter-1) about Haskell during my lunch break. If you are interested in Haskell and functional programming I would definitely recommend the videos.
 

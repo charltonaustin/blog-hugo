@@ -2,6 +2,8 @@
 title: Structual Type Systems
 date: 2015-11-07T09:03:54-04:00
 draft: false
+tags: [
+]
 ---
 I was talking recently to a friend about programming languages and how they affect what kinds of software we write when we got on the subject of Golang. He's a successful vice president of engineering at a ruby shop and I'm a lowly java software engineer, and yet we both agreed on one thing: what people really want is a flexible type system that allows them to rapidly write software. Him coming from the Ruby world wistfully looked off in the distance wishing he didn't have to worry about runtime type production errors, while basking in the glory of how rapidly and concisely his team could get out code. Me on the other hand tired of slaving away writing so many extra lines of code, while sleeping comfortably with the knowledge that I was unlikely to break any servers in production through type errors.
 

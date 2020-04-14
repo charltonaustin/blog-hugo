@@ -2,6 +2,13 @@
 title: Unit Testing With Higher Order Functions
 date: 2016-04-13T09:03:54-04:00
 draft: false
+tags: [
+    "python",
+    "testing",
+    "functional",
+    "development",
+]
+
 ---
 Recently I was writing an interesting bit of Python software that had a couple of layers. There were some high level objects that dealt with some domain logic and then some lower level objects that did more of the nitty gritty interactions with the operating system. When I first started thinking about writing the lower level interface, I was a little afraid that writing the unit tests was going to be difficult. Wrapping up Sys.out or other IO operations in Java is a standard practice. In the past I have had some trouble patching Python modules.
 

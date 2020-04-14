@@ -2,6 +2,10 @@
 title: Vagrant Chef Fun
 date: 2013-02-27T09:03:54-04:00
 draft: false
+tags: [
+    "devops",
+]
+
 ---
 A couple of days ago I got a chance to see some friends of mine (Matt Urbanski and Jinwoo Baek) give a presentation on chef. It was fantastic. Afterward we had a sort of impromptu demo session on using Vagrant and Chef to get an apache server up and running. So this is going to be a quick tutorial on how to use Vagrant and Chef to get a functioning apache server up and running on a vm.
 

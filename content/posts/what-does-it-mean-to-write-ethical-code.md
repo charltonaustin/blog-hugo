@@ -2,6 +2,11 @@
 title: What Does It Mean To Write Ethical Code
 date: 2018-07-09T09:03:54-04:00
 draft: false
+tags: [
+    "ethical coding",
+    "development",
+]
+
 ---
 Recently I read a report from the 2018 stack overflow survey, [here](https://insights.stackoverflow.com/survey/2018/?utm_source=Iterable&utm_medium=email&utm_campaign=dev-survey-2018-promotion).
 

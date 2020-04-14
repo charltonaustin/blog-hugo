@@ -2,6 +2,10 @@
 title: Sudoku Using Go Lang
 date: 2019-05-01T09:03:54-04:00
 draft: false
+tags: [
+    "algorithms",
+    "golang",
+]
 ---
 ## Algorithms
 A friend of mine recently started looking for work and we were talking about the interview process.

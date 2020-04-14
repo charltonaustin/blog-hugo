@@ -2,6 +2,11 @@
 title: Using Checklist In Software Development
 date: 2019-09-09T09:03:54-04:00
 draft: false
+tags: [
+    "checklists",
+    "development",
+]
+
 ---
 ## The dream
 For some time I have been wanting to incorporate checklist into the development project.

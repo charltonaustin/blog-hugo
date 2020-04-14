@@ -2,6 +2,11 @@
 title: Using Quay With Multiple Dockerfiles
 date: 2017-04-08T09:03:54-04:00
 draft: false
+tags: [
+    "devops",
+    "docker",
+]
+
 ---
 # The problem
 

@@ -2,6 +2,11 @@
 title: The Telegram Problem
 date: 2019-11-15T09:03:54-04:00
 draft: false
+tags: [
+    "algorithms",
+    "toy problem",
+    "javascript",
+]
 ---
 ### The problem
 

@@ -2,6 +2,11 @@
 title: The Importance Of Toy Problems
 date: 2016-08-06T09:03:54-04:00
 draft: false
+tags: [
+    "algorithms",
+    "toy problems",
+    "development",
+]
 ---
 As a software engineer I find that I rarely get to practice the fundamentals of computer science. I also rarely get a chance to practice the kinds of problems at work. At the school that I'm currently teaching one thing that the students have been doing every day is called 'toy problems'. Toy problems are a pretty straight forward concept. They are problems that should make you think a bit, shouldn't take too long, and let you exercise your programming muscles.
 

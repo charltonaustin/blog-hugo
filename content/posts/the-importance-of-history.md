@@ -2,6 +2,10 @@
 title: The Importance Of History
 date: 2019-12-10T09:03:54-04:00
 draft: false
+tags: [
+    "management",
+    "hiring",
+]
 ---
 ## History, what is it good for?
 When I interview someone I often ask, "Where did object oriented programming (OOP) come from?"

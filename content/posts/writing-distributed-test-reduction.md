@@ -2,6 +2,10 @@
 title: Writing Distributed Test Reduction
 date: 2016-04-07T09:03:54-04:00
 draft: false
+tags: [
+    "development",
+]
+
 ---
 ### The Problem
 

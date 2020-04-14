@@ -2,6 +2,12 @@
 title: Top Down Vs Bottom Up Api Design In Clojure Part Zero
 date: 2016-04-20T09:03:54-04:00
 draft: false
+tags: [
+    "top-down",
+    "clojure",
+    "functional",
+    "development",
+]
 ---
 ### Intro
 
