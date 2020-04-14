@@ -66,6 +66,51 @@
     </item>
     
     <item>
+      <title>hiring</title>
+      <link>https://charltonaustin.com/tags/hiring/</link>
+      <pubDate>Tue, 10 Dec 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/hiring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>algorithms</title>
+      <link>https://charltonaustin.com/tags/algorithms/</link>
+      <pubDate>Fri, 15 Nov 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/algorithms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>https://charltonaustin.com/tags/javascript/</link>
+      <pubDate>Fri, 15 Nov 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>toy problem</title>
+      <link>https://charltonaustin.com/tags/toy-problem/</link>
+      <pubDate>Fri, 15 Nov 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/toy-problem/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>checklists</title>
+      <link>https://charltonaustin.com/tags/checklists/</link>
+      <pubDate>Mon, 09 Sep 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/checklists/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>euler</title>
       <link>https://charltonaustin.com/tags/euler/</link>
       <pubDate>Mon, 19 Aug 2019 09:03:54 -0400</pubDate>
@@ -75,20 +120,20 @@
     </item>
     
     <item>
-      <title>javascript</title>
-      <link>https://charltonaustin.com/tags/javascript/</link>
-      <pubDate>Mon, 19 Aug 2019 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>toy problems</title>
       <link>https://charltonaustin.com/tags/toy-problems/</link>
       <pubDate>Mon, 19 Aug 2019 09:03:54 -0400</pubDate>
       
       <guid>https://charltonaustin.com/tags/toy-problems/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>https://charltonaustin.com/tags/golang/</link>
+      <pubDate>Wed, 01 May 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/golang/</guid>
       <description></description>
     </item>
     
@@ -134,6 +179,15 @@
       <pubDate>Wed, 01 Aug 2018 09:03:54 -0400</pubDate>
       
       <guid>https://charltonaustin.com/tags/conferences/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ethical coding</title>
+      <link>https://charltonaustin.com/tags/ethical-coding/</link>
+      <pubDate>Mon, 09 Jul 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/ethical-coding/</guid>
       <description></description>
     </item>
     
@@ -192,20 +246,29 @@
     </item>
     
     <item>
+      <title>devops</title>
+      <link>https://charltonaustin.com/tags/devops/</link>
+      <pubDate>Sat, 08 Apr 2017 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://charltonaustin.com/tags/docker/</link>
+      <pubDate>Sat, 08 Apr 2017 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>tdd</title>
       <link>https://charltonaustin.com/tags/tdd/</link>
       <pubDate>Mon, 12 Sep 2016 09:03:54 -0400</pubDate>
       
       <guid>https://charltonaustin.com/tags/tdd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>golang</title>
-      <link>https://charltonaustin.com/tags/golang/</link>
-      <pubDate>Sat, 10 Sep 2016 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/golang/</guid>
       <description></description>
     </item>
     
@@ -237,15 +300,6 @@
     </item>
     
     <item>
-      <title>algorithms</title>
-      <link>https://charltonaustin.com/tags/algorithms/</link>
-      <pubDate>Wed, 03 Aug 2016 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/algorithms/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>permutations</title>
       <link>https://charltonaustin.com/tags/permutations/</link>
       <pubDate>Wed, 27 Jul 2016 09:03:54 -0400</pubDate>
@@ -264,11 +318,47 @@
     </item>
     
     <item>
+      <title>functional</title>
+      <link>https://charltonaustin.com/tags/functional/</link>
+      <pubDate>Tue, 26 Apr 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/functional/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>top-down</title>
+      <link>https://charltonaustin.com/tags/top-down/</link>
+      <pubDate>Tue, 26 Apr 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/top-down/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>haskell</title>
+      <link>https://charltonaustin.com/tags/haskell/</link>
+      <pubDate>Wed, 20 Apr 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/haskell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>python</title>
       <link>https://charltonaustin.com/tags/python/</link>
-      <pubDate>Mon, 04 Apr 2016 09:03:54 -0400</pubDate>
+      <pubDate>Wed, 13 Apr 2016 09:03:54 -0400</pubDate>
       
       <guid>https://charltonaustin.com/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>java</title>
+      <link>https://charltonaustin.com/tags/java/</link>
+      <pubDate>Thu, 03 Mar 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/tags/java/</guid>
       <description></description>
     </item>
     
@@ -278,15 +368,6 @@
       <pubDate>Wed, 11 Nov 2015 09:03:54 -0400</pubDate>
       
       <guid>https://charltonaustin.com/tags/security/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>java</title>
-      <link>https://charltonaustin.com/tags/java/</link>
-      <pubDate>Sat, 24 Oct 2015 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/java/</guid>
       <description></description>
     </item>
     
@@ -305,15 +386,6 @@
       <pubDate>Sat, 26 Sep 2015 09:03:54 -0400</pubDate>
       
       <guid>https://charltonaustin.com/tags/extreme-programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>devops</title>
-      <link>https://charltonaustin.com/tags/devops/</link>
-      <pubDate>Sat, 19 Sep 2015 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/devops/</guid>
       <description></description>
     </item>
     

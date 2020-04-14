@@ -6,10 +6,20 @@
     <description>Recent content in java on Charlton Austin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 24 Oct 2015 09:03:54 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 03 Mar 2016 09:03:54 -0400</lastBuildDate>
     
 	<atom:link href="https://charltonaustin.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The Expression Problem</title>
+      <link>https://charltonaustin.com/posts/the-expression-problem/</link>
+      <pubDate>Thu, 03 Mar 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/the-expression-problem/</guid>
+      <description>What is the expression problem? The expression problem is the idea that it is easy to add new functions for simple data types without changing the data types, while it is hard to add data types without changing all the functions. At the same time it is easy to add data types with objects (complex data types), while it is hard to add functions without changing all the objects.
+Some great descriptions of this include chapter 6 of Uncle Bob&amp;rsquo;s book Clean Code.</description>
+    </item>
     
     <item>
       <title>Debugging Multi  Threaded Applications</title>

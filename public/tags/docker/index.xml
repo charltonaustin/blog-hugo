@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on Charlton Austin</title>
+    <link>https://charltonaustin.com/tags/docker/</link>
+    <description>Recent content in docker on Charlton Austin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 08 Apr 2017 09:03:54 -0400</lastBuildDate>
+    
+	<atom:link href="https://charltonaustin.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using Quay With Multiple Dockerfiles</title>
+      <link>https://charltonaustin.com/posts/using-quay-with-multiple-dockerfiles/</link>
+      <pubDate>Sat, 08 Apr 2017 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/using-quay-with-multiple-dockerfiles/</guid>
+      <description>The problem Let&amp;rsquo;s say you have the following folder layout:
+app1/ app2/ shared-infra-resources/ continuous-integration/ app1/ app1.Dockerfile app2/ app2.Dockerfile And you would like to build app1.Dockerfile and app2.Dockerfile in your Docker registry.
+The Solution If you are using DockerHub. Then you already can&amp;rsquo;t. DockerHub doesn&amp;rsquo;t allow you to specify a context separate from your Dockerfile location. At least they did not as of April 8, 2017. So you can&amp;rsquo;t specify use the continuous-integration/app2/app2.</description>
+    </item>
+    
+  </channel>
+</rss>

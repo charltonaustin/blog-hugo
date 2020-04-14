@@ -6,10 +6,21 @@
     <description>Recent content in devops on Charlton Austin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 19 Sep 2015 09:03:54 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 08 Apr 2017 09:03:54 -0400</lastBuildDate>
     
 	<atom:link href="https://charltonaustin.com/tags/devops/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Using Quay With Multiple Dockerfiles</title>
+      <link>https://charltonaustin.com/posts/using-quay-with-multiple-dockerfiles/</link>
+      <pubDate>Sat, 08 Apr 2017 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/using-quay-with-multiple-dockerfiles/</guid>
+      <description>The problem Let&amp;rsquo;s say you have the following folder layout:
+app1/ app2/ shared-infra-resources/ continuous-integration/ app1/ app1.Dockerfile app2/ app2.Dockerfile And you would like to build app1.Dockerfile and app2.Dockerfile in your Docker registry.
+The Solution If you are using DockerHub. Then you already can&amp;rsquo;t. DockerHub doesn&amp;rsquo;t allow you to specify a context separate from your Dockerfile location. At least they did not as of April 8, 2017. So you can&amp;rsquo;t specify use the continuous-integration/app2/app2.</description>
+    </item>
     
     <item>
       <title>Configurator Boxen Or Things To Wrangle Your Environment</title>
@@ -28,6 +39,15 @@
       <guid>https://charltonaustin.com/posts/problems-with-cucumber-and-chef/</guid>
       <description>So I&amp;rsquo;ve been working on getting some cucumber functional tests to run on a remote server lately and had tons of problems. The setup included using Electric Commander to run a gradle task, which in turn ran cucumber using jruby. It was lots of fun. Let me say.
 This post is basically because cucumber put out a misleading &amp;ldquo;error&amp;rdquo; which when I searched google I couldn&amp;rsquo;t get any help. So for anyone else who finds themselves in some similar situation.</description>
+    </item>
+    
+    <item>
+      <title>Vagrant Chef Fun</title>
+      <link>https://charltonaustin.com/posts/vagrant-chef-fun/</link>
+      <pubDate>Wed, 27 Feb 2013 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/vagrant-chef-fun/</guid>
+      <description>A couple of days ago I got a chance to see some friends of mine (Matt Urbanski and Jinwoo Baek) give a presentation on chef. It was fantastic. Afterward we had a sort of impromptu demo session on using Vagrant and Chef to get an apache server up and running. So this is going to be a quick tutorial on how to use Vagrant and Chef to get a functioning apache server up and running on a vm.</description>
     </item>
     
     <item>

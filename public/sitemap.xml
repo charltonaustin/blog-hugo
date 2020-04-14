@@ -63,12 +63,12 @@
   </url>
   
   <url>
-    <loc>https://charltonaustin.com/tags/management/</loc>
+    <loc>https://charltonaustin.com/categories/management/</loc>
     <lastmod>2020-01-14T09:03:54-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://charltonaustin.com/categories/management/</loc>
+    <loc>https://charltonaustin.com/tags/management/</loc>
     <lastmod>2020-01-14T09:03:54-04:00</lastmod>
   </url>
   
@@ -78,13 +78,38 @@
   </url>
   
   <url>
+    <loc>https://charltonaustin.com/tags/hiring/</loc>
+    <lastmod>2019-12-10T09:03:54-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://charltonaustin.com/posts/the-importance-of-history/</loc>
     <lastmod>2019-12-10T09:03:54-04:00</lastmod>
   </url>
   
   <url>
+    <loc>https://charltonaustin.com/tags/algorithms/</loc>
+    <lastmod>2019-11-15T09:03:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://charltonaustin.com/tags/javascript/</loc>
+    <lastmod>2019-11-15T09:03:54-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://charltonaustin.com/posts/the-telegram-problem/</loc>
     <lastmod>2019-11-15T09:03:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://charltonaustin.com/tags/toy-problem/</loc>
+    <lastmod>2019-11-15T09:03:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://charltonaustin.com/tags/checklists/</loc>
+    <lastmod>2019-09-09T09:03:54-04:00</lastmod>
   </url>
   
   <url>
@@ -103,11 +128,6 @@
   </url>
   
   <url>
-    <loc>https://charltonaustin.com/tags/javascript/</loc>
-    <lastmod>2019-08-19T09:03:54-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://charltonaustin.com/tags/toy-problems/</loc>
     <lastmod>2019-08-19T09:03:54-04:00</lastmod>
   </url>
@@ -120,6 +140,11 @@
   <url>
     <loc>https://charltonaustin.com/posts/graphing-change-vs-cyclomatic-complexity/</loc>
     <lastmod>2019-06-10T09:03:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://charltonaustin.com/tags/golang/</loc>
+    <lastmod>2019-05-01T09:03:54-04:00</lastmod>
   </url>
   
   <url>
@@ -185,6 +210,11 @@
   <url>
     <loc>https://charltonaustin.com/posts/hope-conference-2018/</loc>
     <lastmod>2018-08-01T09:03:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://charltonaustin.com/tags/ethical-coding/</loc>
+    <lastmod>2018-07-09T09:03:54-04:00</lastmod>
   </url>
   
   <url>
@@ -268,6 +298,16 @@
   </url>
   
   <url>
+    <loc>https://charltonaustin.com/tags/devops/</loc>
+    <lastmod>2017-04-08T09:03:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://charltonaustin.com/tags/docker/</loc>
+    <lastmod>2017-04-08T09:03:54-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://charltonaustin.com/posts/using-quay-with-multiple-dockerfiles/</loc>
     <lastmod>2017-04-08T09:03:54-04:00</lastmod>
   </url>
@@ -313,11 +353,6 @@
   </url>
   
   <url>
-    <loc>https://charltonaustin.com/tags/golang/</loc>
-    <lastmod>2016-09-10T09:03:54-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://charltonaustin.com/posts/a-review-of-an-introduction-to-programming-in-go/</loc>
     <lastmod>2016-09-02T09:03:54-04:00</lastmod>
   </url>
@@ -358,11 +393,6 @@
   </url>
   
   <url>
-    <loc>https://charltonaustin.com/tags/algorithms/</loc>
-    <lastmod>2016-08-03T09:03:54-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://charltonaustin.com/posts/binary-search-of-sorted-array-in-clojure-basic-algorithms-part-three/</loc>
     <lastmod>2016-08-03T09:03:54-04:00</lastmod>
   </url>
@@ -393,13 +423,28 @@
   </url>
   
   <url>
+    <loc>https://charltonaustin.com/tags/functional/</loc>
+    <lastmod>2016-04-26T09:03:54-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://charltonaustin.com/posts/top-down-vs-bottom-up-api-design-in-clojure-part-one/</loc>
+    <lastmod>2016-04-26T09:03:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://charltonaustin.com/tags/top-down/</loc>
     <lastmod>2016-04-26T09:03:54-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://charltonaustin.com/posts/clojure-sieve-of-eratosthenes/</loc>
     <lastmod>2016-04-24T09:03:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://charltonaustin.com/tags/haskell/</loc>
+    <lastmod>2016-04-20T09:03:54-04:00</lastmod>
   </url>
   
   <url>
@@ -410,6 +455,11 @@
   <url>
     <loc>https://charltonaustin.com/posts/top-down-vs-bottom-up-api-design-in-clojure-part-zero/</loc>
     <lastmod>2016-04-20T09:03:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://charltonaustin.com/tags/python/</loc>
+    <lastmod>2016-04-13T09:03:54-04:00</lastmod>
   </url>
   
   <url>
@@ -428,13 +478,13 @@
   </url>
   
   <url>
-    <loc>https://charltonaustin.com/tags/python/</loc>
+    <loc>https://charltonaustin.com/posts/python-source-code-gems/</loc>
     <lastmod>2016-04-04T09:03:54-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://charltonaustin.com/posts/python-source-code-gems/</loc>
-    <lastmod>2016-04-04T09:03:54-04:00</lastmod>
+    <loc>https://charltonaustin.com/tags/java/</loc>
+    <lastmod>2016-03-03T09:03:54-04:00</lastmod>
   </url>
   
   <url>
@@ -463,11 +513,6 @@
   </url>
   
   <url>
-    <loc>https://charltonaustin.com/tags/java/</loc>
-    <lastmod>2015-10-24T09:03:54-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://charltonaustin.com/tags/multi-threaded/</loc>
     <lastmod>2015-10-24T09:03:54-04:00</lastmod>
   </url>
@@ -489,11 +534,6 @@
   
   <url>
     <loc>https://charltonaustin.com/posts/configurator-boxen-or-things-to-wrangle-your-environment/</loc>
-    <lastmod>2015-09-19T09:03:54-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://charltonaustin.com/tags/devops/</loc>
     <lastmod>2015-09-19T09:03:54-04:00</lastmod>
   </url>
   

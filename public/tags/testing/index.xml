@@ -40,6 +40,15 @@ One of the gems Here&amp;rsquo;s an example of one of the gems from the Berkeley
     </item>
     
     <item>
+      <title>Unit Testing With Higher Order Functions</title>
+      <link>https://charltonaustin.com/posts/unit-testing-with-higher-order-functions/</link>
+      <pubDate>Wed, 13 Apr 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/unit-testing-with-higher-order-functions/</guid>
+      <description>Recently I was writing an interesting bit of Python software that had a couple of layers. There were some high level objects that dealt with some domain logic and then some lower level objects that did more of the nitty gritty interactions with the operating system. When I first started thinking about writing the lower level interface, I was a little afraid that writing the unit tests was going to be difficult.</description>
+    </item>
+    
+    <item>
       <title>Refactoring Tests For Maintainability</title>
       <link>https://charltonaustin.com/posts/refactoring-tests-for-maintainability/</link>
       <pubDate>Wed, 28 Jan 2015 09:03:54 -0400</pubDate>

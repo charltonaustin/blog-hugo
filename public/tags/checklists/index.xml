@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>checklists on Charlton Austin</title>
+    <link>https://charltonaustin.com/tags/checklists/</link>
+    <description>Recent content in checklists on Charlton Austin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 09 Sep 2019 09:03:54 -0400</lastBuildDate>
+    
+	<atom:link href="https://charltonaustin.com/tags/checklists/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using Checklist In Software Development</title>
+      <link>https://charltonaustin.com/posts/using-checklist-in-software-development/</link>
+      <pubDate>Mon, 09 Sep 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/using-checklist-in-software-development/</guid>
+      <description>The dream For some time I have been wanting to incorporate checklist into the development project. My initial inspiration came from The Checklist Manifesto. The book which was initially published in 2009 sent me frantically searching for checklists in software development. At the time I couldn&amp;rsquo;t find any. Today I use the treasure trove of checklists from Code Complete Two by Steve McConnell. This blog post will describe the use of checklists at my company.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -55,6 +55,16 @@ So the coding challenge is given an array with N numbers m such that m &amp;lt; 
     </item>
     
     <item>
+      <title>Top Down Vs Bottom Up Api Design In Clojure Part One</title>
+      <link>https://charltonaustin.com/posts/top-down-vs-bottom-up-api-design-in-clojure-part-one/</link>
+      <pubDate>Tue, 26 Apr 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/top-down-vs-bottom-up-api-design-in-clojure-part-one/</guid>
+      <description>Recently in my last post&amp;hellip; Recently I posted about the difference between top down vs bottom up design in Clojure, if you haven&amp;rsquo;t read it then you should. This post is the second part about the differences in both code quality and experience between tope down and bottom up approaches. You can see the commits here.
+First impressions It took me 14 functions using the outside-in method vs 15 functions with the inside-out method.</description>
+    </item>
+    
+    <item>
       <title>Clojure Sieve Of Eratosthenes</title>
       <link>https://charltonaustin.com/posts/clojure-sieve-of-eratosthenes/</link>
       <pubDate>Sun, 24 Apr 2016 09:03:54 -0400</pubDate>
@@ -62,6 +72,15 @@ So the coding challenge is given an array with N numbers m such that m &amp;lt; 
       <guid>https://charltonaustin.com/posts/clojure-sieve-of-eratosthenes/</guid>
       <description>I was recently watching a video on Haskell that was showing how you would write a functional form of the Sieve of Eratosthenes. I personally love this algorithm and was interested in what it looked like in Clojure. So I wrote this:
 (defn sieve [number xs] (if (= 0 number) xs (conj (sieve (dec number) (filter #(not= 0 (mod % (first xs))) (rest xs))) (first xs)))) This works, but Clojure doesn&amp;rsquo;t have tail call optimization (TCO) by default which means you can get a stack StackOverflowError.</description>
+    </item>
+    
+    <item>
+      <title>Top Down Vs Bottom Up Api Design In Clojure Part Zero</title>
+      <link>https://charltonaustin.com/posts/top-down-vs-bottom-up-api-design-in-clojure-part-zero/</link>
+      <pubDate>Wed, 20 Apr 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/top-down-vs-bottom-up-api-design-in-clojure-part-zero/</guid>
+      <description>Intro I saw a lot of presentations at Clojure/conj 2015. Most of them were really great, but one of them I was particularly interested in seeing didn&amp;rsquo;t really do it for me. It was called Bottom Up vs Top Down Design in Clojure by Mark Bastian. I thought his presentation was interesting, but it failed to touch on a couple of points that I was interested in. In an effort to learn a bit, I figured I would write post about what I was hoping the talk would actually address.</description>
     </item>
     
     <item>

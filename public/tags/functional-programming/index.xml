@@ -54,6 +54,17 @@ So the coding challenge is given an array with N numbers m such that m &amp;lt; 
     </item>
     
     <item>
+      <title>The Count Down Problem</title>
+      <link>https://charltonaustin.com/posts/the-count-down-problem/</link>
+      <pubDate>Wed, 20 Apr 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/the-count-down-problem/</guid>
+      <description>Recently I&amp;rsquo;ve been watching a wonderful set of videos about Haskell during my lunch break. If you are interested in Haskell and functional programming I would definitely recommend the videos.
+I found lecture 11 particularly interesting because of a paper that was written about the content here.
+The paper is interesting because it shows how you can write a proof for an implementation of a problem in Haskell, then create transformations that speed up that implementation and prove that those transformations are also correct.</description>
+    </item>
+    
+    <item>
       <title>Clojure Web Scraper</title>
       <link>https://charltonaustin.com/posts/clojure-web-scraper/</link>
       <pubDate>Fri, 01 Mar 2013 09:03:54 -0400</pubDate>

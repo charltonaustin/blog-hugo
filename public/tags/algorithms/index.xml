@@ -6,10 +6,38 @@
     <description>Recent content in algorithms on Charlton Austin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 03 Aug 2016 09:03:54 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 15 Nov 2019 09:03:54 -0400</lastBuildDate>
     
 	<atom:link href="https://charltonaustin.com/tags/algorithms/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The Telegram Problem</title>
+      <link>https://charltonaustin.com/posts/the-telegram-problem/</link>
+      <pubDate>Fri, 15 Nov 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/the-telegram-problem/</guid>
+      <description>The problem Write a program that takes a number w, then accepts lines of text and outputs lines of text, where the output lines have as many words as possible but are never longer than w characters. Words may not be split, but you may assume that no single word is too long for a line. Source
+Solution This is a straightforward problem when it comes down to it, but it takes some thinking to get there.</description>
+    </item>
+    
+    <item>
+      <title>Sudoku Using Go Lang</title>
+      <link>https://charltonaustin.com/posts/sudoku-using-go-lang/</link>
+      <pubDate>Wed, 01 May 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/sudoku-using-go-lang/</guid>
+      <description>Algorithms A friend of mine recently started looking for work and we were talking about the interview process. She brought up the fact that often coding every day as a professional looks nothing like the toy problems in interviews. This got me thinking about a surprise question that I had during an interview. I was asked to create a Sudoku solver. At the time I was pretty vexed. I&amp;rsquo;ve never worked as a game programmer.</description>
+    </item>
+    
+    <item>
+      <title>The Importance Of Toy Problems</title>
+      <link>https://charltonaustin.com/posts/the-importance-of-toy-problems/</link>
+      <pubDate>Sat, 06 Aug 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/the-importance-of-toy-problems/</guid>
+      <description>As a software engineer I find that I rarely get to practice the fundamentals of computer science. I also rarely get a chance to practice the kinds of problems at work. At the school that I&amp;rsquo;m currently teaching one thing that the students have been doing every day is called &amp;lsquo;toy problems&amp;rsquo;. Toy problems are a pretty straight forward concept. They are problems that should make you think a bit, shouldn&amp;rsquo;t take too long, and let you exercise your programming muscles.</description>
+    </item>
     
     <item>
       <title>Binary Search Of Sorted Array In Clojure Basic Algorithms Part Three</title>
@@ -20,6 +48,17 @@
       <description>The problem Find an element in a sorted array using binary search
 The solution The solution is pretty straight forward. I added in some printlns to get a sense of how we drill down in the recursion to find the element.
 (defn binary-search [v value] (loop [low 0 high (dec (count v)) depth 0] (let [half-way (quot (+ high low) 2)] (do (println (str &amp;#34;half-way is &amp;#34; half-way)) (println (str &amp;#34;low is &amp;#34; low)) (println (str &amp;#34;high is &amp;#34; high)) (println (str &amp;#34;depth is &amp;#34; depth)) (if (&amp;lt;= high (inc low)) (cond (= value (v low)) low (= value (v high)) high :else nil) (let [middle (quot (+ low high) 2)] (if (&amp;lt; (v middle) value) (recur (inc middle) high (inc depth)) (recur low middle (inc depth))))))))) You can call the function like this:</description>
+    </item>
+    
+    <item>
+      <title>The Count Down Problem</title>
+      <link>https://charltonaustin.com/posts/the-count-down-problem/</link>
+      <pubDate>Wed, 20 Apr 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/the-count-down-problem/</guid>
+      <description>Recently I&amp;rsquo;ve been watching a wonderful set of videos about Haskell during my lunch break. If you are interested in Haskell and functional programming I would definitely recommend the videos.
+I found lecture 11 particularly interesting because of a paper that was written about the content here.
+The paper is interesting because it shows how you can write a proof for an implementation of a problem in Haskell, then create transformations that speed up that implementation and prove that those transformations are also correct.</description>
     </item>
     
   </channel>

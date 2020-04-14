@@ -6,10 +6,19 @@
     <description>Recent content in golang on Charlton Austin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 10 Sep 2016 09:03:54 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 01 May 2019 09:03:54 -0400</lastBuildDate>
     
 	<atom:link href="https://charltonaustin.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Sudoku Using Go Lang</title>
+      <link>https://charltonaustin.com/posts/sudoku-using-go-lang/</link>
+      <pubDate>Wed, 01 May 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/sudoku-using-go-lang/</guid>
+      <description>Algorithms A friend of mine recently started looking for work and we were talking about the interview process. She brought up the fact that often coding every day as a professional looks nothing like the toy problems in interviews. This got me thinking about a surprise question that I had during an interview. I was asked to create a Sudoku solver. At the time I was pretty vexed. I&amp;rsquo;ve never worked as a game programmer.</description>
+    </item>
     
     <item>
       <title>Creating A Web Api With Golang</title>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ethical coding on Charlton Austin</title>
+    <link>https://charltonaustin.com/tags/ethical-coding/</link>
+    <description>Recent content in ethical coding on Charlton Austin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 09 Jul 2018 09:03:54 -0400</lastBuildDate>
+    
+	<atom:link href="https://charltonaustin.com/tags/ethical-coding/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>What Does It Mean To Write Ethical Code</title>
+      <link>https://charltonaustin.com/posts/what-does-it-mean-to-write-ethical-code/</link>
+      <pubDate>Mon, 09 Jul 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/what-does-it-mean-to-write-ethical-code/</guid>
+      <description>Recently I read a report from the 2018 stack overflow survey, here.
+From the survey:
+ Only tiny fractions of developers say that they would write unethical code or that they have no obligation to consider the ethical implications of code, but beyond that, respondents see a lot of ethical gray.
+ Given the recent investigation into Facebook. I thought it might be prudent to do a little thinking and writing about what it means to write code ethically.</description>
+    </item>
+    
+  </channel>
+</rss>

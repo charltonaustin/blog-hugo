@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hiring on Charlton Austin</title>
+    <link>https://charltonaustin.com/tags/hiring/</link>
+    <description>Recent content in hiring on Charlton Austin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 10 Dec 2019 09:03:54 -0400</lastBuildDate>
+    
+	<atom:link href="https://charltonaustin.com/tags/hiring/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Importance Of History</title>
+      <link>https://charltonaustin.com/posts/the-importance-of-history/</link>
+      <pubDate>Tue, 10 Dec 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/the-importance-of-history/</guid>
+      <description>History, what is it good for? When I interview someone I often ask, &amp;ldquo;Where did object oriented programming (OOP) come from?&amp;rdquo; There generally isn&amp;rsquo;t a right or wrong answer to this in the interview. You can go look up whether a particular answer is consistent with what&amp;rsquo;s on the internet. However you could give several answers that would all be right. You might say, &amp;ldquo;it was pioneered in Sketchpad.&amp;rdquo; Or you might say, &amp;ldquo;it came out of the atom in LISP.</description>
+    </item>
+    
+  </channel>
+</rss>

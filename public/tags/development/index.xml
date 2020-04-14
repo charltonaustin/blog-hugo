@@ -31,6 +31,15 @@ The solution Three simple scripts. The first should be run by all engineers that
     </item>
     
     <item>
+      <title>Using Checklist In Software Development</title>
+      <link>https://charltonaustin.com/posts/using-checklist-in-software-development/</link>
+      <pubDate>Mon, 09 Sep 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/using-checklist-in-software-development/</guid>
+      <description>The dream For some time I have been wanting to incorporate checklist into the development project. My initial inspiration came from The Checklist Manifesto. The book which was initially published in 2009 sent me frantically searching for checklists in software development. At the time I couldn&amp;rsquo;t find any. Today I use the treasure trove of checklists from Code Complete Two by Steve McConnell. This blog post will describe the use of checklists at my company.</description>
+    </item>
+    
+    <item>
       <title>Euler Problem 026</title>
       <link>https://charltonaustin.com/posts/euler-problem-026/</link>
       <pubDate>Mon, 19 Aug 2019 09:03:54 -0400</pubDate>
@@ -100,6 +109,18 @@ Solution This solution is straight forward. We satisfy the constraint that a &am
       
       <guid>https://charltonaustin.com/posts/load-and-performance-testing-with-flask/</guid>
       <description>The problem At my current gig, we&amp;rsquo;ve spent some time building out our initial product. Things have been going well, and we have been growing. These days we started to notice that some over our API endpoints weren&amp;rsquo;t as responsive as before. We&amp;rsquo;ve also started to increase our number of users significantly. To that end, it was time for us to start measuring our requests and fixing them if necessary.</description>
+    </item>
+    
+    <item>
+      <title>What Does It Mean To Write Ethical Code</title>
+      <link>https://charltonaustin.com/posts/what-does-it-mean-to-write-ethical-code/</link>
+      <pubDate>Mon, 09 Jul 2018 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/what-does-it-mean-to-write-ethical-code/</guid>
+      <description>Recently I read a report from the 2018 stack overflow survey, here.
+From the survey:
+ Only tiny fractions of developers say that they would write unethical code or that they have no obligation to consider the ethical implications of code, but beyond that, respondents see a lot of ethical gray.
+ Given the recent investigation into Facebook. I thought it might be prudent to do a little thinking and writing about what it means to write code ethically.</description>
     </item>
     
     <item>
@@ -250,6 +271,15 @@ The time complexity of this is O( n^2 ) which isn&amp;rsquo;t great.</descriptio
     </item>
     
     <item>
+      <title>The Importance Of Toy Problems</title>
+      <link>https://charltonaustin.com/posts/the-importance-of-toy-problems/</link>
+      <pubDate>Sat, 06 Aug 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/the-importance-of-toy-problems/</guid>
+      <description>As a software engineer I find that I rarely get to practice the fundamentals of computer science. I also rarely get a chance to practice the kinds of problems at work. At the school that I&amp;rsquo;m currently teaching one thing that the students have been doing every day is called &amp;lsquo;toy problems&amp;rsquo;. Toy problems are a pretty straight forward concept. They are problems that should make you think a bit, shouldn&amp;rsquo;t take too long, and let you exercise your programming muscles.</description>
+    </item>
+    
+    <item>
       <title>Binary Search Of Sorted Array In Clojure Basic Algorithms Part Three</title>
       <link>https://charltonaustin.com/posts/binary-search-of-sorted-array-in-clojure-basic-algorithms-part-three/</link>
       <pubDate>Wed, 03 Aug 2016 09:03:54 -0400</pubDate>
@@ -282,6 +312,34 @@ So the coding challenge is given an array with N numbers m such that m &amp;lt; 
     </item>
     
     <item>
+      <title>Top Down Vs Bottom Up Api Design In Clojure Part One</title>
+      <link>https://charltonaustin.com/posts/top-down-vs-bottom-up-api-design-in-clojure-part-one/</link>
+      <pubDate>Tue, 26 Apr 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/top-down-vs-bottom-up-api-design-in-clojure-part-one/</guid>
+      <description>Recently in my last post&amp;hellip; Recently I posted about the difference between top down vs bottom up design in Clojure, if you haven&amp;rsquo;t read it then you should. This post is the second part about the differences in both code quality and experience between tope down and bottom up approaches. You can see the commits here.
+First impressions It took me 14 functions using the outside-in method vs 15 functions with the inside-out method.</description>
+    </item>
+    
+    <item>
+      <title>Top Down Vs Bottom Up Api Design In Clojure Part Zero</title>
+      <link>https://charltonaustin.com/posts/top-down-vs-bottom-up-api-design-in-clojure-part-zero/</link>
+      <pubDate>Wed, 20 Apr 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/top-down-vs-bottom-up-api-design-in-clojure-part-zero/</guid>
+      <description>Intro I saw a lot of presentations at Clojure/conj 2015. Most of them were really great, but one of them I was particularly interested in seeing didn&amp;rsquo;t really do it for me. It was called Bottom Up vs Top Down Design in Clojure by Mark Bastian. I thought his presentation was interesting, but it failed to touch on a couple of points that I was interested in. In an effort to learn a bit, I figured I would write post about what I was hoping the talk would actually address.</description>
+    </item>
+    
+    <item>
+      <title>Unit Testing With Higher Order Functions</title>
+      <link>https://charltonaustin.com/posts/unit-testing-with-higher-order-functions/</link>
+      <pubDate>Wed, 13 Apr 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/unit-testing-with-higher-order-functions/</guid>
+      <description>Recently I was writing an interesting bit of Python software that had a couple of layers. There were some high level objects that dealt with some domain logic and then some lower level objects that did more of the nitty gritty interactions with the operating system. When I first started thinking about writing the lower level interface, I was a little afraid that writing the unit tests was going to be difficult.</description>
+    </item>
+    
+    <item>
       <title>Does Unit Testing Make Me Slower</title>
       <link>https://charltonaustin.com/posts/does-unit-testing-make-me-slower/</link>
       <pubDate>Tue, 12 Apr 2016 09:03:54 -0400</pubDate>
@@ -292,12 +350,32 @@ My initial reaction in my head was &amp;ldquo;Whoa that&amp;rsquo;s silly&amp;rd
     </item>
     
     <item>
+      <title>Writing Distributed Test Reduction</title>
+      <link>https://charltonaustin.com/posts/writing-distributed-test-reduction/</link>
+      <pubDate>Thu, 07 Apr 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/writing-distributed-test-reduction/</guid>
+      <description>The Problem I recently joined HedgeServ a fintech company and one of my first tasks at the new job has been dealing with how long it takes tests to run. The company has some great end to end test coverage, but the testing time can be rather long (think hours).
+The solution Paul Hammant, my mentor of sorts wrote a blog post about only running tests that actually need to be run when you change a source code set.</description>
+    </item>
+    
+    <item>
       <title>Python Source Code Gems</title>
       <link>https://charltonaustin.com/posts/python-source-code-gems/</link>
       <pubDate>Mon, 04 Apr 2016 09:03:54 -0400</pubDate>
       
       <guid>https://charltonaustin.com/posts/python-source-code-gems/</guid>
       <description>So fairly regularly I read about and dip into the python source code. For some reason there seems to be a great deal of beautiful and interesting code in both the c and the standard libraries and tests for python. The other day I was doing some reading about generators (I was thinking about how to marry the ideas of functional and object oriented programming) and I came across something that I found fascinating as well beautiful so I decided I should share it here on this silly little blog.</description>
+    </item>
+    
+    <item>
+      <title>The Expression Problem</title>
+      <link>https://charltonaustin.com/posts/the-expression-problem/</link>
+      <pubDate>Thu, 03 Mar 2016 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/the-expression-problem/</guid>
+      <description>What is the expression problem? The expression problem is the idea that it is easy to add new functions for simple data types without changing the data types, while it is hard to add data types without changing all the functions. At the same time it is easy to add data types with objects (complex data types), while it is hard to add functions without changing all the objects.
+Some great descriptions of this include chapter 6 of Uncle Bob&amp;rsquo;s book Clean Code.</description>
     </item>
     
     <item>
