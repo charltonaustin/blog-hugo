@@ -6,10 +6,20 @@
     <description>Recent content in toy problems on Charlton Austin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 19 Aug 2019 09:03:54 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 15 Nov 2019 09:03:54 -0400</lastBuildDate>
     
 	<atom:link href="https://charltonaustin.com/tags/toy-problems/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The Telegram Problem</title>
+      <link>https://charltonaustin.com/posts/the-telegram-problem/</link>
+      <pubDate>Fri, 15 Nov 2019 09:03:54 -0400</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/the-telegram-problem/</guid>
+      <description>The problem Write a program that takes a number w, then accepts lines of text and outputs lines of text, where the output lines have as many words as possible but are never longer than w characters. Words may not be split, but you may assume that no single word is too long for a line. Source
+Solution This is a straightforward problem when it comes down to it, but it takes some thinking to get there.</description>
+    </item>
     
     <item>
       <title>Euler Problem 026</title>
