@@ -1,7 +1,8 @@
-+++
-title = "About"
-slug = "about"
-+++
+---
+title: "About"
+slug: "about"
+date: 2020-05-15T09:03:54-04:00
+---
 # A Blog to Help Software Engineers Grow
 
 

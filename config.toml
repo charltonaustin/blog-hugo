@@ -30,7 +30,7 @@ googleAnalytics = "your_google_analytics_id"
 
     hidecredits = false
     hidecopyright = false
-    enableRSS = false
+    enableRSS = true
     enableToc = true
     enableDisqus = false
 
