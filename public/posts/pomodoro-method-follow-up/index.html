@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Charlton Austin">
+		<meta name="description" content="Charlton Austin&#39;s personal website">
+		<meta name="generator" content="Hugo 0.64.1" />
+		<title>Pomodoro Method Follow Up &middot; Charlton Austin</title>
+		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
+		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
+		<link rel="stylesheet" href="https://charltonaustin.com/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://charltonaustin.com/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://charltonaustin.com/index.xml" rel="alternate" type="application/rss+xml" title="Charlton Austin" />
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://charltonaustin.com/'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://charltonaustin.com/posts'>Archive</a>
+	<a href='https://charltonaustin.com/tags'>Tags</a>
+	<a href='https://charltonaustin.com/about'>About</a>
+
+	
+
+	
+	<a class="cta" href="https://charltonaustin.com/index.xml">Subscribe</a>
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Pomodoro Method Follow Up
+                    </h1>
+                    <h2 class="headline">
+                    Apr 27, 2020 07:00
+                    · 314 words
+                    · 2 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://charltonaustin.com/tags/pomodoro">pomodoro</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#pomodoro-technique">Pomodoro Technique</a></li>
+    <li><a href="#the-scripts">The scripts</a></li>
+    <li><a href="#upgrades">Upgrades</a></li>
+    <li><a href="#gotcha">Gotcha!!</a></li>
+  </ul>
+</nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    <h2 id="pomodoro-technique">Pomodoro Technique</h2>
+<p>I&rsquo;ve blogged about it before.
+Recently I dusted off my old method and tried to implement it.
+I found that there were some rather strange problems with my old method and MacOS.
+So I wanted to help some people.</p>
+<h2 id="the-scripts">The scripts</h2>
+<p>We have a few scripts.
+We have a <a href="https://github.com/charltonaustin/dotfiles/blob/master/bin/delayed_mac">delayed_mac</a> script.
+This script just takes a command and a time in mins.
+It executes the command that many mins later.
+Next we have a <a href="https://github.com/charltonaustin/dotfiles/blob/master/bin/take_a_break">take_a_break</a> script.
+It sets a timer a timer for 5 or 15 mins later depending on your choice.
+It will run the pomondoro script after time is up.
+Next we have a <a href="https://github.com/charltonaustin/dotfiles/blob/master/bin/pomodoro">pomodoro</a> script.
+It asks you what your task is and then sets sets up to run the break script 25 mins later.
+All of this is written to a file which is gets rolled up with a timestamp.
+The scripts use <a href="https://www.freebsd.org/cgi/man.cgi?query=atrun&amp;sektion=8">atrun</a> to schedule the tasks.</p>
+<h2 id="upgrades">Upgrades</h2>
+<p>Finally I added a new feature.
+The scripts now play an alarm.
+This way I know when it is time to get back to work.
+You can see the script <a href="https://github.com/charltonaustin/dotfiles/blob/master/bin/play_alarm">here</a></p>
+<h2 id="gotcha">Gotcha!!</h2>
+<p>One problem I had with the script was it would silently fail.
+Mac recently updated it&rsquo;s plist so that they are binary.
+I noticed the change when I moved from Mojave to Catalina.
+By default the at run plist located at /System/Library/LaunchDaemons/com.apple.atrun.plist is turned off.
+Before you could modify the file by turning off system integrity process.
+But with the new binary I couldn&rsquo;t even get that to work.
+In the end I had to do two things.
+First you have to enable the atrun background process overriding the config.
+You can simply run this command.</p>
+<p><code>launchctl load -Fw /System/Library/LaunchDaemons/com.apple.atrun.plist</code></p>
+<p>Next you have to update the Security and Privacy settings in System Settings.
+In particular you have to give atrun and your terminal program full disk access.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2fpomodoro-method-follow-up%2f - Pomodoro%20Method%20Follow%20Up by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/charltonaustin">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/charltonaustin">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://charltonaustin.com/js/jquery-3.3.1.min.js"></script>
+<script src="https://charltonaustin.com/js/main.js"></script>
+<script src="https://charltonaustin.com/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

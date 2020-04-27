@@ -3,17 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://charltonaustin.com/posts/applications-integrating-on-the-database/</loc>
-    <lastmod>2020-03-25T09:03:54-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://charltonaustin.com/categories/</loc>
-    <lastmod>2020-03-25T09:03:54-04:00</lastmod>
+    <lastmod>2020-04-27T07:00:54-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://charltonaustin.com/</loc>
+    <lastmod>2020-04-27T07:00:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://charltonaustin.com/categories/management/</loc>
+    <lastmod>2020-04-27T07:00:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://charltonaustin.com/tags/pomodoro/</loc>
+    <lastmod>2020-04-27T07:00:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://charltonaustin.com/posts/pomodoro-method-follow-up/</loc>
+    <lastmod>2020-04-27T07:00:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://charltonaustin.com/posts/</loc>
+    <lastmod>2020-04-27T07:00:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://charltonaustin.com/tags/</loc>
+    <lastmod>2020-04-27T07:00:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://charltonaustin.com/posts/applications-integrating-on-the-database/</loc>
     <lastmod>2020-03-25T09:03:54-04:00</lastmod>
   </url>
   
@@ -23,22 +48,12 @@
   </url>
   
   <url>
-    <loc>https://charltonaustin.com/tags/development/</loc>
-    <lastmod>2020-03-25T09:03:54-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://charltonaustin.com/categories/development/</loc>
     <lastmod>2020-03-25T09:03:54-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://charltonaustin.com/posts/</loc>
-    <lastmod>2020-03-25T09:03:54-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://charltonaustin.com/tags/</loc>
+    <loc>https://charltonaustin.com/tags/development/</loc>
     <lastmod>2020-03-25T09:03:54-04:00</lastmod>
   </url>
   
@@ -64,11 +79,6 @@
   
   <url>
     <loc>https://charltonaustin.com/tags/management/</loc>
-    <lastmod>2020-01-14T09:03:54-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://charltonaustin.com/categories/management/</loc>
     <lastmod>2020-01-14T09:03:54-04:00</lastmod>
   </url>
   
@@ -240,11 +250,6 @@
   <url>
     <loc>https://charltonaustin.com/posts/euler-problem-008/</loc>
     <lastmod>2018-04-02T09:03:54-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://charltonaustin.com/tags/pomodoro/</loc>
-    <lastmod>2018-03-29T09:03:54-04:00</lastmod>
   </url>
   
   <url>
