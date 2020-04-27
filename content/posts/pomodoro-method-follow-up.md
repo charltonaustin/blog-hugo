@@ -1,7 +1,7 @@
 ---
 title: Pomodoro Method Follow Up
-date: 
-draft: true
+date: 2020-04-27T07:00:54-04:00
+draft: false
 description: "How to amp up your desktop pomodoro game."
 tags: [
     "pomodoro",
