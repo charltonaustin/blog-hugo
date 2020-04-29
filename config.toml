@@ -12,7 +12,7 @@ pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 hasCJKLanguage = true
 
-googleAnalytics = "your_google_analytics_id"
+googleAnalytics = "UA-164961268-1"
 [params]
     author = "Charlton Austin"
 	bio = ""
