@@ -1,6 +1,6 @@
 ---
 title: Why You Should Emulate Containers in Python
-date: 
+date: 2020-08-05T10:17:05-05:00
 draft: true
 description: "Why story points should be tied to time and what that does for you."
 tags: [

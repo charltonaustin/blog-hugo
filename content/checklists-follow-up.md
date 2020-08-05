@@ -1,6 +1,6 @@
 ---
 title: Checklists Follow Up
-date: 
+date: 2020-08-05T10:17:05-05:00
 draft: true
 description: "How is the checklist dream coming? Read this to find out more."
 tags: [
