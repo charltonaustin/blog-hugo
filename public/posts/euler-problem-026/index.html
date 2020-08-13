@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.64.1" />
+		<meta name="generator" content="Hugo 0.74.3" />
 		<title>Euler Problem 026 &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -99,7 +99,7 @@
 </code></pre>
 <p>Where 0.1(6) means 0.166666&hellip;, and has a 1-digit recurring cycle. It can be seen that 1/7 has a 6-digit recurring cycle.</p>
 <p>Find the value of d &lt; 1000 for which 1/d contains the longest recurring cycle in its decimal fraction part.</p>
-<h4 id="solution-">Solution</h4>
+<h4 id="solution">Solution</h4>
 <p>The problem is an interesting one. My initial thoughts lead me down the path of seeing if I could find cycles using JavaScript division, but I realized that it wasn&rsquo;t necessary. I&rsquo;m not particularly proud of my solution to this problem. There are a number of things that I&rsquo;m still a little shaky on. First I only find the longest non terminating decimal sequence. That is I don&rsquo;t remove any leading digits that might not be a part of the cycle. For instance in my algorithm 1/6 = 0.1(6) should have a cycle of 1 but I give it a length of two. This doesn&rsquo;t actually matter because 1/983 has the longest cycle regardless, but this might not work for other number ranges. In any case here is my solution. I could do some more optimizations, but it runs rather quickly (<code>Finished in 0.046 seconds</code>).</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="font-weight:bold">var</span> findNum = (num, den) =&gt;{
   <span style="font-weight:bold">while</span>(den &gt; num){

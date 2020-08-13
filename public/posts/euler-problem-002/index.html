@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.64.1" />
+		<meta name="generator" content="Hugo 0.74.3" />
 		<title>Euler Problem 002 &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -91,7 +91,7 @@ the first 10 terms will be:</p>
 <p>By considering the terms in the Fibonacci sequence
 whose values do not exceed four million, find
 the sum of the even-valued terms.</p>
-<h6 id="solution-">Solution</h6>
+<h6 id="solution">Solution</h6>
 <p>This is a pretty straight forward problem. We generate the the Fibonacci number and as we go we can check if it isEven keeping track of the sum. Note we don&rsquo;t actually have to check if the number is even. An odd integer plus an odd integer is even. So every third term we have an even integer. Which means we could just keep track of the count and add only the even integers, but the solution that is presented here goes fast enough that I didn&rsquo;t really bother with it.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="font-weight:bold">var</span> isEven = <span style="font-weight:bold">function</span>(number){
   <span style="font-weight:bold">return</span> number % 2 === 0;

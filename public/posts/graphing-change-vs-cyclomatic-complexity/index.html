@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.64.1" />
+		<meta name="generator" content="Hugo 0.74.3" />
 		<title>Graphing Change Vs Cyclomatic Complexity &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -50,7 +50,7 @@
                     </h1>
                     <h2 class="headline">
                     Jun 10, 2019 09:03
-                    · 1012 words
+                    · 1013 words
                     · 5 minute read
                       <span class="tags">
                       
@@ -143,26 +143,26 @@ This produces a file with something like the previous output just JS instead of 
 <span style="font-weight:bold">import</span> <span style="font-weight:bold">matplotlib.pyplot</span> <span style="font-weight:bold">as</span> <span style="font-weight:bold">plt</span>
 <span style="font-weight:bold">import</span> <span style="font-weight:bold">mplcursors</span>
 
-base_dir = os.environ.get(<span style="font-style:italic"></span><span style="font-style:italic">&#39;</span><span style="font-style:italic">PROJECT_HOME</span><span style="font-style:italic">&#39;</span>)
+base_dir = os.environ.get(<span style="font-style:italic">&#39;PROJECT_HOME&#39;</span>)
 <span style="font-weight:bold">if</span> <span style="font-weight:bold">not</span> base_dir:
-  <span style="font-weight:bold">print</span>(<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">Please set PROJECT_HOME environment variable</span><span style="font-style:italic">&#34;</span>)
+  <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Please set PROJECT_HOME environment variable&#34;</span>)
 
 project_name = sys.argv[1]
-changes_file_name = f<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">{base_dir}/{project_name}/changes.txt</span><span style="font-style:italic">&#34;</span>
-cc_file_name = f<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">{base_dir}/{project_name}/cc.txt</span><span style="font-style:italic">&#34;</span>
+changes_file_name = f<span style="font-style:italic">&#34;{base_dir}/{project_name}/changes.txt&#34;</span>
+cc_file_name = f<span style="font-style:italic">&#34;{base_dir}/{project_name}/cc.txt&#34;</span>
 
 
 <span style="font-weight:bold">def</span> get_data(file_name_):
   data = {}
   names = set()
-  <span style="font-weight:bold">with</span> open(file_name_, <span style="font-style:italic"></span><span style="font-style:italic">&#39;</span><span style="font-style:italic">r</span><span style="font-style:italic">&#39;</span>) <span style="font-weight:bold">as</span> file:
+  <span style="font-weight:bold">with</span> open(file_name_, <span style="font-style:italic">&#39;r&#39;</span>) <span style="font-weight:bold">as</span> file:
     <span style="font-weight:bold">for</span> cnt, line <span style="font-weight:bold">in</span> enumerate(file):
       <span style="font-weight:bold">try</span>:
-        d, name = line.strip().split(<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic"> </span><span style="font-style:italic">&#34;</span>)
+        d, name = line.strip().split(<span style="font-style:italic">&#34; &#34;</span>)
         data[name] = d
         names.add(name)
       <span style="font-weight:bold">except</span> <span style="font-weight:bold">ValueError</span>:
-        <span style="font-weight:bold">print</span>(f<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">skipping line</span><span style="font-weight:bold;font-style:italic">\n</span><span style="font-style:italic"> {line}</span><span style="font-style:italic">&#34;</span>)
+        <span style="font-weight:bold">print</span>(f<span style="font-style:italic">&#34;skipping line</span><span style="font-weight:bold;font-style:italic">\n</span><span style="font-style:italic"> {line}&#34;</span>)
   <span style="font-weight:bold">return</span> data, names
 
 
@@ -178,12 +178,12 @@ fig, ax = plt.subplots()
   y.append(float(changes[file_name]))
   labels.append(file_name)
 
-lines = plt.plot(x, y, <span style="font-style:italic"></span><span style="font-style:italic">&#39;</span><span style="font-style:italic">bo</span><span style="font-style:italic">&#39;</span>)
+lines = plt.plot(x, y, <span style="font-style:italic">&#39;bo&#39;</span>)
 cursor = mplcursors.cursor(hover=True)
-cursor.connect(<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">add</span><span style="font-style:italic">&#34;</span>, <span style="font-weight:bold">lambda</span> sel: sel.annotation.set_text(labels[sel.target.index]))
-plt.xlabel(<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">complexity</span><span style="font-style:italic">&#34;</span>)
-plt.ylabel(<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">number of times changed</span><span style="font-style:italic">&#34;</span>)
-plt.title(f<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">complexity vs churn {project_name}</span><span style="font-style:italic">&#34;</span>)
+cursor.connect(<span style="font-style:italic">&#34;add&#34;</span>, <span style="font-weight:bold">lambda</span> sel: sel.annotation.set_text(labels[sel.target.index]))
+plt.xlabel(<span style="font-style:italic">&#34;complexity&#34;</span>)
+plt.ylabel(<span style="font-style:italic">&#34;number of times changed&#34;</span>)
+plt.title(f<span style="font-style:italic">&#34;complexity vs churn {project_name}&#34;</span>)
 plt.show()
 </code></pre></div><p>Now, none of this graphing code really depends on the project.
 All you really need are two files that are named cc.txt and changes.txt.

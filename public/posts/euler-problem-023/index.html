@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.64.1" />
+		<meta name="generator" content="Hugo 0.74.3" />
 		<title>Euler Problem 023 &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -90,7 +90,7 @@
 <p>A number n is called deficient if the sum of its proper divisors is less than n and it is called abundant if this sum exceeds n.</p>
 <p>As 12 is the smallest abundant number, 1 + 2 + 3 + 4 + 6 = 16, the smallest number that can be written as the sum of two abundant numbers is 24. By mathematical analysis, it can be shown that all integers greater than 28123 can be written as the sum of two abundant numbers. However, this upper limit cannot be reduced any further by analysis even though it is known that the greatest number that cannot be expressed as the sum of two abundant numbers is less than this limit.</p>
 <p>Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.</p>
-<h4 id="solution-">Solution</h4>
+<h4 id="solution">Solution</h4>
 <p>So my initial thoughts with this guys was generate the abundant numbers. Generate all possible numbers up to a point. Then remove the abundant numbers and finally sum up the rest. Unfortunately I misunderstood the problem to begin with. I needed to remove only the numbers that could be represented as the sum of two abundant numbers. So I made the changes giving me an O(n^2) solution with a pesky splice because of javascript.
 The first solution took over two mins some 130s to find the answer.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Finished in 130.656 seconds

@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.64.1" />
+		<meta name="generator" content="Hugo 0.74.3" />
 		<title>Euler Problem 008 &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -108,7 +108,7 @@
 05886116467109405077541002256983155200055935729725
 71636269561882670428252483600823257530420752963450
 </code></pre></div><p>Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?</p>
-<h4 id="solution-">Solution</h4>
+<h4 id="solution">Solution</h4>
 <p>This guy is a pretty fun warm up for the day. A simple loop to walk over the numbers looking in all the possible directions (there are four). Going down and up are the same, going left and right are the same, forward-up is the same as going backward-down, and going forward-down is the same as going backward-up. Then as we traverse we simply keep track of the largest value.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="font-weight:bold">var</span> findLargestMultiple = <span style="font-weight:bold">function</span>(string, length){
   <span style="font-weight:bold">var</span> largestMultiple = 0;

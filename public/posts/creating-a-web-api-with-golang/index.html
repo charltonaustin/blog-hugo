@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.64.1" />
+		<meta name="generator" content="Hugo 0.74.3" />
 		<title>Creating A Web Api With Golang &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -125,7 +125,7 @@ go build -o /tmp/app
 /tmp/app &amp;
 PID=$!
 go test
-echo <span style="font-style:italic">&#34;</span><span style="font-style:italic">killing the app pid: </span>$PID<span style="font-style:italic">&#34;</span>
+echo <span style="font-style:italic">&#34;killing the app pid: </span>$PID<span style="font-style:italic">&#34;</span>
 kill $PID
 </code></pre></div><p>Now here go shines beautifully.
 The test would simply fire up an http client make some requests on a health_check URL I built into the API.

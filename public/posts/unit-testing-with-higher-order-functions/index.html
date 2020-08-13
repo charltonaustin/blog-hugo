@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.64.1" />
+		<meta name="generator" content="Hugo 0.74.3" />
 		<title>Unit Testing With Higher Order Functions &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -88,10 +88,10 @@
                     <p>Recently I was writing an interesting bit of Python software that had a couple of layers. There were some high level objects that dealt with some domain logic and then some lower level objects that did more of the nitty gritty interactions with the operating system. When I first started thinking about writing the lower level interface, I was a little afraid that writing the unit tests was going to be difficult. Wrapping up Sys.out or other IO operations in Java is a standard practice. In the past I have had some trouble patching Python modules.</p>
 <p>We start out with a low level function that does some IO operations.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-weight:bold">def</span> process(line):
-    line.replace(<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">a</span><span style="font-style:italic">&#34;</span>, <span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">b</span><span style="font-style:italic">&#34;</span>)
+    line.replace(<span style="font-style:italic">&#34;a&#34;</span>, <span style="font-style:italic">&#34;b&#34;</span>)
 
 <span style="font-weight:bold">def</span> do_some_work_on_a_file(input_file, output_file):
-    output = open(output_file, <span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">w</span><span style="font-style:italic">&#34;</span>)
+    output = open(output_file, <span style="font-style:italic">&#34;w&#34;</span>)
     <span style="font-weight:bold">with</span> open(input_file) <span style="font-weight:bold">as</span> input_:
         <span style="font-weight:bold">for</span> line <span style="font-weight:bold">in</span> input_:
             output.write(process(line))
@@ -104,19 +104,19 @@
     output_file = tempfile.NamedTemporaryFile()
 
     <span style="font-weight:bold">with</span> open(input_file.name) <span style="font-weight:bold">as</span> file_io:
-        file_io.write(<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">a</span><span style="font-style:italic">&#34;</span>)
+        file_io.write(<span style="font-style:italic">&#34;a&#34;</span>)
 
     do_some_work_on_a_file(input_file.name, output_file.name)
 
     <span style="font-weight:bold">with</span> open(output_file.name) <span style="font-weight:bold">as</span> file_:
-        self.assertEquals(file_.readlines(), <span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">b</span><span style="font-style:italic">&#34;</span>)
+        self.assertEquals(file_.readlines(), <span style="font-style:italic">&#34;b&#34;</span>)
 
 </code></pre></div><p>It would be better to refactor this because as it stands the unit tests will take a while because of Python&rsquo;s open function.</p>
 <p>Fortunately we can do something about this. We simply pull the low level OS function as a parameter with the default set as Python&rsquo;s open function. Then we can use an in, memory alternative to a file in this case StringIO for the testing. Here&rsquo;s what the refactored code looks like:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-weight:bold">def</span> do_some_work_on_a_file(input_file_name,
                            output_file_name,
                            open_=open):
-    output = open_(output_file_name, <span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">w</span><span style="font-style:italic">&#34;</span>)
+    output = open_(output_file_name, <span style="font-style:italic">&#34;w&#34;</span>)
     <span style="font-weight:bold">with</span> open_(input_file_name) <span style="font-weight:bold">as</span> input_:
         <span style="font-weight:bold">for</span> line <span style="font-weight:bold">in</span> input_:
             output.write(process(line))
@@ -127,7 +127,7 @@
     <span style="font-weight:bold">def</span> fake_open(name, mode=None, buffering=None):
         io = StringIO()
         <span style="font-weight:bold">if</span> mode <span style="font-weight:bold">is</span> None:
-            io.write(<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">a</span><span style="font-style:italic">&#34;</span>)
+            io.write(<span style="font-style:italic">&#34;a&#34;</span>)
         callers.append((name, io))
         <span style="font-weight:bold">return</span> io
 
@@ -136,11 +136,11 @@
 <span style="font-weight:bold">def</span> test_do_some_work(self):
     callers, fake_open = fake_open_creator()
 
-    do_some_work_on_a_file(<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">input_file_name</span><span style="font-style:italic">&#34;</span>,
-                           <span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">output_file_name</span><span style="font-style:italic">&#34;</span>,
+    do_some_work_on_a_file(<span style="font-style:italic">&#34;input_file_name&#34;</span>,
+                           <span style="font-style:italic">&#34;output_file_name&#34;</span>,
                            fake_open)
 
-    self.assertEquals(callers[1][1].getvalue(), <span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">b</span><span style="font-style:italic">&#34;</span>)
+    self.assertEquals(callers[1][1].getvalue(), <span style="font-style:italic">&#34;b&#34;</span>)
 </code></pre></div><p>Now there are a couple of problems with this code. The StringIO object doesn&rsquo;t have an <strong>enter</strong>, <strong>exit</strong> method so it will fail on the with statement, but you can monkey patch or use a proper mocking framework to fix this.</p>
 <h3 id="so-what-did-this-get-us">So what did this get us?</h3>
 <p>There are a couple of really nice things we have done here. First, we don&rsquo;t have to worry about global state. The tests have no way of interacting with one another which can happen when you are patching modules and functions. Second, the function definitions is very close to the invocation. You could create a class that wires in the dependency, but I find it is often simpler and leaves the wiring closer to the invocation. Finally, this is a fairly flexible and cheap way of mocking out a function. You can get the same results by using a mocking framework, but sometimes that can obscure the intention of the test.</p>

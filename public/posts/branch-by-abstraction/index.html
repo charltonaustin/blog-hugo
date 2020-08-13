@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.64.1" />
+		<meta name="generator" content="Hugo 0.74.3" />
 		<title>Branch By Abstraction &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -99,7 +99,7 @@ Originally you might have:</p>
 
   @staticmethod
   <span style="font-weight:bold">def</span> drive():
-    <span style="font-weight:bold">print</span>(<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">Let</span><span style="font-style:italic">&#39;</span><span style="font-style:italic">s-a-go!</span><span style="font-style:italic">&#34;</span>)
+    <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
 
 
 <span style="font-weight:bold">def</span> mario_kart():
@@ -122,7 +122,7 @@ mario_kart_ds()
 
   @staticmethod
   <span style="font-weight:bold">def</span> drive():
-    <span style="font-weight:bold">print</span>(<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">Let</span><span style="font-style:italic">&#39;</span><span style="font-style:italic">s-a-go!</span><span style="font-style:italic">&#34;</span>)
+    <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
 
 
 <span style="font-weight:bold">def</span> get_car(system_name):
@@ -130,7 +130,7 @@ mario_kart_ds()
 
 
 <span style="font-weight:bold">def</span> mario_kart():
-  get_car(<span style="font-style:italic"></span><span style="font-style:italic">&#39;</span><span style="font-style:italic">mario_kart</span><span style="font-style:italic">&#39;</span>).drive()
+  get_car(<span style="font-style:italic">&#39;mario_kart&#39;</span>).drive()
 
 
 <span style="font-weight:bold">def</span> mario_kart_arcade():
@@ -149,7 +149,7 @@ mario_kart_ds()
 
   @staticmethod
   <span style="font-weight:bold">def</span> drive():
-    <span style="font-weight:bold">print</span>(<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">Let</span><span style="font-style:italic">&#39;</span><span style="font-style:italic">s-a-go!</span><span style="font-style:italic">&#34;</span>)
+    <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
 
 
 <span style="font-weight:bold">def</span> get_car(system_name):
@@ -157,15 +157,15 @@ mario_kart_ds()
 
 
 <span style="font-weight:bold">def</span> mario_kart():
-  get_car(<span style="font-style:italic"></span><span style="font-style:italic">&#39;</span><span style="font-style:italic">mario_kart</span><span style="font-style:italic">&#39;</span>).drive()
+  get_car(<span style="font-style:italic">&#39;mario_kart&#39;</span>).drive()
 
 
 <span style="font-weight:bold">def</span> mario_kart_arcade():
-  get_car(<span style="font-style:italic"></span><span style="font-style:italic">&#39;</span><span style="font-style:italic">mario_kart_arcade</span><span style="font-style:italic">&#39;</span>).drive()
+  get_car(<span style="font-style:italic">&#39;mario_kart_arcade&#39;</span>).drive()
 
 
 <span style="font-weight:bold">def</span> mario_kart_ds():
-  get_car(<span style="font-style:italic"></span><span style="font-style:italic">&#39;</span><span style="font-style:italic">mario_kart_ds</span><span style="font-style:italic">&#39;</span>).drive()
+  get_car(<span style="font-style:italic">&#39;mario_kart_ds&#39;</span>).drive()
 
 
 mario_kart()
@@ -176,32 +176,32 @@ mario_kart_ds()
 
   @staticmethod
   <span style="font-weight:bold">def</span> drive():
-    <span style="font-weight:bold">print</span>(<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">Let</span><span style="font-style:italic">&#39;</span><span style="font-style:italic">s-a-go!</span><span style="font-style:italic">&#34;</span>)
+    <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
 
 
 <span style="font-weight:bold">class</span> <span style="font-weight:bold">WarioCar</span>(object):
   @staticmethod
   <span style="font-weight:bold">def</span> drive():
-    <span style="font-weight:bold">print</span>(<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">Here I go!</span><span style="font-style:italic">&#34;</span>)
+    <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Here I go!&#34;</span>)
 
 
 <span style="font-weight:bold">def</span> get_car(system_name):
-  ready_systems = [<span style="font-style:italic"></span><span style="font-style:italic">&#39;</span><span style="font-style:italic">mario_kart</span><span style="font-style:italic">&#39;</span>]
+  ready_systems = [<span style="font-style:italic">&#39;mario_kart&#39;</span>]
   <span style="font-weight:bold">if</span> system_name <span style="font-weight:bold">in</span> ready_systems:
     <span style="font-weight:bold">return</span> WarioCar()
   <span style="font-weight:bold">return</span> MarioCar()
 
 
 <span style="font-weight:bold">def</span> mario_kart():
-  get_car(<span style="font-style:italic"></span><span style="font-style:italic">&#39;</span><span style="font-style:italic">mario_kart</span><span style="font-style:italic">&#39;</span>).drive()
+  get_car(<span style="font-style:italic">&#39;mario_kart&#39;</span>).drive()
 
 
 <span style="font-weight:bold">def</span> mario_kart_arcade():
-  get_car(<span style="font-style:italic"></span><span style="font-style:italic">&#39;</span><span style="font-style:italic">mario_kart_arcade</span><span style="font-style:italic">&#39;</span>).drive()
+  get_car(<span style="font-style:italic">&#39;mario_kart_arcade&#39;</span>).drive()
 
 
 <span style="font-weight:bold">def</span> mario_kart_ds():
-  get_car(<span style="font-style:italic"></span><span style="font-style:italic">&#39;</span><span style="font-style:italic">mario_kart_ds</span><span style="font-style:italic">&#39;</span>).drive()
+  get_car(<span style="font-style:italic">&#39;mario_kart_ds&#39;</span>).drive()
 
 
 mario_kart()
@@ -212,13 +212,13 @@ mario_kart_ds()
 
   @staticmethod
   <span style="font-weight:bold">def</span> drive():
-    <span style="font-weight:bold">print</span>(<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">Let</span><span style="font-style:italic">&#39;</span><span style="font-style:italic">s-a-go!</span><span style="font-style:italic">&#34;</span>)
+    <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
 
 
 <span style="font-weight:bold">class</span> <span style="font-weight:bold">WarioCar</span>(object):
   @staticmethod
   <span style="font-weight:bold">def</span> drive():
-    <span style="font-weight:bold">print</span>(<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">Here I go!</span><span style="font-style:italic">&#34;</span>)
+    <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Here I go!&#34;</span>)
 
 
 <span style="font-weight:bold">def</span> get_car(system_name):
@@ -226,15 +226,15 @@ mario_kart_ds()
 
 
 <span style="font-weight:bold">def</span> mario_kart():
-  get_car(<span style="font-style:italic"></span><span style="font-style:italic">&#39;</span><span style="font-style:italic">mario_kart</span><span style="font-style:italic">&#39;</span>).drive()
+  get_car(<span style="font-style:italic">&#39;mario_kart&#39;</span>).drive()
 
 
 <span style="font-weight:bold">def</span> mario_kart_arcade():
-  get_car(<span style="font-style:italic"></span><span style="font-style:italic">&#39;</span><span style="font-style:italic">mario_kart_arcade</span><span style="font-style:italic">&#39;</span>).drive()
+  get_car(<span style="font-style:italic">&#39;mario_kart_arcade&#39;</span>).drive()
 
 
 <span style="font-weight:bold">def</span> mario_kart_ds():
-  get_car(<span style="font-style:italic"></span><span style="font-style:italic">&#39;</span><span style="font-style:italic">mario_kart_ds</span><span style="font-style:italic">&#39;</span>).drive()
+  get_car(<span style="font-style:italic">&#39;mario_kart_ds&#39;</span>).drive()
 
 
 mario_kart()
@@ -244,7 +244,7 @@ mario_kart_ds()
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-weight:bold">class</span> <span style="font-weight:bold">WarioCar</span>(object):
   @staticmethod
   <span style="font-weight:bold">def</span> drive():
-    <span style="font-weight:bold">print</span>(<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">Here I go!</span><span style="font-style:italic">&#34;</span>)
+    <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Here I go!&#34;</span>)
 
 
 <span style="font-weight:bold">def</span> get_car(system_name):
@@ -252,15 +252,15 @@ mario_kart_ds()
 
 
 <span style="font-weight:bold">def</span> mario_kart():
-  get_car(<span style="font-style:italic"></span><span style="font-style:italic">&#39;</span><span style="font-style:italic">mario_kart</span><span style="font-style:italic">&#39;</span>).drive()
+  get_car(<span style="font-style:italic">&#39;mario_kart&#39;</span>).drive()
 
 
 <span style="font-weight:bold">def</span> mario_kart_arcade():
-  get_car(<span style="font-style:italic"></span><span style="font-style:italic">&#39;</span><span style="font-style:italic">mario_kart_arcade</span><span style="font-style:italic">&#39;</span>).drive()
+  get_car(<span style="font-style:italic">&#39;mario_kart_arcade&#39;</span>).drive()
 
 
 <span style="font-weight:bold">def</span> mario_kart_ds():
-  get_car(<span style="font-style:italic"></span><span style="font-style:italic">&#39;</span><span style="font-style:italic">mario_kart_ds</span><span style="font-style:italic">&#39;</span>).drive()
+  get_car(<span style="font-style:italic">&#39;mario_kart_ds&#39;</span>).drive()
 
 
 mario_kart()
@@ -272,7 +272,7 @@ mario_kart_ds()
 
   @staticmethod
   <span style="font-weight:bold">def</span> drive():
-    <span style="font-weight:bold">print</span>(<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">Let</span><span style="font-style:italic">&#39;</span><span style="font-style:italic">s-a-go!</span><span style="font-style:italic">&#34;</span>)
+    <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
 
 
 <span style="font-weight:bold">def</span> mario_kart():
@@ -299,9 +299,9 @@ mario_kart_ds()
   @staticmethod
   <span style="font-weight:bold">def</span> drive():
     <span style="font-weight:bold">if</span> use_wario_saying:
-      <span style="font-weight:bold">print</span>(<span style="font-style:italic"></span><span style="font-style:italic">&#39;</span><span style="font-style:italic">Here I go!</span><span style="font-style:italic">&#39;</span>)
+      <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#39;Here I go!&#39;</span>)
     <span style="font-weight:bold">else</span>:
-      <span style="font-weight:bold">print</span>(<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">Let</span><span style="font-style:italic">&#39;</span><span style="font-style:italic">s-a-go!</span><span style="font-style:italic">&#34;</span>)
+      <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
 
 
 <span style="font-weight:bold">def</span> mario_kart():
@@ -328,9 +328,9 @@ mario_kart_ds()
   @staticmethod
   <span style="font-weight:bold">def</span> drive():
     <span style="font-weight:bold">if</span> use_wario_saying:
-      <span style="font-weight:bold">print</span>(<span style="font-style:italic"></span><span style="font-style:italic">&#39;</span><span style="font-style:italic">Here I go!</span><span style="font-style:italic">&#39;</span>)
+      <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#39;Here I go!&#39;</span>)
     <span style="font-weight:bold">else</span>:
-      <span style="font-weight:bold">print</span>(<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">Let</span><span style="font-style:italic">&#39;</span><span style="font-style:italic">s-a-go!</span><span style="font-style:italic">&#34;</span>)
+      <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
 
 
 <span style="font-weight:bold">def</span> mario_kart():
@@ -353,7 +353,7 @@ mario_kart_ds()
 
   @staticmethod
   <span style="font-weight:bold">def</span> drive():
-    <span style="font-weight:bold">print</span>(<span style="font-style:italic"></span><span style="font-style:italic">&#39;</span><span style="font-style:italic">Here I go!</span><span style="font-style:italic">&#39;</span>)
+    <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#39;Here I go!&#39;</span>)
 
 
 <span style="font-weight:bold">def</span> mario_kart():
@@ -375,7 +375,7 @@ mario_kart_ds()
 <p>Here&rsquo;s another example that I think is under utilized.
 Originally</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-weight:bold">def</span> mario_drive():
-  <span style="font-weight:bold">print</span>(<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">Let</span><span style="font-style:italic">&#39;</span><span style="font-style:italic">s-a-go!</span><span style="font-style:italic">&#34;</span>)
+  <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
 
 
 <span style="font-weight:bold">def</span> mario_kart():
@@ -395,11 +395,11 @@ mario_kart_arcade()
 mario_kart_ds()
 </code></pre></div><p>But the end of the day comes and you are out of time so you just comment out.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-weight:bold">def</span> mario_drive():
-  <span style="font-weight:bold">print</span>(<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">Let</span><span style="font-style:italic">&#39;</span><span style="font-style:italic">s-a-go!</span><span style="font-style:italic">&#34;</span>)
+  <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
 
 
 <span style="font-weight:bold">def</span> wario_drive():
-  <span style="font-weight:bold">print</span>(<span style="font-style:italic"></span><span style="font-style:italic">&#39;</span><span style="font-style:italic">Here I go!</span><span style="font-style:italic">&#39;</span>)
+  <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#39;Here I go!&#39;</span>)
 
 
 <span style="font-weight:bold">def</span> mario_kart():
@@ -420,11 +420,11 @@ mario_kart_arcade()
 mario_kart_ds()
 </code></pre></div><p>Day two comes along and you&rsquo;ve testes for mario kart the original, but haven&rsquo;t finished testing the arcade version.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-weight:bold">def</span> mario_drive():
-  <span style="font-weight:bold">print</span>(<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">Let</span><span style="font-style:italic">&#39;</span><span style="font-style:italic">s-a-go!</span><span style="font-style:italic">&#34;</span>)
+  <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
 
 
 <span style="font-weight:bold">def</span> wario_drive():
-  <span style="font-weight:bold">print</span>(<span style="font-style:italic"></span><span style="font-style:italic">&#39;</span><span style="font-style:italic">Here I go!</span><span style="font-style:italic">&#39;</span>)
+  <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#39;Here I go!&#39;</span>)
 
 
 <span style="font-weight:bold">def</span> mario_kart():
@@ -445,11 +445,11 @@ mario_kart_arcade()
 mario_kart_ds()
 </code></pre></div><p>Before you know it everything is working.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-weight:bold">def</span> mario_drive():
-  <span style="font-weight:bold">print</span>(<span style="font-style:italic"></span><span style="font-style:italic">&#34;</span><span style="font-style:italic">Let</span><span style="font-style:italic">&#39;</span><span style="font-style:italic">s-a-go!</span><span style="font-style:italic">&#34;</span>)
+  <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
 
 
 <span style="font-weight:bold">def</span> wario_drive():
-  <span style="font-weight:bold">print</span>(<span style="font-style:italic"></span><span style="font-style:italic">&#39;</span><span style="font-style:italic">Here I go!</span><span style="font-style:italic">&#39;</span>)
+  <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#39;Here I go!&#39;</span>)
 
 
 <span style="font-weight:bold">def</span> mario_kart():
@@ -469,7 +469,7 @@ mario_kart_arcade()
 mario_kart_ds()
 </code></pre></div><p>Don&rsquo;t forget to remove unused code.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-weight:bold">def</span> wario_drive():
-  <span style="font-weight:bold">print</span>(<span style="font-style:italic"></span><span style="font-style:italic">&#39;</span><span style="font-style:italic">Here I go!</span><span style="font-style:italic">&#39;</span>)
+  <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#39;Here I go!&#39;</span>)
 
 
 <span style="font-weight:bold">def</span> mario_kart():
