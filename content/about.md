@@ -12,10 +12,13 @@ I believe that security, education, and software can come together to make the w
 
 
 ### The Tuesday Company
-I'm proud to have started a civic technology [company](https://www.tuesdaycompany.com) that's reimagining political engagement for the digital age.
+I'm proud to have started a vertical SaaS [company](https://www.cupolasoftware.com/) in the Architecture space.
 
+I'm also starting a new nonprofit. Please check out my Go Fund Me.
+<div class="gfm-embed" data-url="https://www.gofundme.com/f/democratize-access-to-audiobooks/widget/large/"></div><script defer src="https://www.gofundme.com/static/js/embed.js"></script>
 
 ## My past
+- [Tuesday Company](https://www.tuesdaycompany.com) -- CTO and co-founder
 - [CoreOS](https://coreos.com/) -- Senior Software engineer
 - [ReBootKAMP](http://rbk.org/) -- Volunteer and Hacker in Residence
 - [HedgeServ](https://www.hedgeserv.com/) -- Software Engineer
