@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Charlton Austin">
+		<meta name="description" content="Charlton Austin&#39;s personal website">
+		<meta name="generator" content="Hugo 0.111.3">
+		<title>Points What Are They Good For &middot; Charlton Austin</title>
+		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
+		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
+		<link rel="stylesheet" href="https://charltonaustin.com/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://charltonaustin.com/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://charltonaustin.com/index.xml" rel="alternate" type="application/rss+xml" title="Charlton Austin" />
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://charltonaustin.com/'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://charltonaustin.com/posts'>Archive</a>
+	<a href='https://charltonaustin.com/tags'>Tags</a>
+	<a href='https://charltonaustin.com/about'>About</a>
+
+	
+
+	
+	<a class="cta" href="https://charltonaustin.com/index.xml">Subscribe</a>
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Points What Are They Good For
+                    </h1>
+                    <h2 class="headline">
+                    Aug 5, 2020 10:17
+                    · 711 words
+                    · 4 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://charltonaustin.com/tags/management">management</a>
+                          
+                              <a href="https://charltonaustin.com/tags/books">books</a>
+                          
+                              <a href="https://charltonaustin.com/tags/entrepreneurship">entrepreneurship</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#should-story-points-be-tied-to-time">Should story points be tied to time</a></li>
+    <li><a href="#why-is-it-bad-to-show-internal-estimates-to-external-stakeholders">Why is it bad to show internal estimates to external stakeholders</a></li>
+    <li><a href="#how-to-create-a-model">How to create a model?</a></li>
+  </ul>
+</nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    <h2 id="should-story-points-be-tied-to-time">Should story points be tied to time</h2>
+<p>I often hear people say story point shouldn&rsquo;t be tied to time.
+Instead they should be based on complexity.
+This can be for a variety of reason.
+<a href="https://rubygarage.org/blog/3-reasons-to-estimate-with-story-points">Here</a> for instance three reasons are cited.</p>
+<blockquote>
+<p>Some tasks are difficult to estimate precisely.</p>
+</blockquote>
+<blockquote>
+<p>If one developer estimates a project but another completes the task, the estimate becomes invalid. The time needed to complete a task will vary based on a developer’s level of experience.</p>
+</blockquote>
+<blockquote>
+<p>People generally underestimate obstacles they might face and consider only the best-case scenario.</p>
+</blockquote>
+<p>Each of which I think has a concrete problem that should be solved.
+Like yes some tasks are difficult to estimate, but so what.
+Some surgeries are harder than others does that mean you shouldn&rsquo;t do them?
+Or some developers are better than other developers.
+But that means you should work to figure out how long it will take your team.
+Not change estimates from time to complexity based.
+By moving from time based estimates to complexity estimates you obscure your problems.
+I think the root of most objections come from one simple problem.
+When you tie story points to time people see them as binding estimates.
+These estimates can box the team in.
+I don&rsquo;t disagree with the reasoning.
+Time estimates can definitely seem binding.
+However, I don&rsquo;t come to the same conclusion either.
+That doesnt&rsquo; mean you should not use time estimates.
+Instead story points should be based on ideal days.
+They should be an internal tool for the team is making estimates.
+Timelines that are created should be based on these, but not directly.
+One should take historical estimates and compare them with reality.
+The only thing that should be shared outside the team is the model.
+This does two things.
+First it allows engineers to think in concrete terms of time.
+It also allows for simple diagnostic of time vs story points.
+Imagine a story estimate is for 1 ideal day and it takes 14 days.
+It is easy to see that the estimate is a order of magnitude off.
+This is good.
+The team knows that the estimate was off and can endeavour to explain why.
+Imagine a story that is medium sized though.
+It took 14 days as well.
+Is this a bad thing?
+Without the surrounding context it is pretty difficult asses.
+Like what is a medium size story anyways.
+Is it based on cyclomatic complexity.
+No one goes through the code afterwards and checks how many branches are there.
+But by doing that you actually lose a good internal diagnostic.
+Second it gives you accurate timelines within some uncertainty that can be shared.
+And it doesn&rsquo;t sacrifice points as a diagnostic tool.</p>
+<h2 id="why-is-it-bad-to-show-internal-estimates-to-external-stakeholders">Why is it bad to show internal estimates to external stakeholders</h2>
+<p>I have one word, <a href="https://en.wikipedia.org/wiki/Hawthorne_effect">Hawthorne effect</a>.
+Generally external stakeholders hold the team accountable for that timeline.
+They often come back and say, &ldquo;Hey you said this would take a week and it took a year.&rdquo;
+So you end up having pathological behavior.
+Like a story that is estimated for a year, but takes an hour.
+So you have to separate these things out.
+You can&rsquo;t just measure time vs estimate.
+I would argue you should be looking at other metrics that improve engineers.
+Align the Hawthorne effect with something that will make an engineer better.</p>
+<h2 id="how-to-create-a-model">How to create a model?</h2>
+<p>Well I find that taking historical data is usually the most effective.
+This has one glaring problem.
+What do you do when there is no historical data.
+We&rsquo;ll come back to that.
+Assume that you do have historical data.
+The first thing I would do is measure how long a stories take.
+You can then come up with things like averages, medians, and standard deviations.
+Those can help you chart out how long things are going to take.
+You can even compare the actual times with estimates and create more sophisticated models.
+What about when you don&rsquo;t have any historical data.
+Well I would suggest <em>gasp</em> not having time based road maps.
+Focus on your hiring and trust the people that you have hired.
+Assume they are going as fast as they can.
+Create a mental model of what you think is important and work on those things.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fpoints-what-are-they-good-for%2f - Points%20What%20Are%20They%20Good%20For by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/charltonaustin">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/charltonaustin">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://charltonaustin.com/js/jquery-3.3.1.min.js"></script>
+<script src="https://charltonaustin.com/js/main.js"></script>
+<script src="https://charltonaustin.com/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-164961268-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+    </body>
+</html>

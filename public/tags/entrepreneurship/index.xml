@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>entrepreneurship on Charlton Austin</title>
+    <link>https://charltonaustin.com/tags/entrepreneurship/</link>
+    <description>Recent content in entrepreneurship on Charlton Austin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 05 Aug 2020 10:17:05 -0500</lastBuildDate><atom:link href="https://charltonaustin.com/tags/entrepreneurship/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Maslow Hierarchy of An App</title>
+      <link>https://charltonaustin.com/maslow-hierarchy-of-an-app/</link>
+      <pubDate>Wed, 05 Aug 2020 10:17:05 -0500</pubDate>
+      
+      <guid>https://charltonaustin.com/maslow-hierarchy-of-an-app/</guid>
+      <description>https://www.cbinsights.com/research/maslows-hierarchy-of-needs-startups/</description>
+    </item>
+    
+    <item>
+      <title>Points What Are They Good For</title>
+      <link>https://charltonaustin.com/points-what-are-they-good-for/</link>
+      <pubDate>Wed, 05 Aug 2020 10:17:05 -0500</pubDate>
+      
+      <guid>https://charltonaustin.com/points-what-are-they-good-for/</guid>
+      <description>Should story points be tied to time I often hear people say story point shouldn&amp;rsquo;t be tied to time. Instead they should be based on complexity. This can be for a variety of reason. Here for instance three reasons are cited.
+Some tasks are difficult to estimate precisely.
+If one developer estimates a project but another completes the task, the estimate becomes invalid. The time needed to complete a task will vary based on a developer’s level of experience.</description>
+    </item>
+    
+  </channel>
+</rss>

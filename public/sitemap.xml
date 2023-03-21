@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://charltonaustin.com/being-an-empathetic-leader/</loc>
+    <lastmod>2023-03-21T11:49:25-04:00</lastmod>
+  </url><url>
     <loc>https://charltonaustin.com/</loc>
     <lastmod>2023-03-21T00:00:00+00:00</lastmod>
   </url><url>
@@ -44,11 +47,29 @@
     <loc>https://charltonaustin.com/posts/why-you-should-emulate-containers-in-python/</loc>
     <lastmod>2020-08-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://charltonaustin.com/about/</loc>
-    <lastmod>2020-05-15T09:03:54-04:00</lastmod>
+    <loc>https://charltonaustin.com/tags/books/</loc>
+    <lastmod>2020-08-05T10:17:05-05:00</lastmod>
+  </url><url>
+    <loc>https://charltonaustin.com/tags/checklists/</loc>
+    <lastmod>2020-08-05T10:17:05-05:00</lastmod>
+  </url><url>
+    <loc>https://charltonaustin.com/checklists-follow-up/</loc>
+    <lastmod>2020-08-05T10:17:05-05:00</lastmod>
+  </url><url>
+    <loc>https://charltonaustin.com/tags/entrepreneurship/</loc>
+    <lastmod>2020-08-05T10:17:05-05:00</lastmod>
   </url><url>
     <loc>https://charltonaustin.com/categories/management/</loc>
-    <lastmod>2020-04-27T07:00:54-04:00</lastmod>
+    <lastmod>2020-08-05T10:17:05-05:00</lastmod>
+  </url><url>
+    <loc>https://charltonaustin.com/maslow-hierarchy-of-an-app/</loc>
+    <lastmod>2020-08-05T10:17:05-05:00</lastmod>
+  </url><url>
+    <loc>https://charltonaustin.com/points-what-are-they-good-for/</loc>
+    <lastmod>2020-08-05T10:17:05-05:00</lastmod>
+  </url><url>
+    <loc>https://charltonaustin.com/about/</loc>
+    <lastmod>2020-05-15T09:03:54-04:00</lastmod>
   </url><url>
     <loc>https://charltonaustin.com/tags/pomodoro/</loc>
     <lastmod>2020-04-27T07:00:54-04:00</lastmod>
@@ -70,9 +91,6 @@
   </url><url>
     <loc>https://charltonaustin.com/posts/repo-scripts-and-autoupdates/</loc>
     <lastmod>2020-02-26T09:03:54-04:00</lastmod>
-  </url><url>
-    <loc>https://charltonaustin.com/tags/books/</loc>
-    <lastmod>2020-01-14T09:03:54-04:00</lastmod>
   </url><url>
     <loc>https://charltonaustin.com/posts/bugs-in-software/</loc>
     <lastmod>2020-01-14T09:03:54-04:00</lastmod>
@@ -97,9 +115,6 @@
   </url><url>
     <loc>https://charltonaustin.com/tags/toy-problems/</loc>
     <lastmod>2019-11-15T09:03:54-04:00</lastmod>
-  </url><url>
-    <loc>https://charltonaustin.com/tags/checklists/</loc>
-    <lastmod>2019-09-09T09:03:54-04:00</lastmod>
   </url><url>
     <loc>https://charltonaustin.com/posts/using-checklist-in-software-development/</loc>
     <lastmod>2019-09-09T09:03:54-04:00</lastmod>
@@ -366,5 +381,7 @@
     <lastmod>2013-02-17T09:03:54-04:00</lastmod>
   </url><url>
     <loc>https://charltonaustin.com/contact/</loc>
+  </url><url>
+    <loc>https://charltonaustin.com/make-it-stick/</loc>
   </url>
 </urlset>

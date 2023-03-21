@@ -6,7 +6,27 @@
     <description>Recent content in books on Charlton Austin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 14 Jan 2020 09:03:54 -0400</lastBuildDate><atom:link href="https://charltonaustin.com/tags/books/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Aug 2020 10:17:05 -0500</lastBuildDate><atom:link href="https://charltonaustin.com/tags/books/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Maslow Hierarchy of An App</title>
+      <link>https://charltonaustin.com/maslow-hierarchy-of-an-app/</link>
+      <pubDate>Wed, 05 Aug 2020 10:17:05 -0500</pubDate>
+      
+      <guid>https://charltonaustin.com/maslow-hierarchy-of-an-app/</guid>
+      <description>https://www.cbinsights.com/research/maslows-hierarchy-of-needs-startups/</description>
+    </item>
+    
+    <item>
+      <title>Points What Are They Good For</title>
+      <link>https://charltonaustin.com/points-what-are-they-good-for/</link>
+      <pubDate>Wed, 05 Aug 2020 10:17:05 -0500</pubDate>
+      
+      <guid>https://charltonaustin.com/points-what-are-they-good-for/</guid>
+      <description>Should story points be tied to time I often hear people say story point shouldn&amp;rsquo;t be tied to time. Instead they should be based on complexity. This can be for a variety of reason. Here for instance three reasons are cited.
+Some tasks are difficult to estimate precisely.
+If one developer estimates a project but another completes the task, the estimate becomes invalid. The time needed to complete a task will vary based on a developer’s level of experience.</description>
+    </item>
+    
     <item>
       <title>Bugs In Software</title>
       <link>https://charltonaustin.com/posts/bugs-in-software/</link>
@@ -33,6 +53,15 @@ One of the gems Here&amp;rsquo;s an example of one of the gems from the Berkeley
       
       <guid>https://charltonaustin.com/posts/a-review-of-an-introduction-to-programming-in-go/</guid>
       <description>Recently I had a chance to write some Go code for the first time in a few years as part of the interview process at CoreOS. The challenge was actually really fun, but so as not to ruin surprise I won&amp;rsquo;t be talking about what I did during the challenge. Suffice it to say that I had a great experience, and whether or not I get the job at CoreOS I definitely enjoyed the interview process.</description>
+    </item>
+    
+    <item>
+      <title>Make it stick</title>
+      <link>https://charltonaustin.com/make-it-stick/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://charltonaustin.com/make-it-stick/</guid>
+      <description>The book Make It Stick is a brief review of the best methods for learning. The book starts out by giving a brief overview of how teachers have tried to teach in the past and then turns to evidence based methods backed by science today. There is some repetition in content, but I immediately tried to implement the practices in the book and found that it dramatically changed the way that I read and study.</description>
     </item>
     
   </channel>
