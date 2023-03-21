@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="generator" content="Hugo 0.111.3">
 		<title>Counting Frequencies Of Elements In An Array In Clojure Basic Algorithms Part One &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -79,33 +79,33 @@
 The problem</p>
 <p>So the coding challenge is given an array with N numbers m such that m &lt; N and m is a natural number count the occurrences of m.
 Solution</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="font-weight:bold">defn </span>count-freq [array counts]
-  (<span style="font-weight:bold">if </span>(empty? array)
-    counts
-    (<span style="font-weight:bold">let </span>[number (peek array)]
-      (count-freq (pop array) (update counts number (fnil inc 0))))))
-</code></pre></div><p>This is a pretty straightforward implementation. It takes roughly O(n) time. It is called like so:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(deftest count-freq-test
-  (testing    (is (= {2 2 3 2 5 1} (count-freq [2 3 3 2 5] {})))
-    (is (= {2 5} (count-freq [2 2 2 2 2] {})))
-    (is (= {} (count-freq [] {})))
-    ))
-</code></pre></div><p>I call it using a map, but you could use a properly initialized array if you wanted. This guy still has the StackOverflowError problem since no tail call optimization is employed. That would look like:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="font-weight:bold">defn </span>count-freq [array counts]
-  (<span style="font-weight:bold">loop </span>[array array
-         counts counts]
-    (<span style="font-weight:bold">if </span>(empty? array)
-      counts
-      (<span style="font-weight:bold">let </span>[number (peek array)]
-        (recur (pop array) (update counts number (fnil inc 0)))))))
-</code></pre></div><p>I decided to take a look at the core implementation of frequencies to get a feel for the differences in the implementations. For the record here it is.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="font-weight:bold">defn </span>frequencies
-  <span style="font-style:italic">&#34;Returns a map from distinct items in coll to the number of times  they appear.&#34;</span>  
-  [coll]
-  (persistent!   
-    (reduce (<span style="font-weight:bold">fn </span>[counts x] (assoc! counts x (inc (get counts x 0))))
-            (transient {}) coll)))
-</code></pre></div><p>The largest differences come in the lack of recursion and the use of transient data structures. Transient data structures are meant for speed while abstracting away the messy details of mutability and keeping with the Clojure model.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="font-weight:bold">defn </span>count-freq [array counts]
+</span></span><span style="display:flex;"><span>  (<span style="font-weight:bold">if </span>(empty? array)
+</span></span><span style="display:flex;"><span>    counts
+</span></span><span style="display:flex;"><span>    (<span style="font-weight:bold">let </span>[number (peek array)]
+</span></span><span style="display:flex;"><span>      (count-freq (pop array) (update counts number (fnil inc 0))))))
+</span></span></code></pre></div><p>This is a pretty straightforward implementation. It takes roughly O(n) time. It is called like so:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(deftest count-freq-test
+</span></span><span style="display:flex;"><span>  (testing    (is (= {2 2 3 2 5 1} (count-freq [2 3 3 2 5] {})))
+</span></span><span style="display:flex;"><span>    (is (= {2 5} (count-freq [2 2 2 2 2] {})))
+</span></span><span style="display:flex;"><span>    (is (= {} (count-freq [] {})))
+</span></span><span style="display:flex;"><span>    ))
+</span></span></code></pre></div><p>I call it using a map, but you could use a properly initialized array if you wanted. This guy still has the StackOverflowError problem since no tail call optimization is employed. That would look like:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="font-weight:bold">defn </span>count-freq [array counts]
+</span></span><span style="display:flex;"><span>  (<span style="font-weight:bold">loop </span>[array array
+</span></span><span style="display:flex;"><span>         counts counts]
+</span></span><span style="display:flex;"><span>    (<span style="font-weight:bold">if </span>(empty? array)
+</span></span><span style="display:flex;"><span>      counts
+</span></span><span style="display:flex;"><span>      (<span style="font-weight:bold">let </span>[number (peek array)]
+</span></span><span style="display:flex;"><span>        (recur (pop array) (update counts number (fnil inc 0)))))))
+</span></span></code></pre></div><p>I decided to take a look at the core implementation of frequencies to get a feel for the differences in the implementations. For the record here it is.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="font-weight:bold">defn </span>frequencies
+</span></span><span style="display:flex;"><span>  <span style="font-style:italic">&#34;Returns a map from distinct items in coll to the number of times  they appear.&#34;</span>  
+</span></span><span style="display:flex;"><span>  [coll]
+</span></span><span style="display:flex;"><span>  (persistent!   
+</span></span><span style="display:flex;"><span>    (reduce (<span style="font-weight:bold">fn </span>[counts x] (assoc! counts x (inc (get counts x 0))))
+</span></span><span style="display:flex;"><span>            (transient {}) coll)))
+</span></span></code></pre></div><p>The largest differences come in the lack of recursion and the use of transient data structures. Transient data structures are meant for speed while abstracting away the messy details of mutability and keeping with the Clojure model.</p>
 <blockquote>
 <p>Furthermore, there are no guards against accidentally sharing or aliasing the mutable data structure, especially if you need to call helper functions to do the work. In short, it would be a shame if you had to leave Clojure’s model in order to speed up a piece of code like this. Transient data structures are a solution to this optimization problem that integrates with the Clojure model and provides the same thread safety guarantees you expect of Clojure.</p>
 </blockquote>
@@ -151,7 +151,7 @@ Solution</p>
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -182,7 +182,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 

@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="generator" content="Hugo 0.111.3">
 		<title>Load And Performance Testing With Flask &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -107,10 +107,10 @@ Locust has some pretty good documentation, and it was straightforward creating a
 Werkzeug was a bit more involved, but I followed <a href="http://www.alexandrejoseph.com/blog/2015-12-17-profiling-werkzeug-flask-app.html">this guide</a> and the profiler documentation and managed to muddle through.
 At the end of the day, I had to install <a href="http://brewformulas.org/Qcachegrind">qcachegrind</a> instead of <a href="https://kcachegrind.github.io/html/Home.html">kcachegrind</a> as recommended by the guide.
 Also when setting up the profiler, I had to use this configuration to get the output I needed.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">f = open(&#39;profiler.log&#39;, &#39;w&#39;)
-stream = MergeStream(sys.stdout, f)
-profiler = ProfilerMiddleware(app, stream, profile_dir=&#39;/where/to/save&#39;)
-</code></pre></div><h2 id="our-results">Our results</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>f = open(&#39;profiler.log&#39;, &#39;w&#39;)
+</span></span><span style="display:flex;"><span>stream = MergeStream(sys.stdout, f)
+</span></span><span style="display:flex;"><span>profiler = ProfilerMiddleware(app, stream, profile_dir=&#39;/where/to/save&#39;)
+</span></span></code></pre></div><h2 id="our-results">Our results</h2>
 <p>At the end of the day, we verified about three significant changes to our infrastructure and code.
 We managed to reduce the call time for two of our endpoints by half with code and database changes.
 We managed to increase the number of users we could handle by roughly double, while keeping performance at the previous level with an infrastructure change.
@@ -157,7 +157,7 @@ We also managed to improve by an order of magnitude.</p>
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -188,7 +188,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 

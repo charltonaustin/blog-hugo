@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="generator" content="Hugo 0.111.3">
 		<title>Using Quay With Multiple Dockerfiles &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -75,15 +75,15 @@
                 <section id="post-body">
                     <h1 id="the-problem">The problem</h1>
 <p>Let&rsquo;s say you have the following folder layout:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">app1/
-app2/
-shared-infra-resources/
-continuous-integration/
-                      app1/
-                          app1.Dockerfile
-                      app2/
-                          app2.Dockerfile
-</code></pre></div><p>And you would like to build app1.Dockerfile and app2.Dockerfile in your Docker registry.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>app1/
+</span></span><span style="display:flex;"><span>app2/
+</span></span><span style="display:flex;"><span>shared-infra-resources/
+</span></span><span style="display:flex;"><span>continuous-integration/
+</span></span><span style="display:flex;"><span>                      app1/
+</span></span><span style="display:flex;"><span>                          app1.Dockerfile
+</span></span><span style="display:flex;"><span>                      app2/
+</span></span><span style="display:flex;"><span>                          app2.Dockerfile
+</span></span></code></pre></div><p>And you would like to build app1.Dockerfile and app2.Dockerfile in your Docker registry.</p>
 <h1 id="the-solution">The Solution</h1>
 <p>If you are using <a href="https://hub.docker.com">DockerHub</a>.
 Then you already can&rsquo;t.
@@ -100,10 +100,10 @@ The context is the folder in your buildfile that the docker build will be execut
 The dockerfile path is the location and name of the dockerfile.
 Finally docker tags are arbitrary tag names that can be used to identify your build, version, or whatever other metadata you might want associated with your docker image.
 The request might look something like this.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export HEADERS=--header <span style="font-style:italic">&#34;Content-Type:application/json&#34;</span> --header <span style="font-style:italic">&#34;Authorization:Bearer &lt;my oauth token or my robot token&gt;&#34;</span>
-echo <span style="font-style:italic">&#34;{\&#34;archive_url\&#34;:\&#34;https://path/to/hosted/gzip\&#34;,\&#34;docker_tags\&#34;:[\&#34;&lt;my tag here&gt;\&#34;],\&#34;context\&#34;:\&#34;/my/context\&#34;,\&#34;dockerfile_path\&#34;:\&#34;/my/context/&lt;dockerfile name&gt;\&#34;}&#34;</span> &gt; post.json
-curl -X POST -d @post.json https://quay.io/api/v1/repository/&lt;organization or user name&gt;/&lt;repository name&gt;/build/ $HEADERS
-</code></pre></div><h1 id="wrap-up">Wrap up</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export HEADERS=--header <span style="font-style:italic">&#34;Content-Type:application/json&#34;</span> --header <span style="font-style:italic">&#34;Authorization:Bearer &lt;my oauth token or my robot token&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="font-style:italic">&#34;{\&#34;archive_url\&#34;:\&#34;https://path/to/hosted/gzip\&#34;,\&#34;docker_tags\&#34;:[\&#34;&lt;my tag here&gt;\&#34;],\&#34;context\&#34;:\&#34;/my/context\&#34;,\&#34;dockerfile_path\&#34;:\&#34;/my/context/&lt;dockerfile name&gt;\&#34;}&#34;</span> &gt; post.json
+</span></span><span style="display:flex;"><span>curl -X POST -d @post.json https://quay.io/api/v1/repository/&lt;organization or user name&gt;/&lt;repository name&gt;/build/ $HEADERS
+</span></span></code></pre></div><h1 id="wrap-up">Wrap up</h1>
 <p>So why might you do this rather than just running a docker build in your CI?
 Well there are a couple of answers to this.
 You might have your continuous integration, CI, centered on docker images already and you don&rsquo;t want to run <a href="https://jpetazzo.github.io/2015/09/03/do-not-use-docker-in-docker-for-ci/">docker in docker</a> during the build process.
@@ -154,7 +154,7 @@ I think in a future post I will talk about how to setup a full CD pipeline using
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -185,7 +185,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 

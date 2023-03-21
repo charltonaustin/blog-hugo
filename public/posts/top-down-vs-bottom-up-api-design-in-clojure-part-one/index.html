@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="generator" content="Hugo 0.111.3">
 		<title>Top Down Vs Bottom Up Api Design In Clojure Part One &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -90,43 +90,42 @@
                     <h3 id="recently-in-my-last-post">Recently in my last post&hellip;</h3>
 <p>Recently I posted about the difference between <a href="http://www.charltonaustin.com/2016/04/top-down-vs-bottom-up-api-design-in.html">top down vs bottom up</a> design in Clojure, if you haven&rsquo;t read it then you should. This post is the second part about the differences in both code quality and experience between tope down and bottom up approaches.  You can see the commits <a href="https://github.com/charltonaustin/inside_out_ouside_in/commits">here</a>.</p>
 <h3 id="first-impressions">First impressions</h3>
-<p>It took me 14 functions using the outside-in method vs 15 functions with the inside-out method. But the number of functions doesn&rsquo;t really matter. What&rsquo;s more interesting maybe is the number of characters. It was 2043 for inside-out and 2122 outside-in (without white space). They were pretty close; there wasn&rsquo;t much of a difference; and counting characters isn&rsquo;t all that important (though my usual philosophy is &lsquo;less is better&rsquo;).  What about readability? Well my opinion is outside-in is marginally better. The main loop is less convoluted. Perhaps because I don&rsquo;t do any stupid exit business.</p>
+<p>It took me 14 functions using the outside-in method vs 15 functions with the inside-out method. But the number of functions doesn&rsquo;t really matter. What&rsquo;s more interesting maybe is the number of characters. It was 2043 for inside-out and 2122 outside-in (without white space). They were pretty close; there wasn&rsquo;t much of a difference; and counting characters isn&rsquo;t all that important (though my usual philosophy is &rsquo;less is better&rsquo;).  What about readability? Well my opinion is outside-in is marginally better. The main loop is less convoluted. Perhaps because I don&rsquo;t do any stupid exit business.</p>
 <p>For the inside-out I had:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="font-weight:bold">defn </span>-main
-  [&amp; args]
-  (<span style="font-weight:bold">loop </span>[a-board (board)
-         number-of-moves 0]
-    (<span style="font-weight:bold">if </span>(&gt;= number-of-moves 9)
-      (<span style="font-weight:bold">do </span>(print-to-screen (str-board a-board))
-        (exit-now!))
-      (<span style="font-weight:bold">do </span>(print-to-screen (str-board a-board))
-        (<span style="font-weight:bold">let </span>[player-function (nth turn-function number-of-moves)
-              new-board (player-function a-board)
-              maybe-winner (check-for-winner a-board)]
-          (<span style="font-weight:bold">if </span>maybe-winner
-            (<span style="font-weight:bold">do </span>             (println (str maybe-winner <span style="font-style:italic">&#34; has won!&#34;</span>))
-              (recur new-board 9))
-            (recur new-board
-                   (inc number-of-moves))))))))
-
-</code></pre></div><p>Outside-in:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="font-weight:bold">defn </span>-main
-  [&amp; args]
-  (<span style="font-weight:bold">loop </span>[board (vec (range 1 10))
-         number-of-moves-made 0
-         get-next-move-fn (get-player-move-fn number-of-moves-made)]
-    (print-to-screen (string-board board))
-    (<span style="font-weight:bold">if </span>(= number-of-moves-made 9)
-      nil
-      (<span style="font-weight:bold">do </span>(<span style="font-weight:bold">let </span>[player-move (get-next-move-fn board)
-              new-board (update-board board player-move)
-              number-of-moves-made (inc number-of-moves-made)
-              winner? (check-for-winner new-board)]
-          (<span style="font-weight:bold">if </span>winner?
-            (<span style="font-weight:bold">do </span>(print-to-screen (string-board new-board))
-                (println (str <span style="font-style:italic">&#34;Player &#34;</span> (<span style="font-style:italic">:character</span> player-move) <span style="font-style:italic">&#34; won!&#34;</span>)))
-            (recur new-board number-of-moves-made (get-player-move-fn number-of-moves-made))))))))
-</code></pre></div><p>Obviously only an idiot would write the exit function in the first one. I didn&rsquo;t notice this fact until after I had written the second one. I was focusing on writing the outermost layer first and the way I had written it didn&rsquo;t influence the design of the main loop.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="font-weight:bold">defn </span>-main
+</span></span><span style="display:flex;"><span>  [&amp; args]
+</span></span><span style="display:flex;"><span>  (<span style="font-weight:bold">loop </span>[a-board (board)
+</span></span><span style="display:flex;"><span>         number-of-moves 0]
+</span></span><span style="display:flex;"><span>    (<span style="font-weight:bold">if </span>(&gt;= number-of-moves 9)
+</span></span><span style="display:flex;"><span>      (<span style="font-weight:bold">do </span>(print-to-screen (str-board a-board))
+</span></span><span style="display:flex;"><span>        (exit-now!))
+</span></span><span style="display:flex;"><span>      (<span style="font-weight:bold">do </span>(print-to-screen (str-board a-board))
+</span></span><span style="display:flex;"><span>        (<span style="font-weight:bold">let </span>[player-function (nth turn-function number-of-moves)
+</span></span><span style="display:flex;"><span>              new-board (player-function a-board)
+</span></span><span style="display:flex;"><span>              maybe-winner (check-for-winner a-board)]
+</span></span><span style="display:flex;"><span>          (<span style="font-weight:bold">if </span>maybe-winner
+</span></span><span style="display:flex;"><span>            (<span style="font-weight:bold">do </span>             (println (str maybe-winner <span style="font-style:italic">&#34; has won!&#34;</span>))
+</span></span><span style="display:flex;"><span>              (recur new-board 9))
+</span></span><span style="display:flex;"><span>            (recur new-board
+</span></span><span style="display:flex;"><span>                   (inc number-of-moves))))))))
+</span></span></code></pre></div><p>Outside-in:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="font-weight:bold">defn </span>-main
+</span></span><span style="display:flex;"><span>  [&amp; args]
+</span></span><span style="display:flex;"><span>  (<span style="font-weight:bold">loop </span>[board (vec (range 1 10))
+</span></span><span style="display:flex;"><span>         number-of-moves-made 0
+</span></span><span style="display:flex;"><span>         get-next-move-fn (get-player-move-fn number-of-moves-made)]
+</span></span><span style="display:flex;"><span>    (print-to-screen (string-board board))
+</span></span><span style="display:flex;"><span>    (<span style="font-weight:bold">if </span>(= number-of-moves-made 9)
+</span></span><span style="display:flex;"><span>      nil
+</span></span><span style="display:flex;"><span>      (<span style="font-weight:bold">do </span>(<span style="font-weight:bold">let </span>[player-move (get-next-move-fn board)
+</span></span><span style="display:flex;"><span>              new-board (update-board board player-move)
+</span></span><span style="display:flex;"><span>              number-of-moves-made (inc number-of-moves-made)
+</span></span><span style="display:flex;"><span>              winner? (check-for-winner new-board)]
+</span></span><span style="display:flex;"><span>          (<span style="font-weight:bold">if </span>winner?
+</span></span><span style="display:flex;"><span>            (<span style="font-weight:bold">do </span>(print-to-screen (string-board new-board))
+</span></span><span style="display:flex;"><span>                (println (str <span style="font-style:italic">&#34;Player &#34;</span> (<span style="font-style:italic">:character</span> player-move) <span style="font-style:italic">&#34; won!&#34;</span>)))
+</span></span><span style="display:flex;"><span>            (recur new-board number-of-moves-made (get-player-move-fn number-of-moves-made))))))))
+</span></span></code></pre></div><p>Obviously only an idiot would write the exit function in the first one. I didn&rsquo;t notice this fact until after I had written the second one. I was focusing on writing the outermost layer first and the way I had written it didn&rsquo;t influence the design of the main loop.</p>
 <p>The tests were significantly different. With the outside-in method I wrote most of the human tests in the (-main) test code. Looking back I would definitely refactor that to use a stub implementation in the main test. Other than that there seems to be less test code in general, but I feel pretty confident about both. I added in the same src and test code for finding the winners since I had removed it from my todo list.</p>
 <h3 id="things-i-learned">Things I learned</h3>
 <p>First towards the end of the exercise I was often using the main loop to write the function interface and then stubbing out the implementation using with-redefs for underlying functions. I actually like this, but because this was such a simple example I&rsquo;m not sure how complex it would be to mock other functions. I liked it however because by the end I think this started isolating my tests more and stopped me from testing everything in the (-main) test. While there isn&rsquo;t much of a difference in the outcome, I did like the outside-in method more.</p>
@@ -172,7 +171,7 @@
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -203,7 +202,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 

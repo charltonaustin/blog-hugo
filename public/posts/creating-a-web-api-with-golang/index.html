@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="generator" content="Hugo 0.111.3">
 		<title>Creating A Web Api With Golang &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -120,24 +120,24 @@ But there has been interesting work in Clojure and JavaScript for types that are
 <h3 id="one-nice-little-perk-from-the-project">One nice little perk from the project</h3>
 <p>One thing that I did that I found easier than most projects was write a full end to end test for the web server.
 The basic script was as follows.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go get
-go build -o /tmp/app
-/tmp/app &amp;
-PID=$!
-go test
-echo <span style="font-style:italic">&#34;killing the app pid: </span>$PID<span style="font-style:italic">&#34;</span>
-kill $PID
-</code></pre></div><p>Now here go shines beautifully.
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go get
+</span></span><span style="display:flex;"><span>go build -o /tmp/app
+</span></span><span style="display:flex;"><span>/tmp/app &amp;
+</span></span><span style="display:flex;"><span>PID=$!
+</span></span><span style="display:flex;"><span>go test
+</span></span><span style="display:flex;"><span>echo <span style="font-style:italic">&#34;killing the app pid: </span>$PID<span style="font-style:italic">&#34;</span>
+</span></span><span style="display:flex;"><span>kill $PID
+</span></span></code></pre></div><p>Now here go shines beautifully.
 The test would simply fire up an http client make some requests on a health_check URL I built into the API.
 The output looked like this.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ time ./build.sh test
-testing the app
-2016/08/27 14:15:40 listening on 0.0.0.0:8080
-PASS
-ok      _/path/to/app   0.003s
-killing the app pid: 32440
-./build.sh test  1.26s user 0.15s system 124% cpu 1.136 total
-</code></pre></div><p>It was pretty nice to have a full stack test that ran so quickly.
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ time ./build.sh test
+</span></span><span style="display:flex;"><span>testing the app
+</span></span><span style="display:flex;"><span>2016/08/27 14:15:40 listening on 0.0.0.0:8080
+</span></span><span style="display:flex;"><span>PASS
+</span></span><span style="display:flex;"><span>ok      _/path/to/app   0.003s
+</span></span><span style="display:flex;"><span>killing the app pid: 32440
+</span></span><span style="display:flex;"><span>./build.sh test  1.26s user 0.15s system 124% cpu 1.136 total
+</span></span></code></pre></div><p>It was pretty nice to have a full stack test that ran so quickly.
 Notice that the 1.26s comes from starting up the app.
 The tests ran rather quickly.</p>
 <h3 id="wrap-up">Wrap up</h3>
@@ -185,7 +185,7 @@ I&rsquo;m definitely going to explore it more.</p>
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -216,7 +216,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 

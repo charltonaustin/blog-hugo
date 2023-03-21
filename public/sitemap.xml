@@ -2,10 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://charltonaustin.com/categories/</loc>
-    <lastmod>2020-08-13T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://charltonaustin.com/</loc>
+    <lastmod>2023-03-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://charltonaustin.com/tags/failure/</loc>
+    <lastmod>2023-03-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://charltonaustin.com/posts/failure-is-inevitable/</loc>
+    <lastmod>2023-03-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://charltonaustin.com/tags/leadership/</loc>
+    <lastmod>2023-03-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://charltonaustin.com/tags/learning/</loc>
+    <lastmod>2023-03-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://charltonaustin.com/tags/management/</loc>
+    <lastmod>2023-03-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://charltonaustin.com/posts/</loc>
+    <lastmod>2023-03-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://charltonaustin.com/tags/</loc>
+    <lastmod>2023-03-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://charltonaustin.com/categories/</loc>
     <lastmod>2020-08-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://charltonaustin.com/tags/coding-problems/</loc>
@@ -14,16 +35,10 @@
     <loc>https://charltonaustin.com/tags/development/</loc>
     <lastmod>2020-08-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://charltonaustin.com/posts/</loc>
-    <lastmod>2020-08-13T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://charltonaustin.com/tags/python/</loc>
     <lastmod>2020-08-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://charltonaustin.com/categories/python/</loc>
-    <lastmod>2020-08-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://charltonaustin.com/tags/</loc>
     <lastmod>2020-08-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://charltonaustin.com/posts/why-you-should-emulate-containers-in-python/</loc>
@@ -60,9 +75,6 @@
     <lastmod>2020-01-14T09:03:54-04:00</lastmod>
   </url><url>
     <loc>https://charltonaustin.com/posts/bugs-in-software/</loc>
-    <lastmod>2020-01-14T09:03:54-04:00</lastmod>
-  </url><url>
-    <loc>https://charltonaustin.com/tags/management/</loc>
     <lastmod>2020-01-14T09:03:54-04:00</lastmod>
   </url><url>
     <loc>https://charltonaustin.com/tags/testing/</loc>

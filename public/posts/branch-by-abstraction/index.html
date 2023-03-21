@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="generator" content="Hugo 0.111.3">
 		<title>Branch By Abstraction &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -95,399 +95,399 @@ My team has been struggling with doing this in a coherent way, so here are some 
 <h2 id="example-with-a-function">Example with a function</h2>
 <p>They are all going to be based on <a href="https://martinfowler.com/bliki/BranchByAbstraction.html">this</a> article from Martin Fowler.
 Originally you might have:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-weight:bold">class</span> <span style="font-weight:bold">MarioCar</span>(object):
-
-  @staticmethod
-  <span style="font-weight:bold">def</span> drive():
-    <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
-
-
-<span style="font-weight:bold">def</span> mario_kart():
-  MarioCar().drive()
-
-
-<span style="font-weight:bold">def</span> mario_kart_arcade():
-  MarioCar().drive()
-
-
-<span style="font-weight:bold">def</span> mario_kart_ds():
-  MarioCar().drive()
-
-
-mario_kart()
-mario_kart_arcade()
-mario_kart_ds()
-</code></pre></div><p>Then later you might have:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-weight:bold">class</span> <span style="font-weight:bold">MarioCar</span>(object):
-
-  @staticmethod
-  <span style="font-weight:bold">def</span> drive():
-    <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
-
-
-<span style="font-weight:bold">def</span> get_car(system_name):
-  <span style="font-weight:bold">return</span> MarioCar()
-
-
-<span style="font-weight:bold">def</span> mario_kart():
-  get_car(<span style="font-style:italic">&#39;mario_kart&#39;</span>).drive()
-
-
-<span style="font-weight:bold">def</span> mario_kart_arcade():
-  MarioCar().drive()
-
-
-<span style="font-weight:bold">def</span> mario_kart_ds():
-  MarioCar().drive()
-
-
-mario_kart()
-mario_kart_arcade()
-mario_kart_ds()
-</code></pre></div><p>Eventually you get here:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-weight:bold">class</span> <span style="font-weight:bold">MarioCar</span>(object):
-
-  @staticmethod
-  <span style="font-weight:bold">def</span> drive():
-    <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
-
-
-<span style="font-weight:bold">def</span> get_car(system_name):
-  <span style="font-weight:bold">return</span> MarioCar()
-
-
-<span style="font-weight:bold">def</span> mario_kart():
-  get_car(<span style="font-style:italic">&#39;mario_kart&#39;</span>).drive()
-
-
-<span style="font-weight:bold">def</span> mario_kart_arcade():
-  get_car(<span style="font-style:italic">&#39;mario_kart_arcade&#39;</span>).drive()
-
-
-<span style="font-weight:bold">def</span> mario_kart_ds():
-  get_car(<span style="font-style:italic">&#39;mario_kart_ds&#39;</span>).drive()
-
-
-mario_kart()
-mario_kart_arcade()
-mario_kart_ds()
-</code></pre></div><p>Now you want to deal with some of the clients:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-weight:bold">class</span> <span style="font-weight:bold">MarioCar</span>(object):
-
-  @staticmethod
-  <span style="font-weight:bold">def</span> drive():
-    <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
-
-
-<span style="font-weight:bold">class</span> <span style="font-weight:bold">WarioCar</span>(object):
-  @staticmethod
-  <span style="font-weight:bold">def</span> drive():
-    <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Here I go!&#34;</span>)
-
-
-<span style="font-weight:bold">def</span> get_car(system_name):
-  ready_systems = [<span style="font-style:italic">&#39;mario_kart&#39;</span>]
-  <span style="font-weight:bold">if</span> system_name <span style="font-weight:bold">in</span> ready_systems:
-    <span style="font-weight:bold">return</span> WarioCar()
-  <span style="font-weight:bold">return</span> MarioCar()
-
-
-<span style="font-weight:bold">def</span> mario_kart():
-  get_car(<span style="font-style:italic">&#39;mario_kart&#39;</span>).drive()
-
-
-<span style="font-weight:bold">def</span> mario_kart_arcade():
-  get_car(<span style="font-style:italic">&#39;mario_kart_arcade&#39;</span>).drive()
-
-
-<span style="font-weight:bold">def</span> mario_kart_ds():
-  get_car(<span style="font-style:italic">&#39;mario_kart_ds&#39;</span>).drive()
-
-
-mario_kart()
-mario_kart_arcade()
-mario_kart_ds()
-</code></pre></div><p>Finally all the clients are over:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-weight:bold">class</span> <span style="font-weight:bold">MarioCar</span>(object):
-
-  @staticmethod
-  <span style="font-weight:bold">def</span> drive():
-    <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
-
-
-<span style="font-weight:bold">class</span> <span style="font-weight:bold">WarioCar</span>(object):
-  @staticmethod
-  <span style="font-weight:bold">def</span> drive():
-    <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Here I go!&#34;</span>)
-
-
-<span style="font-weight:bold">def</span> get_car(system_name):
-  <span style="font-weight:bold">return</span> WarioCar()
-
-
-<span style="font-weight:bold">def</span> mario_kart():
-  get_car(<span style="font-style:italic">&#39;mario_kart&#39;</span>).drive()
-
-
-<span style="font-weight:bold">def</span> mario_kart_arcade():
-  get_car(<span style="font-style:italic">&#39;mario_kart_arcade&#39;</span>).drive()
-
-
-<span style="font-weight:bold">def</span> mario_kart_ds():
-  get_car(<span style="font-style:italic">&#39;mario_kart_ds&#39;</span>).drive()
-
-
-mario_kart()
-mario_kart_arcade()
-mario_kart_ds()
-</code></pre></div><p>So we can delete the last implementation</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-weight:bold">class</span> <span style="font-weight:bold">WarioCar</span>(object):
-  @staticmethod
-  <span style="font-weight:bold">def</span> drive():
-    <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Here I go!&#34;</span>)
-
-
-<span style="font-weight:bold">def</span> get_car(system_name):
-  <span style="font-weight:bold">return</span> WarioCar()
-
-
-<span style="font-weight:bold">def</span> mario_kart():
-  get_car(<span style="font-style:italic">&#39;mario_kart&#39;</span>).drive()
-
-
-<span style="font-weight:bold">def</span> mario_kart_arcade():
-  get_car(<span style="font-style:italic">&#39;mario_kart_arcade&#39;</span>).drive()
-
-
-<span style="font-weight:bold">def</span> mario_kart_ds():
-  get_car(<span style="font-style:italic">&#39;mario_kart_ds&#39;</span>).drive()
-
-
-mario_kart()
-mario_kart_arcade()
-mario_kart_ds()
-</code></pre></div><h2 id="example-with-a-feature-flags">Example with a feature flags</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="font-weight:bold">class</span> <span style="font-weight:bold">MarioCar</span>(object):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  @staticmethod
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">def</span> drive():
+</span></span><span style="display:flex;"><span>    print(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart():
+</span></span><span style="display:flex;"><span>  MarioCar().drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart_arcade():
+</span></span><span style="display:flex;"><span>  MarioCar().drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart_ds():
+</span></span><span style="display:flex;"><span>  MarioCar().drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mario_kart()
+</span></span><span style="display:flex;"><span>mario_kart_arcade()
+</span></span><span style="display:flex;"><span>mario_kart_ds()
+</span></span></code></pre></div><p>Then later you might have:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="font-weight:bold">class</span> <span style="font-weight:bold">MarioCar</span>(object):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  @staticmethod
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">def</span> drive():
+</span></span><span style="display:flex;"><span>    print(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> get_car(system_name):
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">return</span> MarioCar()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart():
+</span></span><span style="display:flex;"><span>  get_car(<span style="font-style:italic">&#39;mario_kart&#39;</span>).drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart_arcade():
+</span></span><span style="display:flex;"><span>  MarioCar().drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart_ds():
+</span></span><span style="display:flex;"><span>  MarioCar().drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mario_kart()
+</span></span><span style="display:flex;"><span>mario_kart_arcade()
+</span></span><span style="display:flex;"><span>mario_kart_ds()
+</span></span></code></pre></div><p>Eventually you get here:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="font-weight:bold">class</span> <span style="font-weight:bold">MarioCar</span>(object):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  @staticmethod
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">def</span> drive():
+</span></span><span style="display:flex;"><span>    print(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> get_car(system_name):
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">return</span> MarioCar()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart():
+</span></span><span style="display:flex;"><span>  get_car(<span style="font-style:italic">&#39;mario_kart&#39;</span>).drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart_arcade():
+</span></span><span style="display:flex;"><span>  get_car(<span style="font-style:italic">&#39;mario_kart_arcade&#39;</span>).drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart_ds():
+</span></span><span style="display:flex;"><span>  get_car(<span style="font-style:italic">&#39;mario_kart_ds&#39;</span>).drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mario_kart()
+</span></span><span style="display:flex;"><span>mario_kart_arcade()
+</span></span><span style="display:flex;"><span>mario_kart_ds()
+</span></span></code></pre></div><p>Now you want to deal with some of the clients:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="font-weight:bold">class</span> <span style="font-weight:bold">MarioCar</span>(object):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  @staticmethod
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">def</span> drive():
+</span></span><span style="display:flex;"><span>    print(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">class</span> <span style="font-weight:bold">WarioCar</span>(object):
+</span></span><span style="display:flex;"><span>  @staticmethod
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">def</span> drive():
+</span></span><span style="display:flex;"><span>    print(<span style="font-style:italic">&#34;Here I go!&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> get_car(system_name):
+</span></span><span style="display:flex;"><span>  ready_systems = [<span style="font-style:italic">&#39;mario_kart&#39;</span>]
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">if</span> system_name <span style="font-weight:bold">in</span> ready_systems:
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> WarioCar()
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">return</span> MarioCar()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart():
+</span></span><span style="display:flex;"><span>  get_car(<span style="font-style:italic">&#39;mario_kart&#39;</span>).drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart_arcade():
+</span></span><span style="display:flex;"><span>  get_car(<span style="font-style:italic">&#39;mario_kart_arcade&#39;</span>).drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart_ds():
+</span></span><span style="display:flex;"><span>  get_car(<span style="font-style:italic">&#39;mario_kart_ds&#39;</span>).drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mario_kart()
+</span></span><span style="display:flex;"><span>mario_kart_arcade()
+</span></span><span style="display:flex;"><span>mario_kart_ds()
+</span></span></code></pre></div><p>Finally all the clients are over:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="font-weight:bold">class</span> <span style="font-weight:bold">MarioCar</span>(object):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  @staticmethod
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">def</span> drive():
+</span></span><span style="display:flex;"><span>    print(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">class</span> <span style="font-weight:bold">WarioCar</span>(object):
+</span></span><span style="display:flex;"><span>  @staticmethod
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">def</span> drive():
+</span></span><span style="display:flex;"><span>    print(<span style="font-style:italic">&#34;Here I go!&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> get_car(system_name):
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">return</span> WarioCar()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart():
+</span></span><span style="display:flex;"><span>  get_car(<span style="font-style:italic">&#39;mario_kart&#39;</span>).drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart_arcade():
+</span></span><span style="display:flex;"><span>  get_car(<span style="font-style:italic">&#39;mario_kart_arcade&#39;</span>).drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart_ds():
+</span></span><span style="display:flex;"><span>  get_car(<span style="font-style:italic">&#39;mario_kart_ds&#39;</span>).drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mario_kart()
+</span></span><span style="display:flex;"><span>mario_kart_arcade()
+</span></span><span style="display:flex;"><span>mario_kart_ds()
+</span></span></code></pre></div><p>So we can delete the last implementation</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="font-weight:bold">class</span> <span style="font-weight:bold">WarioCar</span>(object):
+</span></span><span style="display:flex;"><span>  @staticmethod
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">def</span> drive():
+</span></span><span style="display:flex;"><span>    print(<span style="font-style:italic">&#34;Here I go!&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> get_car(system_name):
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">return</span> WarioCar()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart():
+</span></span><span style="display:flex;"><span>  get_car(<span style="font-style:italic">&#39;mario_kart&#39;</span>).drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart_arcade():
+</span></span><span style="display:flex;"><span>  get_car(<span style="font-style:italic">&#39;mario_kart_arcade&#39;</span>).drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart_ds():
+</span></span><span style="display:flex;"><span>  get_car(<span style="font-style:italic">&#39;mario_kart_ds&#39;</span>).drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mario_kart()
+</span></span><span style="display:flex;"><span>mario_kart_arcade()
+</span></span><span style="display:flex;"><span>mario_kart_ds()
+</span></span></code></pre></div><h2 id="example-with-a-feature-flags">Example with a feature flags</h2>
 <p>Again originally you might have:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-weight:bold">class</span> <span style="font-weight:bold">MarioCar</span>(object):
-
-  @staticmethod
-  <span style="font-weight:bold">def</span> drive():
-    <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
-
-
-<span style="font-weight:bold">def</span> mario_kart():
-  MarioCar().drive()
-
-
-<span style="font-weight:bold">def</span> mario_kart_arcade():
-  MarioCar().drive()
-
-
-<span style="font-weight:bold">def</span> mario_kart_ds():
-  MarioCar().drive()
-
-
-mario_kart()
-mario_kart_arcade()
-mario_kart_ds()
-</code></pre></div><p>Then you move to this guy</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">use_wario_saying = False
-
-
-<span style="font-weight:bold">class</span> <span style="font-weight:bold">MarioCar</span>(object):
-
-  @staticmethod
-  <span style="font-weight:bold">def</span> drive():
-    <span style="font-weight:bold">if</span> use_wario_saying:
-      <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#39;Here I go!&#39;</span>)
-    <span style="font-weight:bold">else</span>:
-      <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
-
-
-<span style="font-weight:bold">def</span> mario_kart():
-  MarioCar().drive()
-
-
-<span style="font-weight:bold">def</span> mario_kart_arcade():
-  MarioCar().drive()
-
-
-<span style="font-weight:bold">def</span> mario_kart_ds():
-  MarioCar().drive()
-
-
-mario_kart()
-mario_kart_arcade()
-mario_kart_ds()
-</code></pre></div><p>Do some testing make sure everything is the way you want before you get here:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">use_wario_saying = True
-
-
-<span style="font-weight:bold">class</span> <span style="font-weight:bold">MarioCar</span>(object):
-
-  @staticmethod
-  <span style="font-weight:bold">def</span> drive():
-    <span style="font-weight:bold">if</span> use_wario_saying:
-      <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#39;Here I go!&#39;</span>)
-    <span style="font-weight:bold">else</span>:
-      <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
-
-
-<span style="font-weight:bold">def</span> mario_kart():
-  MarioCar().drive()
-
-
-<span style="font-weight:bold">def</span> mario_kart_arcade():
-  MarioCar().drive()
-
-
-<span style="font-weight:bold">def</span> mario_kart_ds():
-  MarioCar().drive()
-
-
-mario_kart()
-mario_kart_arcade()
-mario_kart_ds()
-</code></pre></div><p>Finally you are here:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-weight:bold">class</span> <span style="font-weight:bold">MarioCar</span>(object):
-
-  @staticmethod
-  <span style="font-weight:bold">def</span> drive():
-    <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#39;Here I go!&#39;</span>)
-
-
-<span style="font-weight:bold">def</span> mario_kart():
-  MarioCar().drive()
-
-
-<span style="font-weight:bold">def</span> mario_kart_arcade():
-  MarioCar().drive()
-
-
-<span style="font-weight:bold">def</span> mario_kart_ds():
-  MarioCar().drive()
-
-
-mario_kart()
-mario_kart_arcade()
-mario_kart_ds()
-</code></pre></div><h2 id="commenting-functions">Commenting functions</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="font-weight:bold">class</span> <span style="font-weight:bold">MarioCar</span>(object):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  @staticmethod
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">def</span> drive():
+</span></span><span style="display:flex;"><span>    print(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart():
+</span></span><span style="display:flex;"><span>  MarioCar().drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart_arcade():
+</span></span><span style="display:flex;"><span>  MarioCar().drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart_ds():
+</span></span><span style="display:flex;"><span>  MarioCar().drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mario_kart()
+</span></span><span style="display:flex;"><span>mario_kart_arcade()
+</span></span><span style="display:flex;"><span>mario_kart_ds()
+</span></span></code></pre></div><p>Then you move to this guy</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>use_wario_saying = <span style="font-weight:bold">False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">class</span> <span style="font-weight:bold">MarioCar</span>(object):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  @staticmethod
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">def</span> drive():
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">if</span> use_wario_saying:
+</span></span><span style="display:flex;"><span>      print(<span style="font-style:italic">&#39;Here I go!&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">else</span>:
+</span></span><span style="display:flex;"><span>      print(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart():
+</span></span><span style="display:flex;"><span>  MarioCar().drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart_arcade():
+</span></span><span style="display:flex;"><span>  MarioCar().drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart_ds():
+</span></span><span style="display:flex;"><span>  MarioCar().drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mario_kart()
+</span></span><span style="display:flex;"><span>mario_kart_arcade()
+</span></span><span style="display:flex;"><span>mario_kart_ds()
+</span></span></code></pre></div><p>Do some testing make sure everything is the way you want before you get here:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>use_wario_saying = <span style="font-weight:bold">True</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">class</span> <span style="font-weight:bold">MarioCar</span>(object):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  @staticmethod
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">def</span> drive():
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">if</span> use_wario_saying:
+</span></span><span style="display:flex;"><span>      print(<span style="font-style:italic">&#39;Here I go!&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">else</span>:
+</span></span><span style="display:flex;"><span>      print(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart():
+</span></span><span style="display:flex;"><span>  MarioCar().drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart_arcade():
+</span></span><span style="display:flex;"><span>  MarioCar().drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart_ds():
+</span></span><span style="display:flex;"><span>  MarioCar().drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mario_kart()
+</span></span><span style="display:flex;"><span>mario_kart_arcade()
+</span></span><span style="display:flex;"><span>mario_kart_ds()
+</span></span></code></pre></div><p>Finally you are here:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="font-weight:bold">class</span> <span style="font-weight:bold">MarioCar</span>(object):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  @staticmethod
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">def</span> drive():
+</span></span><span style="display:flex;"><span>    print(<span style="font-style:italic">&#39;Here I go!&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart():
+</span></span><span style="display:flex;"><span>  MarioCar().drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart_arcade():
+</span></span><span style="display:flex;"><span>  MarioCar().drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart_ds():
+</span></span><span style="display:flex;"><span>  MarioCar().drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mario_kart()
+</span></span><span style="display:flex;"><span>mario_kart_arcade()
+</span></span><span style="display:flex;"><span>mario_kart_ds()
+</span></span></code></pre></div><h2 id="commenting-functions">Commenting functions</h2>
 <p>Here&rsquo;s another example that I think is under utilized.
 Originally</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-weight:bold">def</span> mario_drive():
-  <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
-
-
-<span style="font-weight:bold">def</span> mario_kart():
-  mario_drive()
-
-
-<span style="font-weight:bold">def</span> mario_kart_arcade():
-  mario_drive()
-
-
-<span style="font-weight:bold">def</span> mario_kart_ds():
-  mario_drive()
-
-
-mario_kart()
-mario_kart_arcade()
-mario_kart_ds()
-</code></pre></div><p>But the end of the day comes and you are out of time so you just comment out.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-weight:bold">def</span> mario_drive():
-  <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
-
-
-<span style="font-weight:bold">def</span> wario_drive():
-  <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#39;Here I go!&#39;</span>)
-
-
-<span style="font-weight:bold">def</span> mario_kart():
-  <span style="font-style:italic"># wario_drive()</span>
-  mario_drive()
-
-
-<span style="font-weight:bold">def</span> mario_kart_arcade():
-  mario_drive()
-
-
-<span style="font-weight:bold">def</span> mario_kart_ds():
-  mario_drive()
-
-
-mario_kart()
-mario_kart_arcade()
-mario_kart_ds()
-</code></pre></div><p>Day two comes along and you&rsquo;ve testes for mario kart the original, but haven&rsquo;t finished testing the arcade version.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-weight:bold">def</span> mario_drive():
-  <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
-
-
-<span style="font-weight:bold">def</span> wario_drive():
-  <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#39;Here I go!&#39;</span>)
-
-
-<span style="font-weight:bold">def</span> mario_kart():
-  wario_drive()
-
-
-<span style="font-weight:bold">def</span> mario_kart_arcade():
-  <span style="font-style:italic"># wario_drive()</span>
-  mario_drive()
-
-
-<span style="font-weight:bold">def</span> mario_kart_ds():
-  mario_drive()
-
-
-mario_kart()
-mario_kart_arcade()
-mario_kart_ds()
-</code></pre></div><p>Before you know it everything is working.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-weight:bold">def</span> mario_drive():
-  <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
-
-
-<span style="font-weight:bold">def</span> wario_drive():
-  <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#39;Here I go!&#39;</span>)
-
-
-<span style="font-weight:bold">def</span> mario_kart():
-  wario_drive()
-
-
-<span style="font-weight:bold">def</span> mario_kart_arcade():
-  wario_drive()
-
-
-<span style="font-weight:bold">def</span> mario_kart_ds():
-  wario_drive()
-
-
-mario_kart()
-mario_kart_arcade()
-mario_kart_ds()
-</code></pre></div><p>Don&rsquo;t forget to remove unused code.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-weight:bold">def</span> wario_drive():
-  <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#39;Here I go!&#39;</span>)
-
-
-<span style="font-weight:bold">def</span> mario_kart():
-  wario_drive()
-
-
-<span style="font-weight:bold">def</span> mario_kart_arcade():
-  wario_drive()
-
-
-<span style="font-weight:bold">def</span> mario_kart_ds():
-  wario_drive()
-
-
-mario_kart()
-mario_kart_arcade()
-mario_kart_ds()
-</code></pre></div><h2 id="some-final-thoughts">Some final thoughts</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_drive():
+</span></span><span style="display:flex;"><span>  print(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart():
+</span></span><span style="display:flex;"><span>  mario_drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart_arcade():
+</span></span><span style="display:flex;"><span>  mario_drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart_ds():
+</span></span><span style="display:flex;"><span>  mario_drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mario_kart()
+</span></span><span style="display:flex;"><span>mario_kart_arcade()
+</span></span><span style="display:flex;"><span>mario_kart_ds()
+</span></span></code></pre></div><p>But the end of the day comes and you are out of time so you just comment out.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_drive():
+</span></span><span style="display:flex;"><span>  print(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> wario_drive():
+</span></span><span style="display:flex;"><span>  print(<span style="font-style:italic">&#39;Here I go!&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart():
+</span></span><span style="display:flex;"><span>  <span style="font-style:italic"># wario_drive()</span>
+</span></span><span style="display:flex;"><span>  mario_drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart_arcade():
+</span></span><span style="display:flex;"><span>  mario_drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart_ds():
+</span></span><span style="display:flex;"><span>  mario_drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mario_kart()
+</span></span><span style="display:flex;"><span>mario_kart_arcade()
+</span></span><span style="display:flex;"><span>mario_kart_ds()
+</span></span></code></pre></div><p>Day two comes along and you&rsquo;ve testes for mario kart the original, but haven&rsquo;t finished testing the arcade version.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_drive():
+</span></span><span style="display:flex;"><span>  print(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> wario_drive():
+</span></span><span style="display:flex;"><span>  print(<span style="font-style:italic">&#39;Here I go!&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart():
+</span></span><span style="display:flex;"><span>  wario_drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart_arcade():
+</span></span><span style="display:flex;"><span>  <span style="font-style:italic"># wario_drive()</span>
+</span></span><span style="display:flex;"><span>  mario_drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart_ds():
+</span></span><span style="display:flex;"><span>  mario_drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mario_kart()
+</span></span><span style="display:flex;"><span>mario_kart_arcade()
+</span></span><span style="display:flex;"><span>mario_kart_ds()
+</span></span></code></pre></div><p>Before you know it everything is working.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_drive():
+</span></span><span style="display:flex;"><span>  print(<span style="font-style:italic">&#34;Let&#39;s-a-go!&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> wario_drive():
+</span></span><span style="display:flex;"><span>  print(<span style="font-style:italic">&#39;Here I go!&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart():
+</span></span><span style="display:flex;"><span>  wario_drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart_arcade():
+</span></span><span style="display:flex;"><span>  wario_drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart_ds():
+</span></span><span style="display:flex;"><span>  wario_drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mario_kart()
+</span></span><span style="display:flex;"><span>mario_kart_arcade()
+</span></span><span style="display:flex;"><span>mario_kart_ds()
+</span></span></code></pre></div><p>Don&rsquo;t forget to remove unused code.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="font-weight:bold">def</span> wario_drive():
+</span></span><span style="display:flex;"><span>  print(<span style="font-style:italic">&#39;Here I go!&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart():
+</span></span><span style="display:flex;"><span>  wario_drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart_arcade():
+</span></span><span style="display:flex;"><span>  wario_drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> mario_kart_ds():
+</span></span><span style="display:flex;"><span>  wario_drive()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mario_kart()
+</span></span><span style="display:flex;"><span>mario_kart_arcade()
+</span></span><span style="display:flex;"><span>mario_kart_ds()
+</span></span></code></pre></div><h2 id="some-final-thoughts">Some final thoughts</h2>
 <p>You might use inheritance when you have a typed language, or polymorphic dispatch when you are using a functional language.
 The trick is to figure out an abstraction where you have a single choke point.
 That way at the end of the day it is easy to clean up and turn on and off.</p>
@@ -533,7 +533,7 @@ That way at the end of the day it is easy to clean up and turn on and off.</p>
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -564,7 +564,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 

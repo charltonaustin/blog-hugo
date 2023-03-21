@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="generator" content="Hugo 0.111.3">
 		<title>Euler Problem 001 &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -91,49 +91,49 @@
 <p>Find the sum of all the multiples of 3 or 5 below 1000.</p>
 <h3 id="solution">Solution</h3>
 <p>The first algorithm is super straightforward. We want to simply loop over each number between the start and the end checking if the number is a multiple of 3 or 5 and then adding that to the sum. Now this is going to O(n). It isn&rsquo;t bad at all.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="font-weight:bold">var</span> isMultipleOfThree = <span style="font-weight:bold">function</span>(number) {
-  <span style="font-weight:bold">return</span> (number % 3) === 0;
-}
-
-<span style="font-weight:bold">var</span> isMultipleOfFive = <span style="font-weight:bold">function</span>(number) {
-  <span style="font-weight:bold">return</span> (number % 5) === 0;
-}
-
-<span style="font-weight:bold">var</span> eulerProblemOne = <span style="font-weight:bold">function</span>(upperBound){
-  <span style="font-weight:bold">var</span> sum = 0;
-  
-  <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 0; i &lt; upperBound; i+=3){
-    <span style="font-weight:bold">if</span>(isMultipleOfFive(i) || isMultipleOfThree(i)){
-        sum += i;
-    }
-  }
-  
-  <span style="font-weight:bold">return</span> sum;
-}
-</code></pre></div><p>But we can do a little better than this. Instead of iterating over every single number between 0 and the upper bound we can simply add up to the upper bound across 3 and 5 making sure to account for double counting.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="font-weight:bold">var</span> isMultipleOfThree = <span style="font-weight:bold">function</span>(number) {
-  <span style="font-weight:bold">return</span> (number % 3) === 0;
-}
-
-<span style="font-weight:bold">var</span> isMultipleOfFive = <span style="font-weight:bold">function</span>(number) {
-  <span style="font-weight:bold">return</span> (number % 5) === 0;
-}
-
-<span style="font-weight:bold">var</span> eulerProblemOne = <span style="font-weight:bold">function</span>(upperBound){
-  <span style="font-weight:bold">var</span> sum = 0;
-  
-  <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 3; i &lt; upperBound; i+=3){
-    <span style="font-weight:bold">if</span>(!isMultipleOfFive(i)){
-      sum += i;
-    }
-  }
-  
-  <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i=5; i &lt; upperBound; i+=5){
-    sum +=i;
-  }
-  <span style="font-weight:bold">return</span> sum;
-}
-</code></pre></div><p>If you&rsquo;d like to see the full code please see my daily <a href="https://github.com/charltonaustin/toy-problems/">toy problem</a> exercises that I&rsquo;ve been working on. It includes tests and a README.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="font-weight:bold">var</span> isMultipleOfThree = <span style="font-weight:bold">function</span>(number) {
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">return</span> (number % 3) === 0;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">var</span> isMultipleOfFive = <span style="font-weight:bold">function</span>(number) {
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">return</span> (number % 5) === 0;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">var</span> eulerProblemOne = <span style="font-weight:bold">function</span>(upperBound){
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">var</span> sum = 0;
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 0; i &lt; upperBound; i+=3){
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">if</span>(isMultipleOfFive(i) || isMultipleOfThree(i)){
+</span></span><span style="display:flex;"><span>        sum += i;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">return</span> sum;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>But we can do a little better than this. Instead of iterating over every single number between 0 and the upper bound we can simply add up to the upper bound across 3 and 5 making sure to account for double counting.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="font-weight:bold">var</span> isMultipleOfThree = <span style="font-weight:bold">function</span>(number) {
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">return</span> (number % 3) === 0;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">var</span> isMultipleOfFive = <span style="font-weight:bold">function</span>(number) {
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">return</span> (number % 5) === 0;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">var</span> eulerProblemOne = <span style="font-weight:bold">function</span>(upperBound){
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">var</span> sum = 0;
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 3; i &lt; upperBound; i+=3){
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">if</span>(!isMultipleOfFive(i)){
+</span></span><span style="display:flex;"><span>      sum += i;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i=5; i &lt; upperBound; i+=5){
+</span></span><span style="display:flex;"><span>    sum +=i;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">return</span> sum;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If you&rsquo;d like to see the full code please see my daily <a href="https://github.com/charltonaustin/toy-problems/">toy problem</a> exercises that I&rsquo;ve been working on. It includes tests and a README.</p>
 
                 </section>
             </article>
@@ -176,7 +176,7 @@
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -207,7 +207,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 

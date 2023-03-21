@@ -18,7 +18,7 @@ categories : [
 1. Do you mind if we go over feedback for you?
 
 ## The reasoning
-Each week I like to have a thirty minute one on one with all of my direct reports.
+Each week I like to have a thirty-minute one on one with all of my direct reports.
 I know that can be a bit time demanding, but it isn't that bad.
 If you imagine that you have 10 direct reports that translates into 300 minutes or 5 hours.
 If you double that to make sure that you are prepared then you spend 10 hours.

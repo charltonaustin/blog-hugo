@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="generator" content="Hugo 0.111.3">
 		<title>Euler Problem 006 &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -92,18 +92,18 @@
 <p>Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.</p>
 <h4 id="solution">Solution</h4>
 <p>The code is not that interesting. You simply walk from 1 to the number keeping track of the differences and return them in the end. Not a bad way to warm up for the day, but definitely isn&rsquo;t going to keep thinking forever.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="font-weight:bold">var</span> findDifferenceOfSquares = <span style="font-weight:bold">function</span>(number){
-  <span style="font-weight:bold">var</span> differences = [];
-  <span style="font-weight:bold">var</span> sum = 0;
-  <span style="font-weight:bold">var</span> sumOfSquares = 0;
-  <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 1; i &lt; number + 1; i++) {
-    sum += i;
-    sumOfSquares += i * i;
-    differences.push(sum*sum - sumOfSquares);
-  }
-  <span style="font-weight:bold">return</span> differences;
-}
-</code></pre></div><p>If you&rsquo;d like to see the full code please see my daily <a href="https://github.com/charltonaustin/toy-problems/">toy problem</a> exercises that I&rsquo;ve been working on. It includes tests and a README.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="font-weight:bold">var</span> findDifferenceOfSquares = <span style="font-weight:bold">function</span>(number){
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">var</span> differences = [];
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">var</span> sum = 0;
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">var</span> sumOfSquares = 0;
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 1; i &lt; number + 1; i++) {
+</span></span><span style="display:flex;"><span>    sum += i;
+</span></span><span style="display:flex;"><span>    sumOfSquares += i * i;
+</span></span><span style="display:flex;"><span>    differences.push(sum*sum - sumOfSquares);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">return</span> differences;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If you&rsquo;d like to see the full code please see my daily <a href="https://github.com/charltonaustin/toy-problems/">toy problem</a> exercises that I&rsquo;ve been working on. It includes tests and a README.</p>
 
                 </section>
             </article>
@@ -146,7 +146,7 @@
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -177,7 +177,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 

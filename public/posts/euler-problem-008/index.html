@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="generator" content="Hugo 0.111.3">
 		<title>Euler Problem 008 &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -87,44 +87,44 @@
                 <section id="post-body">
                     <h3 id="the-problem">The problem</h3>
 <p>The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">73167176531330624919225119674426574742355349194934
-96983520312774506326239578318016984801869478851843
-85861560789112949495459501737958331952853208805511
-12540698747158523863050715693290963295227443043557
-66896648950445244523161731856403098711121722383113
-62229893423380308135336276614282806444486645238749
-30358907296290491560440772390713810515859307960866
-70172427121883998797908792274921901699720888093776
-65727333001053367881220235421809751254540594752243
-52584907711670556013604839586446706324415722155397
-53697817977846174064955149290862569321978468622482
-83972241375657056057490261407972968652414535100474
-82166370484403199890008895243450658541227588666881
-16427171479924442928230863465674813919123162824586
-17866458359124566529476545682848912883142607690042
-24219022671055626321111109370544217506941658960408
-07198403850962455444362981230987879927244284909188
-84580156166097919133875499200524063689912560717606
-05886116467109405077541002256983155200055935729725
-71636269561882670428252483600823257530420752963450
-</code></pre></div><p>Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>73167176531330624919225119674426574742355349194934
+</span></span><span style="display:flex;"><span>96983520312774506326239578318016984801869478851843
+</span></span><span style="display:flex;"><span>85861560789112949495459501737958331952853208805511
+</span></span><span style="display:flex;"><span>12540698747158523863050715693290963295227443043557
+</span></span><span style="display:flex;"><span>66896648950445244523161731856403098711121722383113
+</span></span><span style="display:flex;"><span>62229893423380308135336276614282806444486645238749
+</span></span><span style="display:flex;"><span>30358907296290491560440772390713810515859307960866
+</span></span><span style="display:flex;"><span>70172427121883998797908792274921901699720888093776
+</span></span><span style="display:flex;"><span>65727333001053367881220235421809751254540594752243
+</span></span><span style="display:flex;"><span>52584907711670556013604839586446706324415722155397
+</span></span><span style="display:flex;"><span>53697817977846174064955149290862569321978468622482
+</span></span><span style="display:flex;"><span>83972241375657056057490261407972968652414535100474
+</span></span><span style="display:flex;"><span>82166370484403199890008895243450658541227588666881
+</span></span><span style="display:flex;"><span>16427171479924442928230863465674813919123162824586
+</span></span><span style="display:flex;"><span>17866458359124566529476545682848912883142607690042
+</span></span><span style="display:flex;"><span>24219022671055626321111109370544217506941658960408
+</span></span><span style="display:flex;"><span>07198403850962455444362981230987879927244284909188
+</span></span><span style="display:flex;"><span>84580156166097919133875499200524063689912560717606
+</span></span><span style="display:flex;"><span>05886116467109405077541002256983155200055935729725
+</span></span><span style="display:flex;"><span>71636269561882670428252483600823257530420752963450
+</span></span></code></pre></div><p>Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?</p>
 <h4 id="solution">Solution</h4>
 <p>This guy is a pretty fun warm up for the day. A simple loop to walk over the numbers looking in all the possible directions (there are four). Going down and up are the same, going left and right are the same, forward-up is the same as going backward-down, and going forward-down is the same as going backward-up. Then as we traverse we simply keep track of the largest value.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="font-weight:bold">var</span> findLargestMultiple = <span style="font-weight:bold">function</span>(string, length){
-  <span style="font-weight:bold">var</span> largestMultiple = 0;
-  <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 0; i &lt; string.length-length; i++){
-    <span style="font-weight:bold">var</span> currentMultiple = 1;
-    <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> j = i; j &lt; i+length; j++){
-      console.log(Number(string[j]));
-      currentMultiple *= Number(string[j]);
-    }
-    <span style="font-weight:bold">if</span>(currentMultiple &gt; largestMultiple){
-      largestMultiple = currentMultiple;
-    }
-  }
-  <span style="font-weight:bold">return</span> largestMultiple;
-}
-</code></pre></div><p>If you&rsquo;d like to see the full code please see my daily <a href="https://github.com/charltonaustin/toy-problems/">toy problem</a> exercises that I&rsquo;ve been working on. It includes tests and a README.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="font-weight:bold">var</span> findLargestMultiple = <span style="font-weight:bold">function</span>(string, length){
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">var</span> largestMultiple = 0;
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 0; i &lt; string.length-length; i++){
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">var</span> currentMultiple = 1;
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> j = i; j &lt; i+length; j++){
+</span></span><span style="display:flex;"><span>      console.log(Number(string[j]));
+</span></span><span style="display:flex;"><span>      currentMultiple *= Number(string[j]);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">if</span>(currentMultiple &gt; largestMultiple){
+</span></span><span style="display:flex;"><span>      largestMultiple = currentMultiple;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">return</span> largestMultiple;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If you&rsquo;d like to see the full code please see my daily <a href="https://github.com/charltonaustin/toy-problems/">toy problem</a> exercises that I&rsquo;ve been working on. It includes tests and a README.</p>
 
                 </section>
             </article>
@@ -167,7 +167,7 @@
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -198,7 +198,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 

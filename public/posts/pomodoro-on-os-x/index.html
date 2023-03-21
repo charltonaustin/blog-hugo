@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="generator" content="Hugo 0.111.3">
 		<title>Pomodoro On Os X &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -93,8 +93,8 @@ For a while I was using my phone timer which worked okay, but I&rsquo;m pretty s
 If you haven&rsquo;t used it the <a href="http://www.computerhope.com/unix/uat.htm">at command</a> schedules a command to execute sometime in the future.
 The osascript is a hook for shell scripts into AppleScripts.
 Putting those two things together I came up with this.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">at now + 25 minutes &lt;&lt;&lt; &#34;osascript -e &#39;tell app \&#34;System Events\&#34; to display dialog \&#34;Take A Break Pomodoro :)\&#34;&#39;&#34;
-</code></pre></div><p>This is a command that you can put into a script and run to set up a pomodoro timer that will pop up 25 minutes later.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>at now + 25 minutes &lt;&lt;&lt; &#34;osascript -e &#39;tell app \&#34;System Events\&#34; to display dialog \&#34;Take A Break Pomodoro :)\&#34;&#39;&#34;
+</span></span></code></pre></div><p>This is a command that you can put into a script and run to set up a pomodoro timer that will pop up 25 minutes later.</p>
 <h3 id="next-steps">Next steps</h3>
 <p>The next steps would be having a hook so then when you hit okay it starts up a 5 min timer that has another pop up.
 That next pop up should set another timer for 25 minutes and then maybe I will never forget to set up my next pomodoro timer.</p>
@@ -140,7 +140,7 @@ That next pop up should set another timer for 25 minutes and then maybe I will n
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -171,7 +171,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 

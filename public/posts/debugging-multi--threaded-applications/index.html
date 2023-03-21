@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Charlton Austin">
+		<meta name="description" content="Charlton Austin&#39;s personal website">
+		<meta name="generator" content="Hugo 0.111.3">
+		<title>Debugging Multi  Threaded Applications &middot; Charlton Austin</title>
+		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
+		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
+		<link rel="stylesheet" href="https://charltonaustin.com/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://charltonaustin.com/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://charltonaustin.com/index.xml" rel="alternate" type="application/rss+xml" title="Charlton Austin" />
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://charltonaustin.com/'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://charltonaustin.com/posts'>Archive</a>
+	<a href='https://charltonaustin.com/tags'>Tags</a>
+	<a href='https://charltonaustin.com/about'>About</a>
+
+	
+
+	
+	<a class="cta" href="https://charltonaustin.com/index.xml">Subscribe</a>
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Debugging Multi  Threaded Applications
+                    </h1>
+                    <h2 class="headline">
+                    Oct 24, 2015 09:03
+                    · 500 words
+                    · 3 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://charltonaustin.com/tags/java">java</a>
+                          
+                              <a href="https://charltonaustin.com/tags/multi-threaded">multi threaded</a>
+                          
+                              <a href="https://charltonaustin.com/tags/development">development</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#logging-logging-logging-and-more-logging">logging Logging <em>LOGGING</em> and <em>MORE LOGGING</em></a></li>
+        <li><a href="#make-sure-you-log-all-exceptions-in-children-threads">Make sure you log all exceptions in children threads</a></li>
+        <li><a href="#dont-start-optimizing-before-you-understand-what-is-going-on">Don&rsquo;t start optimizing before you understand what is going on</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    <p>Recently I had debug a multithreaded application with some surprising results. Seeing as this can be a particularly tricky task for people that haven&rsquo;t done it before I thought  I would write about some lessons I learned from the experience.</p>
+<h3 id="logging-logging-logging-and-more-logging">logging Logging <em>LOGGING</em> and <em>MORE LOGGING</em></h3>
+<p>Log to understand the problem. This one is hard to set up retroactively, but it is well worth the effort. Strive for logs that are meaningful, and that give you checkpoints. For instance avoid putting logs in tight loops. Unless there is something you really need to see inside of the tight loop, move the log out. If you really need to log within a tight loop think about either making the log level DEBUGGING, or only logging every nth element, or doing some other logic to really only log things that you will be interested in. In multithreaded application logging can give you clues on whether or not a thread is starved or when events are happening out of order. Most of the time logs in tight loops will be unhelpful. While some people argue that you should log everything and then use other tools to sift through them I think you will save everyone a whole lot of headaches if you try and log only what you really need. True hard disk space is cheap, true you can roll your logs often to make it easier to sift through them, but at the end of the day the simpler your logs are to sift through the more likely you are to solve the problem.</p>
+<h3 id="make-sure-you-log-all-exceptions-in-children-threads">Make sure you log all exceptions in children threads</h3>
+<p>Register your threads with a logger so you don&rsquo;t just swallow un-handled exceptions. This is something that the java docs tends to leave out. With executors you should take a look at <a href="http://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadPoolExecutor.html#afterExecute-java.lang.Runnable-java.lang.Throwable-">http://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadPoolExecutor.html#afterExecute-java.lang.Runnable-java.lang.Throwable-</a> rather than registering directly with the thread (and you should probably be using Executors to create your thread pool). Silently dying threads can be confusing even with lots of good logging unless you log out that something died. If you have a message based system and messages are just falling off the end of the earth this is probably a good place to start.</p>
+<h3 id="dont-start-optimizing-before-you-understand-what-is-going-on">Don&rsquo;t start optimizing before you understand what is going on</h3>
+<p>On my problem clients were timing out because they weren&rsquo;t receiving messages from the server in time. I did a lot of work to speed up the process since only some clients weren&rsquo;t receiving messages and it seemed to only happen under heavy load and after some time. While the optimization was in some sense not wasted effort because it was a time and load sensitive problem it didn&rsquo;t actually have anything to do with clients timing out. It had everything to do with an uncaught exception on a corner case that wasn&rsquo;t being handled properly. Because I started with what I intuitively knew was wrong rather than by systematic understanding through logging it took me some time to figure that out.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2fdebugging-multi--threaded-applications%2f - Debugging%20Multi%20%20Threaded%20Applications by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/charltonaustin">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/charltonaustin">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://charltonaustin.com/js/jquery-3.3.1.min.js"></script>
+<script src="https://charltonaustin.com/js/main.js"></script>
+<script src="https://charltonaustin.com/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-164961268-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+    </body>
+</html>

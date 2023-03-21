@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="generator" content="Hugo 0.111.3">
 		<title>Clojure Sieve Of Eratosthenes &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -74,44 +74,43 @@
                 
                 <section id="post-body">
                     <p>I was recently watching a video on Haskell that was showing how you would write a functional form of the <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">Sieve of Eratosthenes</a>. I personally love this algorithm and was interested in what it looked like in Clojure. So I wrote this:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="font-weight:bold">defn </span>sieve [number xs]
-  (<span style="font-weight:bold">if </span>(= 0 number)
-    xs
-    (conj (sieve (dec number)
-                 (filter #(not= 0 (mod % (first xs))) (rest xs)))
-          (first xs))))
-</code></pre></div><p>This works, but Clojure doesn&rsquo;t have tail call optimization (TCO) by default which means you can get a stack StackOverflowError. So I decided to rewrite it to use the loop and recur construct to remove the StackOverflowError. It looks like this:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="font-weight:bold">defn </span>sieve [number xs]
-  (<span style="font-weight:bold">loop </span>[number number
-         xs xs
-         return-value nil]
-    (<span style="font-weight:bold">if </span>(= 0 number)
-      return-value
-      (recur (dec number)
-             (filter #(not= 0 (mod % (first xs))) (rest xs))
-             (conj return-value (first xs))))))
-</code></pre></div><p>Which can be called like this:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(sieve 1000 (iterate inc 2))
-</code></pre></div><p>I like this implementation, but I wanted to see what would happen when I pushed it towards it&rsquo;s limit. So I went ahead and I ran:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(sieve 10000 (iterate inc 2))
-</code></pre></div><p>At which point I promptly got;</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="font-weight:bold">defn </span>sieve [number xs]
+</span></span><span style="display:flex;"><span>  (<span style="font-weight:bold">if </span>(= 0 number)
+</span></span><span style="display:flex;"><span>    xs
+</span></span><span style="display:flex;"><span>    (conj (sieve (dec number)
+</span></span><span style="display:flex;"><span>                 (filter #(not= 0 (mod % (first xs))) (rest xs)))
+</span></span><span style="display:flex;"><span>          (first xs))))
+</span></span></code></pre></div><p>This works, but Clojure doesn&rsquo;t have tail call optimization (TCO) by default which means you can get a stack StackOverflowError. So I decided to rewrite it to use the loop and recur construct to remove the StackOverflowError. It looks like this:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="font-weight:bold">defn </span>sieve [number xs]
+</span></span><span style="display:flex;"><span>  (<span style="font-weight:bold">loop </span>[number number
+</span></span><span style="display:flex;"><span>         xs xs
+</span></span><span style="display:flex;"><span>         return-value nil]
+</span></span><span style="display:flex;"><span>    (<span style="font-weight:bold">if </span>(= 0 number)
+</span></span><span style="display:flex;"><span>      return-value
+</span></span><span style="display:flex;"><span>      (recur (dec number)
+</span></span><span style="display:flex;"><span>             (filter #(not= 0 (mod % (first xs))) (rest xs))
+</span></span><span style="display:flex;"><span>             (conj return-value (first xs))))))
+</span></span></code></pre></div><p>Which can be called like this:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(sieve 1000 (iterate inc 2))
+</span></span></code></pre></div><p>I like this implementation, but I wanted to see what would happen when I pushed it towards it&rsquo;s limit. So I went ahead and I ran:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(sieve 10000 (iterate inc 2))
+</span></span></code></pre></div><p>At which point I promptly got;</p>
 <p>StackOverflowError   clojure.lang.Numbers.inc (Numbers.java:112)</p>
 <p>A little sad and perplexed, it wasn&rsquo;t immediately obvious to me why I was getting a stack overflow. Well it turns out that recur can&rsquo;t use TCO on lazy lists. In particular;</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(filter #(not= 0 (mod % (first xs))) (rest xs))
-</code></pre></div><p>Doesn&rsquo;t work, but if we change the implementation to:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="font-weight:bold">defn </span>sieve [number xs]
-  (<span style="font-weight:bold">loop </span>[number number
-         xs xs
-         return-value nil]
-    (<span style="font-weight:bold">if </span>(= 0 number)
-      return-value
-      (recur (dec number)
-             (doall (filter #(not= 0 (mod % (first xs))) (rest xs)))
-             (conj return-value (first xs))))))
-
-</code></pre></div><p>and we call it as</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(sieve 10000 (range 2 1000000))
-</code></pre></div><p>While it takes some time, the above does come back without a StackOverflowError, but at the cost of losing the lazy evaluation.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(filter #(not= 0 (mod % (first xs))) (rest xs))
+</span></span></code></pre></div><p>Doesn&rsquo;t work, but if we change the implementation to:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="font-weight:bold">defn </span>sieve [number xs]
+</span></span><span style="display:flex;"><span>  (<span style="font-weight:bold">loop </span>[number number
+</span></span><span style="display:flex;"><span>         xs xs
+</span></span><span style="display:flex;"><span>         return-value nil]
+</span></span><span style="display:flex;"><span>    (<span style="font-weight:bold">if </span>(= 0 number)
+</span></span><span style="display:flex;"><span>      return-value
+</span></span><span style="display:flex;"><span>      (recur (dec number)
+</span></span><span style="display:flex;"><span>             (doall (filter #(not= 0 (mod % (first xs))) (rest xs)))
+</span></span><span style="display:flex;"><span>             (conj return-value (first xs))))))
+</span></span></code></pre></div><p>and we call it as</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(sieve 10000 (range 2 1000000))
+</span></span></code></pre></div><p>While it takes some time, the above does come back without a StackOverflowError, but at the cost of losing the lazy evaluation.</p>
 
                 </section>
             </article>
@@ -154,7 +153,7 @@
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -185,7 +184,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 

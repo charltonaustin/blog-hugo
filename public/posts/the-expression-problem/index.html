@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="generator" content="Hugo 0.111.3">
 		<title>The Expression Problem &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -88,16 +88,16 @@
 <p>Some great descriptions of this include chapter 6 of <a href="https://sites.google.com/site/unclebobconsultingllc/">Uncle Bob&rsquo;s</a> book <a href="http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882">Clean Code</a>. He doesn&rsquo;t actually call it the expression problem, but it is. Or you can see it on [Wikipedia(https://en.wikipedia.org/wiki/Expression_problem). Or my personal favorite because this was the first place I came across it, is in a <a href="http://lampwww.epfl.ch/~odersky/papers/ExpressionProblem.html">paper</a> from <a href="https://en.wikipedia.org/wiki/Martin_Odersky">Martin Odersky</a>.</p>
 <h3 id="why-do-i-care">Why do I care?</h3>
 <p>So why bring this up today? Well because in my everyday programming life I get the feeling that most people have never heard of it. Or maybe a little better most people are rather confused by it. Why do I get that feeling? Because I will often see a class like:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    <span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">Square</span> <span style="font-weight:bold">implements</span> Shape{
-        <span style="font-style:italic">// Sometimes this is private with getters and setters which is the same.
-</span><span style="font-style:italic"></span>
-        <span style="font-weight:bold">public</span> <span style="">int</span> side;
-
-        <span style="font-weight:bold">public</span> <span style="">void</span> putSquareIn(Circle hole){
-            ... some domain logic ...
-        }
-    }
-</code></pre></div><p>And what&rsquo;s wrong with that you ask? Well as Uncle Bob so astutely points out:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">Square</span> <span style="font-weight:bold">implements</span> Shape{
+</span></span><span style="display:flex;"><span>        <span style="font-style:italic">// Sometimes this is private with getters and setters which is the same.
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">public</span> <span style="">int</span> side;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">public</span> <span style="">void</span> putSquareIn(Circle hole){
+</span></span><span style="display:flex;"><span>            ... some domain logic ...
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>And what&rsquo;s wrong with that you ask? Well as Uncle Bob so astutely points out:</p>
 <blockquote>
 <p>This confusion sometimes leads to unfortunate hybrid structures that are half object and half data structure. They have functions that do significant things, and they also have either public variables or public accessors and mutators that&hellip; tempting other external functions to use those variables the way a procedural program would use a data structure.</p>
 </blockquote>
@@ -148,7 +148,7 @@
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -179,7 +179,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 

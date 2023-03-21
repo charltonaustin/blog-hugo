@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="generator" content="Hugo 0.111.3">
 		<title>Clojure Web Scraper &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -92,70 +92,70 @@
 </ol>
 <p>So first install lein which means going <a href="https://raw.github.com/technomancy/leiningen/stable/bin/lein">here</a> and downloading the script.</p>
 <p>Then move that script to somewhere in your path.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ export  PATH=$PATH:/path/to/script
-</code></pre></div><p>Next make a new lein project.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ lein new hnharvest
-</code></pre></div><p>Then cd into the project.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd hnharvest
-</code></pre></div><p>So we can add some text to project.clj.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ vim   project.clj
-</code></pre></div><p>Then make it look like this. If you don&rsquo;t know how to use vim use any text editor you like.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="font-weight:bold">defproject </span>hnharvest <span style="font-style:italic">&#34;0.1.0-SNAPSHOT&#34;</span>
-  <span style="font-style:italic">:description</span> <span style="font-style:italic">&#34;FIXME: write description&#34;</span>
-  <span style="font-style:italic">:url</span> <span style="font-style:italic">&#34;http://example.com/FIXME&#34;</span>
-  <span style="font-style:italic">:license</span> {<span style="font-style:italic">:name</span> <span style="font-style:italic">&#34;Eclipse Public License&#34;</span>
-            <span style="font-style:italic">:url</span> <span style="font-style:italic">&#34;http://www.eclipse.org/legal/epl-v10.html&#34;</span>}
-  <span style="font-style:italic">:dependencies</span> [[org.clojure/clojure <span style="font-style:italic">&#34;1.4.0&#34;</span>]
-                 [clj-http/clj-http <span style="font-style:italic">&#34;0.6.4&#34;</span>]
-                 [enlive <span style="font-style:italic">&#34;1.1.1&#34;</span>]
-                 [org.clojure/data.json <span style="font-style:italic">&#34;0.2.1&#34;</span>]])
-</code></pre></div><p>Next we need to add our modify core.clj.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ vim src/hnharvest/core.clj
-</code></pre></div><p>Make it look like this.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="font-weight:bold">ns </span>hnharvest.core
-  (<span style="font-style:italic">:require</span> [net.cgrand.enlive-html <span style="font-style:italic">:as</span> html]
-            [clojure.string <span style="font-style:italic">:as</span> s]))
-
-(<span style="font-weight:bold">defn </span>fetch-url []
-  (html/html-resource
-   (java.net.URL. <span style="font-style:italic">&#34;http://news.ycombinator.com&#34;</span>)))
-
-(<span style="font-weight:bold">defonce </span>content (fetch-url))
-
-(<span style="font-weight:bold">defn </span>parse-int [s]
-  (try
-    (Integer/parseInt s)
-    (catch NumberFormatException e
-      0)))
-
-(<span style="font-weight:bold">defn </span>hn-str-&gt;number [s]
-  (-&gt; (s/split s #<span style="font-style:italic">&#34;\s&#34;</span>)
-      first
-      parse-int))
-
-(<span style="font-weight:bold">defn </span>get-info
-  [{[{[points-string] <span style="font-style:italic">:content</span>}
-     _
-     _
-     _
-     {[comments-string] <span style="font-style:italic">:content</span>}] <span style="font-style:italic">:content</span>}]
-  (when (and points-string comments-string)
-   {<span style="font-style:italic">:points</span> (hn-str-&gt;number points-string)
-    <span style="font-style:italic">:comments</span> (hn-str-&gt;number comments-string)}))
-
-(<span style="font-weight:bold">defn </span>go []
-  (remove nil? (map get-info (html/select content [<span style="font-style:italic">:td.subtext</span>])))) 
-</code></pre></div><p>Finally we need to open a repl session.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ lein repl
-</code></pre></div><p>Then we need to import our source files and change the name space and start the function.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user=&gt; (use <span style="">&#39;</span>hnharvest.core)
-
-user=&gt; (ns hnharvest.core)
-
-hnharvest.core=&gt; (go)
-</code></pre></div><p>This should spit out something like this:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">({<span style="font-style:italic">:points</span> 283, <span style="font-style:italic">:comments</span> 105} {<span style="font-style:italic">:points</span> 99, <span style="font-style:italic">:comments</span> 29} {<span style="font-style:italic">:points</span> 345, <span style="font-style:italic">:comments</span> 123} {<span style="font-style:italic">:points</span> 51, <span style="font-style:italic">:comments</span> 23} {<span style="font-style:italic">:points</span> 398, <span style="font-style:italic">:comments</span> 252} {<span style="font-style:italic">:points</span> 142, <span style="font-style:italic">:comments</span> 97} {<span style="font-style:italic">:points</span> 219, <span style="font-style:italic">:comments</span> 63} {<span style="font-style:italic">:points</span> 18, <span style="font-style:italic">:comments</span> 4} {<span style="font-style:italic">:points</span> 228, <span style="font-style:italic">:comments</span> 78} {<span style="font-style:italic">:points</span> 264, <span style="font-style:italic">:comments</span> 153} {<span style="font-style:italic">:points</span> 125, <span style="font-style:italic">:comments</span> 19} {<span style="font-style:italic">:points</span> 67, <span style="font-style:italic">:comments</span> 37} {<span style="font-style:italic">:points</span> 202, <span style="font-style:italic">:comments</span> 31} {<span style="font-style:italic">:points</span> 34, <span style="font-style:italic">:comments</span> 19} {<span style="font-style:italic">:points</span> 43, <span style="font-style:italic">:comments</span> 13} {<span style="font-style:italic">:points</span> 36, <span style="font-style:italic">:comments</span> 6} {<span style="font-style:italic">:points</span> 136, <span style="font-style:italic">:comments</span> 44} {<span style="font-style:italic">:points</span> 87, <span style="font-style:italic">:comments</span> 17} {<span style="font-style:italic">:points</span> 44, <span style="font-style:italic">:comments</span> 3} {<span style="font-style:italic">:points</span> 236, <span style="font-style:italic">:comments</span> 100} {<span style="font-style:italic">:points</span> 35, <span style="font-style:italic">:comments</span> 21} {<span style="font-style:italic">:points</span> 26, <span style="font-style:italic">:comments</span> 4} {<span style="font-style:italic">:points</span> 68, <span style="font-style:italic">:comments</span> 17} {<span style="font-style:italic">:points</span> 41, <span style="font-style:italic">:comments</span> 8} {<span style="font-style:italic">:points</span> 193, <span style="font-style:italic">:comments</span> 69} {<span style="font-style:italic">:points</span> 67, <span style="font-style:italic">:comments</span> 20} {<span style="font-style:italic">:points</span> 55, <span style="font-style:italic">:comments</span> 16} {<span style="font-style:italic">:points</span> 608, <span style="font-style:italic">:comments</span> 181} {<span style="font-style:italic">:points</span> 63, <span style="font-style:italic">:comments</span> 16})
-</code></pre></div><p>This is just a current listing of points and comments from <a href="http://news.ycombinator.com/">http://news.ycombinator.com/</a></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ export  PATH=$PATH:/path/to/script
+</span></span></code></pre></div><p>Next make a new lein project.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ lein new hnharvest
+</span></span></code></pre></div><p>Then cd into the project.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cd hnharvest
+</span></span></code></pre></div><p>So we can add some text to project.clj.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ vim   project.clj
+</span></span></code></pre></div><p>Then make it look like this. If you don&rsquo;t know how to use vim use any text editor you like.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="font-weight:bold">defproject </span>hnharvest <span style="font-style:italic">&#34;0.1.0-SNAPSHOT&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="font-style:italic">:description</span> <span style="font-style:italic">&#34;FIXME: write description&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="font-style:italic">:url</span> <span style="font-style:italic">&#34;http://example.com/FIXME&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="font-style:italic">:license</span> {<span style="font-style:italic">:name</span> <span style="font-style:italic">&#34;Eclipse Public License&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="font-style:italic">:url</span> <span style="font-style:italic">&#34;http://www.eclipse.org/legal/epl-v10.html&#34;</span>}
+</span></span><span style="display:flex;"><span>  <span style="font-style:italic">:dependencies</span> [[org.clojure/clojure <span style="font-style:italic">&#34;1.4.0&#34;</span>]
+</span></span><span style="display:flex;"><span>                 [clj-http/clj-http <span style="font-style:italic">&#34;0.6.4&#34;</span>]
+</span></span><span style="display:flex;"><span>                 [enlive <span style="font-style:italic">&#34;1.1.1&#34;</span>]
+</span></span><span style="display:flex;"><span>                 [org.clojure/data.json <span style="font-style:italic">&#34;0.2.1&#34;</span>]])
+</span></span></code></pre></div><p>Next we need to add our modify core.clj.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ vim src/hnharvest/core.clj
+</span></span></code></pre></div><p>Make it look like this.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="font-weight:bold">ns </span>hnharvest.core
+</span></span><span style="display:flex;"><span>  (<span style="font-style:italic">:require</span> [net.cgrand.enlive-html <span style="font-style:italic">:as</span> html]
+</span></span><span style="display:flex;"><span>            [clojure.string <span style="font-style:italic">:as</span> s]))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="font-weight:bold">defn </span>fetch-url []
+</span></span><span style="display:flex;"><span>  (html/html-resource
+</span></span><span style="display:flex;"><span>   (java.net.URL. <span style="font-style:italic">&#34;http://news.ycombinator.com&#34;</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="font-weight:bold">defonce </span>content (fetch-url))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="font-weight:bold">defn </span>parse-int [s]
+</span></span><span style="display:flex;"><span>  (try
+</span></span><span style="display:flex;"><span>    (Integer/parseInt s)
+</span></span><span style="display:flex;"><span>    (catch NumberFormatException e
+</span></span><span style="display:flex;"><span>      0)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="font-weight:bold">defn </span>hn-str-&gt;number [s]
+</span></span><span style="display:flex;"><span>  (-&gt; (s/split s #<span style="font-style:italic">&#34;\s&#34;</span>)
+</span></span><span style="display:flex;"><span>      first
+</span></span><span style="display:flex;"><span>      parse-int))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="font-weight:bold">defn </span>get-info
+</span></span><span style="display:flex;"><span>  [{[{[points-string] <span style="font-style:italic">:content</span>}
+</span></span><span style="display:flex;"><span>     _
+</span></span><span style="display:flex;"><span>     _
+</span></span><span style="display:flex;"><span>     _
+</span></span><span style="display:flex;"><span>     {[comments-string] <span style="font-style:italic">:content</span>}] <span style="font-style:italic">:content</span>}]
+</span></span><span style="display:flex;"><span>  (when (and points-string comments-string)
+</span></span><span style="display:flex;"><span>   {<span style="font-style:italic">:points</span> (hn-str-&gt;number points-string)
+</span></span><span style="display:flex;"><span>    <span style="font-style:italic">:comments</span> (hn-str-&gt;number comments-string)}))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="font-weight:bold">defn </span>go []
+</span></span><span style="display:flex;"><span>  (remove nil? (map get-info (html/select content [<span style="font-style:italic">:td.subtext</span>])))) 
+</span></span></code></pre></div><p>Finally we need to open a repl session.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ lein repl
+</span></span></code></pre></div><p>Then we need to import our source files and change the name space and start the function.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>user=&gt; (use <span style="">&#39;</span>hnharvest.core)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>user=&gt; (ns hnharvest.core)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>hnharvest.core=&gt; (go)
+</span></span></code></pre></div><p>This should spit out something like this:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>({<span style="font-style:italic">:points</span> 283, <span style="font-style:italic">:comments</span> 105} {<span style="font-style:italic">:points</span> 99, <span style="font-style:italic">:comments</span> 29} {<span style="font-style:italic">:points</span> 345, <span style="font-style:italic">:comments</span> 123} {<span style="font-style:italic">:points</span> 51, <span style="font-style:italic">:comments</span> 23} {<span style="font-style:italic">:points</span> 398, <span style="font-style:italic">:comments</span> 252} {<span style="font-style:italic">:points</span> 142, <span style="font-style:italic">:comments</span> 97} {<span style="font-style:italic">:points</span> 219, <span style="font-style:italic">:comments</span> 63} {<span style="font-style:italic">:points</span> 18, <span style="font-style:italic">:comments</span> 4} {<span style="font-style:italic">:points</span> 228, <span style="font-style:italic">:comments</span> 78} {<span style="font-style:italic">:points</span> 264, <span style="font-style:italic">:comments</span> 153} {<span style="font-style:italic">:points</span> 125, <span style="font-style:italic">:comments</span> 19} {<span style="font-style:italic">:points</span> 67, <span style="font-style:italic">:comments</span> 37} {<span style="font-style:italic">:points</span> 202, <span style="font-style:italic">:comments</span> 31} {<span style="font-style:italic">:points</span> 34, <span style="font-style:italic">:comments</span> 19} {<span style="font-style:italic">:points</span> 43, <span style="font-style:italic">:comments</span> 13} {<span style="font-style:italic">:points</span> 36, <span style="font-style:italic">:comments</span> 6} {<span style="font-style:italic">:points</span> 136, <span style="font-style:italic">:comments</span> 44} {<span style="font-style:italic">:points</span> 87, <span style="font-style:italic">:comments</span> 17} {<span style="font-style:italic">:points</span> 44, <span style="font-style:italic">:comments</span> 3} {<span style="font-style:italic">:points</span> 236, <span style="font-style:italic">:comments</span> 100} {<span style="font-style:italic">:points</span> 35, <span style="font-style:italic">:comments</span> 21} {<span style="font-style:italic">:points</span> 26, <span style="font-style:italic">:comments</span> 4} {<span style="font-style:italic">:points</span> 68, <span style="font-style:italic">:comments</span> 17} {<span style="font-style:italic">:points</span> 41, <span style="font-style:italic">:comments</span> 8} {<span style="font-style:italic">:points</span> 193, <span style="font-style:italic">:comments</span> 69} {<span style="font-style:italic">:points</span> 67, <span style="font-style:italic">:comments</span> 20} {<span style="font-style:italic">:points</span> 55, <span style="font-style:italic">:comments</span> 16} {<span style="font-style:italic">:points</span> 608, <span style="font-style:italic">:comments</span> 181} {<span style="font-style:italic">:points</span> 63, <span style="font-style:italic">:comments</span> 16})
+</span></span></code></pre></div><p>This is just a current listing of points and comments from <a href="http://news.ycombinator.com/">http://news.ycombinator.com/</a></p>
 <p>I thought it was really cool how quickly we got something up and running with Clojure. I hope you did too.</p>
 
                 </section>
@@ -199,7 +199,7 @@ hnharvest.core=&gt; (go)
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -230,7 +230,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 

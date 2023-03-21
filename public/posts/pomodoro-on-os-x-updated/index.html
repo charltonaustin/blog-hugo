@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="generator" content="Hugo 0.111.3">
 		<title>Pomodoro On Os X Updated &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -83,45 +83,45 @@
 <p>Previously I had created <a href="https://charltonaustin.com/2016/11/03/pomodoro-on-os-x">a post</a> where I talked about using the pomodoro technique on mac OSX.
 Well today I want to show how I have expanded on my original idea.
 First I created this:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="">#! /bin/sh
-</span><span style=""></span>at now + $1 minutes &lt;&lt;&lt; $2
-</code></pre></div><p>Which is a small script to run a bash command at some time in the future.
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="">#! /bin/sh
+</span></span></span><span style="display:flex;"><span><span style=""></span>at now + $1 minutes &lt;&lt;&lt; $2
+</span></span></code></pre></div><p>Which is a small script to run a bash command at some time in the future.
 Then I created this:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="">#!/bin/bash
-</span><span style=""></span>x=<span style="font-style:italic">`</span>/usr/bin/osascript <span style="font-style:italic">&lt;&lt;EOT
-</span><span style="font-style:italic">tell application &#34;Finder&#34;
-</span><span style="font-style:italic">    activate
-</span><span style="font-style:italic">    set myReply to text returned of (display dialog &#34;Start 25 mins: Please put in task&#34; default button 1 buttons {&#34;OK&#34;} default answer &#34;&#34; with icon 1)
-</span><span style="font-style:italic">end tell
-</span><span style="font-style:italic">EOT</span><span style="font-style:italic">`</span>
-echo <span style="font-style:italic">&#39;Text is: &#39;</span>$x
-<span style="font-weight:bold">if</span> [[ -z <span style="font-style:italic">&#34;</span>$x<span style="font-style:italic">&#34;</span> ]]; <span style="font-weight:bold">then</span>
-  echo <span style="font-style:italic">&#34;Done for the day&#34;</span>
-<span style="font-weight:bold">else</span>
-  mkdir -p $HOME/work
-  touch $HOME/work/daily_pomodoro.txt
-  echo <span style="font-style:italic">`</span>date<span style="font-style:italic">`</span> $x &gt;&gt; $HOME/work/daily_pomodoro.txt
-  delayed_mac 25 five_min
-<span style="font-weight:bold">fi</span>
-</code></pre></div><p>Which is little script that takes a description of what I&rsquo;m going to be doing for the next 25 mins and then logs that to a file with a time.
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style=""></span>x=<span style="font-style:italic">`</span>/usr/bin/osascript <span style="font-style:italic">&lt;&lt;EOT
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic">tell application &#34;Finder&#34;
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic">    activate
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic">    set myReply to text returned of (display dialog &#34;Start 25 mins: Please put in task&#34; default button 1 buttons {&#34;OK&#34;} default answer &#34;&#34; with icon 1)
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic">end tell
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic">EOT</span><span style="font-style:italic">`</span>
+</span></span><span style="display:flex;"><span>echo <span style="font-style:italic">&#39;Text is: &#39;</span>$x
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">if</span> [[ -z <span style="font-style:italic">&#34;</span>$x<span style="font-style:italic">&#34;</span> ]]; <span style="font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>  echo <span style="font-style:italic">&#34;Done for the day&#34;</span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>  mkdir -p $HOME/work
+</span></span><span style="display:flex;"><span>  touch $HOME/work/daily_pomodoro.txt
+</span></span><span style="display:flex;"><span>  echo <span style="font-style:italic">`</span>date<span style="font-style:italic">`</span> $x &gt;&gt; $HOME/work/daily_pomodoro.txt
+</span></span><span style="display:flex;"><span>  delayed_mac 25 five_min
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">fi</span>
+</span></span></code></pre></div><p>Which is little script that takes a description of what I&rsquo;m going to be doing for the next 25 mins and then logs that to a file with a time.
 Finally I created this:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="">#!/bin/bash
-</span><span style=""></span>x=<span style="font-style:italic">`</span>/usr/bin/osascript <span style="font-style:italic">&lt;&lt;EOT
-</span><span style="font-style:italic">tell application &#34;Finder&#34;
-</span><span style="font-style:italic">    activate
-</span><span style="font-style:italic">    set myReply to text returned of (display dialog &#34;Start 25 mins: Please put in task&#34; default button 1 buttons {&#34;OK&#34;} default answer &#34;&#34; with icon 1)
-</span><span style="font-style:italic">end tell
-</span><span style="font-style:italic">EOT</span><span style="font-style:italic">`</span>
-echo <span style="font-style:italic">&#39;Text is: &#39;</span>$x
-<span style="font-weight:bold">if</span> [[ -z <span style="font-style:italic">&#34;</span>$x<span style="font-style:italic">&#34;</span> ]]; <span style="font-weight:bold">then</span>
-  echo <span style="font-style:italic">&#34;Done for the day&#34;</span>
-<span style="font-weight:bold">else</span>
-  mkdir -p $HOME/work
-  touch $HOME/work/daily_pomodoro.txt
-  echo <span style="font-style:italic">`</span>date<span style="font-style:italic">`</span> $x &gt;&gt; $HOME/work/daily_pomodoro.txt
-  delayed_mac 25 five_min
-<span style="font-weight:bold">fi</span>
-</code></pre></div><p>Now all I have to do is run the script and I can keep track of what I&rsquo;m doing all day.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style=""></span>x=<span style="font-style:italic">`</span>/usr/bin/osascript <span style="font-style:italic">&lt;&lt;EOT
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic">tell application &#34;Finder&#34;
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic">    activate
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic">    set myReply to text returned of (display dialog &#34;Start 25 mins: Please put in task&#34; default button 1 buttons {&#34;OK&#34;} default answer &#34;&#34; with icon 1)
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic">end tell
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic">EOT</span><span style="font-style:italic">`</span>
+</span></span><span style="display:flex;"><span>echo <span style="font-style:italic">&#39;Text is: &#39;</span>$x
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">if</span> [[ -z <span style="font-style:italic">&#34;</span>$x<span style="font-style:italic">&#34;</span> ]]; <span style="font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>  echo <span style="font-style:italic">&#34;Done for the day&#34;</span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>  mkdir -p $HOME/work
+</span></span><span style="display:flex;"><span>  touch $HOME/work/daily_pomodoro.txt
+</span></span><span style="display:flex;"><span>  echo <span style="font-style:italic">`</span>date<span style="font-style:italic">`</span> $x &gt;&gt; $HOME/work/daily_pomodoro.txt
+</span></span><span style="display:flex;"><span>  delayed_mac 25 five_min
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">fi</span>
+</span></span></code></pre></div><p>Now all I have to do is run the script and I can keep track of what I&rsquo;m doing all day.</p>
 
                 </section>
             </article>
@@ -164,7 +164,7 @@ echo <span style="font-style:italic">&#39;Text is: &#39;</span>$x
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -195,7 +195,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 

@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="generator" content="Hugo 0.111.3">
 		<title>Euler Problem 007 &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -96,44 +96,44 @@ My next attempt included going piece by piece and only keeping in memory as many
 To remove the new composite numbers.
 This worked much better.
 The final solution runs at a very reasonable speed and has no memory issues.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="font-weight:bold">var</span> findPrimeN = <span style="font-weight:bold">function</span>(number){
-  <span style="font-weight:bold">var</span> primes = [2]
-  <span style="font-weight:bold">var</span> numbers = [];
-  <span style="font-weight:bold">while</span>(primes.length &lt; number){
-    <span style="font-style:italic">// Grow the numbers array
-</span><span style="font-style:italic"></span>    <span style="font-weight:bold">var</span> start = primes[primes.length-1] + 1;
-    <span style="font-weight:bold">var</span> growth = primes[primes.length-1];
-    <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = start; i &lt; start + growth; i++){
-      numbers.push(i);
-    }
-
-    <span style="font-style:italic">// Remove composite numbers
-</span><span style="font-style:italic"></span>    <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 0; i &lt; primes.length; i++){
-      <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> j = 0; j &lt; numbers.length; j++){
-        <span style="font-weight:bold">if</span>(numbers[j] % primes[i] === 0){
-          numbers.splice(j,1);
-        }
-      }
-    }
-
-
-    <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 0; i &lt; numbers.length; i++){
-      <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> j = 1; j &lt; numbers.length; j++){
-        <span style="font-weight:bold">if</span>(numbers[j] % number[i] === 0){
-          number.splice(j,1);
-        }
-      }
-    }
-
-    <span style="font-style:italic">// move prime numbers to primes
-</span><span style="font-style:italic"></span>    <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 0; i &lt; numbers.length; i++){
-      primes.push(numbers[i]);
-    }
-    numbers = [];
-  }
-  <span style="font-weight:bold">return</span> primes[number - 1];
-}
-</code></pre></div><p>If you&rsquo;d like to see the full code please see my daily <a href="https://github.com/charltonaustin/toy-problems/">toy problem</a> exercises that I&rsquo;ve been working on.
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="font-weight:bold">var</span> findPrimeN = <span style="font-weight:bold">function</span>(number){
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">var</span> primes = [2]
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">var</span> numbers = [];
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">while</span>(primes.length &lt; number){
+</span></span><span style="display:flex;"><span>    <span style="font-style:italic">// Grow the numbers array
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>    <span style="font-weight:bold">var</span> start = primes[primes.length-1] + 1;
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">var</span> growth = primes[primes.length-1];
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = start; i &lt; start + growth; i++){
+</span></span><span style="display:flex;"><span>      numbers.push(i);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="font-style:italic">// Remove composite numbers
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>    <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 0; i &lt; primes.length; i++){
+</span></span><span style="display:flex;"><span>      <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> j = 0; j &lt; numbers.length; j++){
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">if</span>(numbers[j] % primes[i] === 0){
+</span></span><span style="display:flex;"><span>          numbers.splice(j,1);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 0; i &lt; numbers.length; i++){
+</span></span><span style="display:flex;"><span>      <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> j = 1; j &lt; numbers.length; j++){
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">if</span>(numbers[j] % number[i] === 0){
+</span></span><span style="display:flex;"><span>          number.splice(j,1);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="font-style:italic">// move prime numbers to primes
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>    <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 0; i &lt; numbers.length; i++){
+</span></span><span style="display:flex;"><span>      primes.push(numbers[i]);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    numbers = [];
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">return</span> primes[number - 1];
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If you&rsquo;d like to see the full code please see my daily <a href="https://github.com/charltonaustin/toy-problems/">toy problem</a> exercises that I&rsquo;ve been working on.
 It includes tests and a README.</p>
 
                 </section>
@@ -177,7 +177,7 @@ It includes tests and a README.</p>
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -208,7 +208,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 

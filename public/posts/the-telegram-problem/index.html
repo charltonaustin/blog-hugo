@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="generator" content="Hugo 0.111.3">
 		<title>The Telegram Problem &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -98,37 +98,37 @@ It also sanitizes and formats the information that we will be walking over.
 Next it loops through and checks to see if the line will grow to long.
 If it won&rsquo;t, we add to the current line output; if it will, we save the current line output to the total output and then initialize the next line output.
 Finally, on our way out, we flush the last partial line.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="font-weight:bold">var</span> createWriter = <span style="font-weight:bold">function</span>(w){
-  <span style="font-weight:bold">var</span> writer = <span style="font-weight:bold">function</span>(lines){
-
-    <span style="font-weight:bold">var</span> output = <span style="font-style:italic">&#34;&#34;</span>;
-    <span style="font-weight:bold">var</span> words = lines.replace(<span style="font-style:italic">&#34;\n&#34;</span>, <span style="font-style:italic">&#34; &#34;</span>).split(<span style="font-style:italic">&#34; &#34;</span>)
-    <span style="font-weight:bold">var</span> currentOutput = words[0];
-    <span style="font-weight:bold">var</span> currentLineLength = words[0].length;
-    
-    <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 1; i&lt; words.length; i++){
-      
-      <span style="font-weight:bold">var</span> word = words[i];
-      
-      <span style="font-weight:bold">if</span>(currentLineLength + word.length + 1 &gt; w){
-        output += currentOutput + <span style="font-style:italic">&#34;\n&#34;</span>;
-        currentOutput = word;
-        currentLineLength = word.length;
-      } <span style="font-weight:bold">else</span> {
-        currentOutput += <span style="font-style:italic">&#34; &#34;</span> + word;
-        currentLineLength += word.length + 1;
-      }
-    
-    }
-    
-    output+= currentOutput;
-    
-    <span style="font-weight:bold">return</span> output;
-  }
-  
-  <span style="font-weight:bold">return</span> writer;
-}
-</code></pre></div><p>If you&rsquo;d like to see the full code please see my daily <a href="https://github.com/charltonaustin/toy-problems/tree/master/telegram-problem">toy problem</a> exercises that I&rsquo;ve been working on.
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="font-weight:bold">var</span> createWriter = <span style="font-weight:bold">function</span>(w){
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">var</span> writer = <span style="font-weight:bold">function</span>(lines){
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">var</span> output = <span style="font-style:italic">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">var</span> words = lines.replace(<span style="font-style:italic">&#34;\n&#34;</span>, <span style="font-style:italic">&#34; &#34;</span>).split(<span style="font-style:italic">&#34; &#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">var</span> currentOutput = words[0];
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">var</span> currentLineLength = words[0].length;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 1; i&lt; words.length; i++){
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      <span style="font-weight:bold">var</span> word = words[i];
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      <span style="font-weight:bold">if</span>(currentLineLength + word.length + 1 &gt; w){
+</span></span><span style="display:flex;"><span>        output += currentOutput + <span style="font-style:italic">&#34;\n&#34;</span>;
+</span></span><span style="display:flex;"><span>        currentOutput = word;
+</span></span><span style="display:flex;"><span>        currentLineLength = word.length;
+</span></span><span style="display:flex;"><span>      } <span style="font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>        currentOutput += <span style="font-style:italic">&#34; &#34;</span> + word;
+</span></span><span style="display:flex;"><span>        currentLineLength += word.length + 1;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    output+= currentOutput;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> output;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">return</span> writer;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If you&rsquo;d like to see the full code please see my daily <a href="https://github.com/charltonaustin/toy-problems/tree/master/telegram-problem">toy problem</a> exercises that I&rsquo;ve been working on.
 It includes tests and a README.</p>
 
                 </section>
@@ -172,7 +172,7 @@ It includes tests and a README.</p>
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -203,7 +203,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 

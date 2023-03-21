@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="generator" content="Hugo 0.111.3">
 		<title>Python Source Code Gems &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -74,61 +74,61 @@
                 
                 <section id="post-body">
                     <p>So fairly regularly I read about and dip into the python source code. For some reason there seems to be a great deal of beautiful and interesting code in both the c and the standard libraries and tests for python. The other day I was doing some reading about <a href="https://docs.python.org/2/howto/functional.html#passing-values-into-a-generator">generators</a> (I was thinking about how to marry the ideas of functional and object oriented programming) and I came across something that I found fascinating as well beautiful so I decided I should share it here on this silly little blog. It&rsquo;s a full implementation of a generator built <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">Sieve of Eratosthenes</a> in test_generators.py.   If you are writing python and you aren&rsquo;t using generators regularly then you are probably missing something.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Build up to a recursive Sieve of Eratosthenes generator.
-
-
-&gt;&gt;&gt; <span style="font-weight:bold">def</span> firstn(g, n):
-
-...     <span style="font-weight:bold">return</span> [g.next() <span style="font-weight:bold">for</span> i <span style="font-weight:bold">in</span> range(n)]
-
-
-&gt;&gt;&gt; <span style="font-weight:bold">def</span> intsfrom(i):
-
-...     <span style="font-weight:bold">while</span> 1:
-
-...         <span style="font-weight:bold">yield</span> i
-
-...         i += 1
-
-
-&gt;&gt;&gt; firstn(intsfrom(5), 7)
-
-[5, 6, 7, 8, 9, 10, 11]
-
-
-&gt;&gt;&gt; <span style="font-weight:bold">def</span> exclude_multiples(n, ints):
-
-...     <span style="font-weight:bold">for</span> i <span style="font-weight:bold">in</span> ints:
-
-...         <span style="font-weight:bold">if</span> i % n:
-
-...             <span style="font-weight:bold">yield</span> i
-
-
-&gt;&gt;&gt; firstn(exclude_multiples(3, intsfrom(1)), 6)
-
-[1, 2, 4, 5, 7, 8]
-
-
-&gt;&gt;&gt; <span style="font-weight:bold">def</span> sieve(ints):
-
-...     prime = ints.next()
-
-...     <span style="font-weight:bold">yield</span> prime
-
-...     not_divisible_by_prime = exclude_multiples(prime, ints)
-
-...     <span style="font-weight:bold">for</span> p <span style="font-weight:bold">in</span> sieve(not_divisible_by_prime):
-
-...         <span style="font-weight:bold">yield</span> p
-
-
-&gt;&gt;&gt; primes = sieve(intsfrom(2))
-
-&gt;&gt;&gt; firstn(primes, 20)
-
-[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>Build up to a recursive Sieve of Eratosthenes generator.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt; <span style="font-weight:bold">def</span> firstn(g, n):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...     <span style="font-weight:bold">return</span> [g.next() <span style="font-weight:bold">for</span> i <span style="font-weight:bold">in</span> range(n)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt; <span style="font-weight:bold">def</span> intsfrom(i):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...     <span style="font-weight:bold">while</span> 1:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...         <span style="font-weight:bold">yield</span> i
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...         i += 1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt; firstn(intsfrom(5), 7)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[5, 6, 7, 8, 9, 10, 11]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt; <span style="font-weight:bold">def</span> exclude_multiples(n, ints):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...     <span style="font-weight:bold">for</span> i <span style="font-weight:bold">in</span> ints:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...         <span style="font-weight:bold">if</span> i % n:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...             <span style="font-weight:bold">yield</span> i
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt; firstn(exclude_multiples(3, intsfrom(1)), 6)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[1, 2, 4, 5, 7, 8]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt; <span style="font-weight:bold">def</span> sieve(ints):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...     prime = ints.next()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...     <span style="font-weight:bold">yield</span> prime
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...     not_divisible_by_prime = exclude_multiples(prime, ints)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...     <span style="font-weight:bold">for</span> p <span style="font-weight:bold">in</span> sieve(not_divisible_by_prime):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...         <span style="font-weight:bold">yield</span> p
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt; primes = sieve(intsfrom(2))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt; firstn(primes, 20)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]
+</span></span></code></pre></div>
                 </section>
             </article>
 
@@ -170,7 +170,7 @@
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -201,7 +201,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 

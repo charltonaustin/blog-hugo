@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="generator" content="Hugo 0.111.3">
 		<title>Sudoku Using Go Lang &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -103,101 +103,101 @@ There are some tests, but they are not super comprehensive.
 Mostly this was a chance to do a toy problem and talk about it with my friend that is looking for a job.
 I used the famed backtracking algorithm that is all over the internet.
 In particular I used this description from <a href="https://www.geeksforgeeks.org/sudoku-backtracking-7/">here</a></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">  Find row, col of an unassigned cell
-  If there is none, return true
-  For digits from 1 to 9
-    a) If there is no conflict for digit at row, col assign digit to row, col and recursively try fill in rest of grid
-    b) If recursion successful, return true
-    c) Else, remove digit and try another
-  If all digits have been tried and nothing worked, return false
-</code></pre></div><p>I modified it slightly since in building the solution finder I was also interested in generating valid completed boards.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>  Find row, col of an unassigned cell
+</span></span><span style="display:flex;"><span>  If there is none, return true
+</span></span><span style="display:flex;"><span>  For digits from 1 to 9
+</span></span><span style="display:flex;"><span>    a) If there is no conflict for digit at row, col assign digit to row, col and recursively try fill in rest of grid
+</span></span><span style="display:flex;"><span>    b) If recursion successful, return true
+</span></span><span style="display:flex;"><span>    c) Else, remove digit and try another
+</span></span><span style="display:flex;"><span>  If all digits have been tried and nothing worked, return false
+</span></span></code></pre></div><p>I modified it slightly since in building the solution finder I was also interested in generating valid completed boards.</p>
 <h2 id="the-dirty-details">The dirty details</h2>
 <p>If we take a quick look at the algorithm you can see what I mean.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="font-weight:bold">func</span> backTrace(b *board.Board) <span style="">bool</span> {
-	<span style="font-weight:bold">for</span> x := 0; x &lt; 9; x++ {
-		<span style="font-weight:bold">for</span> y := 0; y &lt; 9; y++ {
-			value, err := b.Get(x, y)
-			<span style="font-weight:bold">if</span> err != <span style="font-weight:bold">nil</span> {
-				panic(err)
-			}
-			<span style="font-weight:bold">if</span> value == 0 {
-				<span style="font-weight:bold">for</span> _, number := <span style="font-weight:bold">range</span> randomNumbers() {
-					err := b.Update(x, y, number)
-					<span style="font-weight:bold">if</span> err != <span style="font-weight:bold">nil</span> {
-						panic(err)
-					}
-					<span style="font-weight:bold">if</span> b.IsValid() {
-						<span style="font-weight:bold">if</span> backTrace(b) {
-							<span style="font-weight:bold">return</span> <span style="font-weight:bold">true</span>
-						}
-						b.Update(x, y, 0)
-					} <span style="font-weight:bold">else</span> {
-						b.Update(x, y, 0)
-					}
-
-				}
-				<span style="font-weight:bold">return</span> <span style="font-weight:bold">false</span>
-			}
-		}
-	}
-	<span style="font-weight:bold">return</span> <span style="font-weight:bold">true</span>
-}
-</code></pre></div><p>Notice that I have a function called randomNumbers.
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="font-weight:bold">func</span> backTrace(b *board.Board) <span style="">bool</span> {
+</span></span><span style="display:flex;"><span>	<span style="font-weight:bold">for</span> x := 0; x &lt; 9; x++ {
+</span></span><span style="display:flex;"><span>		<span style="font-weight:bold">for</span> y := 0; y &lt; 9; y++ {
+</span></span><span style="display:flex;"><span>			value, err := b.Get(x, y)
+</span></span><span style="display:flex;"><span>			<span style="font-weight:bold">if</span> err != <span style="font-weight:bold">nil</span> {
+</span></span><span style="display:flex;"><span>				panic(err)
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="font-weight:bold">if</span> value == 0 {
+</span></span><span style="display:flex;"><span>				<span style="font-weight:bold">for</span> _, number := <span style="font-weight:bold">range</span> randomNumbers() {
+</span></span><span style="display:flex;"><span>					err := b.Update(x, y, number)
+</span></span><span style="display:flex;"><span>					<span style="font-weight:bold">if</span> err != <span style="font-weight:bold">nil</span> {
+</span></span><span style="display:flex;"><span>						panic(err)
+</span></span><span style="display:flex;"><span>					}
+</span></span><span style="display:flex;"><span>					<span style="font-weight:bold">if</span> b.IsValid() {
+</span></span><span style="display:flex;"><span>						<span style="font-weight:bold">if</span> backTrace(b) {
+</span></span><span style="display:flex;"><span>							<span style="font-weight:bold">return</span> <span style="font-weight:bold">true</span>
+</span></span><span style="display:flex;"><span>						}
+</span></span><span style="display:flex;"><span>						b.Update(x, y, 0)
+</span></span><span style="display:flex;"><span>					} <span style="font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>						b.Update(x, y, 0)
+</span></span><span style="display:flex;"><span>					}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>				<span style="font-weight:bold">return</span> <span style="font-weight:bold">false</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="font-weight:bold">return</span> <span style="font-weight:bold">true</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Notice that I have a function called randomNumbers.
 It looks like this.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="font-weight:bold">func</span> randomNumbers() []<span style="">int</span> {
-	numbers := []<span style="">int</span>{1, 2, 3, 4, 5, 6, 7, 8, 9}
-	rand.Shuffle(len(numbers), <span style="font-weight:bold">func</span>(i, j <span style="">int</span>) { numbers[i], numbers[j] = numbers[j], numbers[i] })
-	<span style="font-weight:bold">return</span> numbers
-}
-</code></pre></div><p>I do that since when I was building the code I was actually interested in generating the board and so I needed to introduce some randomization in order to not get the same board repeatedly.
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="font-weight:bold">func</span> randomNumbers() []<span style="">int</span> {
+</span></span><span style="display:flex;"><span>	numbers := []<span style="">int</span>{1, 2, 3, 4, 5, 6, 7, 8, 9}
+</span></span><span style="display:flex;"><span>	rand.Shuffle(len(numbers), <span style="font-weight:bold">func</span>(i, j <span style="">int</span>) { numbers[i], numbers[j] = numbers[j], numbers[i] })
+</span></span><span style="display:flex;"><span>	<span style="font-weight:bold">return</span> numbers
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>I do that since when I was building the code I was actually interested in generating the board and so I needed to introduce some randomization in order to not get the same board repeatedly.
 If we break down the description from above you can create a 1-1 mapping from the description to the code.</p>
 <p>For instance, <code>Find row, col of an unassigned cell</code> directly maps to</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">	<span style="font-weight:bold">for</span> x := 0; x &lt; 9; x++ {
-		<span style="font-weight:bold">for</span> y := 0; y &lt; 9; y++ {
-			...
-		}
-	}
-</code></pre></div><p>While <code>If there is none, return true</code>, directly maps to the bottom return true.
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>	<span style="font-weight:bold">for</span> x := 0; x &lt; 9; x++ {
+</span></span><span style="display:flex;"><span>		<span style="font-weight:bold">for</span> y := 0; y &lt; 9; y++ {
+</span></span><span style="display:flex;"><span>			...
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span></code></pre></div><p>While <code>If there is none, return true</code>, directly maps to the bottom return true.
 An easier way to see it might be to just add comments like this.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="font-weight:bold">func</span> backTrace(b *board.Board) <span style="">bool</span> {
-	<span style="font-weight:bold">for</span> x := 0; x &lt; 9; x++ {
-		<span style="font-weight:bold">for</span> y := 0; y &lt; 9; y++ { 
-			<span style="font-style:italic">// find empty square
-</span><span style="font-style:italic"></span>			value, err := b.Get(x, y)
-			<span style="font-weight:bold">if</span> err != <span style="font-weight:bold">nil</span> {
-				panic(err)
-			}
-			<span style="font-weight:bold">if</span> value == 0 { 
-				<span style="font-weight:bold">for</span> _, number := <span style="font-weight:bold">range</span> randomNumbers() {
-					<span style="font-style:italic">// go through digits 1 to 9
-</span><span style="font-style:italic"></span>					err := b.Update(x, y, number)
-					<span style="font-weight:bold">if</span> err != <span style="font-weight:bold">nil</span> {
-						panic(err)
-					}
-					<span style="font-style:italic">// If there is no conflict for digit at row,
-</span><span style="font-style:italic"></span>					<span style="font-weight:bold">if</span> b.IsValid() {
-					    <span style="font-style:italic">// col assign digit to row, col and recursively try fill in rest of grid
-</span><span style="font-style:italic"></span>						<span style="font-weight:bold">if</span> backTrace(b) { 
-						    <span style="font-style:italic">//If recursion successful, return true
-</span><span style="font-style:italic"></span>							<span style="font-weight:bold">return</span> <span style="font-weight:bold">true</span> 
-						}
-						<span style="font-style:italic">//Else, remove digit and try another
-</span><span style="font-style:italic"></span>						b.Update(x, y, 0) 
-					} <span style="font-weight:bold">else</span> {
-						<span style="font-style:italic">//Else, remove digit and try another (okay not exactly 1-1, but close)
-</span><span style="font-style:italic"></span>						b.Update(x, y, 0) 
-					}
-
-				}
-				<span style="font-style:italic">// If all digits have been tried and nothing worked, return false
-</span><span style="font-style:italic"></span>				<span style="font-weight:bold">return</span> <span style="font-weight:bold">false</span> 
-			}
-		}
-	}
-	<span style="font-style:italic">//If there is none, return true
-</span><span style="font-style:italic"></span>	<span style="font-weight:bold">return</span> <span style="font-weight:bold">true</span> 
-}
-</code></pre></div><h2 id="why-is-this-even-here">Why is this even here</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="font-weight:bold">func</span> backTrace(b *board.Board) <span style="">bool</span> {
+</span></span><span style="display:flex;"><span>	<span style="font-weight:bold">for</span> x := 0; x &lt; 9; x++ {
+</span></span><span style="display:flex;"><span>		<span style="font-weight:bold">for</span> y := 0; y &lt; 9; y++ { 
+</span></span><span style="display:flex;"><span>			<span style="font-style:italic">// find empty square
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>			value, err := b.Get(x, y)
+</span></span><span style="display:flex;"><span>			<span style="font-weight:bold">if</span> err != <span style="font-weight:bold">nil</span> {
+</span></span><span style="display:flex;"><span>				panic(err)
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="font-weight:bold">if</span> value == 0 { 
+</span></span><span style="display:flex;"><span>				<span style="font-weight:bold">for</span> _, number := <span style="font-weight:bold">range</span> randomNumbers() {
+</span></span><span style="display:flex;"><span>					<span style="font-style:italic">// go through digits 1 to 9
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>					err := b.Update(x, y, number)
+</span></span><span style="display:flex;"><span>					<span style="font-weight:bold">if</span> err != <span style="font-weight:bold">nil</span> {
+</span></span><span style="display:flex;"><span>						panic(err)
+</span></span><span style="display:flex;"><span>					}
+</span></span><span style="display:flex;"><span>					<span style="font-style:italic">// If there is no conflict for digit at row,
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>					<span style="font-weight:bold">if</span> b.IsValid() {
+</span></span><span style="display:flex;"><span>					    <span style="font-style:italic">// col assign digit to row, col and recursively try fill in rest of grid
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>						<span style="font-weight:bold">if</span> backTrace(b) { 
+</span></span><span style="display:flex;"><span>						    <span style="font-style:italic">//If recursion successful, return true
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>							<span style="font-weight:bold">return</span> <span style="font-weight:bold">true</span> 
+</span></span><span style="display:flex;"><span>						}
+</span></span><span style="display:flex;"><span>						<span style="font-style:italic">//Else, remove digit and try another
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>						b.Update(x, y, 0) 
+</span></span><span style="display:flex;"><span>					} <span style="font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>						<span style="font-style:italic">//Else, remove digit and try another (okay not exactly 1-1, but close)
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>						b.Update(x, y, 0) 
+</span></span><span style="display:flex;"><span>					}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>				<span style="font-style:italic">// If all digits have been tried and nothing worked, return false
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>				<span style="font-weight:bold">return</span> <span style="font-weight:bold">false</span> 
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="font-style:italic">//If there is none, return true
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>	<span style="font-weight:bold">return</span> <span style="font-weight:bold">true</span> 
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="why-is-this-even-here">Why is this even here</h2>
 <p>For a few reasons.</p>
 <ol>
 <li>One if you are asked a random Sudoku question and you have read this hopefully it helps you to get through the interview</li>
@@ -262,7 +262,7 @@ That&rsquo;s a different future blog post though.</p>
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -293,7 +293,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 

@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="generator" content="Hugo 0.111.3">
 		<title>Frank Cucumber &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -96,20 +96,20 @@
 <p>First I would like to say that I&rsquo;ve actually done very little iOS programming myself. Mostly I&rsquo;ve been doing Java programming for work these days (with a healthy mix of Chef/Cucumber/Gradle/MongoDB/Knockout.js and a couple of other technologies) while learning Scala on the side. That said the presentation was fantastic and I learned a couple of things which I would like to talk about.</p>
 <p>If you go to the frank-cucumber <a href="http://testingwithfrank.com/">homepage</a> you will see that frank is a way to execute cucumber tests against an iOS app. Now what does this mean.</p>
 <p>First we are going to need an iOS app to work with.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$: svn checkout http://countitout.googlecode.com/svn/trunk/ countitout-read-only
-</code></pre></div><p>Now cd into the directory.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$:cd countitout-read-only/
-</code></pre></div><p>Next you want to install frank and cucumber.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$:gem install frank-cucumber
-
-$:gem install cucumber
-</code></pre></div><p>Then you need to run frank build to create a frank structure for your iOS app.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$:frank build
-</code></pre></div><p>This should create the basic frank structure. Next to get the app running with frank simple run frank launch. Now you have an instance with frank running with it, but even better is to use something like frank inspect. This brings up a webpage with symbiote and chance for you to see elements in which you can select on in your cucumber tests.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$:frank inspect
-</code></pre></div><p>Finally if you would like to see the a basic set of tests run then run cucumber (close down the iOS Simulator first).</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$:cucumber Frank/features
-</code></pre></div><p>Now you are ready to start exploring cucumber testing for your iOS app. :)</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$: svn checkout http://countitout.googlecode.com/svn/trunk/ countitout-read-only
+</span></span></code></pre></div><p>Now cd into the directory.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$:cd countitout-read-only/
+</span></span></code></pre></div><p>Next you want to install frank and cucumber.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$:gem install frank-cucumber
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$:gem install cucumber
+</span></span></code></pre></div><p>Then you need to run frank build to create a frank structure for your iOS app.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$:frank build
+</span></span></code></pre></div><p>This should create the basic frank structure. Next to get the app running with frank simple run frank launch. Now you have an instance with frank running with it, but even better is to use something like frank inspect. This brings up a webpage with symbiote and chance for you to see elements in which you can select on in your cucumber tests.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$:frank inspect
+</span></span></code></pre></div><p>Finally if you would like to see the a basic set of tests run then run cucumber (close down the iOS Simulator first).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$:cucumber Frank/features
+</span></span></code></pre></div><p>Now you are ready to start exploring cucumber testing for your iOS app. :)</p>
 
                 </section>
             </article>
@@ -152,7 +152,7 @@ $:gem install cucumber
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -183,7 +183,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 

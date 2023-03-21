@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="generator" content="Hugo 0.111.3">
 		<title>Euler Problem 003 &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -90,80 +90,80 @@
 <p>What is the largest prime factor of the number 600851475143 ?</p>
 <h6 id="solution">Solution</h6>
 <p>This one took a bit longer than I expected. My fist attempt was pretty naive. The idea was generate all the primes less than the number and then check if the number is divisible by the prime. At the end we simple return the largest prime number that divides the number evenly. This works up until we get to 600851475143. Then we start getting out of memory errors and it takes too long. The first attempt looks like this.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="font-weight:bold">var</span> findPrimesLessThan = <span style="font-weight:bold">function</span>(number){
-  <span style="font-weight:bold">var</span> primes = [];
-  <span style="font-weight:bold">for</span> (<span style="font-weight:bold">var</span> i = 2; i &lt; number; i++){
-    primes.push(i);
-  }
-  <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 0; i &lt; Math.sqrt(primes.length); i++){
-    <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> j = i + 1; j &lt; primes.length; j++){
-      <span style="font-weight:bold">if</span>(primes[j] % primes[i] === 0){
-        primes.splice(j,1);
-      }
-    }
-  }
-  <span style="font-weight:bold">return</span> primes;
-}
-
-<span style="font-weight:bold">var</span> isPrimeFactor = <span style="font-weight:bold">function</span>(number, prime){
-  <span style="font-weight:bold">return</span> number % prime === 0;
-}
-
-<span style="font-weight:bold">var</span> findPrimeFactors = <span style="font-weight:bold">function</span>(number){
-  <span style="font-weight:bold">var</span> primes = findPrimesLessThan(number);
-  <span style="font-weight:bold">var</span> largestPrimeFactor = primes[0];
-  <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 0; i &lt; primes.length; i++){
-    <span style="font-weight:bold">if</span>(isPrimeFactor(number, primes[i]) &amp;&amp; primes[i] &gt; largestPrimeFactor){
-      largestPrimeFactor = primes[i];
-    }
-  }
-  <span style="font-weight:bold">return</span> largestPrimeFactor;
-}
-</code></pre></div><p>Now I could have done some optimizations to search backwards or to generate the largest number first, but I remembered Fermat factorization and figured this guy was odd so I would give another method a try. It looks something like this.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="font-weight:bold">var</span> findFermatFactorization = <span style="font-weight:bold">function</span>(a, number){
-  <span style="font-weight:bold">if</span>(number % 2 === 0){
-    <span style="font-weight:bold">return</span> 0;
-  }
-
-  <span style="font-weight:bold">var</span> bSquared = a * a - number;
-  <span style="font-weight:bold">while</span>(Math.sqrt(bSquared) % 1 !== 0 &amp;&amp; a &lt; number){
-    a += 1;
-    bSquared = a*a-number;
-  }
-  <span style="font-weight:bold">if</span>(Math.sqrt(bSquared) % 1 !== 0){
-    <span style="font-weight:bold">return</span> <span style="font-weight:bold">false</span>;
-  }
-  <span style="font-weight:bold">return</span> [a, Math.sqrt(bSquared)];
-}
-
-<span style="font-weight:bold">var</span> isPrimeNumber = <span style="font-weight:bold">function</span>(number){
-  <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 2; i &lt; number; i++){
-    <span style="font-weight:bold">if</span>(number % i === 0){
-      <span style="font-weight:bold">return</span> <span style="font-weight:bold">false</span>;
-    }
-  }
-  <span style="font-weight:bold">return</span> <span style="font-weight:bold">true</span>;
-}
-
-<span style="font-weight:bold">var</span> findPrimeNumber = <span style="font-weight:bold">function</span>(number){
-  <span style="font-weight:bold">var</span> factors = findFermatFactorization(Math.ceil(Math.sqrt(number)), number);
-  <span style="font-weight:bold">while</span>(factors){
-    <span style="font-weight:bold">var</span> addFactor = factors[0] + factors[1];
-    <span style="font-weight:bold">var</span> subFactor = factors[0] - factors[1];
-    console.log(<span style="font-style:italic">&#34;addFactor: &#34;</span>, addFactor)
-    console.log(<span style="font-style:italic">&#34;subFactor: &#34;</span>, subFactor)
-    <span style="font-weight:bold">if</span>(isPrimeNumber(addFactor)){
-      <span style="font-weight:bold">return</span> addFactor;
-    }
-    <span style="font-weight:bold">if</span>(isPrimeNumber(subFactor)){
-      <span style="font-weight:bold">return</span> subFactor;
-    }
-    factors = findFermatFactorization(factors[0]+1, number);
-  }
-
-  <span style="font-weight:bold">return</span> primes;
-}
-</code></pre></div><p>This guy works much faster and doesn&rsquo;t give out of memory errors, but it works on an assumption that admittedly I have not proven. That the first prime we find using Fermat Factorization is indeed the largest prime number that exists. Now I believe it to be true, but I&rsquo;m not sure how to prove it. I&rsquo;m just going to have to do a bit more research.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="font-weight:bold">var</span> findPrimesLessThan = <span style="font-weight:bold">function</span>(number){
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">var</span> primes = [];
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">for</span> (<span style="font-weight:bold">var</span> i = 2; i &lt; number; i++){
+</span></span><span style="display:flex;"><span>    primes.push(i);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 0; i &lt; Math.sqrt(primes.length); i++){
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> j = i + 1; j &lt; primes.length; j++){
+</span></span><span style="display:flex;"><span>      <span style="font-weight:bold">if</span>(primes[j] % primes[i] === 0){
+</span></span><span style="display:flex;"><span>        primes.splice(j,1);
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">return</span> primes;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">var</span> isPrimeFactor = <span style="font-weight:bold">function</span>(number, prime){
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">return</span> number % prime === 0;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">var</span> findPrimeFactors = <span style="font-weight:bold">function</span>(number){
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">var</span> primes = findPrimesLessThan(number);
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">var</span> largestPrimeFactor = primes[0];
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 0; i &lt; primes.length; i++){
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">if</span>(isPrimeFactor(number, primes[i]) &amp;&amp; primes[i] &gt; largestPrimeFactor){
+</span></span><span style="display:flex;"><span>      largestPrimeFactor = primes[i];
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">return</span> largestPrimeFactor;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Now I could have done some optimizations to search backwards or to generate the largest number first, but I remembered Fermat factorization and figured this guy was odd so I would give another method a try. It looks something like this.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="font-weight:bold">var</span> findFermatFactorization = <span style="font-weight:bold">function</span>(a, number){
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">if</span>(number % 2 === 0){
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> 0;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">var</span> bSquared = a * a - number;
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">while</span>(Math.sqrt(bSquared) % 1 !== 0 &amp;&amp; a &lt; number){
+</span></span><span style="display:flex;"><span>    a += 1;
+</span></span><span style="display:flex;"><span>    bSquared = a*a-number;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">if</span>(Math.sqrt(bSquared) % 1 !== 0){
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> <span style="font-weight:bold">false</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">return</span> [a, Math.sqrt(bSquared)];
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">var</span> isPrimeNumber = <span style="font-weight:bold">function</span>(number){
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 2; i &lt; number; i++){
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">if</span>(number % i === 0){
+</span></span><span style="display:flex;"><span>      <span style="font-weight:bold">return</span> <span style="font-weight:bold">false</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">return</span> <span style="font-weight:bold">true</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">var</span> findPrimeNumber = <span style="font-weight:bold">function</span>(number){
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">var</span> factors = findFermatFactorization(Math.ceil(Math.sqrt(number)), number);
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">while</span>(factors){
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">var</span> addFactor = factors[0] + factors[1];
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">var</span> subFactor = factors[0] - factors[1];
+</span></span><span style="display:flex;"><span>    console.log(<span style="font-style:italic">&#34;addFactor: &#34;</span>, addFactor)
+</span></span><span style="display:flex;"><span>    console.log(<span style="font-style:italic">&#34;subFactor: &#34;</span>, subFactor)
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">if</span>(isPrimeNumber(addFactor)){
+</span></span><span style="display:flex;"><span>      <span style="font-weight:bold">return</span> addFactor;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">if</span>(isPrimeNumber(subFactor)){
+</span></span><span style="display:flex;"><span>      <span style="font-weight:bold">return</span> subFactor;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    factors = findFermatFactorization(factors[0]+1, number);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">return</span> primes;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This guy works much faster and doesn&rsquo;t give out of memory errors, but it works on an assumption that admittedly I have not proven. That the first prime we find using Fermat Factorization is indeed the largest prime number that exists. Now I believe it to be true, but I&rsquo;m not sure how to prove it. I&rsquo;m just going to have to do a bit more research.</p>
 <p>If you&rsquo;d like to see the full code please see my daily <a href="https://github.com/charltonaustin/toy-problems/">toy problem</a> exercises that I&rsquo;ve been working on. It includes tests and a README.</p>
 
                 </section>
@@ -207,7 +207,7 @@
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -238,7 +238,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 

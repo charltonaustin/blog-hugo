@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="generator" content="Hugo 0.111.3">
 		<title>Euler Problem 004 &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -90,29 +90,29 @@
 <p>Find the largest palindrome made from the product of two 3-digit numbers.</p>
 <h6 id="solution">Solution</h6>
 <p>Now this guy is your daily warm up kind of easy. I created two functions. The first one simply checks a number to see if it is a palindrome. The second one accepts a number finds the largest multiplication combination that is a palindrome. Now I didn&rsquo;t have to go all the way to zero, but since we are looking for the largest it should work for any number.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="font-weight:bold">var</span> isPallidrome = <span style="font-weight:bold">function</span>(number){
-  <span style="font-weight:bold">var</span> stringNumber = <span style="font-style:italic">&#34;&#34;</span> + number;
-  <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 0; i &lt; stringNumber.length / 2; i++){
-    <span style="font-weight:bold">var</span> lastIndex = stringNumber.length - 1 - i;
-    <span style="font-weight:bold">if</span>(stringNumber[i] !== stringNumber[lastIndex]){
-      <span style="font-weight:bold">return</span> <span style="font-weight:bold">false</span>;
-    }
-  }
-  <span style="font-weight:bold">return</span> <span style="font-weight:bold">true</span>;
-}
-
-<span style="font-weight:bold">var</span> findPallidromes = <span style="font-weight:bold">function</span>(number){
-  <span style="font-weight:bold">var</span> largestPallidrome = -<span style="font-weight:bold">Infinity</span>;
-  <span style="font-weight:bold">for</span>(i = number; i &gt; 0; i--){
-    <span style="font-weight:bold">for</span>(j = number; j &gt; 0; j--){
-      <span style="font-weight:bold">if</span>(isPallidrome(i*j) &amp;&amp; i*j &gt; largestPallidrome){
-        largestPallidrome = i*j;
-      }
-    }
-  }
-    <span style="font-weight:bold">return</span> largestPallidrome;
-}
-</code></pre></div><p>If you&rsquo;d like to see the full code please see my daily <a href="https://github.com/charltonaustin/toy-problems/">toy problem</a> exercises that I&rsquo;ve been working on. It includes tests and a README.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="font-weight:bold">var</span> isPallidrome = <span style="font-weight:bold">function</span>(number){
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">var</span> stringNumber = <span style="font-style:italic">&#34;&#34;</span> + number;
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 0; i &lt; stringNumber.length / 2; i++){
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">var</span> lastIndex = stringNumber.length - 1 - i;
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">if</span>(stringNumber[i] !== stringNumber[lastIndex]){
+</span></span><span style="display:flex;"><span>      <span style="font-weight:bold">return</span> <span style="font-weight:bold">false</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">return</span> <span style="font-weight:bold">true</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">var</span> findPallidromes = <span style="font-weight:bold">function</span>(number){
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">var</span> largestPallidrome = -<span style="font-weight:bold">Infinity</span>;
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">for</span>(i = number; i &gt; 0; i--){
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">for</span>(j = number; j &gt; 0; j--){
+</span></span><span style="display:flex;"><span>      <span style="font-weight:bold">if</span>(isPallidrome(i*j) &amp;&amp; i*j &gt; largestPallidrome){
+</span></span><span style="display:flex;"><span>        largestPallidrome = i*j;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> largestPallidrome;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If you&rsquo;d like to see the full code please see my daily <a href="https://github.com/charltonaustin/toy-problems/">toy problem</a> exercises that I&rsquo;ve been working on. It includes tests and a README.</p>
 
                 </section>
             </article>
@@ -155,7 +155,7 @@
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -186,7 +186,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 

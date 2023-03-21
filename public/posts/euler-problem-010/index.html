@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="generator" content="Hugo 0.111.3">
 		<title>Euler Problem 010 &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -110,21 +110,21 @@
 <p>Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?</p>
 <h4 id="solution">Solution</h4>
 <p>This guy is a straightforward fun warm up for the day. A simple loop to walk over the numbers looking in all the possible directions (there are four). Going down and up are the same, going left and right are the same, forward-up is the same as going backward-down, and going forward-down is the same as going backward-up. Then as we traverse we keep track of the largest value.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="font-weight:bold">var</span> findLargestMultiple = <span style="font-weight:bold">function</span>(string, length){
-  <span style="font-weight:bold">var</span> largestMultiple = 0;
-  <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 0; i &lt; string.length-length; i++){
-    <span style="font-weight:bold">var</span> currentMultiple = 1;
-    <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> j = i; j &lt; i+length; j++){
-      console.log(Number(string[j]));
-      currentMultiple *= Number(string[j]);
-    }
-    <span style="font-weight:bold">if</span>(currentMultiple &gt; largestMultiple){
-      largestMultiple = currentMultiple;
-    }
-  }
-  <span style="font-weight:bold">return</span> largestMultiple;
-}
-</code></pre></div><p>If you&rsquo;d like to see the full code please see my daily <a href="https://github.com/charltonaustin/toy-problems/">toy problem</a> exercises that I&rsquo;ve been working on. It includes tests and a README.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="font-weight:bold">var</span> findLargestMultiple = <span style="font-weight:bold">function</span>(string, length){
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">var</span> largestMultiple = 0;
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 0; i &lt; string.length-length; i++){
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">var</span> currentMultiple = 1;
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> j = i; j &lt; i+length; j++){
+</span></span><span style="display:flex;"><span>      console.log(Number(string[j]));
+</span></span><span style="display:flex;"><span>      currentMultiple *= Number(string[j]);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">if</span>(currentMultiple &gt; largestMultiple){
+</span></span><span style="display:flex;"><span>      largestMultiple = currentMultiple;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">return</span> largestMultiple;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If you&rsquo;d like to see the full code please see my daily <a href="https://github.com/charltonaustin/toy-problems/">toy problem</a> exercises that I&rsquo;ve been working on. It includes tests and a README.</p>
 
                 </section>
             </article>
@@ -167,7 +167,7 @@
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -198,7 +198,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 

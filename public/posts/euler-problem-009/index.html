@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="generator" content="Hugo 0.111.3">
 		<title>Euler Problem 009 &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -93,19 +93,19 @@ a^2 + b^2 = c^2</p>
 Find the product abc.</p>
 <h4 id="solution">Solution</h4>
 <p>This solution is straight forward. We satisfy the constraint that a &lt; b &lt; c by incrementing up by one in each variable and then we search for the solution. At first glance this might seem like an O(n^3) problem, but it&rsquo;s constant, at least in the sense that we are only going to 1000 and we have no variable inputs. Mine runs fast enough. So I guess brute force it is today.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="font-weight:bold">var</span> findPythagoreanTriplet = <span style="font-weight:bold">function</span>(){
-  <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> a = 1; a &lt; 1000; a++){
-    <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> b = a+1; b &lt; 1000; b++){
-      <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> c = b+1; c &lt; 1000; c++){
-        <span style="font-weight:bold">if</span>(a + b + c === 1000 &amp;&amp; a * a + b * b === c * c){
-          <span style="font-weight:bold">return</span> a*b*c;
-        }
-      }
-    }
-  }
-  <span style="font-weight:bold">return</span> 0;
-}
-</code></pre></div><p>If you&rsquo;d like to see the full code please see my daily <a href="https://github.com/charltonaustin/toy-problems/">toy problem</a> exercises that I&rsquo;ve been working on. It includes tests and a README.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="font-weight:bold">var</span> findPythagoreanTriplet = <span style="font-weight:bold">function</span>(){
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> a = 1; a &lt; 1000; a++){
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> b = a+1; b &lt; 1000; b++){
+</span></span><span style="display:flex;"><span>      <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> c = b+1; c &lt; 1000; c++){
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">if</span>(a + b + c === 1000 &amp;&amp; a * a + b * b === c * c){
+</span></span><span style="display:flex;"><span>          <span style="font-weight:bold">return</span> a*b*c;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">return</span> 0;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If you&rsquo;d like to see the full code please see my daily <a href="https://github.com/charltonaustin/toy-problems/">toy problem</a> exercises that I&rsquo;ve been working on. It includes tests and a README.</p>
 
                 </section>
             </article>
@@ -148,7 +148,7 @@ Find the product abc.</p>
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -179,7 +179,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 

@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="generator" content="Hugo 0.111.3">
 		<title>Vagrant Chef Fun &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -90,62 +90,62 @@
 <p>I would suggest using <a href="https://rvm.io/">rvm</a> to manage Ruby. <a href="http://stackoverflow.com/questions/3696564/how-to-update-ruby-to-1-9-x-on-mac">Here</a> is a post to help with the install.
 Download and install <a href="https://www.virtualbox.org/wiki/Downloads">virtual box</a>.</p>
 <p>Now make a test directory and cd into it.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkdir test &amp;&amp; cd test 
-</code></pre></div><p>Install vagrant</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ gem install vagrant
-</code></pre></div><p>Create a new vagrant file.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ vagrant init
-</code></pre></div><p>Next open up the vagrant file and make it look like this:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">  # Every Vagrant virtual environment requires a box to build off of.
-
-  config.vm.box = &#34;ubuntu&#34;
-
-
-
-  # Forward a port from the guest to the host, which allows for outside
-
-  # computers to access the VM, whereas host only networking does not.
-
-  config.vm.forward_port 80, 8080
-
-
-
-
-
-  # Enable provisioning with chef solo, specifying a cookbooks path, roles
-
-  # path, and data_bags path (all relative to this Vagrantfile), and adding 
-
-  # some recipes and/or roles.
-
-  #
-
-  config.vm.provision :chef_solo do |chef|
-
-     chef.cookbooks_path = &#34;./cookbooks&#34;
-
-     chef.add_recipe &#34;apache2::default&#34;
-
-  end
-
-end
-</code></pre></div><p>Next download a public base box with Ubuntu on it.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ vagrant box add ubuntu http://files.vagrantup.com/lucid64.box  
-</code></pre></div><p>Now clone a copy of the apache2 opscode cookbook into a directory for cookbooks.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkdir cookbooks &amp;&amp; cd cookbooks 
-$ git clone https://github.com/opscode-cookbooks/apache2.git
-</code></pre></div><p>Okay next you need to modify some of the source code for the cookbooks.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim recipes/default.rb 
-</code></pre></div><p>Then add this to the default.rb file just below the comments. (Because the version of ubuntu I downloaded needed an apt-get update in order for the package install to work.)</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">bash &#34;apt-get update&#34; do
-  user &#34;root&#34;
-  code &lt;&lt;-EOH
-  sudo apt-get update
-  EOH
-end
-</code></pre></div><p>Finally use vagrant to start the server up.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ vagrant up
-</code></pre></div><p>Now we should be able to hit the url in your browser simply hit localhost:8080.  This should give you a 404 from Apache Server at localhost port 8080.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ mkdir test &amp;&amp; cd test 
+</span></span></code></pre></div><p>Install vagrant</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ gem install vagrant
+</span></span></code></pre></div><p>Create a new vagrant file.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ vagrant init
+</span></span></code></pre></div><p>Next open up the vagrant file and make it look like this:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>  # Every Vagrant virtual environment requires a box to build off of.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  config.vm.box = &#34;ubuntu&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  # Forward a port from the guest to the host, which allows for outside
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  # computers to access the VM, whereas host only networking does not.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  config.vm.forward_port 80, 8080
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  # Enable provisioning with chef solo, specifying a cookbooks path, roles
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  # path, and data_bags path (all relative to this Vagrantfile), and adding 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  # some recipes and/or roles.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  #
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  config.vm.provision :chef_solo do |chef|
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     chef.cookbooks_path = &#34;./cookbooks&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     chef.add_recipe &#34;apache2::default&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  end
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>end
+</span></span></code></pre></div><p>Next download a public base box with Ubuntu on it.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ vagrant box add ubuntu http://files.vagrantup.com/lucid64.box  
+</span></span></code></pre></div><p>Now clone a copy of the apache2 opscode cookbook into a directory for cookbooks.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ mkdir cookbooks &amp;&amp; cd cookbooks 
+</span></span><span style="display:flex;"><span>$ git clone https://github.com/opscode-cookbooks/apache2.git
+</span></span></code></pre></div><p>Okay next you need to modify some of the source code for the cookbooks.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim recipes/default.rb 
+</span></span></code></pre></div><p>Then add this to the default.rb file just below the comments. (Because the version of ubuntu I downloaded needed an apt-get update in order for the package install to work.)</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>bash &#34;apt-get update&#34; do
+</span></span><span style="display:flex;"><span>  user &#34;root&#34;
+</span></span><span style="display:flex;"><span>  code &lt;&lt;-EOH
+</span></span><span style="display:flex;"><span>  sudo apt-get update
+</span></span><span style="display:flex;"><span>  EOH
+</span></span><span style="display:flex;"><span>end
+</span></span></code></pre></div><p>Finally use vagrant to start the server up.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ vagrant up
+</span></span></code></pre></div><p>Now we should be able to hit the url in your browser simply hit localhost:8080.  This should give you a 404 from Apache Server at localhost port 8080.</p>
 <p>I think it is nothing short of amazing how easy it is to get a virtual machine up and running with an Apache server.</p>
 
                 </section>
@@ -189,7 +189,7 @@ end
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -220,7 +220,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 

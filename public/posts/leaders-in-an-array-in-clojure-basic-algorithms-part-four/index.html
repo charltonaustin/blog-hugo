@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="generator" content="Hugo 0.111.3">
 		<title>Leaders In An Array In Clojure Basic Algorithms Part Four &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -91,27 +91,27 @@
 <h3 id="solution">Solution</h3>
 <p>Is was my first attempt at coming up with a solution. Naturally I used recursion and simply walked down the array seeing if every element after it was the same.</p>
 <p>The time complexity of this is O( n^2 ) which isn&rsquo;t great.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="font-weight:bold">defn </span>find-leader
-  [xs]
-  (<span style="font-weight:bold">if </span>(empty? xs)
-    nil
-    (<span style="font-weight:bold">let </span>[head (first xs)
-          tail (rest xs)]
-      (<span style="font-weight:bold">if </span>(every? #(&gt; head %1) tail)
-        (conj (find-leader tail) head)
-        (find-leader tail)))))
-</code></pre></div><p>To see if I could get this any better I decided to try and find a non recursive method that does it in O(n) time. To do that we traverse backwards across the array keeping track of the largest element and when we find something smaller then we pop it into an accumulator. Then at the end we simply return the accumulator.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="font-weight:bold">defn </span>find-leader-loop
-  [coll]
-  (<span style="font-weight:bold">loop </span>[largest (last coll)
-         all (butlast coll)
-         leaders (conj &#39;() (last coll))]
-    (<span style="font-weight:bold">if </span>all
-      (<span style="font-weight:bold">if </span>(&gt; (last all) largest)
-        (recur (last all) (butlast all) (conj leaders (last all)))
-        (recur largest (butlast all) leaders))
-      leaders)))
-</code></pre></div><p>One thing to note about this. Since we are using last we should have a vector or else this becomes O( n^2 ) again.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="font-weight:bold">defn </span>find-leader
+</span></span><span style="display:flex;"><span>  [xs]
+</span></span><span style="display:flex;"><span>  (<span style="font-weight:bold">if </span>(empty? xs)
+</span></span><span style="display:flex;"><span>    nil
+</span></span><span style="display:flex;"><span>    (<span style="font-weight:bold">let </span>[head (first xs)
+</span></span><span style="display:flex;"><span>          tail (rest xs)]
+</span></span><span style="display:flex;"><span>      (<span style="font-weight:bold">if </span>(every? #(&gt; head %1) tail)
+</span></span><span style="display:flex;"><span>        (conj (find-leader tail) head)
+</span></span><span style="display:flex;"><span>        (find-leader tail)))))
+</span></span></code></pre></div><p>To see if I could get this any better I decided to try and find a non recursive method that does it in O(n) time. To do that we traverse backwards across the array keeping track of the largest element and when we find something smaller then we pop it into an accumulator. Then at the end we simply return the accumulator.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="font-weight:bold">defn </span>find-leader-loop
+</span></span><span style="display:flex;"><span>  [coll]
+</span></span><span style="display:flex;"><span>  (<span style="font-weight:bold">loop </span>[largest (last coll)
+</span></span><span style="display:flex;"><span>         all (butlast coll)
+</span></span><span style="display:flex;"><span>         leaders (conj &#39;() (last coll))]
+</span></span><span style="display:flex;"><span>    (<span style="font-weight:bold">if </span>all
+</span></span><span style="display:flex;"><span>      (<span style="font-weight:bold">if </span>(&gt; (last all) largest)
+</span></span><span style="display:flex;"><span>        (recur (last all) (butlast all) (conj leaders (last all)))
+</span></span><span style="display:flex;"><span>        (recur largest (butlast all) leaders))
+</span></span><span style="display:flex;"><span>      leaders)))
+</span></span></code></pre></div><p>One thing to note about this. Since we are using last we should have a vector or else this becomes O( n^2 ) again.</p>
 
                 </section>
             </article>
@@ -154,7 +154,7 @@
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -185,7 +185,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 

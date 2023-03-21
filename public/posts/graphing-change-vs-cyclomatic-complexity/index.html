@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="generator" content="Hugo 0.111.3">
 		<title>Graphing Change Vs Cyclomatic Complexity &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -50,7 +50,7 @@
                     </h1>
                     <h2 class="headline">
                     Jun 10, 2019 09:03
-                    · 1013 words
+                    · 1014 words
                     · 5 minute read
                       <span class="tags">
                       
@@ -114,22 +114,22 @@ In particular since I use git for version control so I use the number of commits
 <p>To get a useful measure from git I general use a command like this one.
 <code>git log --name-only --pretty=format: | grep &lt;folder name&gt; | sort | uniq -c | sort -nr &gt; changes.txt</code>
 This produces an output with something like the following:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">100 &lt;folder name&gt;/path/to/file/a.py
-40 &lt;folder name&gt;/path/to/file/b.py
-10 &lt;folder name&gt;/path/to/file/c.py
-2 &lt;folder name&gt;/path/to/file/d.py
-1 &lt;folder name&gt;/path/to/file/e.py
-...
-</code></pre></div><p>The first column is the number of times a commit has been made to that file and the second column is the file name.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>100 &lt;folder name&gt;/path/to/file/a.py
+</span></span><span style="display:flex;"><span>40 &lt;folder name&gt;/path/to/file/b.py
+</span></span><span style="display:flex;"><span>10 &lt;folder name&gt;/path/to/file/c.py
+</span></span><span style="display:flex;"><span>2 &lt;folder name&gt;/path/to/file/d.py
+</span></span><span style="display:flex;"><span>1 &lt;folder name&gt;/path/to/file/e.py
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p>The first column is the number of times a commit has been made to that file and the second column is the file name.</p>
 <h2 id="the-process-for-python">The process for python</h2>
 <p>For python I would do something like this.
 <code>radon cc -s -j ./* | jq 'with_entries(.value |= .[].complexity)' | jq 'to_entries' | jq '.[]' | jq '&quot;\(.value) \(.key)&quot;' |  tr -d '&quot;' | sort -rn &gt; cc.txt</code>
 This produces a file with something like the following:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">26 &lt;folder name&gt;/path/to/file/a.py
-24 &lt;folder name&gt;/path/to/file/b.py
-20 &lt;folder name&gt;/path/to/file/c.py
-19 &lt;folder name&gt;/path/to/file/d.py
-</code></pre></div><p>Here the first column is the cyclomatic complexity and the second column is the file name.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>26 &lt;folder name&gt;/path/to/file/a.py
+</span></span><span style="display:flex;"><span>24 &lt;folder name&gt;/path/to/file/b.py
+</span></span><span style="display:flex;"><span>20 &lt;folder name&gt;/path/to/file/c.py
+</span></span><span style="display:flex;"><span>19 &lt;folder name&gt;/path/to/file/d.py
+</span></span></code></pre></div><p>Here the first column is the cyclomatic complexity and the second column is the file name.</p>
 <h2 id="the-process-for-js">The process for JS</h2>
 <p>For JavaScript I like the plato tool which gives me a directory with a bunch of information.
 I simply process the JSON that it produces and do something very similar.
@@ -137,55 +137,55 @@ I simply process the JSON that it produces and do something very similar.
 This produces a file with something like the previous output just JS instead of PY.</p>
 <h2 id="graphing-all-of-this">Graphing all of this</h2>
 <p>Finally I take the out puts and I create graphs for them with the following script.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-weight:bold">import</span> <span style="font-weight:bold">os</span>
-<span style="font-weight:bold">import</span> <span style="font-weight:bold">sys</span>
-
-<span style="font-weight:bold">import</span> <span style="font-weight:bold">matplotlib.pyplot</span> <span style="font-weight:bold">as</span> <span style="font-weight:bold">plt</span>
-<span style="font-weight:bold">import</span> <span style="font-weight:bold">mplcursors</span>
-
-base_dir = os.environ.get(<span style="font-style:italic">&#39;PROJECT_HOME&#39;</span>)
-<span style="font-weight:bold">if</span> <span style="font-weight:bold">not</span> base_dir:
-  <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Please set PROJECT_HOME environment variable&#34;</span>)
-
-project_name = sys.argv[1]
-changes_file_name = f<span style="font-style:italic">&#34;{base_dir}/{project_name}/changes.txt&#34;</span>
-cc_file_name = f<span style="font-style:italic">&#34;{base_dir}/{project_name}/cc.txt&#34;</span>
-
-
-<span style="font-weight:bold">def</span> get_data(file_name_):
-  data = {}
-  names = set()
-  <span style="font-weight:bold">with</span> open(file_name_, <span style="font-style:italic">&#39;r&#39;</span>) <span style="font-weight:bold">as</span> file:
-    <span style="font-weight:bold">for</span> cnt, line <span style="font-weight:bold">in</span> enumerate(file):
-      <span style="font-weight:bold">try</span>:
-        d, name = line.strip().split(<span style="font-style:italic">&#34; &#34;</span>)
-        data[name] = d
-        names.add(name)
-      <span style="font-weight:bold">except</span> <span style="font-weight:bold">ValueError</span>:
-        <span style="font-weight:bold">print</span>(f<span style="font-style:italic">&#34;skipping line</span><span style="font-weight:bold;font-style:italic">\n</span><span style="font-style:italic"> {line}&#34;</span>)
-  <span style="font-weight:bold">return</span> data, names
-
-
-ccs, ccs_keys = get_data(cc_file_name)
-changes, change_keys = get_data(changes_file_name)
-file_names = change_keys.intersection(ccs_keys)
-x = []
-y = []
-labels = []
-fig, ax = plt.subplots()
-<span style="font-weight:bold">for</span> file_name <span style="font-weight:bold">in</span> file_names:
-  x.append(float(ccs[file_name]))
-  y.append(float(changes[file_name]))
-  labels.append(file_name)
-
-lines = plt.plot(x, y, <span style="font-style:italic">&#39;bo&#39;</span>)
-cursor = mplcursors.cursor(hover=True)
-cursor.connect(<span style="font-style:italic">&#34;add&#34;</span>, <span style="font-weight:bold">lambda</span> sel: sel.annotation.set_text(labels[sel.target.index]))
-plt.xlabel(<span style="font-style:italic">&#34;complexity&#34;</span>)
-plt.ylabel(<span style="font-style:italic">&#34;number of times changed&#34;</span>)
-plt.title(f<span style="font-style:italic">&#34;complexity vs churn {project_name}&#34;</span>)
-plt.show()
-</code></pre></div><p>Now, none of this graphing code really depends on the project.
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="font-weight:bold">import</span> <span style="font-weight:bold">os</span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">import</span> <span style="font-weight:bold">sys</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">import</span> <span style="font-weight:bold">matplotlib.pyplot</span> <span style="font-weight:bold">as</span> <span style="font-weight:bold">plt</span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">import</span> <span style="font-weight:bold">mplcursors</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>base_dir = os.environ.get(<span style="font-style:italic">&#39;PROJECT_HOME&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">if</span> <span style="font-weight:bold">not</span> base_dir:
+</span></span><span style="display:flex;"><span>  print(<span style="font-style:italic">&#34;Please set PROJECT_HOME environment variable&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>project_name = sys.argv[1]
+</span></span><span style="display:flex;"><span>changes_file_name = <span style="font-style:italic">f</span><span style="font-style:italic">&#34;</span><span style="font-weight:bold;font-style:italic">{</span>base_dir<span style="font-weight:bold;font-style:italic">}</span><span style="font-style:italic">/</span><span style="font-weight:bold;font-style:italic">{</span>project_name<span style="font-weight:bold;font-style:italic">}</span><span style="font-style:italic">/changes.txt&#34;</span>
+</span></span><span style="display:flex;"><span>cc_file_name = <span style="font-style:italic">f</span><span style="font-style:italic">&#34;</span><span style="font-weight:bold;font-style:italic">{</span>base_dir<span style="font-weight:bold;font-style:italic">}</span><span style="font-style:italic">/</span><span style="font-weight:bold;font-style:italic">{</span>project_name<span style="font-weight:bold;font-style:italic">}</span><span style="font-style:italic">/cc.txt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> get_data(file_name_):
+</span></span><span style="display:flex;"><span>  data = {}
+</span></span><span style="display:flex;"><span>  names = set()
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">with</span> open(file_name_, <span style="font-style:italic">&#39;r&#39;</span>) <span style="font-weight:bold">as</span> file:
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">for</span> cnt, line <span style="font-weight:bold">in</span> enumerate(file):
+</span></span><span style="display:flex;"><span>      <span style="font-weight:bold">try</span>:
+</span></span><span style="display:flex;"><span>        d, name = line.strip().split(<span style="font-style:italic">&#34; &#34;</span>)
+</span></span><span style="display:flex;"><span>        data[name] = d
+</span></span><span style="display:flex;"><span>        names.add(name)
+</span></span><span style="display:flex;"><span>      <span style="font-weight:bold">except</span> <span style="font-weight:bold">ValueError</span>:
+</span></span><span style="display:flex;"><span>        print(<span style="font-style:italic">f</span><span style="font-style:italic">&#34;skipping line</span><span style="font-weight:bold;font-style:italic">\n</span><span style="font-style:italic"> </span><span style="font-weight:bold;font-style:italic">{</span>line<span style="font-weight:bold;font-style:italic">}</span><span style="font-style:italic">&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">return</span> data, names
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ccs, ccs_keys = get_data(cc_file_name)
+</span></span><span style="display:flex;"><span>changes, change_keys = get_data(changes_file_name)
+</span></span><span style="display:flex;"><span>file_names = change_keys.intersection(ccs_keys)
+</span></span><span style="display:flex;"><span>x = []
+</span></span><span style="display:flex;"><span>y = []
+</span></span><span style="display:flex;"><span>labels = []
+</span></span><span style="display:flex;"><span>fig, ax = plt.subplots()
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">for</span> file_name <span style="font-weight:bold">in</span> file_names:
+</span></span><span style="display:flex;"><span>  x.append(float(ccs[file_name]))
+</span></span><span style="display:flex;"><span>  y.append(float(changes[file_name]))
+</span></span><span style="display:flex;"><span>  labels.append(file_name)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>lines = plt.plot(x, y, <span style="font-style:italic">&#39;bo&#39;</span>)
+</span></span><span style="display:flex;"><span>cursor = mplcursors.cursor(hover=<span style="font-weight:bold">True</span>)
+</span></span><span style="display:flex;"><span>cursor.connect(<span style="font-style:italic">&#34;add&#34;</span>, <span style="font-weight:bold">lambda</span> sel: sel.annotation.set_text(labels[sel.target.index]))
+</span></span><span style="display:flex;"><span>plt.xlabel(<span style="font-style:italic">&#34;complexity&#34;</span>)
+</span></span><span style="display:flex;"><span>plt.ylabel(<span style="font-style:italic">&#34;number of times changed&#34;</span>)
+</span></span><span style="display:flex;"><span>plt.title(<span style="font-style:italic">f</span><span style="font-style:italic">&#34;complexity vs churn </span><span style="font-weight:bold;font-style:italic">{</span>project_name<span style="font-weight:bold;font-style:italic">}</span><span style="font-style:italic">&#34;</span>)
+</span></span><span style="display:flex;"><span>plt.show()
+</span></span></code></pre></div><p>Now, none of this graphing code really depends on the project.
 All you really need are two files that are named cc.txt and changes.txt.
 It reads those and then creates a graph where the x label comes from cc.txt and the y label comes from changes.txt.
 It only really depends on <a href="https://matplotlib.org/">matplotlib</a> and <a href="https://mplcursors.readthedocs.io/en/stable/">mplcursors</a>
@@ -247,7 +247,7 @@ So if you are out there please let me know so I can show my references.</p>
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -278,7 +278,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 

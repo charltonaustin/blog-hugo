@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="generator" content="Hugo 0.111.3">
 		<title>Refactoring Tests For Maintainability &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -77,81 +77,81 @@
                 <section id="post-body">
                     <p>I just began working at Intent Media  and I&rsquo;ve been spending some time getting to know the code base. I spent the other day pairing with another guy on the team to add a new feature. We needed to change one of the data models by adding a new field. So we wrote some tests specifying how we thought the new data field should work. Next we got them passing. After that we ran all the unit tests. Oh man were we in trouble. We had twenty-five test failures. I was a little surprised since we had made a pretty small change in the production code.</p>
 <p>Small changes in production code should have small effects in test code. So to my mind this meant that we had some refactoring to do. The object we were changing had an internal builder pattern which looks something like this.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="font-weight:bold">package</span> <span style="font-weight:bold">org.charlieaustin.blog</span>;
-
-<span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">DataModel</span> {
-
-    <span style="font-weight:bold">private</span> Object field;
-    <span style="font-weight:bold">private</span> Object field1;
-    <span style="font-weight:bold">private</span> Object field2;
-
-    <span style="font-weight:bold">private</span> DataModel() {}
-
-    <span style="font-weight:bold">public</span> DataModelBuilder dataModelBuilder() {
-        <span style="font-weight:bold">return</span> <span style="font-weight:bold">new</span> DataModelBuilder();
-    }
-
-    <span style="font-weight:bold">protected</span> <span style="font-weight:bold">static</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">DataModelBuilder</span> {
-
-
-        <span style="font-weight:bold">private</span> <span style="font-weight:bold">final</span> org.charlieaustin.blog.DataModel dataModel;
-        <span style="font-weight:bold">private</span> Object field;
-        <span style="font-weight:bold">private</span> Object field1;
-        <span style="font-weight:bold">private</span> Object field2;
-
-        <span style="font-weight:bold">public</span> <span style="">void</span> setField(Object field) {
-            <span style="font-style:italic">//do some transformations
-</span><span style="font-style:italic"></span>            <span style="font-weight:bold">this</span>.field = field;
-        }
-
-        <span style="font-weight:bold">public</span> <span style="">void</span> setField1(Object field1) {
-            <span style="font-style:italic">// do some transformations
-</span><span style="font-style:italic"></span>            <span style="font-weight:bold">this</span>.field1 = field1;
-        }
-
-        <span style="font-weight:bold">public</span> <span style="">void</span> setField2(Object field2) {
-            <span style="font-style:italic">// do some transformations
-</span><span style="font-style:italic"></span>            <span style="font-weight:bold">this</span>.field2 = field2;
-        }
-
-        <span style="font-weight:bold">public</span> DataModel build() {
-            validate();
-            dataModel.field = field;
-            dataModel.field1 = field1;
-            dataModel.field2 = field2;
-            <span style="font-weight:bold">return</span> dataModel;
-        }
-
-        <span style="font-weight:bold">private</span> <span style="">void</span> validate(){
-            <span style="font-style:italic">// validate that fields are correct
-</span><span style="font-style:italic"></span>        }
-
-
-        <span style="font-weight:bold">private</span> DataModelBuilder(){
-            <span style="font-weight:bold">this</span>.dataModel = <span style="font-weight:bold">new</span> DataModel();
-        }
-
-    }
-} 
-</code></pre></div><p>While looking at the tests we realized they were all failing for the same reason. The new field we had created wasn&rsquo;t initialized in any way for the old tests. We quickly realized we were constructing the object in too many places as part of test code set up. We could fix this without refactoring, but we would have to make the same change in 25 places. Also some times the data used to construct the data model was important to the test, while other times it wasn&rsquo;t. It was difficult to see the difference between the two cases.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">package</span> <span style="font-weight:bold">org.charlieaustin.blog</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">DataModel</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">private</span> Object field;
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">private</span> Object field1;
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">private</span> Object field2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">private</span> DataModel() {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">public</span> DataModelBuilder dataModelBuilder() {
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">return</span> <span style="font-weight:bold">new</span> DataModelBuilder();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">protected</span> <span style="font-weight:bold">static</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">DataModelBuilder</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">private</span> <span style="font-weight:bold">final</span> org.charlieaustin.blog.DataModel dataModel;
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">private</span> Object field;
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">private</span> Object field1;
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">private</span> Object field2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">public</span> <span style="">void</span> setField(Object field) {
+</span></span><span style="display:flex;"><span>            <span style="font-style:italic">//do some transformations
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>            <span style="font-weight:bold">this</span>.field = field;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">public</span> <span style="">void</span> setField1(Object field1) {
+</span></span><span style="display:flex;"><span>            <span style="font-style:italic">// do some transformations
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>            <span style="font-weight:bold">this</span>.field1 = field1;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">public</span> <span style="">void</span> setField2(Object field2) {
+</span></span><span style="display:flex;"><span>            <span style="font-style:italic">// do some transformations
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>            <span style="font-weight:bold">this</span>.field2 = field2;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">public</span> DataModel build() {
+</span></span><span style="display:flex;"><span>            validate();
+</span></span><span style="display:flex;"><span>            dataModel.field = field;
+</span></span><span style="display:flex;"><span>            dataModel.field1 = field1;
+</span></span><span style="display:flex;"><span>            dataModel.field2 = field2;
+</span></span><span style="display:flex;"><span>            <span style="font-weight:bold">return</span> dataModel;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">private</span> <span style="">void</span> validate(){
+</span></span><span style="display:flex;"><span>            <span style="font-style:italic">// validate that fields are correct
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">private</span> DataModelBuilder(){
+</span></span><span style="display:flex;"><span>            <span style="font-weight:bold">this</span>.dataModel = <span style="font-weight:bold">new</span> DataModel();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>} 
+</span></span></code></pre></div><p>While looking at the tests we realized they were all failing for the same reason. The new field we had created wasn&rsquo;t initialized in any way for the old tests. We quickly realized we were constructing the object in too many places as part of test code set up. We could fix this without refactoring, but we would have to make the same change in 25 places. Also some times the data used to construct the data model was important to the test, while other times it wasn&rsquo;t. It was difficult to see the difference between the two cases.</p>
 <p>The builder was doing a good job of controlling when the fields got accessed and ensuring that we only had consistent data models in the world, but we needed another abstraction to ease the construction for tests. We really wanted to minimize the number of places that we constructed the builder without losing the flexibility that it provided. We decided to pull the construction of the data model builder into a central place on the data model test class. That way we could create a data model builder with sensible defaults which the consuming class could override with import data before building. We also added a second method to construct a default data model. It looked something like this.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">DataModelBuilderTest</span> <span style="font-weight:bold">extends</span> TestCase {
-    <span style="font-style:italic">// there are some tests in here somewhere ...
-</span><span style="font-style:italic"></span>    <span style="font-style:italic">//  ...
-</span><span style="font-style:italic"></span>
-    <span style="font-weight:bold">public</span> <span style="font-weight:bold">static</span> DataModel.DataModelBuilder getDefaultDataModelBuilder() {
-        DataModel.DataModelBuilder dataModelBuilder = DataModel.dataModelBuilder();
-        dataModelBuilder.setField(<span style="font-weight:bold">new</span> Object()); <span style="font-style:italic">//add default object
-</span><span style="font-style:italic"></span>        dataModelBuilder.setField1(<span style="font-weight:bold">new</span> Object()); <span style="font-style:italic">//add default object
-</span><span style="font-style:italic"></span>        dataModelBuilder.setField2(<span style="font-weight:bold">new</span> Object()); <span style="font-style:italic">//add default object
-</span><span style="font-style:italic"></span>        <span style="font-weight:bold">return</span> dataModelBuilder;
-    }
-    
-    <span style="font-weight:bold">public</span> <span style="font-weight:bold">static</span> DataModel getDefaultDataModel () {
-        <span style="font-weight:bold">return</span> getDefaultDataModelBuilder().build();
-    }
-} 
-</code></pre></div><p>We then went from failing test to failing test. First fixing the test and then constructing the default object where possible. If the data was important to the test we would create the builder and make it clear that this particular field was important to this particular test. Later during the story when we needed to add another field we ended up having to change the code in only three places. First where we actually added the field, second where the builder created the default test object, and finally where we needed to add tests for the new field. The resulting test code was also easier to read. We could more easily see when the data was important and we got rid of a lot of noise in the test code.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">DataModelBuilderTest</span> <span style="font-weight:bold">extends</span> TestCase {
+</span></span><span style="display:flex;"><span>    <span style="font-style:italic">// there are some tests in here somewhere ...
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>    <span style="font-style:italic">//  ...
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">public</span> <span style="font-weight:bold">static</span> DataModel.DataModelBuilder getDefaultDataModelBuilder() {
+</span></span><span style="display:flex;"><span>        DataModel.DataModelBuilder dataModelBuilder = DataModel.dataModelBuilder();
+</span></span><span style="display:flex;"><span>        dataModelBuilder.setField(<span style="font-weight:bold">new</span> Object()); <span style="font-style:italic">//add default object
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>        dataModelBuilder.setField1(<span style="font-weight:bold">new</span> Object()); <span style="font-style:italic">//add default object
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>        dataModelBuilder.setField2(<span style="font-weight:bold">new</span> Object()); <span style="font-style:italic">//add default object
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>        <span style="font-weight:bold">return</span> dataModelBuilder;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">public</span> <span style="font-weight:bold">static</span> DataModel getDefaultDataModel () {
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">return</span> getDefaultDataModelBuilder().build();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>} 
+</span></span></code></pre></div><p>We then went from failing test to failing test. First fixing the test and then constructing the default object where possible. If the data was important to the test we would create the builder and make it clear that this particular field was important to this particular test. Later during the story when we needed to add another field we ended up having to change the code in only three places. First where we actually added the field, second where the builder created the default test object, and finally where we needed to add tests for the new field. The resulting test code was also easier to read. We could more easily see when the data was important and we got rid of a lot of noise in the test code.</p>
 
                 </section>
             </article>
@@ -194,7 +194,7 @@
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -225,7 +225,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 

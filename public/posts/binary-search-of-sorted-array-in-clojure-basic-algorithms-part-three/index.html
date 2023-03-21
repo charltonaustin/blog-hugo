@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="generator" content="Hugo 0.111.3">
 		<title>Binary Search Of Sorted Array In Clojure Basic Algorithms Part Three &middot; Charlton Austin</title>
 		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
@@ -88,72 +88,72 @@
 <p>Find an element in a sorted array using  binary search</p>
 <h3 id="the-solution">The solution</h3>
 <p>The solution is pretty straight forward. I added in some printlns to get a sense of how we drill down in the recursion to find the element.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="font-weight:bold">defn </span>binary-search [v value]
-  (<span style="font-weight:bold">loop </span>[low 0 high (dec (count v))
-         depth 0]
-    (<span style="font-weight:bold">let </span>[half-way (quot (+ high low)  2)]
-      (<span style="font-weight:bold">do </span>(println (str <span style="font-style:italic">&#34;half-way is &#34;</span> half-way))
-          (println (str <span style="font-style:italic">&#34;low is &#34;</span> low))
-          (println (str <span style="font-style:italic">&#34;high is &#34;</span> high))
-          (println (str <span style="font-style:italic">&#34;depth is &#34;</span> depth))
-          (<span style="font-weight:bold">if </span>(&lt;= high (inc low))
-            (cond (= value (v low)) low
-              (= value (v high)) high
-              <span style="font-style:italic">:else</span> nil)
-            (<span style="font-weight:bold">let </span>[middle (quot (+ low high) 2)]
-              (<span style="font-weight:bold">if </span>(&lt; (v middle) value)
-                (recur (inc middle) high (inc depth))
-                (recur low middle (inc depth)))))))))
-</code></pre></div><p>You can call the function like this:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(binary-search (vec (range 0 10)) 1000)
-</code></pre></div><p>Dialing up the range you can see how many steps it takes to get to the value.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="font-weight:bold">defn </span>binary-search [v value]
+</span></span><span style="display:flex;"><span>  (<span style="font-weight:bold">loop </span>[low 0 high (dec (count v))
+</span></span><span style="display:flex;"><span>         depth 0]
+</span></span><span style="display:flex;"><span>    (<span style="font-weight:bold">let </span>[half-way (quot (+ high low)  2)]
+</span></span><span style="display:flex;"><span>      (<span style="font-weight:bold">do </span>(println (str <span style="font-style:italic">&#34;half-way is &#34;</span> half-way))
+</span></span><span style="display:flex;"><span>          (println (str <span style="font-style:italic">&#34;low is &#34;</span> low))
+</span></span><span style="display:flex;"><span>          (println (str <span style="font-style:italic">&#34;high is &#34;</span> high))
+</span></span><span style="display:flex;"><span>          (println (str <span style="font-style:italic">&#34;depth is &#34;</span> depth))
+</span></span><span style="display:flex;"><span>          (<span style="font-weight:bold">if </span>(&lt;= high (inc low))
+</span></span><span style="display:flex;"><span>            (cond (= value (v low)) low
+</span></span><span style="display:flex;"><span>              (= value (v high)) high
+</span></span><span style="display:flex;"><span>              <span style="font-style:italic">:else</span> nil)
+</span></span><span style="display:flex;"><span>            (<span style="font-weight:bold">let </span>[middle (quot (+ low high) 2)]
+</span></span><span style="display:flex;"><span>              (<span style="font-weight:bold">if </span>(&lt; (v middle) value)
+</span></span><span style="display:flex;"><span>                (recur (inc middle) high (inc depth))
+</span></span><span style="display:flex;"><span>                (recur low middle (inc depth)))))))))
+</span></span></code></pre></div><p>You can call the function like this:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(binary-search (vec (range 0 10)) 1000)
+</span></span></code></pre></div><p>Dialing up the range you can see how many steps it takes to get to the value.</p>
 <p>There&rsquo;s also a java implementation of binary search.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">java.util.Collections.binarySearch(List&lt;T&gt; list, T key, Comparator&lt;? <span style="font-weight:bold">super</span> T&gt; c).
-</code></pre></div><p>I decided to see compare the two implementations with a variety of elements in the collection while, looking for a random element. I took the average time over 100,000 runs to see how different the two implementations did.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>java.util.Collections.binarySearch(List&lt;T&gt; list, T key, Comparator&lt;? <span style="font-weight:bold">super</span> T&gt; c).
+</span></span></code></pre></div><p>I decided to see compare the two implementations with a variety of elements in the collection while, looking for a random element. I took the average time over 100,000 runs to see how different the two implementations did.</p>
 <p>The two implementations that I ran were.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="font-weight:bold">defn </span>binary-search [v value]
-  (<span style="font-weight:bold">loop </span>[low 0 high (dec (count v))
-         depth 0]
-    (<span style="font-weight:bold">let </span>[half-way (quot (+ high low)  2)]
-      (<span style="font-weight:bold">if </span>(&lt;= high (inc low))
-        (cond  (= value (v low)) low
-          (= value (v high)) high
-          <span style="font-style:italic">:else</span> nil)
-        (<span style="font-weight:bold">let </span>[middle (quot (+ low high) 2)]
-          (<span style="font-weight:bold">if </span>(&lt; (v middle) value)
-            (recur (inc middle) high (inc depth))
-            (recur low middle (inc depth))))))))
-</code></pre></div><p>vs</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="font-weight:bold">defn </span>java-binary-search [v value]
-  (Collections/binarySearch v value compare))
-</code></pre></div><p>For 1000000 elements in the array using java-binary-search I got.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">{<span style="font-style:italic">:average</span> 30.04732094221115, <span style="font-style:italic">:std-deviation</span> 9.367210018023908}
-</code></pre></div><p>For 1000000 element in the array using binary-search I got.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">{<span style="font-style:italic">:average</span> 29.451808820724487, <span style="font-style:italic">:std-deviation</span> 9.199826118870515}
-</code></pre></div><p>Insanely they were basically the same. It took about 5 mins to get the results back for 10,000 runs. So I decided to dial up the number of elements to 10,000,000 and reduce the number of runs to 100.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="font-weight:bold">defn </span>binary-search [v value]
+</span></span><span style="display:flex;"><span>  (<span style="font-weight:bold">loop </span>[low 0 high (dec (count v))
+</span></span><span style="display:flex;"><span>         depth 0]
+</span></span><span style="display:flex;"><span>    (<span style="font-weight:bold">let </span>[half-way (quot (+ high low)  2)]
+</span></span><span style="display:flex;"><span>      (<span style="font-weight:bold">if </span>(&lt;= high (inc low))
+</span></span><span style="display:flex;"><span>        (cond  (= value (v low)) low
+</span></span><span style="display:flex;"><span>          (= value (v high)) high
+</span></span><span style="display:flex;"><span>          <span style="font-style:italic">:else</span> nil)
+</span></span><span style="display:flex;"><span>        (<span style="font-weight:bold">let </span>[middle (quot (+ low high) 2)]
+</span></span><span style="display:flex;"><span>          (<span style="font-weight:bold">if </span>(&lt; (v middle) value)
+</span></span><span style="display:flex;"><span>            (recur (inc middle) high (inc depth))
+</span></span><span style="display:flex;"><span>            (recur low middle (inc depth))))))))
+</span></span></code></pre></div><p>vs</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="font-weight:bold">defn </span>java-binary-search [v value]
+</span></span><span style="display:flex;"><span>  (Collections/binarySearch v value compare))
+</span></span></code></pre></div><p>For 1000000 elements in the array using java-binary-search I got.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>{<span style="font-style:italic">:average</span> 30.04732094221115, <span style="font-style:italic">:std-deviation</span> 9.367210018023908}
+</span></span></code></pre></div><p>For 1000000 element in the array using binary-search I got.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>{<span style="font-style:italic">:average</span> 29.451808820724487, <span style="font-style:italic">:std-deviation</span> 9.199826118870515}
+</span></span></code></pre></div><p>Insanely they were basically the same. It took about 5 mins to get the results back for 10,000 runs. So I decided to dial up the number of elements to 10,000,000 and reduce the number of runs to 100.</p>
 <p>For java-binary-search I got</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">{<span style="font-style:italic">:average</span> 870.9942288208008, <span style="font-style:italic">:std-deviation</span> 705.2356880437546}
-</code></pre></div><p>For binary-search I got</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">{<span style="font-style:italic">:average</span> 728.1910227966308, <span style="font-style:italic">:std-deviation</span> 441.7981992776274}
-</code></pre></div><p>There is some difference here. The standard deviations show that java-binary-search has a slightly wider spread, which means it could be faster in some cases with some outliers as compared to binary search. Since I didn&rsquo;t I decided to look at the implementation of binarySearch within Java itself. For the record here it is.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="font-weight:bold">private</span> <span style="font-weight:bold">static</span> &lt;T&gt; <span style="">int</span> indexedBinarySearch(List&lt;? <span style="font-weight:bold">extends</span> T&gt; l, T key, Comparator&lt;? <span style="font-weight:bold">super</span> T&gt; c) {
-    <span style="">int</span> low = 0;
-    <span style="">int</span> high = l.size()-1;
-    <span style="font-weight:bold">while</span> (low &lt;= high) {
-        <span style="">int</span> mid = (low + high) &gt;&gt;&gt; 1;
-        T midVal = l.get(mid);
-        <span style="">int</span> cmp = c.compare(midVal, key);
-        <span style="font-weight:bold">if</span> (cmp &lt; 0)
-            low = mid + 1;
-        <span style="font-weight:bold">else</span> <span style="font-weight:bold">if</span> (cmp &gt; 0)
-            high = mid - 1;
-        <span style="font-weight:bold">else</span>
-            <span style="font-weight:bold">return</span> mid; <span style="font-style:italic">// key found
-</span><span style="font-style:italic"></span>    }
-
-    <span style="font-weight:bold">return</span> -(low + 1);  <span style="font-style:italic">// key not found
-</span><span style="font-style:italic"></span>}
-</code></pre></div><p>This is actually the indexed version of binary search, but since we are using a vector/array I figured this would be the one that was getting used from Clojure (though I didn&rsquo;t confirm this). I&rsquo;m not sure why the two implementations are so close together. I would love to see the byte code produced by each invocation. Maybe in a future post I will do exactly that. For now this will have to be good.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>{<span style="font-style:italic">:average</span> 870.9942288208008, <span style="font-style:italic">:std-deviation</span> 705.2356880437546}
+</span></span></code></pre></div><p>For binary-search I got</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>{<span style="font-style:italic">:average</span> 728.1910227966308, <span style="font-style:italic">:std-deviation</span> 441.7981992776274}
+</span></span></code></pre></div><p>There is some difference here. The standard deviations show that java-binary-search has a slightly wider spread, which means it could be faster in some cases with some outliers as compared to binary search. Since I didn&rsquo;t I decided to look at the implementation of binarySearch within Java itself. For the record here it is.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">private</span> <span style="font-weight:bold">static</span> &lt;T&gt; <span style="">int</span> indexedBinarySearch(List&lt;? <span style="font-weight:bold">extends</span> T&gt; l, T key, Comparator&lt;? <span style="font-weight:bold">super</span> T&gt; c) {
+</span></span><span style="display:flex;"><span>    <span style="">int</span> low = 0;
+</span></span><span style="display:flex;"><span>    <span style="">int</span> high = l.size()-1;
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">while</span> (low &lt;= high) {
+</span></span><span style="display:flex;"><span>        <span style="">int</span> mid = (low + high) &gt;&gt;&gt; 1;
+</span></span><span style="display:flex;"><span>        T midVal = l.get(mid);
+</span></span><span style="display:flex;"><span>        <span style="">int</span> cmp = c.compare(midVal, key);
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">if</span> (cmp &lt; 0)
+</span></span><span style="display:flex;"><span>            low = mid + 1;
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">else</span> <span style="font-weight:bold">if</span> (cmp &gt; 0)
+</span></span><span style="display:flex;"><span>            high = mid - 1;
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>            <span style="font-weight:bold">return</span> mid; <span style="font-style:italic">// key found
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> -(low + 1);  <span style="font-style:italic">// key not found
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>}
+</span></span></code></pre></div><p>This is actually the indexed version of binary search, but since we are using a vector/array I figured this would be the one that was getting used from Clojure (though I didn&rsquo;t confirm this). I&rsquo;m not sure why the two implementations are so close together. I would love to see the byte code produced by each invocation. Maybe in a future post I will do exactly that. For now this will have to be good.</p>
 
                 </section>
             </article>
@@ -196,7 +196,7 @@
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -227,7 +227,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 
