@@ -6,36 +6,7 @@
     <description>Recent content in management on Charlton Austin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 05 Aug 2020 10:17:05 -0500</lastBuildDate><atom:link href="https://charltonaustin.com/categories/management/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Checklists Follow Up</title>
-      <link>https://charltonaustin.com/checklists-follow-up/</link>
-      <pubDate>Wed, 05 Aug 2020 10:17:05 -0500</pubDate>
-      
-      <guid>https://charltonaustin.com/checklists-follow-up/</guid>
-      <description>Before I wrote about checklists, here. In it I talked about a dream.</description>
-    </item>
-    
-    <item>
-      <title>Maslow Hierarchy of An App</title>
-      <link>https://charltonaustin.com/maslow-hierarchy-of-an-app/</link>
-      <pubDate>Wed, 05 Aug 2020 10:17:05 -0500</pubDate>
-      
-      <guid>https://charltonaustin.com/maslow-hierarchy-of-an-app/</guid>
-      <description>https://www.cbinsights.com/research/maslows-hierarchy-of-needs-startups/</description>
-    </item>
-    
-    <item>
-      <title>Points What Are They Good For</title>
-      <link>https://charltonaustin.com/points-what-are-they-good-for/</link>
-      <pubDate>Wed, 05 Aug 2020 10:17:05 -0500</pubDate>
-      
-      <guid>https://charltonaustin.com/points-what-are-they-good-for/</guid>
-      <description>Should story points be tied to time I often hear people say story point shouldn&amp;rsquo;t be tied to time. Instead they should be based on complexity. This can be for a variety of reason. Here for instance three reasons are cited.
-Some tasks are difficult to estimate precisely.
-If one developer estimates a project but another completes the task, the estimate becomes invalid. The time needed to complete a task will vary based on a developer’s level of experience.</description>
-    </item>
-    
+    <lastBuildDate>Mon, 27 Apr 2020 07:00:54 -0400</lastBuildDate><atom:link href="https://charltonaustin.com/categories/management/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pomodoro Method Follow Up</title>
       <link>https://charltonaustin.com/posts/pomodoro-method-follow-up/</link>
@@ -75,15 +46,6 @@ Why shouldn’t they be punished or reprimanded? Because an engineer who thinks 
       <guid>https://charltonaustin.com/posts/branch-by-abstraction/</guid>
       <description>The problem I want to write code that is consistently shared with the rest of the team, but I also want trunk based development.
 What is branch by abstraction Paul Hammant a friend and mentor of mine, has two great articles explaining branch by abstraction here and here. The basic concept is pretty easy. Instead of having long lived branches in your version control system, you simply create an abstraction that allows you to change the behavior with only a few minor changes.</description>
-    </item>
-    
-    <item>
-      <title>Make it stick</title>
-      <link>https://charltonaustin.com/make-it-stick/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/make-it-stick/</guid>
-      <description>The book Make It Stick is a brief review of the best methods for learning. The book starts out by giving a brief overview of how teachers have tried to teach in the past and then turns to evidence based methods backed by science today. There is some repetition in content, but I immediately tried to implement the practices in the book and found that it dramatically changed the way that I read and study.</description>
     </item>
     
   </channel>
