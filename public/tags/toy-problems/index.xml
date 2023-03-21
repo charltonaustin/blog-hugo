@@ -6,11 +6,7 @@
     <description>Recent content in toy problems on Charlton Austin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 15 Nov 2019 09:03:54 -0400</lastBuildDate>
-    
-	<atom:link href="https://charltonaustin.com/tags/toy-problems/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 15 Nov 2019 09:03:54 -0400</lastBuildDate><atom:link href="https://charltonaustin.com/tags/toy-problems/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Telegram Problem</title>
       <link>https://charltonaustin.com/posts/the-telegram-problem/</link>
@@ -28,7 +24,7 @@ Solution This is a straightforward problem when it comes down to it, but it take
       
       <guid>https://charltonaustin.com/posts/euler-problem-026/</guid>
       <description>The problem A unit fraction contains 1 in the numerator. The decimal representation of the unit fractions with denominators 2 to 10 are given:
-1/2	= 0.5 1/3	= 0.(3) 1/4	= 0.25 1/5	= 0.2 1/6	= 0.1(6) 1/7	= 0.(142857) 1/8	= 0.125 1/9	= 0.(1) 1/10	= 0.1  Where 0.1(6) means 0.166666&amp;hellip;, and has a 1-digit recurring cycle. It can be seen that 1/7 has a 6-digit recurring cycle.</description>
+1/2	= 0.5 1/3	= 0.(3) 1/4	= 0.25 1/5	= 0.2 1/6	= 0.1(6) 1/7	= 0.(142857) 1/8	= 0.125 1/9	= 0.(1) 1/10	= 0.1 Where 0.1(6) means 0.166666&amp;hellip;, and has a 1-digit recurring cycle. It can be seen that 1/7 has a 6-digit recurring cycle.</description>
     </item>
     
     <item>
@@ -171,7 +167,7 @@ The time complexity of this is O( n^2 ) which isn&amp;rsquo;t great.</descriptio
       <pubDate>Sat, 06 Aug 2016 09:03:54 -0400</pubDate>
       
       <guid>https://charltonaustin.com/posts/the-importance-of-toy-problems/</guid>
-      <description>As a software engineer I find that I rarely get to practice the fundamentals of computer science. I also rarely get a chance to practice the kinds of problems at work. At the school that I&amp;rsquo;m currently teaching one thing that the students have been doing every day is called &amp;lsquo;toy problems&amp;rsquo;. Toy problems are a pretty straight forward concept. They are problems that should make you think a bit, shouldn&amp;rsquo;t take too long, and let you exercise your programming muscles.</description>
+      <description>As a software engineer I find that I rarely get to practice the fundamentals of computer science. I also rarely get a chance to practice the kinds of problems at work. At the school that I&amp;rsquo;m currently teaching one thing that the students have been doing every day is called &amp;rsquo;toy problems&amp;rsquo;. Toy problems are a pretty straight forward concept. They are problems that should make you think a bit, shouldn&amp;rsquo;t take too long, and let you exercise your programming muscles.</description>
     </item>
     
   </channel>

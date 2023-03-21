@@ -6,17 +6,13 @@
     <description>Recent content in multi threaded on Charlton Austin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 24 Oct 2015 09:03:54 -0400</lastBuildDate>
-    
-	<atom:link href="https://charltonaustin.com/tags/multi-threaded/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 24 Oct 2015 09:03:54 -0400</lastBuildDate><atom:link href="https://charltonaustin.com/tags/multi-threaded/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Debugging Multi  Threaded Applications</title>
-      <link>https://charltonaustin.com/posts/debugging-multi-threaded-applications/</link>
+      <link>https://charltonaustin.com/posts/debugging-multi--threaded-applications/</link>
       <pubDate>Sat, 24 Oct 2015 09:03:54 -0400</pubDate>
       
-      <guid>https://charltonaustin.com/posts/debugging-multi-threaded-applications/</guid>
+      <guid>https://charltonaustin.com/posts/debugging-multi--threaded-applications/</guid>
       <description>Recently I had debug a multithreaded application with some surprising results. Seeing as this can be a particularly tricky task for people that haven&amp;rsquo;t done it before I thought I would write about some lessons I learned from the experience.
 logging Logging LOGGING and MORE LOGGING Log to understand the problem. This one is hard to set up retroactively, but it is well worth the effort. Strive for logs that are meaningful, and that give you checkpoints.</description>
     </item>

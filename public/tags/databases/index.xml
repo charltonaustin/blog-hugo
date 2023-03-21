@@ -6,11 +6,7 @@
     <description>Recent content in databases on Charlton Austin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 25 Mar 2020 09:03:54 -0400</lastBuildDate>
-    
-	<atom:link href="https://charltonaustin.com/tags/databases/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 25 Mar 2020 09:03:54 -0400</lastBuildDate><atom:link href="https://charltonaustin.com/tags/databases/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Applications Integrating On The Database</title>
       <link>https://charltonaustin.com/posts/applications-integrating-on-the-database/</link>

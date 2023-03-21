@@ -6,11 +6,7 @@
     <description>Recent content in postmortems on Charlton Austin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 14 Jan 2019 09:03:54 -0400</lastBuildDate>
-    
-	<atom:link href="https://charltonaustin.com/tags/postmortems/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 14 Jan 2019 09:03:54 -0400</lastBuildDate><atom:link href="https://charltonaustin.com/tags/postmortems/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Blameless Postmortems</title>
       <link>https://charltonaustin.com/posts/blameless-postmortems/</link>
@@ -19,7 +15,7 @@
       <guid>https://charltonaustin.com/posts/blameless-postmortems/</guid>
       <description>Subject Why should we have blameless postmortems?
 Context I recently read a blog post about blameless postmortems from Etsy. In it there was a simple question about why software engineers shouldn&amp;rsquo;t be punished:
- Why shouldn’t they be punished or reprimanded? Because an engineer who thinks they’re going to be reprimanded are disincentivized to give the details necessary to get an understanding of the mechanism, pathology, and operation of the failure.</description>
+Why shouldn’t they be punished or reprimanded? Because an engineer who thinks they’re going to be reprimanded are disincentivized to give the details necessary to get an understanding of the mechanism, pathology, and operation of the failure. This lack of understanding of how the accident occurred all but guarantees that it will repeat.</description>
     </item>
     
   </channel>

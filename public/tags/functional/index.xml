@@ -6,11 +6,7 @@
     <description>Recent content in functional on Charlton Austin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 26 Apr 2016 09:03:54 -0400</lastBuildDate>
-    
-	<atom:link href="https://charltonaustin.com/tags/functional/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 26 Apr 2016 09:03:54 -0400</lastBuildDate><atom:link href="https://charltonaustin.com/tags/functional/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Top Down Vs Bottom Up Api Design In Clojure Part One</title>
       <link>https://charltonaustin.com/posts/top-down-vs-bottom-up-api-design-in-clojure-part-one/</link>
