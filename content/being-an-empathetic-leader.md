@@ -10,7 +10,7 @@ categories : [ "leadership", "empathy"
 ---
 Empathy is a critical skill for any leader who wants to build a successful and sustainable organization. It enables leaders to connect with their employees on a personal level, understand their needs and concerns, and create a positive work environment that fosters engagement and productivity. In this article, we'll explore some practical strategies for becoming a more empathetic leader.
 In the Marine Corps I was always taught to know your Marines.
-Empathy can only come through understanding.
+I believe that is because empathy can only come through understanding.
 
 ## Listen actively
 Active listening is an essential component of empathy. As a leader, it's important to give your full attention to the person speaking to you, without interrupting or dismissing their concerns. Take the time to truly understand their perspective, and ask open-ended questions to encourage them to share more. Reflect back what you hear to ensure you understand correctly, and show that you value their input.
