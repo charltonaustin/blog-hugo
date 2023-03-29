@@ -1,11 +1,11 @@
 ---
 title: "A Practical Guide to Productive Weekly One-on-One Meetings with Employees"
 date: 2023-03-28
-draft: true
+draft: false
 description: "A short guide to having effective weekly check ins with employees."
-tags: [
+tags: ["management", "1-1"
 ]
-categories : [
+categories : ["management"
 ]
 ---
 As a manager, it's essential to have regular one-on-one meetings with your direct reports. These meetings allow you to stay connected with your employees, address their concerns, and give them the feedback they need to grow professionally. In this blog post, we'll share a simple checklist to help you have effective weekly check-ins with your employees.
