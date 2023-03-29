@@ -12,12 +12,12 @@ As a manager, it's essential to have regular one-on-one meetings with your direc
 
 ## The Checklist:
 
-How was last week?
-Is there anything I need to know about that I don't know about?
-Are you waiting on me for anything?
-What can I do to make your life better?
-Do you have any feedback for me?
-Do you mind if we go over feedback for you?
+- How was last week?
+- Is there anything I need to know about that I don't know about?
+- Are you waiting on me for anything?
+- What can I do to make your life better?
+- Do you have any feedback for me?
+- Do you mind if we go over feedback for you?
 
 ## The Reasoning:
 Having a weekly one-on-one with your direct reports may seem time-consuming, but it's worth it. You get to know what's going on with your employees, address any feedback you have for them, and show them that you care about their well-being. Besides, the most crucial aspect of any company is the quality of its people, so it's essential to spend time caring for your employees.
