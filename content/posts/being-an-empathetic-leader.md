@@ -1,7 +1,7 @@
 ---
 title: "How to Be an Empathetic Leader: Strategies for Effective Leadership"
 date: 2023-04-04
-draft: true
+draft: false
 description: "A strategy guide for being empathetic as a leader."
 tags: ["empathy", "leadership"
 ]

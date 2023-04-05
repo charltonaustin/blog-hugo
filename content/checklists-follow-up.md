@@ -12,7 +12,7 @@ categories : [
 ]
 ---
 
-Before I wrote about checklists, [here](https://charltonaustin.com/2019/09/09/using-checklist-in-software-development.md).
-In it I talked about a dream.
+Before I wrote about checklists, [here](https://charltonaustin.com/posts/using-checklist-in-software-development/).
+In it I talked about a dream of having checklist for consistency sake.
 
 
