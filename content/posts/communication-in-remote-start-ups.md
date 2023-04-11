@@ -1,17 +1,21 @@
 ---
 title: Communication in Remote Start-Ups
 date: 2023-04-11
-draft: true
-description: "How is the checklist dream coming? Read this to find out more."
+draft: false
+description: "Navigating remote communication challenges? Check out my latest blog post for tips on honing communication skills, building strong relationships, and ensuring team performance in a virtual environment!"
 tags: [
 "management",
 "start-ups",
 "communication",
+"remote-work",
+"virtual-teams",
 ]
 categories : [
 "management",
 "communication",
 "start-ups",
+"remote-work",
+"virtual-teams",
 ]
 ---
 
