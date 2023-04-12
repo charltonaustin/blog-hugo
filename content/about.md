@@ -11,11 +11,9 @@ If you find tech or tech management interesting hopefully you find this blog int
 I believe that security, education, and software can come together to make the world a better place.
 
 
-### The Tuesday Company
+## Cupola Software
 I'm proud to have started a vertical SaaS [company](https://www.cupolasoftware.com/) in the Architecture space.
 
-I'm also starting a new nonprofit. Please check out my Go Fund Me.
-<div class="gfm-embed" data-url="https://www.gofundme.com/f/democratize-access-to-audiobooks/widget/large/"></div><script defer src="https://www.gofundme.com/static/js/embed.js"></script>
 
 ## My past
 - [Tuesday Company](https://www.tuesdaycompany.com) -- CTO and co-founder
@@ -30,3 +28,6 @@ I'm also starting a new nonprofit. Please check out my Go Fund Me.
 
 ## Contact
 See my page [here](/contact)
+
+## Austin Consulting Inc
+Interested in hiring me as a [consultant](/consulting)?

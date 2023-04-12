@@ -63,7 +63,7 @@ import sys class Item: def __init__(self, name, price): self.name = name self.pr
       
       <guid>https://charltonaustin.com/about/</guid>
       <description>A Blog to Help Software Engineers Grow This blog is a labor of love meant to give back to tech community which has helped me grow so much. If you find tech or tech management interesting hopefully you find this blog interesting. I believe that security, education, and software can come together to make the world a better place.
-The Tuesday Company I&amp;rsquo;m proud to have started a vertical SaaS company in the Architecture space.</description>
+Cupola Software I&amp;rsquo;m proud to have started a vertical SaaS company in the Architecture space.</description>
     </item>
     
     <item>
