@@ -1,7 +1,7 @@
 ---
 title: Overcoming Lack of Team Cohesion in Remote Teams
 date: 2023-04-18
-draft: true
+draft: false
 description: "Struggling with team cohesion in remote work? My latest blog post shares strategies for building trust, camaraderie, and effective communication in remote teams! Learn how to foster personal connections, adapt hiring practices, and more!"
 tags: [
 "management",
