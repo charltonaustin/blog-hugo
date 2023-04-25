@@ -33,3 +33,6 @@ This question shows that you care about your employee's well-being and helps you
 
 ### Questions Five and Six: Do you have any feedback for me? Do you mind if we go over feedback for you?
 Save the feedback for the end of the meeting. This allows you to focus on feedback when the conversation is already warmed up. Let the employee go first, and write down any feedback you have before the conversation. Keep all the notes in a document that both of you have access to, so the employee isn't surprised, and they can comment on it. Be mindful of giving feedback when someone isn't ready to accept it. It can be a waste of everyone's time and lead to bad feelings.
+
+
+why asking questions is key to remembering what you learn

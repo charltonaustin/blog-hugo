@@ -1,6 +1,6 @@
 ---
 title: The Importance of Commander's Intent in Distributed Teams
-date: 
+date: 2023-05-02
 draft: true
 description: "How commander's intent can help distributed teams to succeed."
 tags: [

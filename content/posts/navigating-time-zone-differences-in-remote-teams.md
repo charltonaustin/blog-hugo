@@ -1,7 +1,7 @@
 ---
 title: Navigating Time Zone Differences in Remote Teams
 date: 2023-04-25
-draft: true
+draft: false
 description: "Navigating Time Zone Differences in Remote Teams: Strategies that Work (and Don't Work)"
 tags: [
     "management",

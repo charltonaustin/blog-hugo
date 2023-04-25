@@ -1,6 +1,6 @@
 ---
 title: Points What Are They Good For
-date: 2023-04-11
+date: 2023-05-09
 draft: true
 description: "Why story points should be tied to time and what that does for you."
 tags: [

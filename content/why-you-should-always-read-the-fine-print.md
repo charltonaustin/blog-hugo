@@ -1,6 +1,6 @@
 ---
 title: Why you should read the fine print
-date:
+date: 2023-05-16
 draft: true
 description: "Big learnings can come in a fraction of a second. Here's how I learned to read the fine print."
 tags: [
@@ -16,7 +16,7 @@ I was driving a truck in Iraq when the first IED exploded. I remember seeing the
 
 The next thing I knew, someone was screaming at me to drive. I snapped out of my daze and hit the gas pedal. We drove as fast as we could to the nearest forward operating base.
 
-That moment changed me. I had joined the Marines without fully reading the contract, and I had been assigned to be a truck driver without much say in the matter. I loved serving my country, but that experience made me realize that I needed to be more aware of what I was signing up for.
+That moment changed me. I had joined the Marines without fully reading the contract, and I had been assigned to be a truck driver without much say in the matter. See when I signed up in 2003 truck drivers were not reenlisting. The USMC found it cheaper to train computer technicians to drive trucks then to find more recruits.  I loved serving my country, but that experience made me realize that I needed to be more aware of what I was signing up for.
 
 From then on, I made a promise to myself never to sign anything without fully understanding it. I started to read contracts thoroughly, even the fine print. I wanted to be informed and aware of what I was getting into.
 
