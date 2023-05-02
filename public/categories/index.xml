@@ -6,13 +6,31 @@
     <description>Recent content in Categories on Charlton Austin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 25 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://charltonaustin.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://charltonaustin.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>communication</title>
+      <link>https://charltonaustin.com/categories/communication/</link>
+      <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://charltonaustin.com/categories/communication/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>management</title>
       <link>https://charltonaustin.com/categories/management/</link>
-      <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
       
       <guid>https://charltonaustin.com/categories/management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>start-ups</title>
+      <link>https://charltonaustin.com/categories/start-ups/</link>
+      <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://charltonaustin.com/categories/start-ups/</guid>
       <description></description>
     </item>
     
@@ -44,29 +62,11 @@
     </item>
     
     <item>
-      <title>communication</title>
-      <link>https://charltonaustin.com/categories/communication/</link>
-      <pubDate>Tue, 18 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/categories/communication/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>remote-work</title>
       <link>https://charltonaustin.com/categories/remote-work/</link>
       <pubDate>Tue, 18 Apr 2023 00:00:00 +0000</pubDate>
       
       <guid>https://charltonaustin.com/categories/remote-work/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>start-ups</title>
-      <link>https://charltonaustin.com/categories/start-ups/</link>
-      <pubDate>Tue, 18 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/categories/start-ups/</guid>
       <description></description>
     </item>
     
