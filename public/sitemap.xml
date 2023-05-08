@@ -444,5 +444,9 @@
     <priority>0</priority>
   </url><url>
     <loc>https://charltonaustin.com/contact/</loc>
+  </url><url>
+    <loc>https://charltonaustin.com/privacy_policy/</loc>
+  </url><url>
+    <loc>https://charltonaustin.com/terms_of_service/</loc>
   </url>
 </urlset>
