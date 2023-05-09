@@ -6,7 +6,17 @@
     <description>Recent content in books on Charlton Austin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 14 Jan 2020 09:03:54 -0400</lastBuildDate><atom:link href="https://charltonaustin.com/tags/books/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://charltonaustin.com/tags/books/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Points What Are They Good For</title>
+      <link>https://charltonaustin.com/posts/2023_05_09_points-what-are-they-good-for/</link>
+      <pubDate>Tue, 09 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://charltonaustin.com/posts/2023_05_09_points-what-are-they-good-for/</guid>
+      <description>Should Story Points Be Tied to Time I often hear people say that story points shouldn&amp;rsquo;t be tied to time. Instead, they should be based on complexity. This can be for a variety of reasons. For instance, three reasons are cited in this article:
+Some tasks are difficult to estimate precisely. If one developer estimates a project but another completes the task, the estimate becomes invalid. The time needed to complete a task will vary based on a developer&amp;rsquo;s level of experience.</description>
+    </item>
+    
     <item>
       <title>Bugs In Software</title>
       <link>https://charltonaustin.com/posts/bugs-in-software/</link>

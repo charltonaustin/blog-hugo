@@ -1,7 +1,7 @@
 ---
 title: Points What Are They Good For
 date: 2023-05-09
-draft: true
+draft: false
 description: "Why story points should be tied to time and what that does for you."
 tags: [
     "management",
@@ -12,7 +12,6 @@ categories : [
     "management",
 ]
 ---
-This does two things.
 # Should Story Points Be Tied to Time
 
 I often hear people say that story points shouldn't be tied to time. Instead, they should be based on complexity. This can be for a variety of reasons. For instance, three reasons are cited in [this article](https://rubygarage.org/blog/3-reasons-to-estimate-with-story-points):
@@ -33,10 +32,12 @@ Second, it gives you accurate timelines within some uncertainty that can be shar
 
 ## Why Is It Bad to Show Internal Estimates to External Stakeholders?
 
-I have one word: the Hawthorne effect. Generally, external stakeholders hold the team accountable for that timeline. They often come back and say, "Hey, you said this would take a week and it took a year." So you end up having pathological behavior. Like a story that is estimated for a year but takes an hour. So you have to separate these things out. You can't just measure time vs. estimate. I would argue you should be looking at other metrics that improve engineers. Align the Hawthorne effect with something that will make an engineer better.
+I have one reason: the Hawthorne effect. Generally, external stakeholders hold the team accountable for that timeline. They often come back and say, "Hey, you said this would take a week and it took a year." So you end up having pathological behavior. Like a story that is estimated for a year but takes an hour. So you have to separate these things out. You can't just measure time vs. estimate. I would argue you should be looking at other metrics that improve engineers. Align the Hawthorne effect with something that will make an engineer better.
 
 ## How to Create a Model?
 
 Well, I find that taking historical data is usually the most effective. This has one glaring problem. What do you do when there is no historical data? We'll come back to that.
 
 Assume that you do have historical data. The first thing I would do is measure how long stories take. You can then come up with things like averages, medians, and standard
+
+So what do you do if you don't have any historical data. Make educated guesses to start and measure as you go. Your model will get better over time and you can iterate from there. Keep the model simple and it will work itself out.

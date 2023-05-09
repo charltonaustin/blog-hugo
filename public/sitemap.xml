@@ -2,11 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://charltonaustin.com/tags/books/</loc>
+    <lastmod>2023-05-09T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://charltonaustin.com/categories/</loc>
-    <lastmod>2023-05-02T00:00:00+00:00</lastmod>
+    <lastmod>2023-05-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://charltonaustin.com/</loc>
-    <lastmod>2023-05-02T00:00:00+00:00</lastmod>
+    <lastmod>2023-05-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://charltonaustin.com/tags/entrepreneurship/</loc>
+    <lastmod>2023-05-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://charltonaustin.com/tags/management/</loc>
+    <lastmod>2023-05-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://charltonaustin.com/categories/management/</loc>
+    <lastmod>2023-05-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://charltonaustin.com/posts/2023_05_09_points-what-are-they-good-for/</loc>
+    <lastmod>2023-05-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://charltonaustin.com/posts/</loc>
+    <lastmod>2023-05-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://charltonaustin.com/tags/</loc>
+    <lastmod>2023-05-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://charltonaustin.com/tags/communication/</loc>
     <lastmod>2023-05-02T00:00:00+00:00</lastmod>
@@ -14,22 +35,10 @@
     <loc>https://charltonaustin.com/categories/communication/</loc>
     <lastmod>2023-05-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://charltonaustin.com/tags/management/</loc>
-    <lastmod>2023-05-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://charltonaustin.com/categories/management/</loc>
-    <lastmod>2023-05-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://charltonaustin.com/posts/</loc>
-    <lastmod>2023-05-02T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://charltonaustin.com/tags/start-ups/</loc>
     <lastmod>2023-05-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://charltonaustin.com/categories/start-ups/</loc>
-    <lastmod>2023-05-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://charltonaustin.com/tags/</loc>
     <lastmod>2023-05-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://charltonaustin.com/posts/commanders-intent-in-distributed-teams/</loc>
@@ -145,9 +154,6 @@
   </url><url>
     <loc>https://charltonaustin.com/posts/repo-scripts-and-autoupdates/</loc>
     <lastmod>2020-02-26T09:03:54-04:00</lastmod>
-  </url><url>
-    <loc>https://charltonaustin.com/tags/books/</loc>
-    <lastmod>2020-01-14T09:03:54-04:00</lastmod>
   </url><url>
     <loc>https://charltonaustin.com/posts/bugs-in-software/</loc>
     <lastmod>2020-01-14T09:03:54-04:00</lastmod>
@@ -440,7 +446,7 @@
     <loc>https://charltonaustin.com/tags/ruby/</loc>
     <lastmod>2013-02-17T09:03:54-04:00</lastmod>
   </url><url>
-    <loc>https://charltonaustin.com/driven-talent-over-technical-expertise/</loc>
+    <loc>https://charltonaustin.com/2023_05_23_driven-talent-over-technical-expertise/</loc>
     <priority>0</priority>
   </url><url>
     <loc>https://charltonaustin.com/contact/</loc>
