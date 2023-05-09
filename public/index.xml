@@ -96,26 +96,6 @@ import sys class Item: def __init__(self, name, price): self.name = name self.pr
     </item>
     
     <item>
-      <title>About</title>
-      <link>https://charltonaustin.com/about/</link>
-      <pubDate>Fri, 15 May 2020 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/about/</guid>
-      <description>A Blog to Help Software Engineers Grow This blog is a labor of love meant to give back to tech community which has helped me grow so much. If you find tech or tech management interesting hopefully you find this blog interesting. I believe that security, education, and software can come together to make the world a better place.
-Cupola Software I&amp;rsquo;m proud to have started a vertical SaaS company in the Architecture space.</description>
-    </item>
-    
-    <item>
-      <title>Austin Consulting Inc.</title>
-      <link>https://charltonaustin.com/consulting/</link>
-      <pubDate>Fri, 15 May 2020 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/consulting/</guid>
-      <description>Austin Consulting Inc. About Austin Consulting Inc. Welcome to Austin Consulting Inc., a boutique consulting firm founded and operated solely by me. With a diverse background working with Fortune 500, Ad Tech, and Finance companies, I bring a wealth of experience to provide clients with cutting-edge solutions and unparalleled expertise.
-At Austin Consulting Inc., I am committed to helping clients stay ahead of the curve in today&amp;rsquo;s constantly evolving tech landscape.</description>
-    </item>
-    
-    <item>
       <title>Pomodoro Method Follow Up</title>
       <link>https://charltonaustin.com/posts/pomodoro-method-follow-up/</link>
       <pubDate>Mon, 27 Apr 2020 07:00:54 -0400</pubDate>
@@ -768,6 +748,26 @@ This post is basically because cucumber put out a misleading &amp;ldquo;error&am
       
       <guid>https://charltonaustin.com/2023_05_23_driven-talent-over-technical-expertise/</guid>
       <description>title: The Art of Making Trade-offs: My Experience Hiring Driven Talent over Technical Expertise date: 2023-05-23 draft: true description: &amp;ldquo;Learn how to strike the right balance between hiring for intelligence and drive versus technical expertise to build a strong and successful team. Gain valuable insights into the art of making trade-offs when it comes to hiring and building your team.&amp;rdquo; tags: [ &amp;ldquo;management&amp;rdquo;, &amp;ldquo;entrepreneurship&amp;rdquo;, &amp;ldquo;hiring&amp;rdquo;, &amp;ldquo;talent&amp;rdquo;, &amp;ldquo;recruiting&amp;rdquo; ] categories : [ &amp;ldquo;management&amp;rdquo;, &amp;ldquo;entrepreneurship&amp;rdquo;, &amp;ldquo;hiring&amp;rdquo;, &amp;ldquo;talent&amp;rdquo;, &amp;ldquo;recruiting&amp;rdquo; ] The problem Hiring the right talent is critical for the success of any company.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://charltonaustin.com/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://charltonaustin.com/about/</guid>
+      <description>A Blog to Help Software Engineers Grow This blog is a labor of love meant to give back to tech community which has helped me grow so much. If you find tech or tech management interesting hopefully you find this blog interesting. I believe that security, education, and software can come together to make the world a better place.
+Cupola Software I&amp;rsquo;m proud to have started a vertical SaaS company in the Architecture space.</description>
+    </item>
+    
+    <item>
+      <title>Austin Consulting Inc.</title>
+      <link>https://charltonaustin.com/consulting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://charltonaustin.com/consulting/</guid>
+      <description>Austin Consulting Inc. About Austin Consulting Inc. Welcome to Austin Consulting Inc., a boutique consulting firm founded and operated solely by me. With a diverse background working with Fortune 500, Ad Tech, and Finance companies, I bring a wealth of experience to provide clients with cutting-edge solutions and unparalleled expertise.
+At Austin Consulting Inc., I am committed to helping clients stay ahead of the curve in today&amp;rsquo;s constantly evolving tech landscape.</description>
     </item>
     
     <item>
