@@ -1,7 +1,6 @@
 ---
 title: "Austin Consulting Inc."
 slug: "consulting"
-date: 2020-05-15T09:03:54-04:00
 ---
 # Austin Consulting Inc.
 
