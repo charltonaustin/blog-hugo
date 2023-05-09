@@ -14,8 +14,6 @@ I have a proven track record of delivering results, from building a company from
 
 At Austin Consulting Inc., a client's success is my success. I am committed to excellence in everything I do and always strive to exceed my clients' expectations. Contact me today to learn more about how I can help your business thrive.
 
-## Austin Consulting Inc. Products
-LingoLore is a language learning app in beta for iOS and Android read more about it [here](https://lingolore.webflow.io/)
 
 ## About Charlton
 Learn more about [me](/about)
