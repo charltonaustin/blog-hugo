@@ -2,13 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://charltonaustin.com/tags/books/</loc>
-    <lastmod>2023-05-09T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://charltonaustin.com/categories/</loc>
-    <lastmod>2023-05-09T00:00:00+00:00</lastmod>
+    <lastmod>2023-05-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://charltonaustin.com/</loc>
+    <lastmod>2023-05-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://charltonaustin.com/tags/leadership/</loc>
+    <lastmod>2023-05-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://charltonaustin.com/tags/personal-growth/</loc>
+    <lastmod>2023-05-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://charltonaustin.com/posts/</loc>
+    <lastmod>2023-05-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://charltonaustin.com/categories/self-awareness/</loc>
+    <lastmod>2023-05-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://charltonaustin.com/categories/self-improvement/</loc>
+    <lastmod>2023-05-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://charltonaustin.com/tags/</loc>
+    <lastmod>2023-05-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://charltonaustin.com/posts/2023_05_16_why_you_should_always_read_the_fine_print/</loc>
+    <lastmod>2023-05-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://charltonaustin.com/tags/books/</loc>
     <lastmod>2023-05-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://charltonaustin.com/tags/entrepreneurship/</loc>
@@ -21,12 +42,6 @@
     <lastmod>2023-05-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://charltonaustin.com/posts/2023_05_09_points-what-are-they-good-for/</loc>
-    <lastmod>2023-05-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://charltonaustin.com/posts/</loc>
-    <lastmod>2023-05-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://charltonaustin.com/tags/</loc>
     <lastmod>2023-05-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://charltonaustin.com/tags/communication/</loc>
@@ -90,9 +105,6 @@
     <lastmod>2023-04-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://charltonaustin.com/posts/being-an-empathetic-leader/</loc>
-    <lastmod>2023-04-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://charltonaustin.com/tags/leadership/</loc>
     <lastmod>2023-04-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://charltonaustin.com/categories/leadership/</loc>
@@ -440,7 +452,7 @@
     <loc>https://charltonaustin.com/tags/ruby/</loc>
     <lastmod>2013-02-17T09:03:54-04:00</lastmod>
   </url><url>
-    <loc>https://charltonaustin.com/2023_05_23_driven-talent-over-technical-expertise/</loc>
+    <loc>https://charltonaustin.com/2023_05_23_driven_talent_over_technical_expertise/</loc>
     <priority>0</priority>
   </url><url>
     <loc>https://charltonaustin.com/about/</loc>

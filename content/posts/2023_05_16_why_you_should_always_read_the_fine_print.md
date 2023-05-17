@@ -1,7 +1,7 @@
 ---
 title: Why you should read the fine print
-date: 2023-05-16
-draft: true
+date: 2023-05-17
+draft: false
 description: "Big learnings can come in a fraction of a second. Here's how I learned to read the fine print."
 tags: [
     "leadership",

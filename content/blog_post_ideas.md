@@ -14,8 +14,7 @@ categories : [
     1. Time zone differences: When team members are located in different time zones, scheduling meetings and collaborations can become more difficult.
     2. Difficulty establishing and maintaining a work-life balance: Without the physical separation between work and home that an office provides, it can be harder to switch off from work and relax.
     3. Technical issues: Poor internet connections, technical glitches, and other technology-related issues can make it difficult to work efficiently and collaboratively.
-    
-    5. Security concerns: Remote work can present security risks, such as data breaches and cyberattacks, that may be harder to detect and mitigate than in a traditional office setting.
+    4. Security concerns: Remote work can present security risks, such as data breaches and cyberattacks, that may be harder to detect and mitigate than in a traditional office setting.
 2. Being strategic
    1. The essential skills for strategic leadership.
       1. Anticipate

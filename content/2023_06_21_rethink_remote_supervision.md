@@ -2,8 +2,7 @@
 title: Rethinking Supervision and Support in Remote Work Environments
 date: 2023-06-21
 draft: true
-description: "
-Discover strategies for navigating the challenges of remote work environments in our latest article. Learn how to motivate employees, rethink performance metrics, and provide essential support to foster success. Explore the importance of quickly identifying and addressing low output while adapting to the evolving landscape of remote work. Embrace change and improve your business with our insightful tips."
+description: "Discover strategies for navigating the challenges of remote work environments in our latest article. Learn how to motivate employees, rethink performance metrics, and provide essential support to foster success. Explore the importance of quickly identifying and addressing low output while adapting to the evolving landscape of remote work. Embrace change and improve your business with our insightful tips."
 tags: [
   "leadership",
   "team improvement",
