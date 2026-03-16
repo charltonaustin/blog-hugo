@@ -1,0 +1,20 @@
+<div id="social">
+{{ if eq .Site.Params.iconFont "font-awesome" }}
+
+    {{ range .Site.Params.social }}
+    <a class="symbol" href="{{ .url }}">
+        <i class="{{ .icon }}"></i>
+    </a>
+    {{ end }}
+
+{{ else }}
+
+    {{ $iconStyle := .Site.Params.socialIconStyle }}
+    {{ range .Site.Params.social }}
+    <a class="symbol" href="{{ .url }}">
+        {{ $iconStyle }}{{ if eq .name "twitter" }}twitterbird{{ else }}{{ .name | lower }}{{ end }}
+    </a>
+    {{ end }}
+
+{{ end }}
+</div>
