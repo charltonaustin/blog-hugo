@@ -1,92 +1,68 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>clojure on Charlton Austin</title>
-    <link>https://charltonaustin.com/tags/clojure/</link>
-    <description>Recent content in clojure on Charlton Austin</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Clojure on Charlton Austin</title>
+    <link>http://localhost:1313/tags/clojure/</link>
+    <description>Recent content in Clojure on Charlton Austin</description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 17 Aug 2016 09:03:54 -0400</lastBuildDate><atom:link href="https://charltonaustin.com/tags/clojure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Aug 2016 09:03:54 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/clojure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Leaders In An Array In Clojure Basic Algorithms Part Four</title>
-      <link>https://charltonaustin.com/posts/leaders-in-an-array-in-clojure-basic-algorithms-part-four/</link>
+      <link>http://localhost:1313/posts/leaders-in-an-array-in-clojure-basic-algorithms-part-four/</link>
       <pubDate>Wed, 17 Aug 2016 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/posts/leaders-in-an-array-in-clojure-basic-algorithms-part-four/</guid>
-      <description>The problem Given an array of integers, print the leaders in the array. A leader is an element which is larger than all the elements in the array to its right.
-Solution Is was my first attempt at coming up with a solution. Naturally I used recursion and simply walked down the array seeing if every element after it was the same.
-The time complexity of this is O( n^2 ) which isn&amp;rsquo;t great.</description>
+      <guid>http://localhost:1313/posts/leaders-in-an-array-in-clojure-basic-algorithms-part-four/</guid>
+      <description>&lt;h3 id=&#34;the-problem&#34;&gt;The problem&lt;/h3&gt;&#xA;&lt;p&gt;Given an array of integers, print the leaders in the array. A leader is an element which is larger than all the elements in the array to its right.&lt;/p&gt;&#xA;&lt;h3 id=&#34;solution&#34;&gt;Solution&lt;/h3&gt;&#xA;&lt;p&gt;Is was my first attempt at coming up with a solution. Naturally I used recursion and simply walked down the array seeing if every element after it was the same.&lt;/p&gt;&#xA;&lt;p&gt;The time complexity of this is O( n^2 ) which isn&amp;rsquo;t great.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Binary Search Of Sorted Array In Clojure Basic Algorithms Part Three</title>
-      <link>https://charltonaustin.com/posts/binary-search-of-sorted-array-in-clojure-basic-algorithms-part-three/</link>
+      <link>http://localhost:1313/posts/binary-search-of-sorted-array-in-clojure-basic-algorithms-part-three/</link>
       <pubDate>Wed, 03 Aug 2016 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/posts/binary-search-of-sorted-array-in-clojure-basic-algorithms-part-three/</guid>
-      <description>The problem Find an element in a sorted array using binary search
-The solution The solution is pretty straight forward. I added in some printlns to get a sense of how we drill down in the recursion to find the element.
-(defn binary-search [v value] (loop [low 0 high (dec (count v)) depth 0] (let [half-way (quot (+ high low) 2)] (do (println (str &amp;#34;half-way is &amp;#34; half-way)) (println (str &amp;#34;low is &amp;#34; low)) (println (str &amp;#34;high is &amp;#34; high)) (println (str &amp;#34;depth is &amp;#34; depth)) (if (&amp;lt;= high (inc low)) (cond (= value (v low)) low (= value (v high)) high :else nil) (let [middle (quot (+ low high) 2)] (if (&amp;lt; (v middle) value) (recur (inc middle) high (inc depth)) (recur low middle (inc depth))))))))) You can call the function like this:</description>
+      <guid>http://localhost:1313/posts/binary-search-of-sorted-array-in-clojure-basic-algorithms-part-three/</guid>
+      <description>&lt;h3 id=&#34;the-problem&#34;&gt;The problem&lt;/h3&gt;&#xA;&lt;p&gt;Find an element in a sorted array using  binary search&lt;/p&gt;&#xA;&lt;h3 id=&#34;the-solution&#34;&gt;The solution&lt;/h3&gt;&#xA;&lt;p&gt;The solution is pretty straight forward. I added in some printlns to get a sense of how we drill down in the recursion to find the element.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(&lt;span style=&#34;font-weight:bold&#34;&gt;defn &lt;/span&gt;binary-search [v value]&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  (&lt;span style=&#34;font-weight:bold&#34;&gt;loop &lt;/span&gt;[low 0 high (dec (count v))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         depth 0]&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    (&lt;span style=&#34;font-weight:bold&#34;&gt;let &lt;/span&gt;[half-way (quot (+ high low)  2)]&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      (&lt;span style=&#34;font-weight:bold&#34;&gt;do &lt;/span&gt;(println (str &lt;span style=&#34;font-style:italic&#34;&gt;&amp;#34;half-way is &amp;#34;&lt;/span&gt; half-way))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          (println (str &lt;span style=&#34;font-style:italic&#34;&gt;&amp;#34;low is &amp;#34;&lt;/span&gt; low))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          (println (str &lt;span style=&#34;font-style:italic&#34;&gt;&amp;#34;high is &amp;#34;&lt;/span&gt; high))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          (println (str &lt;span style=&#34;font-style:italic&#34;&gt;&amp;#34;depth is &amp;#34;&lt;/span&gt; depth))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          (&lt;span style=&#34;font-weight:bold&#34;&gt;if &lt;/span&gt;(&amp;lt;= high (inc low))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            (cond (= value (v low)) low&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;              (= value (v high)) high&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;              &lt;span style=&#34;font-style:italic&#34;&gt;:else&lt;/span&gt; nil)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            (&lt;span style=&#34;font-weight:bold&#34;&gt;let &lt;/span&gt;[middle (quot (+ low high) 2)]&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;              (&lt;span style=&#34;font-weight:bold&#34;&gt;if &lt;/span&gt;(&amp;lt; (v middle) value)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                (recur (inc middle) high (inc depth))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                (recur low middle (inc depth)))))))))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can call the function like this:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Permutations Of A String In Clojure Basic Algorithms Part Two</title>
-      <link>https://charltonaustin.com/posts/permutations-of-a-string-in-clojure-basic-algorithms-part-two/</link>
+      <link>http://localhost:1313/posts/permutations-of-a-string-in-clojure-basic-algorithms-part-two/</link>
       <pubDate>Wed, 27 Jul 2016 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/posts/permutations-of-a-string-in-clojure-basic-algorithms-part-two/</guid>
-      <description>The problem Find all permutations of a string
-The solution My first solution is comes from Java and is a recursive solution.
-(defn- perms [pre v] (let [n (count v)] (if (zero? n) nil (loop [i 0] (if (&amp;lt; i n) (do (perms (conj pre (nth v i)) (into [] (concat(first (split-at i v)) (second (split-at (inc i) v))))) (recur (inc i))) nil))))) It has some problems. It is recursive so vulnerable to stack overflow errors, but more than that it is pretty slow and not very idiomatic Clojure.</description>
+      <guid>http://localhost:1313/posts/permutations-of-a-string-in-clojure-basic-algorithms-part-two/</guid>
+      <description>&lt;h3 id=&#34;the-problem&#34;&gt;The problem&lt;/h3&gt;&#xA;&lt;p&gt;Find all permutations of a string&lt;/p&gt;&#xA;&lt;h3 id=&#34;the-solution&#34;&gt;The solution&lt;/h3&gt;&#xA;&lt;p&gt;My first solution is comes from Java and is a recursive solution.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(&lt;span style=&#34;font-weight:bold&#34;&gt;defn- &lt;/span&gt;perms [pre v]&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  (&lt;span style=&#34;font-weight:bold&#34;&gt;let &lt;/span&gt;[n (count v)]&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    (&lt;span style=&#34;font-weight:bold&#34;&gt;if &lt;/span&gt;(zero? n)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      nil      &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      (&lt;span style=&#34;font-weight:bold&#34;&gt;loop &lt;/span&gt;[i 0]&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        (&lt;span style=&#34;font-weight:bold&#34;&gt;if &lt;/span&gt;(&amp;lt; i n)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          (&lt;span style=&#34;font-weight:bold&#34;&gt;do &lt;/span&gt;(perms (conj pre (nth v i))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;              (into [] (concat(first (split-at i v))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                              (second (split-at (inc i) v)))))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            (recur (inc i)))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          nil)))))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It has some problems. It is recursive so vulnerable to stack overflow errors, but more than that it is pretty slow and not very idiomatic Clojure. So I went in search of a better more idiomatic implementation of this problem and I found this.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Counting Frequencies Of Elements In An Array In Clojure Basic Algorithms Part One</title>
-      <link>https://charltonaustin.com/posts/counting-frequencies-of-elements-in-an-array-in-clojure-basic-algorithms-part-one/</link>
+      <link>http://localhost:1313/posts/counting-frequencies-of-elements-in-an-array-in-clojure-basic-algorithms-part-one/</link>
       <pubDate>Wed, 20 Jul 2016 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/posts/counting-frequencies-of-elements-in-an-array-in-clojure-basic-algorithms-part-one/</guid>
-      <description>So I&amp;rsquo;m not a CS guy. I went to school for math and I became a programmer pretty late. I also never had the obligatory algorithms class. So I&amp;rsquo;m going to start a series where I explore some algorithms coding problems. The problem
-So the coding challenge is given an array with N numbers m such that m &amp;lt; N and m is a natural number count the occurrences of m.</description>
+      <guid>http://localhost:1313/posts/counting-frequencies-of-elements-in-an-array-in-clojure-basic-algorithms-part-one/</guid>
+      <description>&lt;p&gt;So I&amp;rsquo;m not a CS guy. I went to school for math and I became a programmer pretty late. I also never had the obligatory algorithms class. So I&amp;rsquo;m going to start a series where I explore some algorithms coding problems.&#xA;The problem&lt;/p&gt;&#xA;&lt;p&gt;So the coding challenge is given an array with N numbers m such that m &amp;lt; N and m is a natural number count the occurrences of m.&#xA;Solution&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Top Down Vs Bottom Up Api Design In Clojure Part One</title>
-      <link>https://charltonaustin.com/posts/top-down-vs-bottom-up-api-design-in-clojure-part-one/</link>
+      <link>http://localhost:1313/posts/top-down-vs-bottom-up-api-design-in-clojure-part-one/</link>
       <pubDate>Tue, 26 Apr 2016 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/posts/top-down-vs-bottom-up-api-design-in-clojure-part-one/</guid>
-      <description>Recently in my last post&amp;hellip; Recently I posted about the difference between top down vs bottom up design in Clojure, if you haven&amp;rsquo;t read it then you should. This post is the second part about the differences in both code quality and experience between tope down and bottom up approaches. You can see the commits here.
-First impressions It took me 14 functions using the outside-in method vs 15 functions with the inside-out method.</description>
+      <guid>http://localhost:1313/posts/top-down-vs-bottom-up-api-design-in-clojure-part-one/</guid>
+      <description>&lt;h3 id=&#34;recently-in-my-last-post&#34;&gt;Recently in my last post&amp;hellip;&lt;/h3&gt;&#xA;&lt;p&gt;Recently I posted about the difference between &lt;a href=&#34;http://www.charltonaustin.com/2016/04/top-down-vs-bottom-up-api-design-in.html&#34;&gt;top down vs bottom up&lt;/a&gt; design in Clojure, if you haven&amp;rsquo;t read it then you should. This post is the second part about the differences in both code quality and experience between tope down and bottom up approaches.  You can see the commits &lt;a href=&#34;https://github.com/charltonaustin/inside_out_ouside_in/commits&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h3 id=&#34;first-impressions&#34;&gt;First impressions&lt;/h3&gt;&#xA;&lt;p&gt;It took me 14 functions using the outside-in method vs 15 functions with the inside-out method. But the number of functions doesn&amp;rsquo;t really matter. What&amp;rsquo;s more interesting maybe is the number of characters. It was 2043 for inside-out and 2122 outside-in (without white space). They were pretty close; there wasn&amp;rsquo;t much of a difference; and counting characters isn&amp;rsquo;t all that important (though my usual philosophy is &amp;rsquo;less is better&amp;rsquo;).  What about readability? Well my opinion is outside-in is marginally better. The main loop is less convoluted. Perhaps because I don&amp;rsquo;t do any stupid exit business.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Clojure Sieve Of Eratosthenes</title>
-      <link>https://charltonaustin.com/posts/clojure-sieve-of-eratosthenes/</link>
+      <link>http://localhost:1313/posts/clojure-sieve-of-eratosthenes/</link>
       <pubDate>Sun, 24 Apr 2016 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/posts/clojure-sieve-of-eratosthenes/</guid>
-      <description>I was recently watching a video on Haskell that was showing how you would write a functional form of the Sieve of Eratosthenes. I personally love this algorithm and was interested in what it looked like in Clojure. So I wrote this:
-(defn sieve [number xs] (if (= 0 number) xs (conj (sieve (dec number) (filter #(not= 0 (mod % (first xs))) (rest xs))) (first xs)))) This works, but Clojure doesn&amp;rsquo;t have tail call optimization (TCO) by default which means you can get a stack StackOverflowError.</description>
+      <guid>http://localhost:1313/posts/clojure-sieve-of-eratosthenes/</guid>
+      <description>&lt;p&gt;I was recently watching a video on Haskell that was showing how you would write a functional form of the &lt;a href=&#34;https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes&#34;&gt;Sieve of Eratosthenes&lt;/a&gt;. I personally love this algorithm and was interested in what it looked like in Clojure. So I wrote this:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(&lt;span style=&#34;font-weight:bold&#34;&gt;defn &lt;/span&gt;sieve [number xs]&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  (&lt;span style=&#34;font-weight:bold&#34;&gt;if &lt;/span&gt;(= 0 number)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    xs&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    (conj (sieve (dec number)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                 (filter #(not= 0 (mod % (first xs))) (rest xs)))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          (first xs))))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This works, but Clojure doesn&amp;rsquo;t have tail call optimization (TCO) by default which means you can get a stack StackOverflowError. So I decided to rewrite it to use the loop and recur construct to remove the StackOverflowError. It looks like this:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Top Down Vs Bottom Up Api Design In Clojure Part Zero</title>
-      <link>https://charltonaustin.com/posts/top-down-vs-bottom-up-api-design-in-clojure-part-zero/</link>
+      <link>http://localhost:1313/posts/top-down-vs-bottom-up-api-design-in-clojure-part-zero/</link>
       <pubDate>Wed, 20 Apr 2016 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/posts/top-down-vs-bottom-up-api-design-in-clojure-part-zero/</guid>
-      <description>Intro I saw a lot of presentations at Clojure/conj 2015. Most of them were really great, but one of them I was particularly interested in seeing didn&amp;rsquo;t really do it for me. It was called Bottom Up vs Top Down Design in Clojure by Mark Bastian. I thought his presentation was interesting, but it failed to touch on a couple of points that I was interested in. In an effort to learn a bit, I figured I would write post about what I was hoping the talk would actually address.</description>
+      <guid>http://localhost:1313/posts/top-down-vs-bottom-up-api-design-in-clojure-part-zero/</guid>
+      <description>&lt;h3 id=&#34;intro&#34;&gt;Intro&lt;/h3&gt;&#xA;&lt;p&gt;I saw a lot of presentations at &lt;a href=&#34;http://clojure-conj.org/&#34;&gt;Clojure/conj&lt;/a&gt; 2015. Most of them were really great, but one of them I was particularly interested in seeing didn&amp;rsquo;t really do it for me. It was called &lt;a href=&#34;https://www.youtube.com/watch?v=Tb823aqgX_0&amp;amp;index=13&amp;amp;list=PLZdCLR02grLrl5ie970A24kvti21hGiOf&#34;&gt;Bottom Up vs Top Down Design&lt;/a&gt; in Clojure by &lt;a href=&#34;https://github.com/markbastian&#34;&gt;Mark Bastian&lt;/a&gt;.  I thought his presentation was interesting, but it failed to touch on a couple of points that I was interested in. In an effort to learn a bit, I figured I would write post about what I was hoping the talk would actually address.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Clojure Web Scraper</title>
-      <link>https://charltonaustin.com/posts/clojure-web-scraper/</link>
+      <link>http://localhost:1313/posts/clojure-web-scraper/</link>
       <pubDate>Fri, 01 Mar 2013 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/posts/clojure-web-scraper/</guid>
-      <description>Okay so another thing that I did this week was go to a clojure meet up. I really enjoyed it. There I met some really cool people like Anthony from WalmartLabs. In the end we created a hacker news scraper from scratch in a couple of hours. So here is a brief tutorial on how we did it. (Note I&amp;rsquo;m not that great with Clojure yet thought I do think it is rather awesome.</description>
+      <guid>http://localhost:1313/posts/clojure-web-scraper/</guid>
+      <description>&lt;p&gt;Okay so another thing that I did this week was go to a clojure meet up. I really enjoyed it. There I met some really cool people like Anthony from WalmartLabs. In the end we created a hacker news scraper from scratch in a couple of hours. So here is a brief tutorial on how we did it. (Note I&amp;rsquo;m not that great with Clojure yet thought I do think it is rather awesome. So most of this is because Anthony is a rock star.)&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

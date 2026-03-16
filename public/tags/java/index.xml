@@ -1,40 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>java on Charlton Austin</title>
-    <link>https://charltonaustin.com/tags/java/</link>
-    <description>Recent content in java on Charlton Austin</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Java on Charlton Austin</title>
+    <link>http://localhost:1313/tags/java/</link>
+    <description>Recent content in Java on Charlton Austin</description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 03 Mar 2016 09:03:54 -0400</lastBuildDate><atom:link href="https://charltonaustin.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Mar 2016 09:03:54 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Expression Problem</title>
-      <link>https://charltonaustin.com/posts/the-expression-problem/</link>
+      <link>http://localhost:1313/posts/the-expression-problem/</link>
       <pubDate>Thu, 03 Mar 2016 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/posts/the-expression-problem/</guid>
-      <description>What is the expression problem? The expression problem is the idea that it is easy to add new functions for simple data types without changing the data types, while it is hard to add data types without changing all the functions. At the same time it is easy to add data types with objects (complex data types), while it is hard to add functions without changing all the objects.
-Some great descriptions of this include chapter 6 of Uncle Bob&amp;rsquo;s book Clean Code.</description>
+      <guid>http://localhost:1313/posts/the-expression-problem/</guid>
+      <description>&lt;h3 id=&#34;what-is-the-expression-problem&#34;&gt;What is the expression problem?&lt;/h3&gt;&#xA;&lt;p&gt;The expression problem is the idea that it is easy to add new functions for simple data types without changing the data types, while it is hard to add data types without changing all the functions. At the same time it is easy to add data types with objects (complex data types), while it is hard to add functions without changing all the objects.&lt;/p&gt;&#xA;&lt;p&gt;Some great descriptions of this include chapter 6 of &lt;a href=&#34;https://sites.google.com/site/unclebobconsultingllc/&#34;&gt;Uncle Bob&amp;rsquo;s&lt;/a&gt; book &lt;a href=&#34;http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882&#34;&gt;Clean Code&lt;/a&gt;. He doesn&amp;rsquo;t actually call it the expression problem, but it is. Or you can see it on [Wikipedia(https://en.wikipedia.org/wiki/Expression_problem). Or my personal favorite because this was the first place I came across it, is in a &lt;a href=&#34;http://lampwww.epfl.ch/~odersky/papers/ExpressionProblem.html&#34;&gt;paper&lt;/a&gt; from &lt;a href=&#34;https://en.wikipedia.org/wiki/Martin_Odersky&#34;&gt;Martin Odersky&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Debugging Multi  Threaded Applications</title>
-      <link>https://charltonaustin.com/posts/debugging-multi--threaded-applications/</link>
+      <link>http://localhost:1313/posts/debugging-multi--threaded-applications/</link>
       <pubDate>Sat, 24 Oct 2015 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/posts/debugging-multi--threaded-applications/</guid>
-      <description>Recently I had debug a multithreaded application with some surprising results. Seeing as this can be a particularly tricky task for people that haven&amp;rsquo;t done it before I thought I would write about some lessons I learned from the experience.
-logging Logging LOGGING and MORE LOGGING Log to understand the problem. This one is hard to set up retroactively, but it is well worth the effort. Strive for logs that are meaningful, and that give you checkpoints.</description>
+      <guid>http://localhost:1313/posts/debugging-multi--threaded-applications/</guid>
+      <description>&lt;p&gt;Recently I had debug a multithreaded application with some surprising results. Seeing as this can be a particularly tricky task for people that haven&amp;rsquo;t done it before I thought  I would write about some lessons I learned from the experience.&lt;/p&gt;&#xA;&lt;h3 id=&#34;logging-logging-logging-and-more-logging&#34;&gt;logging Logging &lt;em&gt;LOGGING&lt;/em&gt; and &lt;em&gt;MORE LOGGING&lt;/em&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Log to understand the problem. This one is hard to set up retroactively, but it is well worth the effort. Strive for logs that are meaningful, and that give you checkpoints. For instance avoid putting logs in tight loops. Unless there is something you really need to see inside of the tight loop, move the log out. If you really need to log within a tight loop think about either making the log level DEBUGGING, or only logging every nth element, or doing some other logic to really only log things that you will be interested in. In multithreaded application logging can give you clues on whether or not a thread is starved or when events are happening out of order. Most of the time logs in tight loops will be unhelpful. While some people argue that you should log everything and then use other tools to sift through them I think you will save everyone a whole lot of headaches if you try and log only what you really need. True hard disk space is cheap, true you can roll your logs often to make it easier to sift through them, but at the end of the day the simpler your logs are to sift through the more likely you are to solve the problem.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Refactoring Tests For Maintainability</title>
-      <link>https://charltonaustin.com/posts/refactoring-tests-for-maintainability/</link>
+      <link>http://localhost:1313/posts/refactoring-tests-for-maintainability/</link>
       <pubDate>Wed, 28 Jan 2015 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/posts/refactoring-tests-for-maintainability/</guid>
-      <description>I just began working at Intent Media and I&amp;rsquo;ve been spending some time getting to know the code base. I spent the other day pairing with another guy on the team to add a new feature. We needed to change one of the data models by adding a new field. So we wrote some tests specifying how we thought the new data field should work. Next we got them passing. After that we ran all the unit tests.</description>
+      <guid>http://localhost:1313/posts/refactoring-tests-for-maintainability/</guid>
+      <description>&lt;p&gt;I just began working at Intent Media  and I&amp;rsquo;ve been spending some time getting to know the code base. I spent the other day pairing with another guy on the team to add a new feature. We needed to change one of the data models by adding a new field. So we wrote some tests specifying how we thought the new data field should work. Next we got them passing. After that we ran all the unit tests. Oh man were we in trouble. We had twenty-five test failures. I was a little surprised since we had made a pretty small change in the production code.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

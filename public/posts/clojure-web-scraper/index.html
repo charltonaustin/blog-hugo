@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
+	<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.111.3">
+		<meta name="generator" content="Hugo 0.157.0">
 		<title>Clojure Web Scraper &middot; Charlton Austin</title>
-		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
-		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
-		<link rel="stylesheet" href="https://charltonaustin.com/css/highlight.css">
+		<link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico">
+		<link rel="stylesheet" href="http://localhost:1313/css/style.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/highlight.css">
 
 		
-		<link rel="stylesheet" href="https://charltonaustin.com/css/font-awesome.min.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/font-awesome.min.css">
 		
 
 		
-		<link href="https://charltonaustin.com/index.xml" rel="alternate" type="application/rss+xml" title="Charlton Austin" />
+		<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="Charlton Austin" />
 		
 
 		
@@ -28,16 +28,16 @@
        <nav class="main-nav">
 	
 	
-		<a href='https://charltonaustin.com/'> <span class="arrow">←</span>Home</a>
+		<a href='http://localhost:1313/'> <span class="arrow">←</span>Home</a>
 	
-	<a href='https://charltonaustin.com/posts'>Archive</a>
-	<a href='https://charltonaustin.com/tags'>Tags</a>
-	<a href='https://charltonaustin.com/about'>About</a>
+	<a href='http://localhost:1313/posts'>Archive</a>
+	<a href='http://localhost:1313/tags'>Tags</a>
+	<a href='http://localhost:1313/about'>About</a>
 
 	
 
 	
-	<a class="cta" href="https://charltonaustin.com/index.xml">Subscribe</a>
+	<a class="cta" href="http://localhost:1313/index.xml">Subscribe</a>
 	
 </nav>
 
@@ -56,11 +56,11 @@
                       
                       
                           
-                              <a href="https://charltonaustin.com/tags/clojure">clojure</a>
+                              <a href="http://localhost:1313/tags/clojure">clojure</a>
                           
-                              <a href="https://charltonaustin.com/tags/functional-programming">functional programming</a>
+                              <a href="http://localhost:1313/tags/functional-programming">functional programming</a>
                           
-                              <a href="https://charltonaustin.com/tags/development">development</a>
+                              <a href="http://localhost:1313/tags/development">development</a>
                           
                       
                       
@@ -92,15 +92,15 @@
 </ol>
 <p>So first install lein which means going <a href="https://raw.github.com/technomancy/leiningen/stable/bin/lein">here</a> and downloading the script.</p>
 <p>Then move that script to somewhere in your path.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ export  PATH=$PATH:/path/to/script
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ export  PATH=$PATH:/path/to/script
 </span></span></code></pre></div><p>Next make a new lein project.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ lein new hnharvest
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ lein new hnharvest
 </span></span></code></pre></div><p>Then cd into the project.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cd hnharvest
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cd hnharvest
 </span></span></code></pre></div><p>So we can add some text to project.clj.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ vim   project.clj
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ vim   project.clj
 </span></span></code></pre></div><p>Then make it look like this. If you don&rsquo;t know how to use vim use any text editor you like.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="font-weight:bold">defproject </span>hnharvest <span style="font-style:italic">&#34;0.1.0-SNAPSHOT&#34;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="font-weight:bold">defproject </span>hnharvest <span style="font-style:italic">&#34;0.1.0-SNAPSHOT&#34;</span>
 </span></span><span style="display:flex;"><span>  <span style="font-style:italic">:description</span> <span style="font-style:italic">&#34;FIXME: write description&#34;</span>
 </span></span><span style="display:flex;"><span>  <span style="font-style:italic">:url</span> <span style="font-style:italic">&#34;http://example.com/FIXME&#34;</span>
 </span></span><span style="display:flex;"><span>  <span style="font-style:italic">:license</span> {<span style="font-style:italic">:name</span> <span style="font-style:italic">&#34;Eclipse Public License&#34;</span>
@@ -110,9 +110,9 @@
 </span></span><span style="display:flex;"><span>                 [enlive <span style="font-style:italic">&#34;1.1.1&#34;</span>]
 </span></span><span style="display:flex;"><span>                 [org.clojure/data.json <span style="font-style:italic">&#34;0.2.1&#34;</span>]])
 </span></span></code></pre></div><p>Next we need to add our modify core.clj.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ vim src/hnharvest/core.clj
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ vim src/hnharvest/core.clj
 </span></span></code></pre></div><p>Make it look like this.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="font-weight:bold">ns </span>hnharvest.core
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="font-weight:bold">ns </span>hnharvest.core
 </span></span><span style="display:flex;"><span>  (<span style="font-style:italic">:require</span> [net.cgrand.enlive-html <span style="font-style:italic">:as</span> html]
 </span></span><span style="display:flex;"><span>            [clojure.string <span style="font-style:italic">:as</span> s]))
 </span></span><span style="display:flex;"><span>
@@ -146,15 +146,15 @@
 </span></span><span style="display:flex;"><span>(<span style="font-weight:bold">defn </span>go []
 </span></span><span style="display:flex;"><span>  (remove nil? (map get-info (html/select content [<span style="font-style:italic">:td.subtext</span>])))) 
 </span></span></code></pre></div><p>Finally we need to open a repl session.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ lein repl
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ lein repl
 </span></span></code></pre></div><p>Then we need to import our source files and change the name space and start the function.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>user=&gt; (use <span style="">&#39;</span>hnharvest.core)
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>user=&gt; (use <span style="">&#39;</span>hnharvest.core)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>user=&gt; (ns hnharvest.core)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>hnharvest.core=&gt; (go)
 </span></span></code></pre></div><p>This should spit out something like this:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>({<span style="font-style:italic">:points</span> 283, <span style="font-style:italic">:comments</span> 105} {<span style="font-style:italic">:points</span> 99, <span style="font-style:italic">:comments</span> 29} {<span style="font-style:italic">:points</span> 345, <span style="font-style:italic">:comments</span> 123} {<span style="font-style:italic">:points</span> 51, <span style="font-style:italic">:comments</span> 23} {<span style="font-style:italic">:points</span> 398, <span style="font-style:italic">:comments</span> 252} {<span style="font-style:italic">:points</span> 142, <span style="font-style:italic">:comments</span> 97} {<span style="font-style:italic">:points</span> 219, <span style="font-style:italic">:comments</span> 63} {<span style="font-style:italic">:points</span> 18, <span style="font-style:italic">:comments</span> 4} {<span style="font-style:italic">:points</span> 228, <span style="font-style:italic">:comments</span> 78} {<span style="font-style:italic">:points</span> 264, <span style="font-style:italic">:comments</span> 153} {<span style="font-style:italic">:points</span> 125, <span style="font-style:italic">:comments</span> 19} {<span style="font-style:italic">:points</span> 67, <span style="font-style:italic">:comments</span> 37} {<span style="font-style:italic">:points</span> 202, <span style="font-style:italic">:comments</span> 31} {<span style="font-style:italic">:points</span> 34, <span style="font-style:italic">:comments</span> 19} {<span style="font-style:italic">:points</span> 43, <span style="font-style:italic">:comments</span> 13} {<span style="font-style:italic">:points</span> 36, <span style="font-style:italic">:comments</span> 6} {<span style="font-style:italic">:points</span> 136, <span style="font-style:italic">:comments</span> 44} {<span style="font-style:italic">:points</span> 87, <span style="font-style:italic">:comments</span> 17} {<span style="font-style:italic">:points</span> 44, <span style="font-style:italic">:comments</span> 3} {<span style="font-style:italic">:points</span> 236, <span style="font-style:italic">:comments</span> 100} {<span style="font-style:italic">:points</span> 35, <span style="font-style:italic">:comments</span> 21} {<span style="font-style:italic">:points</span> 26, <span style="font-style:italic">:comments</span> 4} {<span style="font-style:italic">:points</span> 68, <span style="font-style:italic">:comments</span> 17} {<span style="font-style:italic">:points</span> 41, <span style="font-style:italic">:comments</span> 8} {<span style="font-style:italic">:points</span> 193, <span style="font-style:italic">:comments</span> 69} {<span style="font-style:italic">:points</span> 67, <span style="font-style:italic">:comments</span> 20} {<span style="font-style:italic">:points</span> 55, <span style="font-style:italic">:comments</span> 16} {<span style="font-style:italic">:points</span> 608, <span style="font-style:italic">:comments</span> 181} {<span style="font-style:italic">:points</span> 63, <span style="font-style:italic">:comments</span> 16})
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>({<span style="font-style:italic">:points</span> 283, <span style="font-style:italic">:comments</span> 105} {<span style="font-style:italic">:points</span> 99, <span style="font-style:italic">:comments</span> 29} {<span style="font-style:italic">:points</span> 345, <span style="font-style:italic">:comments</span> 123} {<span style="font-style:italic">:points</span> 51, <span style="font-style:italic">:comments</span> 23} {<span style="font-style:italic">:points</span> 398, <span style="font-style:italic">:comments</span> 252} {<span style="font-style:italic">:points</span> 142, <span style="font-style:italic">:comments</span> 97} {<span style="font-style:italic">:points</span> 219, <span style="font-style:italic">:comments</span> 63} {<span style="font-style:italic">:points</span> 18, <span style="font-style:italic">:comments</span> 4} {<span style="font-style:italic">:points</span> 228, <span style="font-style:italic">:comments</span> 78} {<span style="font-style:italic">:points</span> 264, <span style="font-style:italic">:comments</span> 153} {<span style="font-style:italic">:points</span> 125, <span style="font-style:italic">:comments</span> 19} {<span style="font-style:italic">:points</span> 67, <span style="font-style:italic">:comments</span> 37} {<span style="font-style:italic">:points</span> 202, <span style="font-style:italic">:comments</span> 31} {<span style="font-style:italic">:points</span> 34, <span style="font-style:italic">:comments</span> 19} {<span style="font-style:italic">:points</span> 43, <span style="font-style:italic">:comments</span> 13} {<span style="font-style:italic">:points</span> 36, <span style="font-style:italic">:comments</span> 6} {<span style="font-style:italic">:points</span> 136, <span style="font-style:italic">:comments</span> 44} {<span style="font-style:italic">:points</span> 87, <span style="font-style:italic">:comments</span> 17} {<span style="font-style:italic">:points</span> 44, <span style="font-style:italic">:comments</span> 3} {<span style="font-style:italic">:points</span> 236, <span style="font-style:italic">:comments</span> 100} {<span style="font-style:italic">:points</span> 35, <span style="font-style:italic">:comments</span> 21} {<span style="font-style:italic">:points</span> 26, <span style="font-style:italic">:comments</span> 4} {<span style="font-style:italic">:points</span> 68, <span style="font-style:italic">:comments</span> 17} {<span style="font-style:italic">:points</span> 41, <span style="font-style:italic">:comments</span> 8} {<span style="font-style:italic">:points</span> 193, <span style="font-style:italic">:comments</span> 69} {<span style="font-style:italic">:points</span> 67, <span style="font-style:italic">:comments</span> 20} {<span style="font-style:italic">:points</span> 55, <span style="font-style:italic">:comments</span> 16} {<span style="font-style:italic">:points</span> 608, <span style="font-style:italic">:comments</span> 181} {<span style="font-style:italic">:points</span> 63, <span style="font-style:italic">:comments</span> 16})
 </span></span></code></pre></div><p>This is just a current listing of points and comments from <a href="http://news.ycombinator.com/">http://news.ycombinator.com/</a></p>
 <p>I thought it was really cool how quickly we got something up and running with Clojure. I hope you did too.</p>
 
@@ -162,7 +162,7 @@
             </article>
 
             
-                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2fclojure-web-scraper%2f - Clojure%20Web%20Scraper by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2flocalhost%3a1313%2fposts%2fclojure-web-scraper%2f - Clojure%20Web%20Scraper by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -182,14 +182,18 @@
     
         <div id="social">
 
-	
-	
-    <a class="symbol" href="https://www.github.com/charltonaustin">
-        <i class="fa fa-github-square"></i>
+
+    
+    <a class="symbol" href="https://github.com/charltonaustin/">
+        <i class="fa fa-github fa-2x"></i>
     </a>
     
-    <a class="symbol" href="https://www.twitter.com/charltonaustin">
-        <i class="fa fa-twitter-square"></i>
+    <a class="symbol" href="https://gitlab.com/charlie_tuesday_company/">
+        <i class="fa fa-gitlab fa-2x"></i>
+    </a>
+    
+    <a class="symbol" href="https://twitter.com/charltonaustin/">
+        <i class="fa fa-twitter fa-2x"></i>
     </a>
     
 
@@ -199,7 +203,7 @@
     
     <p class="small">
     
-       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2026 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -209,27 +213,15 @@
 
         </section>
 
-        <script src="https://charltonaustin.com/js/jquery-3.3.1.min.js"></script>
-<script src="https://charltonaustin.com/js/main.js"></script>
-<script src="https://charltonaustin.com/js/highlight.min.js"></script>
+        <script src="http://localhost:1313/js/jquery-3.3.1.min.js"></script>
+<script src="http://localhost:1313/js/main.js"></script>
+<script src="http://localhost:1313/js/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
 
 
 
   
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-164961268-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
 
 
 

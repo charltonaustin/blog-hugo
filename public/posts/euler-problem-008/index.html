@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
+	<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.111.3">
+		<meta name="generator" content="Hugo 0.157.0">
 		<title>Euler Problem 008 &middot; Charlton Austin</title>
-		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
-		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
-		<link rel="stylesheet" href="https://charltonaustin.com/css/highlight.css">
+		<link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico">
+		<link rel="stylesheet" href="http://localhost:1313/css/style.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/highlight.css">
 
 		
-		<link rel="stylesheet" href="https://charltonaustin.com/css/font-awesome.min.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/font-awesome.min.css">
 		
 
 		
-		<link href="https://charltonaustin.com/index.xml" rel="alternate" type="application/rss+xml" title="Charlton Austin" />
+		<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="Charlton Austin" />
 		
 
 		
@@ -28,16 +28,16 @@
        <nav class="main-nav">
 	
 	
-		<a href='https://charltonaustin.com/'> <span class="arrow">←</span>Home</a>
+		<a href='http://localhost:1313/'> <span class="arrow">←</span>Home</a>
 	
-	<a href='https://charltonaustin.com/posts'>Archive</a>
-	<a href='https://charltonaustin.com/tags'>Tags</a>
-	<a href='https://charltonaustin.com/about'>About</a>
+	<a href='http://localhost:1313/posts'>Archive</a>
+	<a href='http://localhost:1313/tags'>Tags</a>
+	<a href='http://localhost:1313/about'>About</a>
 
 	
 
 	
-	<a class="cta" href="https://charltonaustin.com/index.xml">Subscribe</a>
+	<a class="cta" href="http://localhost:1313/index.xml">Subscribe</a>
 	
 </nav>
 
@@ -56,13 +56,13 @@
                       
                       
                           
-                              <a href="https://charltonaustin.com/tags/javascript">javascript</a>
+                              <a href="http://localhost:1313/tags/javascript">javascript</a>
                           
-                              <a href="https://charltonaustin.com/tags/toy-problems">toy problems</a>
+                              <a href="http://localhost:1313/tags/toy-problems">toy problems</a>
                           
-                              <a href="https://charltonaustin.com/tags/development">development</a>
+                              <a href="http://localhost:1313/tags/development">development</a>
                           
-                              <a href="https://charltonaustin.com/tags/euler">euler</a>
+                              <a href="http://localhost:1313/tags/euler">euler</a>
                           
                       
                       
@@ -87,7 +87,7 @@
                 <section id="post-body">
                     <h3 id="the-problem">The problem</h3>
 <p>The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>73167176531330624919225119674426574742355349194934
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>73167176531330624919225119674426574742355349194934
 </span></span><span style="display:flex;"><span>96983520312774506326239578318016984801869478851843
 </span></span><span style="display:flex;"><span>85861560789112949495459501737958331952853208805511
 </span></span><span style="display:flex;"><span>12540698747158523863050715693290963295227443043557
@@ -110,7 +110,7 @@
 </span></span></code></pre></div><p>Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?</p>
 <h4 id="solution">Solution</h4>
 <p>This guy is a pretty fun warm up for the day. A simple loop to walk over the numbers looking in all the possible directions (there are four). Going down and up are the same, going left and right are the same, forward-up is the same as going backward-down, and going forward-down is the same as going backward-up. Then as we traverse we simply keep track of the largest value.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="font-weight:bold">var</span> findLargestMultiple = <span style="font-weight:bold">function</span>(string, length){
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="font-weight:bold">var</span> findLargestMultiple = <span style="font-weight:bold">function</span>(string, length){
 </span></span><span style="display:flex;"><span>  <span style="font-weight:bold">var</span> largestMultiple = 0;
 </span></span><span style="display:flex;"><span>  <span style="font-weight:bold">for</span>(<span style="font-weight:bold">var</span> i = 0; i &lt; string.length-length; i++){
 </span></span><span style="display:flex;"><span>    <span style="font-weight:bold">var</span> currentMultiple = 1;
@@ -130,7 +130,7 @@
             </article>
 
             
-                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2feuler-problem-008%2f - Euler%20Problem%20008 by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2flocalhost%3a1313%2fposts%2feuler-problem-008%2f - Euler%20Problem%20008 by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -150,14 +150,18 @@
     
         <div id="social">
 
-	
-	
-    <a class="symbol" href="https://www.github.com/charltonaustin">
-        <i class="fa fa-github-square"></i>
+
+    
+    <a class="symbol" href="https://github.com/charltonaustin/">
+        <i class="fa fa-github fa-2x"></i>
     </a>
     
-    <a class="symbol" href="https://www.twitter.com/charltonaustin">
-        <i class="fa fa-twitter-square"></i>
+    <a class="symbol" href="https://gitlab.com/charlie_tuesday_company/">
+        <i class="fa fa-gitlab fa-2x"></i>
+    </a>
+    
+    <a class="symbol" href="https://twitter.com/charltonaustin/">
+        <i class="fa fa-twitter fa-2x"></i>
     </a>
     
 
@@ -167,7 +171,7 @@
     
     <p class="small">
     
-       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2026 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -177,27 +181,15 @@
 
         </section>
 
-        <script src="https://charltonaustin.com/js/jquery-3.3.1.min.js"></script>
-<script src="https://charltonaustin.com/js/main.js"></script>
-<script src="https://charltonaustin.com/js/highlight.min.js"></script>
+        <script src="http://localhost:1313/js/jquery-3.3.1.min.js"></script>
+<script src="http://localhost:1313/js/main.js"></script>
+<script src="http://localhost:1313/js/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
 
 
 
   
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-164961268-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
 
 
 

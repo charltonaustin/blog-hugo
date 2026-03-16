@@ -30,3 +30,15 @@ See my page [here](/contact)
 
 ## Austin Consulting Inc
 Interested in hiring me as a [consultant](/consulting)?
+
+## Endorsements
+
+
+```text
+I worked with Charlie four times - once in ThoughtWorks (2010),
+later in HedgeServ (2016), then in two startups he was CTO
+of, Tuesday Company (2019) and Cupola Software (2022).  
+Charlie was a great colleague for all of those - a CI/CD and 
+test automation expert.
+verify:paulhammant.com/refs
+```

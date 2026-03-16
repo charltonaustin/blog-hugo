@@ -1,30 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>top-down on Charlton Austin</title>
-    <link>https://charltonaustin.com/tags/top-down/</link>
-    <description>Recent content in top-down on Charlton Austin</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Top-Down on Charlton Austin</title>
+    <link>http://localhost:1313/tags/top-down/</link>
+    <description>Recent content in Top-Down on Charlton Austin</description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 26 Apr 2016 09:03:54 -0400</lastBuildDate><atom:link href="https://charltonaustin.com/tags/top-down/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Apr 2016 09:03:54 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/top-down/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Top Down Vs Bottom Up Api Design In Clojure Part One</title>
-      <link>https://charltonaustin.com/posts/top-down-vs-bottom-up-api-design-in-clojure-part-one/</link>
+      <link>http://localhost:1313/posts/top-down-vs-bottom-up-api-design-in-clojure-part-one/</link>
       <pubDate>Tue, 26 Apr 2016 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/posts/top-down-vs-bottom-up-api-design-in-clojure-part-one/</guid>
-      <description>Recently in my last post&amp;hellip; Recently I posted about the difference between top down vs bottom up design in Clojure, if you haven&amp;rsquo;t read it then you should. This post is the second part about the differences in both code quality and experience between tope down and bottom up approaches. You can see the commits here.
-First impressions It took me 14 functions using the outside-in method vs 15 functions with the inside-out method.</description>
+      <guid>http://localhost:1313/posts/top-down-vs-bottom-up-api-design-in-clojure-part-one/</guid>
+      <description>&lt;h3 id=&#34;recently-in-my-last-post&#34;&gt;Recently in my last post&amp;hellip;&lt;/h3&gt;&#xA;&lt;p&gt;Recently I posted about the difference between &lt;a href=&#34;http://www.charltonaustin.com/2016/04/top-down-vs-bottom-up-api-design-in.html&#34;&gt;top down vs bottom up&lt;/a&gt; design in Clojure, if you haven&amp;rsquo;t read it then you should. This post is the second part about the differences in both code quality and experience between tope down and bottom up approaches.  You can see the commits &lt;a href=&#34;https://github.com/charltonaustin/inside_out_ouside_in/commits&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h3 id=&#34;first-impressions&#34;&gt;First impressions&lt;/h3&gt;&#xA;&lt;p&gt;It took me 14 functions using the outside-in method vs 15 functions with the inside-out method. But the number of functions doesn&amp;rsquo;t really matter. What&amp;rsquo;s more interesting maybe is the number of characters. It was 2043 for inside-out and 2122 outside-in (without white space). They were pretty close; there wasn&amp;rsquo;t much of a difference; and counting characters isn&amp;rsquo;t all that important (though my usual philosophy is &amp;rsquo;less is better&amp;rsquo;).  What about readability? Well my opinion is outside-in is marginally better. The main loop is less convoluted. Perhaps because I don&amp;rsquo;t do any stupid exit business.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Top Down Vs Bottom Up Api Design In Clojure Part Zero</title>
-      <link>https://charltonaustin.com/posts/top-down-vs-bottom-up-api-design-in-clojure-part-zero/</link>
+      <link>http://localhost:1313/posts/top-down-vs-bottom-up-api-design-in-clojure-part-zero/</link>
       <pubDate>Wed, 20 Apr 2016 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/posts/top-down-vs-bottom-up-api-design-in-clojure-part-zero/</guid>
-      <description>Intro I saw a lot of presentations at Clojure/conj 2015. Most of them were really great, but one of them I was particularly interested in seeing didn&amp;rsquo;t really do it for me. It was called Bottom Up vs Top Down Design in Clojure by Mark Bastian. I thought his presentation was interesting, but it failed to touch on a couple of points that I was interested in. In an effort to learn a bit, I figured I would write post about what I was hoping the talk would actually address.</description>
+      <guid>http://localhost:1313/posts/top-down-vs-bottom-up-api-design-in-clojure-part-zero/</guid>
+      <description>&lt;h3 id=&#34;intro&#34;&gt;Intro&lt;/h3&gt;&#xA;&lt;p&gt;I saw a lot of presentations at &lt;a href=&#34;http://clojure-conj.org/&#34;&gt;Clojure/conj&lt;/a&gt; 2015. Most of them were really great, but one of them I was particularly interested in seeing didn&amp;rsquo;t really do it for me. It was called &lt;a href=&#34;https://www.youtube.com/watch?v=Tb823aqgX_0&amp;amp;index=13&amp;amp;list=PLZdCLR02grLrl5ie970A24kvti21hGiOf&#34;&gt;Bottom Up vs Top Down Design&lt;/a&gt; in Clojure by &lt;a href=&#34;https://github.com/markbastian&#34;&gt;Mark Bastian&lt;/a&gt;.  I thought his presentation was interesting, but it failed to touch on a couple of points that I was interested in. In an effort to learn a bit, I figured I would write post about what I was hoping the talk would actually address.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

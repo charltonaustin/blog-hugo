@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
+	<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.111.3">
+		<meta name="generator" content="Hugo 0.157.0">
 		<title>Sudoku Using Go Lang &middot; Charlton Austin</title>
-		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
-		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
-		<link rel="stylesheet" href="https://charltonaustin.com/css/highlight.css">
+		<link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico">
+		<link rel="stylesheet" href="http://localhost:1313/css/style.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/highlight.css">
 
 		
-		<link rel="stylesheet" href="https://charltonaustin.com/css/font-awesome.min.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/font-awesome.min.css">
 		
 
 		
-		<link href="https://charltonaustin.com/index.xml" rel="alternate" type="application/rss+xml" title="Charlton Austin" />
+		<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="Charlton Austin" />
 		
 
 		
@@ -28,16 +28,16 @@
        <nav class="main-nav">
 	
 	
-		<a href='https://charltonaustin.com/'> <span class="arrow">←</span>Home</a>
+		<a href='http://localhost:1313/'> <span class="arrow">←</span>Home</a>
 	
-	<a href='https://charltonaustin.com/posts'>Archive</a>
-	<a href='https://charltonaustin.com/tags'>Tags</a>
-	<a href='https://charltonaustin.com/about'>About</a>
+	<a href='http://localhost:1313/posts'>Archive</a>
+	<a href='http://localhost:1313/tags'>Tags</a>
+	<a href='http://localhost:1313/about'>About</a>
 
 	
 
 	
-	<a class="cta" href="https://charltonaustin.com/index.xml">Subscribe</a>
+	<a class="cta" href="http://localhost:1313/index.xml">Subscribe</a>
 	
 </nav>
 
@@ -56,9 +56,9 @@
                       
                       
                           
-                              <a href="https://charltonaustin.com/tags/algorithms">algorithms</a>
+                              <a href="http://localhost:1313/tags/algorithms">algorithms</a>
                           
-                              <a href="https://charltonaustin.com/tags/golang">golang</a>
+                              <a href="http://localhost:1313/tags/golang">golang</a>
                           
                       
                       
@@ -103,7 +103,7 @@ There are some tests, but they are not super comprehensive.
 Mostly this was a chance to do a toy problem and talk about it with my friend that is looking for a job.
 I used the famed backtracking algorithm that is all over the internet.
 In particular I used this description from <a href="https://www.geeksforgeeks.org/sudoku-backtracking-7/">here</a></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>  Find row, col of an unassigned cell
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>  Find row, col of an unassigned cell
 </span></span><span style="display:flex;"><span>  If there is none, return true
 </span></span><span style="display:flex;"><span>  For digits from 1 to 9
 </span></span><span style="display:flex;"><span>    a) If there is no conflict for digit at row, col assign digit to row, col and recursively try fill in rest of grid
@@ -113,7 +113,7 @@ In particular I used this description from <a href="https://www.geeksforgeeks.or
 </span></span></code></pre></div><p>I modified it slightly since in building the solution finder I was also interested in generating valid completed boards.</p>
 <h2 id="the-dirty-details">The dirty details</h2>
 <p>If we take a quick look at the algorithm you can see what I mean.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="font-weight:bold">func</span> backTrace(b *board.Board) <span style="">bool</span> {
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="font-weight:bold">func</span> backTrace(b *board.Board) <span style="">bool</span> {
 </span></span><span style="display:flex;"><span>	<span style="font-weight:bold">for</span> x := 0; x &lt; 9; x++ {
 </span></span><span style="display:flex;"><span>		<span style="font-weight:bold">for</span> y := 0; y &lt; 9; y++ {
 </span></span><span style="display:flex;"><span>			value, err := b.Get(x, y)
@@ -144,7 +144,7 @@ In particular I used this description from <a href="https://www.geeksforgeeks.or
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Notice that I have a function called randomNumbers.
 It looks like this.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="font-weight:bold">func</span> randomNumbers() []<span style="">int</span> {
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="font-weight:bold">func</span> randomNumbers() []<span style="">int</span> {
 </span></span><span style="display:flex;"><span>	numbers := []<span style="">int</span>{1, 2, 3, 4, 5, 6, 7, 8, 9}
 </span></span><span style="display:flex;"><span>	rand.Shuffle(len(numbers), <span style="font-weight:bold">func</span>(i, j <span style="">int</span>) { numbers[i], numbers[j] = numbers[j], numbers[i] })
 </span></span><span style="display:flex;"><span>	<span style="font-weight:bold">return</span> numbers
@@ -152,50 +152,50 @@ It looks like this.</p>
 </span></span></code></pre></div><p>I do that since when I was building the code I was actually interested in generating the board and so I needed to introduce some randomization in order to not get the same board repeatedly.
 If we break down the description from above you can create a 1-1 mapping from the description to the code.</p>
 <p>For instance, <code>Find row, col of an unassigned cell</code> directly maps to</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>	<span style="font-weight:bold">for</span> x := 0; x &lt; 9; x++ {
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>	<span style="font-weight:bold">for</span> x := 0; x &lt; 9; x++ {
 </span></span><span style="display:flex;"><span>		<span style="font-weight:bold">for</span> y := 0; y &lt; 9; y++ {
 </span></span><span style="display:flex;"><span>			...
 </span></span><span style="display:flex;"><span>		}
 </span></span><span style="display:flex;"><span>	}
 </span></span></code></pre></div><p>While <code>If there is none, return true</code>, directly maps to the bottom return true.
 An easier way to see it might be to just add comments like this.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="font-weight:bold">func</span> backTrace(b *board.Board) <span style="">bool</span> {
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="font-weight:bold">func</span> backTrace(b *board.Board) <span style="">bool</span> {
 </span></span><span style="display:flex;"><span>	<span style="font-weight:bold">for</span> x := 0; x &lt; 9; x++ {
 </span></span><span style="display:flex;"><span>		<span style="font-weight:bold">for</span> y := 0; y &lt; 9; y++ { 
-</span></span><span style="display:flex;"><span>			<span style="font-style:italic">// find empty square
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>			value, err := b.Get(x, y)
+</span></span><span style="display:flex;"><span>			<span style="font-style:italic">// find empty square</span>
+</span></span><span style="display:flex;"><span>			value, err := b.Get(x, y)
 </span></span><span style="display:flex;"><span>			<span style="font-weight:bold">if</span> err != <span style="font-weight:bold">nil</span> {
 </span></span><span style="display:flex;"><span>				panic(err)
 </span></span><span style="display:flex;"><span>			}
 </span></span><span style="display:flex;"><span>			<span style="font-weight:bold">if</span> value == 0 { 
 </span></span><span style="display:flex;"><span>				<span style="font-weight:bold">for</span> _, number := <span style="font-weight:bold">range</span> randomNumbers() {
-</span></span><span style="display:flex;"><span>					<span style="font-style:italic">// go through digits 1 to 9
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>					err := b.Update(x, y, number)
+</span></span><span style="display:flex;"><span>					<span style="font-style:italic">// go through digits 1 to 9</span>
+</span></span><span style="display:flex;"><span>					err := b.Update(x, y, number)
 </span></span><span style="display:flex;"><span>					<span style="font-weight:bold">if</span> err != <span style="font-weight:bold">nil</span> {
 </span></span><span style="display:flex;"><span>						panic(err)
 </span></span><span style="display:flex;"><span>					}
-</span></span><span style="display:flex;"><span>					<span style="font-style:italic">// If there is no conflict for digit at row,
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>					<span style="font-weight:bold">if</span> b.IsValid() {
-</span></span><span style="display:flex;"><span>					    <span style="font-style:italic">// col assign digit to row, col and recursively try fill in rest of grid
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>						<span style="font-weight:bold">if</span> backTrace(b) { 
-</span></span><span style="display:flex;"><span>						    <span style="font-style:italic">//If recursion successful, return true
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>							<span style="font-weight:bold">return</span> <span style="font-weight:bold">true</span> 
+</span></span><span style="display:flex;"><span>					<span style="font-style:italic">// If there is no conflict for digit at row,</span>
+</span></span><span style="display:flex;"><span>					<span style="font-weight:bold">if</span> b.IsValid() {
+</span></span><span style="display:flex;"><span>					    <span style="font-style:italic">// col assign digit to row, col and recursively try fill in rest of grid</span>
+</span></span><span style="display:flex;"><span>						<span style="font-weight:bold">if</span> backTrace(b) { 
+</span></span><span style="display:flex;"><span>						    <span style="">//If recursion successful, return true</span>
+</span></span><span style="display:flex;"><span>							<span style="font-weight:bold">return</span> <span style="font-weight:bold">true</span> 
 </span></span><span style="display:flex;"><span>						}
-</span></span><span style="display:flex;"><span>						<span style="font-style:italic">//Else, remove digit and try another
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>						b.Update(x, y, 0) 
+</span></span><span style="display:flex;"><span>						<span style="">//Else, remove digit and try another</span>
+</span></span><span style="display:flex;"><span>						b.Update(x, y, 0) 
 </span></span><span style="display:flex;"><span>					} <span style="font-weight:bold">else</span> {
-</span></span><span style="display:flex;"><span>						<span style="font-style:italic">//Else, remove digit and try another (okay not exactly 1-1, but close)
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>						b.Update(x, y, 0) 
+</span></span><span style="display:flex;"><span>						<span style="">//Else, remove digit and try another (okay not exactly 1-1, but close)</span>
+</span></span><span style="display:flex;"><span>						b.Update(x, y, 0) 
 </span></span><span style="display:flex;"><span>					}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>				}
-</span></span><span style="display:flex;"><span>				<span style="font-style:italic">// If all digits have been tried and nothing worked, return false
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>				<span style="font-weight:bold">return</span> <span style="font-weight:bold">false</span> 
+</span></span><span style="display:flex;"><span>				<span style="font-style:italic">// If all digits have been tried and nothing worked, return false</span>
+</span></span><span style="display:flex;"><span>				<span style="font-weight:bold">return</span> <span style="font-weight:bold">false</span> 
 </span></span><span style="display:flex;"><span>			}
 </span></span><span style="display:flex;"><span>		}
 </span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>	<span style="font-style:italic">//If there is none, return true
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>	<span style="font-weight:bold">return</span> <span style="font-weight:bold">true</span> 
+</span></span><span style="display:flex;"><span>	<span style="">//If there is none, return true</span>
+</span></span><span style="display:flex;"><span>	<span style="font-weight:bold">return</span> <span style="font-weight:bold">true</span> 
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 id="why-is-this-even-here">Why is this even here</h2>
 <p>For a few reasons.</p>
@@ -225,7 +225,7 @@ That&rsquo;s a different future blog post though.</p>
             </article>
 
             
-                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2fsudoku-using-go-lang%2f - Sudoku%20Using%20Go%20Lang by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2flocalhost%3a1313%2fposts%2fsudoku-using-go-lang%2f - Sudoku%20Using%20Go%20Lang by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -245,14 +245,18 @@ That&rsquo;s a different future blog post though.</p>
     
         <div id="social">
 
-	
-	
-    <a class="symbol" href="https://www.github.com/charltonaustin">
-        <i class="fa fa-github-square"></i>
+
+    
+    <a class="symbol" href="https://github.com/charltonaustin/">
+        <i class="fa fa-github fa-2x"></i>
     </a>
     
-    <a class="symbol" href="https://www.twitter.com/charltonaustin">
-        <i class="fa fa-twitter-square"></i>
+    <a class="symbol" href="https://gitlab.com/charlie_tuesday_company/">
+        <i class="fa fa-gitlab fa-2x"></i>
+    </a>
+    
+    <a class="symbol" href="https://twitter.com/charltonaustin/">
+        <i class="fa fa-twitter fa-2x"></i>
     </a>
     
 
@@ -262,7 +266,7 @@ That&rsquo;s a different future blog post though.</p>
     
     <p class="small">
     
-       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2026 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -272,27 +276,15 @@ That&rsquo;s a different future blog post though.</p>
 
         </section>
 
-        <script src="https://charltonaustin.com/js/jquery-3.3.1.min.js"></script>
-<script src="https://charltonaustin.com/js/main.js"></script>
-<script src="https://charltonaustin.com/js/highlight.min.js"></script>
+        <script src="http://localhost:1313/js/jquery-3.3.1.min.js"></script>
+<script src="http://localhost:1313/js/main.js"></script>
+<script src="http://localhost:1313/js/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
 
 
 
   
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-164961268-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
 
 
 

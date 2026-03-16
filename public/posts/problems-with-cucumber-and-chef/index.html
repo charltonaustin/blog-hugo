@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
+	<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.111.3">
+		<meta name="generator" content="Hugo 0.157.0">
 		<title>Problems With Cucumber And Chef &middot; Charlton Austin</title>
-		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
-		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
-		<link rel="stylesheet" href="https://charltonaustin.com/css/highlight.css">
+		<link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico">
+		<link rel="stylesheet" href="http://localhost:1313/css/style.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/highlight.css">
 
 		
-		<link rel="stylesheet" href="https://charltonaustin.com/css/font-awesome.min.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/font-awesome.min.css">
 		
 
 		
-		<link href="https://charltonaustin.com/index.xml" rel="alternate" type="application/rss+xml" title="Charlton Austin" />
+		<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="Charlton Austin" />
 		
 
 		
@@ -28,16 +28,16 @@
        <nav class="main-nav">
 	
 	
-		<a href='https://charltonaustin.com/'> <span class="arrow">←</span>Home</a>
+		<a href='http://localhost:1313/'> <span class="arrow">←</span>Home</a>
 	
-	<a href='https://charltonaustin.com/posts'>Archive</a>
-	<a href='https://charltonaustin.com/tags'>Tags</a>
-	<a href='https://charltonaustin.com/about'>About</a>
+	<a href='http://localhost:1313/posts'>Archive</a>
+	<a href='http://localhost:1313/tags'>Tags</a>
+	<a href='http://localhost:1313/about'>About</a>
 
 	
 
 	
-	<a class="cta" href="https://charltonaustin.com/index.xml">Subscribe</a>
+	<a class="cta" href="http://localhost:1313/index.xml">Subscribe</a>
 	
 </nav>
 
@@ -56,7 +56,7 @@
                       
                       
                           
-                              <a href="https://charltonaustin.com/tags/devops">devops</a>
+                              <a href="http://localhost:1313/tags/devops">devops</a>
                           
                       
                       
@@ -73,9 +73,9 @@
                 <section id="post-body">
                     <p>So I&rsquo;ve been working on getting some cucumber functional tests to run on a remote server lately and had tons of problems. The setup included using Electric Commander to run a gradle task, which in turn ran cucumber using jruby. It was lots of fun. Let me say.</p>
 <p>This post is basically because cucumber put out a misleading &ldquo;error&rdquo; which when I searched google I couldn&rsquo;t get any help.  So for anyone else who finds themselves in some similar situation. Even if there is only one of you. I hope it helps. So this is what gradle was actually running.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>jruby -S cucumber -v -t @api -f html -o/path/to/report/report.html
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>jruby -S cucumber -v -t @api -f html -o/path/to/report/report.html
 </span></span></code></pre></div><p>Which was giving me the output</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Failed to load <span style="font-style:italic">&#39;yml&#39;</span> programming language <span style="font-weight:bold">for</span> file support/data/ap_atom_success.yml: 
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Failed to load <span style="font-style:italic">&#39;yml&#39;</span> programming language <span style="font-weight:bold">for</span> file support/data/ap_atom_success.yml: 
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>no such file to load -- cucumber/yml_support/yml_language * support/.../*.yml [NOT SUPPORTED]
 </span></span><span style="display:flex;"><span>
@@ -86,14 +86,14 @@
 </span></span><span style="display:flex;"><span>* support/data/.../*.json [NOT SUPPORTED]
 </span></span></code></pre></div><p>All of this of course was with an exit value of 1.</p>
 <p>This of course left me scratching my head. I assumed that my tests weren&rsquo;t getting run. And that the failure was because I couldn&rsquo;t load &lsquo;yml&rsquo; or &lsquo;json&rsquo; programming language.  After a couple of searches on the internet I couldn&rsquo;t find anything useful.  So I left it for a bit and started asking around.  It turns out this has nothing to do with my failure. After looking in the report.html I saw that I there was actually a functional test failing and that despite the misleading cucumber output nothing was wrong with my cucumber run at all. I was getting the message because I was using -v. I&rsquo;m not sure why -v would give that output.  According to cucumber &ndash;help verbose is supposed to show the files and features loaded. In any case. I switched gradle command to actually execute.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>jruby -S cucumber -f pretty -t @api -f html -o/path/to/report/report.html
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>jruby -S cucumber -f pretty -t @api -f html -o/path/to/report/report.html
 </span></span></code></pre></div><p>Which put out the failing test to the console (because I added -f pretty) as well as the report and got rid of the misleading error message (because I removed the -v).  Again I know this was just a silly problem, but that&rsquo;s why I made this post. I hope no one has to go through the pain I did ever again.</p>
 
                 </section>
             </article>
 
             
-                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2fproblems-with-cucumber-and-chef%2f - Problems%20With%20Cucumber%20And%20Chef by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2flocalhost%3a1313%2fposts%2fproblems-with-cucumber-and-chef%2f - Problems%20With%20Cucumber%20And%20Chef by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -113,14 +113,18 @@
     
         <div id="social">
 
-	
-	
-    <a class="symbol" href="https://www.github.com/charltonaustin">
-        <i class="fa fa-github-square"></i>
+
+    
+    <a class="symbol" href="https://github.com/charltonaustin/">
+        <i class="fa fa-github fa-2x"></i>
     </a>
     
-    <a class="symbol" href="https://www.twitter.com/charltonaustin">
-        <i class="fa fa-twitter-square"></i>
+    <a class="symbol" href="https://gitlab.com/charlie_tuesday_company/">
+        <i class="fa fa-gitlab fa-2x"></i>
+    </a>
+    
+    <a class="symbol" href="https://twitter.com/charltonaustin/">
+        <i class="fa fa-twitter fa-2x"></i>
     </a>
     
 
@@ -130,7 +134,7 @@
     
     <p class="small">
     
-       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2026 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -140,27 +144,15 @@
 
         </section>
 
-        <script src="https://charltonaustin.com/js/jquery-3.3.1.min.js"></script>
-<script src="https://charltonaustin.com/js/main.js"></script>
-<script src="https://charltonaustin.com/js/highlight.min.js"></script>
+        <script src="http://localhost:1313/js/jquery-3.3.1.min.js"></script>
+<script src="http://localhost:1313/js/main.js"></script>
+<script src="http://localhost:1313/js/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
 
 
 
   
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-164961268-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
 
 
 

@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>scaling on Charlton Austin</title>
-    <link>https://charltonaustin.com/tags/scaling/</link>
-    <description>Recent content in scaling on Charlton Austin</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Scaling on Charlton Austin</title>
+    <link>http://localhost:1313/tags/scaling/</link>
+    <description>Recent content in Scaling on Charlton Austin</description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 10 Dec 2018 09:03:54 -0400</lastBuildDate><atom:link href="https://charltonaustin.com/tags/scaling/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 10 Dec 2018 09:03:54 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/scaling/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Election Results 2018</title>
-      <link>https://charltonaustin.com/posts/election-results-2018/</link>
+      <link>http://localhost:1313/posts/election-results-2018/</link>
       <pubDate>Mon, 10 Dec 2018 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/posts/election-results-2018/</guid>
-      <description>Election 2018 The Tuesday Company had the honor to work on many races over the midterm elections. The team worked incredibly hard and managed to help in over 118 different races. We had a chance to scale our technology on a national level and managed to have no production issues despite having an large magnitude of increased traffic. We also learned some valuable lessons about what it means for a team to grow; both in the number of developers and in the number of users.</description>
+      <guid>http://localhost:1313/posts/election-results-2018/</guid>
+      <description>&lt;h2 id=&#34;election-2018&#34;&gt;Election 2018&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.tuesdaycompany.com/&#34;&gt;The Tuesday Company&lt;/a&gt; had the honor to work on many races over the &lt;a href=&#34;https://www.tuesdaycompany.com/midterms/&#34;&gt;midterm elections&lt;/a&gt;.&#xA;The team worked incredibly hard and managed to help in over 118 different races.&#xA;We had a chance to scale our technology on a national level and managed to have no production issues despite having an large magnitude of increased traffic.&#xA;We also learned some valuable lessons about what it means for a team to grow; both in the number of developers and in the number of users.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

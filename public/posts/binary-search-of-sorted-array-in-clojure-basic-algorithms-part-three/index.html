@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
+	<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<meta name="author" content="Charlton Austin">
 		<meta name="description" content="Charlton Austin&#39;s personal website">
-		<meta name="generator" content="Hugo 0.111.3">
+		<meta name="generator" content="Hugo 0.157.0">
 		<title>Binary Search Of Sorted Array In Clojure Basic Algorithms Part Three &middot; Charlton Austin</title>
-		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
-		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
-		<link rel="stylesheet" href="https://charltonaustin.com/css/highlight.css">
+		<link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico">
+		<link rel="stylesheet" href="http://localhost:1313/css/style.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/highlight.css">
 
 		
-		<link rel="stylesheet" href="https://charltonaustin.com/css/font-awesome.min.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/font-awesome.min.css">
 		
 
 		
-		<link href="https://charltonaustin.com/index.xml" rel="alternate" type="application/rss+xml" title="Charlton Austin" />
+		<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="Charlton Austin" />
 		
 
 		
@@ -28,16 +28,16 @@
        <nav class="main-nav">
 	
 	
-		<a href='https://charltonaustin.com/'> <span class="arrow">←</span>Home</a>
+		<a href='http://localhost:1313/'> <span class="arrow">←</span>Home</a>
 	
-	<a href='https://charltonaustin.com/posts'>Archive</a>
-	<a href='https://charltonaustin.com/tags'>Tags</a>
-	<a href='https://charltonaustin.com/about'>About</a>
+	<a href='http://localhost:1313/posts'>Archive</a>
+	<a href='http://localhost:1313/tags'>Tags</a>
+	<a href='http://localhost:1313/about'>About</a>
 
 	
 
 	
-	<a class="cta" href="https://charltonaustin.com/index.xml">Subscribe</a>
+	<a class="cta" href="http://localhost:1313/index.xml">Subscribe</a>
 	
 </nav>
 
@@ -56,11 +56,11 @@
                       
                       
                           
-                              <a href="https://charltonaustin.com/tags/clojure">clojure</a>
+                              <a href="http://localhost:1313/tags/clojure">clojure</a>
                           
-                              <a href="https://charltonaustin.com/tags/development">development</a>
+                              <a href="http://localhost:1313/tags/development">development</a>
                           
-                              <a href="https://charltonaustin.com/tags/algorithms">algorithms</a>
+                              <a href="http://localhost:1313/tags/algorithms">algorithms</a>
                           
                       
                       
@@ -88,7 +88,7 @@
 <p>Find an element in a sorted array using  binary search</p>
 <h3 id="the-solution">The solution</h3>
 <p>The solution is pretty straight forward. I added in some printlns to get a sense of how we drill down in the recursion to find the element.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="font-weight:bold">defn </span>binary-search [v value]
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="font-weight:bold">defn </span>binary-search [v value]
 </span></span><span style="display:flex;"><span>  (<span style="font-weight:bold">loop </span>[low 0 high (dec (count v))
 </span></span><span style="display:flex;"><span>         depth 0]
 </span></span><span style="display:flex;"><span>    (<span style="font-weight:bold">let </span>[half-way (quot (+ high low)  2)]
@@ -105,13 +105,13 @@
 </span></span><span style="display:flex;"><span>                (recur (inc middle) high (inc depth))
 </span></span><span style="display:flex;"><span>                (recur low middle (inc depth)))))))))
 </span></span></code></pre></div><p>You can call the function like this:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(binary-search (vec (range 0 10)) 1000)
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(binary-search (vec (range 0 10)) 1000)
 </span></span></code></pre></div><p>Dialing up the range you can see how many steps it takes to get to the value.</p>
 <p>There&rsquo;s also a java implementation of binary search.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>java.util.Collections.binarySearch(List&lt;T&gt; list, T key, Comparator&lt;? <span style="font-weight:bold">super</span> T&gt; c).
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>java.util.Collections.binarySearch(List&lt;T&gt; list, T key, Comparator&lt;? <span style="font-weight:bold">super</span> T&gt; c).
 </span></span></code></pre></div><p>I decided to see compare the two implementations with a variety of elements in the collection while, looking for a random element. I took the average time over 100,000 runs to see how different the two implementations did.</p>
 <p>The two implementations that I ran were.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="font-weight:bold">defn </span>binary-search [v value]
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="font-weight:bold">defn </span>binary-search [v value]
 </span></span><span style="display:flex;"><span>  (<span style="font-weight:bold">loop </span>[low 0 high (dec (count v))
 </span></span><span style="display:flex;"><span>         depth 0]
 </span></span><span style="display:flex;"><span>    (<span style="font-weight:bold">let </span>[half-way (quot (+ high low)  2)]
@@ -124,19 +124,19 @@
 </span></span><span style="display:flex;"><span>            (recur (inc middle) high (inc depth))
 </span></span><span style="display:flex;"><span>            (recur low middle (inc depth))))))))
 </span></span></code></pre></div><p>vs</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="font-weight:bold">defn </span>java-binary-search [v value]
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="font-weight:bold">defn </span>java-binary-search [v value]
 </span></span><span style="display:flex;"><span>  (Collections/binarySearch v value compare))
 </span></span></code></pre></div><p>For 1000000 elements in the array using java-binary-search I got.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>{<span style="font-style:italic">:average</span> 30.04732094221115, <span style="font-style:italic">:std-deviation</span> 9.367210018023908}
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>{<span style="font-style:italic">:average</span> 30.04732094221115, <span style="font-style:italic">:std-deviation</span> 9.367210018023908}
 </span></span></code></pre></div><p>For 1000000 element in the array using binary-search I got.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>{<span style="font-style:italic">:average</span> 29.451808820724487, <span style="font-style:italic">:std-deviation</span> 9.199826118870515}
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>{<span style="font-style:italic">:average</span> 29.451808820724487, <span style="font-style:italic">:std-deviation</span> 9.199826118870515}
 </span></span></code></pre></div><p>Insanely they were basically the same. It took about 5 mins to get the results back for 10,000 runs. So I decided to dial up the number of elements to 10,000,000 and reduce the number of runs to 100.</p>
 <p>For java-binary-search I got</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>{<span style="font-style:italic">:average</span> 870.9942288208008, <span style="font-style:italic">:std-deviation</span> 705.2356880437546}
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>{<span style="font-style:italic">:average</span> 870.9942288208008, <span style="font-style:italic">:std-deviation</span> 705.2356880437546}
 </span></span></code></pre></div><p>For binary-search I got</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>{<span style="font-style:italic">:average</span> 728.1910227966308, <span style="font-style:italic">:std-deviation</span> 441.7981992776274}
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>{<span style="font-style:italic">:average</span> 728.1910227966308, <span style="font-style:italic">:std-deviation</span> 441.7981992776274}
 </span></span></code></pre></div><p>There is some difference here. The standard deviations show that java-binary-search has a slightly wider spread, which means it could be faster in some cases with some outliers as compared to binary search. Since I didn&rsquo;t I decided to look at the implementation of binarySearch within Java itself. For the record here it is.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">private</span> <span style="font-weight:bold">static</span> &lt;T&gt; <span style="">int</span> indexedBinarySearch(List&lt;? <span style="font-weight:bold">extends</span> T&gt; l, T key, Comparator&lt;? <span style="font-weight:bold">super</span> T&gt; c) {
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">private</span> <span style="font-weight:bold">static</span> &lt;T&gt; <span style="">int</span> indexedBinarySearch(List&lt;? <span style="font-weight:bold">extends</span> T&gt; l, T key, Comparator&lt;? <span style="font-weight:bold">super</span> T&gt; c) {
 </span></span><span style="display:flex;"><span>    <span style="">int</span> low = 0;
 </span></span><span style="display:flex;"><span>    <span style="">int</span> high = l.size()-1;
 </span></span><span style="display:flex;"><span>    <span style="font-weight:bold">while</span> (low &lt;= high) {
@@ -148,18 +148,18 @@
 </span></span><span style="display:flex;"><span>        <span style="font-weight:bold">else</span> <span style="font-weight:bold">if</span> (cmp &gt; 0)
 </span></span><span style="display:flex;"><span>            high = mid - 1;
 </span></span><span style="display:flex;"><span>        <span style="font-weight:bold">else</span>
-</span></span><span style="display:flex;"><span>            <span style="font-weight:bold">return</span> mid; <span style="font-style:italic">// key found
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>    }
+</span></span><span style="display:flex;"><span>            <span style="font-weight:bold">return</span> mid; <span style="font-style:italic">// key found</span>
+</span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> -(low + 1);  <span style="font-style:italic">// key not found
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>}
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> -(low + 1);  <span style="font-style:italic">// key not found</span>
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>This is actually the indexed version of binary search, but since we are using a vector/array I figured this would be the one that was getting used from Clojure (though I didn&rsquo;t confirm this). I&rsquo;m not sure why the two implementations are so close together. I would love to see the byte code produced by each invocation. Maybe in a future post I will do exactly that. For now this will have to be good.</p>
 
                 </section>
             </article>
 
             
-                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2fbinary-search-of-sorted-array-in-clojure-basic-algorithms-part-three%2f - Binary%20Search%20Of%20Sorted%20Array%20In%20Clojure%20Basic%20Algorithms%20Part%20Three by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2flocalhost%3a1313%2fposts%2fbinary-search-of-sorted-array-in-clojure-basic-algorithms-part-three%2f - Binary%20Search%20Of%20Sorted%20Array%20In%20Clojure%20Basic%20Algorithms%20Part%20Three by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -179,14 +179,18 @@
     
         <div id="social">
 
-	
-	
-    <a class="symbol" href="https://www.github.com/charltonaustin">
-        <i class="fa fa-github-square"></i>
+
+    
+    <a class="symbol" href="https://github.com/charltonaustin/">
+        <i class="fa fa-github fa-2x"></i>
     </a>
     
-    <a class="symbol" href="https://www.twitter.com/charltonaustin">
-        <i class="fa fa-twitter-square"></i>
+    <a class="symbol" href="https://gitlab.com/charlie_tuesday_company/">
+        <i class="fa fa-gitlab fa-2x"></i>
+    </a>
+    
+    <a class="symbol" href="https://twitter.com/charltonaustin/">
+        <i class="fa fa-twitter fa-2x"></i>
     </a>
     
 
@@ -196,7 +200,7 @@
     
     <p class="small">
     
-       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+       © Copyright 2026 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
     
     </p>
     <p class="small">
@@ -206,27 +210,15 @@
 
         </section>
 
-        <script src="https://charltonaustin.com/js/jquery-3.3.1.min.js"></script>
-<script src="https://charltonaustin.com/js/main.js"></script>
-<script src="https://charltonaustin.com/js/highlight.min.js"></script>
+        <script src="http://localhost:1313/js/jquery-3.3.1.min.js"></script>
+<script src="http://localhost:1313/js/main.js"></script>
+<script src="http://localhost:1313/js/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
 
 
 
   
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-164961268-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
 
 
 

@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>permutations on Charlton Austin</title>
-    <link>https://charltonaustin.com/tags/permutations/</link>
-    <description>Recent content in permutations on Charlton Austin</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Permutations on Charlton Austin</title>
+    <link>http://localhost:1313/tags/permutations/</link>
+    <description>Recent content in Permutations on Charlton Austin</description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 27 Jul 2016 09:03:54 -0400</lastBuildDate><atom:link href="https://charltonaustin.com/tags/permutations/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Jul 2016 09:03:54 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/permutations/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Permutations Of A String In Clojure Basic Algorithms Part Two</title>
-      <link>https://charltonaustin.com/posts/permutations-of-a-string-in-clojure-basic-algorithms-part-two/</link>
+      <link>http://localhost:1313/posts/permutations-of-a-string-in-clojure-basic-algorithms-part-two/</link>
       <pubDate>Wed, 27 Jul 2016 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/posts/permutations-of-a-string-in-clojure-basic-algorithms-part-two/</guid>
-      <description>The problem Find all permutations of a string
-The solution My first solution is comes from Java and is a recursive solution.
-(defn- perms [pre v] (let [n (count v)] (if (zero? n) nil (loop [i 0] (if (&amp;lt; i n) (do (perms (conj pre (nth v i)) (into [] (concat(first (split-at i v)) (second (split-at (inc i) v))))) (recur (inc i))) nil))))) It has some problems. It is recursive so vulnerable to stack overflow errors, but more than that it is pretty slow and not very idiomatic Clojure.</description>
+      <guid>http://localhost:1313/posts/permutations-of-a-string-in-clojure-basic-algorithms-part-two/</guid>
+      <description>&lt;h3 id=&#34;the-problem&#34;&gt;The problem&lt;/h3&gt;&#xA;&lt;p&gt;Find all permutations of a string&lt;/p&gt;&#xA;&lt;h3 id=&#34;the-solution&#34;&gt;The solution&lt;/h3&gt;&#xA;&lt;p&gt;My first solution is comes from Java and is a recursive solution.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(&lt;span style=&#34;font-weight:bold&#34;&gt;defn- &lt;/span&gt;perms [pre v]&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  (&lt;span style=&#34;font-weight:bold&#34;&gt;let &lt;/span&gt;[n (count v)]&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    (&lt;span style=&#34;font-weight:bold&#34;&gt;if &lt;/span&gt;(zero? n)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      nil      &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      (&lt;span style=&#34;font-weight:bold&#34;&gt;loop &lt;/span&gt;[i 0]&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        (&lt;span style=&#34;font-weight:bold&#34;&gt;if &lt;/span&gt;(&amp;lt; i n)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          (&lt;span style=&#34;font-weight:bold&#34;&gt;do &lt;/span&gt;(perms (conj pre (nth v i))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;              (into [] (concat(first (split-at i v))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                              (second (split-at (inc i) v)))))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            (recur (inc i)))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          nil)))))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It has some problems. It is recursive so vulnerable to stack overflow errors, but more than that it is pretty slow and not very idiomatic Clojure. So I went in search of a better more idiomatic implementation of this problem and I found this.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

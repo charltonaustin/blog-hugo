@@ -2,136 +2,109 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Charlton Austin</title>
-    <link>https://charltonaustin.com/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on Charlton Austin</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 17 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://charltonaustin.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 May 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>self-awareness</title>
-      <link>https://charltonaustin.com/categories/self-awareness/</link>
+      <title>Self-Awareness</title>
+      <link>http://localhost:1313/categories/self-awareness/</link>
       <pubDate>Wed, 17 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/categories/self-awareness/</guid>
+      <guid>http://localhost:1313/categories/self-awareness/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>self-improvement</title>
-      <link>https://charltonaustin.com/categories/self-improvement/</link>
+      <title>Self-Improvement</title>
+      <link>http://localhost:1313/categories/self-improvement/</link>
       <pubDate>Wed, 17 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/categories/self-improvement/</guid>
+      <guid>http://localhost:1313/categories/self-improvement/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>management</title>
-      <link>https://charltonaustin.com/categories/management/</link>
+      <title>Management</title>
+      <link>http://localhost:1313/categories/management/</link>
       <pubDate>Tue, 09 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/categories/management/</guid>
+      <guid>http://localhost:1313/categories/management/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>communication</title>
-      <link>https://charltonaustin.com/categories/communication/</link>
+      <title>Communication</title>
+      <link>http://localhost:1313/categories/communication/</link>
       <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/categories/communication/</guid>
+      <guid>http://localhost:1313/categories/communication/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>start-ups</title>
-      <link>https://charltonaustin.com/categories/start-ups/</link>
+      <title>Start-Ups</title>
+      <link>http://localhost:1313/categories/start-ups/</link>
       <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/categories/start-ups/</guid>
+      <guid>http://localhost:1313/categories/start-ups/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>meetings</title>
-      <link>https://charltonaustin.com/categories/meetings/</link>
+      <title>Meetings</title>
+      <link>http://localhost:1313/categories/meetings/</link>
       <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/categories/meetings/</guid>
+      <guid>http://localhost:1313/categories/meetings/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>remote teams</title>
-      <link>https://charltonaustin.com/categories/remote-teams/</link>
+      <title>Remote Teams</title>
+      <link>http://localhost:1313/categories/remote-teams/</link>
       <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/categories/remote-teams/</guid>
+      <guid>http://localhost:1313/categories/remote-teams/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>time zones</title>
-      <link>https://charltonaustin.com/categories/time-zones/</link>
+      <title>Time Zones</title>
+      <link>http://localhost:1313/categories/time-zones/</link>
       <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/categories/time-zones/</guid>
+      <guid>http://localhost:1313/categories/time-zones/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>remote-work</title>
-      <link>https://charltonaustin.com/categories/remote-work/</link>
+      <title>Remote-Work</title>
+      <link>http://localhost:1313/categories/remote-work/</link>
       <pubDate>Tue, 18 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/categories/remote-work/</guid>
+      <guid>http://localhost:1313/categories/remote-work/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>virtual-teams</title>
-      <link>https://charltonaustin.com/categories/virtual-teams/</link>
+      <title>Virtual-Teams</title>
+      <link>http://localhost:1313/categories/virtual-teams/</link>
       <pubDate>Tue, 11 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/categories/virtual-teams/</guid>
+      <guid>http://localhost:1313/categories/virtual-teams/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>empathy</title>
-      <link>https://charltonaustin.com/categories/empathy/</link>
+      <title>Empathy</title>
+      <link>http://localhost:1313/categories/empathy/</link>
       <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/categories/empathy/</guid>
+      <guid>http://localhost:1313/categories/empathy/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>leadership</title>
-      <link>https://charltonaustin.com/categories/leadership/</link>
+      <title>Leadership</title>
+      <link>http://localhost:1313/categories/leadership/</link>
       <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/categories/leadership/</guid>
+      <guid>http://localhost:1313/categories/leadership/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>python</title>
-      <link>https://charltonaustin.com/categories/python/</link>
+      <title>Python</title>
+      <link>http://localhost:1313/categories/python/</link>
       <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/categories/python/</guid>
+      <guid>http://localhost:1313/categories/python/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Development</title>
-      <link>https://charltonaustin.com/categories/development/</link>
+      <link>http://localhost:1313/categories/development/</link>
       <pubDate>Wed, 25 Mar 2020 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/categories/development/</guid>
+      <guid>http://localhost:1313/categories/development/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

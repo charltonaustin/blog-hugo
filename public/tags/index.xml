@@ -2,523 +2,410 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Charlton Austin</title>
-    <link>https://charltonaustin.com/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Charlton Austin</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 17 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://charltonaustin.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 May 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>leadership</title>
-      <link>https://charltonaustin.com/tags/leadership/</link>
+      <title>Leadership</title>
+      <link>http://localhost:1313/tags/leadership/</link>
       <pubDate>Wed, 17 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/leadership/</guid>
+      <guid>http://localhost:1313/tags/leadership/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>personal growth</title>
-      <link>https://charltonaustin.com/tags/personal-growth/</link>
+      <title>Personal Growth</title>
+      <link>http://localhost:1313/tags/personal-growth/</link>
       <pubDate>Wed, 17 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/personal-growth/</guid>
+      <guid>http://localhost:1313/tags/personal-growth/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>books</title>
-      <link>https://charltonaustin.com/tags/books/</link>
+      <title>Books</title>
+      <link>http://localhost:1313/tags/books/</link>
       <pubDate>Tue, 09 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/books/</guid>
+      <guid>http://localhost:1313/tags/books/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>entrepreneurship</title>
-      <link>https://charltonaustin.com/tags/entrepreneurship/</link>
+      <title>Entrepreneurship</title>
+      <link>http://localhost:1313/tags/entrepreneurship/</link>
       <pubDate>Tue, 09 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/entrepreneurship/</guid>
+      <guid>http://localhost:1313/tags/entrepreneurship/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>management</title>
-      <link>https://charltonaustin.com/tags/management/</link>
+      <title>Management</title>
+      <link>http://localhost:1313/tags/management/</link>
       <pubDate>Tue, 09 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/management/</guid>
+      <guid>http://localhost:1313/tags/management/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>communication</title>
-      <link>https://charltonaustin.com/tags/communication/</link>
+      <title>Communication</title>
+      <link>http://localhost:1313/tags/communication/</link>
       <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/communication/</guid>
+      <guid>http://localhost:1313/tags/communication/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>start-ups</title>
-      <link>https://charltonaustin.com/tags/start-ups/</link>
+      <title>Start-Ups</title>
+      <link>http://localhost:1313/tags/start-ups/</link>
       <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/start-ups/</guid>
+      <guid>http://localhost:1313/tags/start-ups/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>meetings</title>
-      <link>https://charltonaustin.com/tags/meetings/</link>
+      <title>Meetings</title>
+      <link>http://localhost:1313/tags/meetings/</link>
       <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/meetings/</guid>
+      <guid>http://localhost:1313/tags/meetings/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>remote teams</title>
-      <link>https://charltonaustin.com/tags/remote-teams/</link>
+      <title>Remote Teams</title>
+      <link>http://localhost:1313/tags/remote-teams/</link>
       <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/remote-teams/</guid>
+      <guid>http://localhost:1313/tags/remote-teams/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>time zones</title>
-      <link>https://charltonaustin.com/tags/time-zones/</link>
+      <title>Time Zones</title>
+      <link>http://localhost:1313/tags/time-zones/</link>
       <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/time-zones/</guid>
+      <guid>http://localhost:1313/tags/time-zones/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>remote-work</title>
-      <link>https://charltonaustin.com/tags/remote-work/</link>
+      <title>Remote-Work</title>
+      <link>http://localhost:1313/tags/remote-work/</link>
       <pubDate>Tue, 18 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/remote-work/</guid>
+      <guid>http://localhost:1313/tags/remote-work/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>virtual-teams</title>
-      <link>https://charltonaustin.com/tags/virtual-teams/</link>
+      <title>Virtual-Teams</title>
+      <link>http://localhost:1313/tags/virtual-teams/</link>
       <pubDate>Tue, 11 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/virtual-teams/</guid>
+      <guid>http://localhost:1313/tags/virtual-teams/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>empathy</title>
-      <link>https://charltonaustin.com/tags/empathy/</link>
+      <title>Empathy</title>
+      <link>http://localhost:1313/tags/empathy/</link>
       <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/empathy/</guid>
+      <guid>http://localhost:1313/tags/empathy/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>1-1</title>
-      <link>https://charltonaustin.com/tags/1-1/</link>
+      <link>http://localhost:1313/tags/1-1/</link>
       <pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/1-1/</guid>
+      <guid>http://localhost:1313/tags/1-1/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>failure</title>
-      <link>https://charltonaustin.com/tags/failure/</link>
+      <title>Failure</title>
+      <link>http://localhost:1313/tags/failure/</link>
       <pubDate>Tue, 21 Mar 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/failure/</guid>
+      <guid>http://localhost:1313/tags/failure/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>learning</title>
-      <link>https://charltonaustin.com/tags/learning/</link>
+      <title>Learning</title>
+      <link>http://localhost:1313/tags/learning/</link>
       <pubDate>Tue, 21 Mar 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/learning/</guid>
+      <guid>http://localhost:1313/tags/learning/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>coding problems</title>
-      <link>https://charltonaustin.com/tags/coding-problems/</link>
+      <title>Coding Problems</title>
+      <link>http://localhost:1313/tags/coding-problems/</link>
       <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/coding-problems/</guid>
+      <guid>http://localhost:1313/tags/coding-problems/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>development</title>
-      <link>https://charltonaustin.com/tags/development/</link>
+      <title>Development</title>
+      <link>http://localhost:1313/tags/development/</link>
       <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/development/</guid>
+      <guid>http://localhost:1313/tags/development/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>python</title>
-      <link>https://charltonaustin.com/tags/python/</link>
+      <title>Python</title>
+      <link>http://localhost:1313/tags/python/</link>
       <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/python/</guid>
+      <guid>http://localhost:1313/tags/python/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>pomodoro</title>
-      <link>https://charltonaustin.com/tags/pomodoro/</link>
+      <title>Pomodoro</title>
+      <link>http://localhost:1313/tags/pomodoro/</link>
       <pubDate>Mon, 27 Apr 2020 07:00:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/pomodoro/</guid>
+      <guid>http://localhost:1313/tags/pomodoro/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>databases</title>
-      <link>https://charltonaustin.com/tags/databases/</link>
+      <title>Databases</title>
+      <link>http://localhost:1313/tags/databases/</link>
       <pubDate>Wed, 25 Mar 2020 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/databases/</guid>
+      <guid>http://localhost:1313/tags/databases/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>automation</title>
-      <link>https://charltonaustin.com/tags/automation/</link>
+      <title>Automation</title>
+      <link>http://localhost:1313/tags/automation/</link>
       <pubDate>Wed, 26 Feb 2020 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/automation/</guid>
+      <guid>http://localhost:1313/tags/automation/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>testing</title>
-      <link>https://charltonaustin.com/tags/testing/</link>
+      <title>Testing</title>
+      <link>http://localhost:1313/tags/testing/</link>
       <pubDate>Tue, 14 Jan 2020 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/testing/</guid>
+      <guid>http://localhost:1313/tags/testing/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>hiring</title>
-      <link>https://charltonaustin.com/tags/hiring/</link>
+      <title>Hiring</title>
+      <link>http://localhost:1313/tags/hiring/</link>
       <pubDate>Tue, 10 Dec 2019 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/hiring/</guid>
+      <guid>http://localhost:1313/tags/hiring/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>algorithms</title>
-      <link>https://charltonaustin.com/tags/algorithms/</link>
+      <title>Algorithms</title>
+      <link>http://localhost:1313/tags/algorithms/</link>
       <pubDate>Fri, 15 Nov 2019 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/algorithms/</guid>
+      <guid>http://localhost:1313/tags/algorithms/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>javascript</title>
-      <link>https://charltonaustin.com/tags/javascript/</link>
+      <title>Javascript</title>
+      <link>http://localhost:1313/tags/javascript/</link>
       <pubDate>Fri, 15 Nov 2019 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/javascript/</guid>
+      <guid>http://localhost:1313/tags/javascript/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>toy problems</title>
-      <link>https://charltonaustin.com/tags/toy-problems/</link>
+      <title>Toy Problems</title>
+      <link>http://localhost:1313/tags/toy-problems/</link>
       <pubDate>Fri, 15 Nov 2019 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/toy-problems/</guid>
+      <guid>http://localhost:1313/tags/toy-problems/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>checklists</title>
-      <link>https://charltonaustin.com/tags/checklists/</link>
+      <title>Checklists</title>
+      <link>http://localhost:1313/tags/checklists/</link>
       <pubDate>Mon, 09 Sep 2019 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/checklists/</guid>
+      <guid>http://localhost:1313/tags/checklists/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>euler</title>
-      <link>https://charltonaustin.com/tags/euler/</link>
+      <title>Euler</title>
+      <link>http://localhost:1313/tags/euler/</link>
       <pubDate>Mon, 19 Aug 2019 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/euler/</guid>
+      <guid>http://localhost:1313/tags/euler/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>golang</title>
-      <link>https://charltonaustin.com/tags/golang/</link>
+      <title>Golang</title>
+      <link>http://localhost:1313/tags/golang/</link>
       <pubDate>Wed, 01 May 2019 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/golang/</guid>
+      <guid>http://localhost:1313/tags/golang/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>prior art</title>
-      <link>https://charltonaustin.com/tags/prior-art/</link>
+      <title>Prior Art</title>
+      <link>http://localhost:1313/tags/prior-art/</link>
       <pubDate>Mon, 18 Feb 2019 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/prior-art/</guid>
+      <guid>http://localhost:1313/tags/prior-art/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>postmortems</title>
-      <link>https://charltonaustin.com/tags/postmortems/</link>
+      <title>Postmortems</title>
+      <link>http://localhost:1313/tags/postmortems/</link>
       <pubDate>Mon, 14 Jan 2019 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/postmortems/</guid>
+      <guid>http://localhost:1313/tags/postmortems/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>scaling</title>
-      <link>https://charltonaustin.com/tags/scaling/</link>
+      <title>Scaling</title>
+      <link>http://localhost:1313/tags/scaling/</link>
       <pubDate>Mon, 10 Dec 2018 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/scaling/</guid>
+      <guid>http://localhost:1313/tags/scaling/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Tuesday Company</title>
-      <link>https://charltonaustin.com/tags/tuesday-company/</link>
+      <link>http://localhost:1313/tags/tuesday-company/</link>
       <pubDate>Mon, 10 Dec 2018 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/tuesday-company/</guid>
+      <guid>http://localhost:1313/tags/tuesday-company/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>conferences</title>
-      <link>https://charltonaustin.com/tags/conferences/</link>
+      <title>Conferences</title>
+      <link>http://localhost:1313/tags/conferences/</link>
       <pubDate>Wed, 01 Aug 2018 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/conferences/</guid>
+      <guid>http://localhost:1313/tags/conferences/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ethical coding</title>
-      <link>https://charltonaustin.com/tags/ethical-coding/</link>
+      <title>Ethical Coding</title>
+      <link>http://localhost:1313/tags/ethical-coding/</link>
       <pubDate>Mon, 09 Jul 2018 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/ethical-coding/</guid>
+      <guid>http://localhost:1313/tags/ethical-coding/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>team building</title>
-      <link>https://charltonaustin.com/tags/team-building/</link>
+      <title>Team Building</title>
+      <link>http://localhost:1313/tags/team-building/</link>
       <pubDate>Mon, 04 Jun 2018 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/team-building/</guid>
+      <guid>http://localhost:1313/tags/team-building/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>branch by abstraction</title>
-      <link>https://charltonaustin.com/tags/branch-by-abstraction/</link>
+      <title>Branch by Abstraction</title>
+      <link>http://localhost:1313/tags/branch-by-abstraction/</link>
       <pubDate>Mon, 07 May 2018 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/branch-by-abstraction/</guid>
+      <guid>http://localhost:1313/tags/branch-by-abstraction/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>code review</title>
-      <link>https://charltonaustin.com/tags/code-review/</link>
+      <title>Code Review</title>
+      <link>http://localhost:1313/tags/code-review/</link>
       <pubDate>Tue, 27 Mar 2018 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/code-review/</guid>
+      <guid>http://localhost:1313/tags/code-review/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>pairing</title>
-      <link>https://charltonaustin.com/tags/pairing/</link>
+      <title>Pairing</title>
+      <link>http://localhost:1313/tags/pairing/</link>
       <pubDate>Tue, 27 Mar 2018 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/pairing/</guid>
+      <guid>http://localhost:1313/tags/pairing/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>entrepreneur</title>
-      <link>https://charltonaustin.com/tags/entrepreneur/</link>
+      <title>Entrepreneur</title>
+      <link>http://localhost:1313/tags/entrepreneur/</link>
       <pubDate>Mon, 26 Mar 2018 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/entrepreneur/</guid>
+      <guid>http://localhost:1313/tags/entrepreneur/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>devops</title>
-      <link>https://charltonaustin.com/tags/devops/</link>
+      <title>Devops</title>
+      <link>http://localhost:1313/tags/devops/</link>
       <pubDate>Sat, 08 Apr 2017 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/devops/</guid>
+      <guid>http://localhost:1313/tags/devops/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>docker</title>
-      <link>https://charltonaustin.com/tags/docker/</link>
+      <title>Docker</title>
+      <link>http://localhost:1313/tags/docker/</link>
       <pubDate>Sat, 08 Apr 2017 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/docker/</guid>
+      <guid>http://localhost:1313/tags/docker/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>tdd</title>
-      <link>https://charltonaustin.com/tags/tdd/</link>
+      <title>Tdd</title>
+      <link>http://localhost:1313/tags/tdd/</link>
       <pubDate>Mon, 12 Sep 2016 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/tdd/</guid>
+      <guid>http://localhost:1313/tags/tdd/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>showcases</title>
-      <link>https://charltonaustin.com/tags/showcases/</link>
+      <title>Showcases</title>
+      <link>http://localhost:1313/tags/showcases/</link>
       <pubDate>Sat, 27 Aug 2016 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/showcases/</guid>
+      <guid>http://localhost:1313/tags/showcases/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>clojure</title>
-      <link>https://charltonaustin.com/tags/clojure/</link>
+      <title>Clojure</title>
+      <link>http://localhost:1313/tags/clojure/</link>
       <pubDate>Wed, 17 Aug 2016 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/clojure/</guid>
+      <guid>http://localhost:1313/tags/clojure/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>functional programming</title>
-      <link>https://charltonaustin.com/tags/functional-programming/</link>
+      <title>Functional Programming</title>
+      <link>http://localhost:1313/tags/functional-programming/</link>
       <pubDate>Wed, 17 Aug 2016 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/functional-programming/</guid>
+      <guid>http://localhost:1313/tags/functional-programming/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>permutations</title>
-      <link>https://charltonaustin.com/tags/permutations/</link>
+      <title>Permutations</title>
+      <link>http://localhost:1313/tags/permutations/</link>
       <pubDate>Wed, 27 Jul 2016 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/permutations/</guid>
+      <guid>http://localhost:1313/tags/permutations/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>life</title>
-      <link>https://charltonaustin.com/tags/life/</link>
+      <title>Life</title>
+      <link>http://localhost:1313/tags/life/</link>
       <pubDate>Tue, 10 May 2016 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/life/</guid>
+      <guid>http://localhost:1313/tags/life/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>functional</title>
-      <link>https://charltonaustin.com/tags/functional/</link>
+      <title>Functional</title>
+      <link>http://localhost:1313/tags/functional/</link>
       <pubDate>Tue, 26 Apr 2016 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/functional/</guid>
+      <guid>http://localhost:1313/tags/functional/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>top-down</title>
-      <link>https://charltonaustin.com/tags/top-down/</link>
+      <title>Top-Down</title>
+      <link>http://localhost:1313/tags/top-down/</link>
       <pubDate>Tue, 26 Apr 2016 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/top-down/</guid>
+      <guid>http://localhost:1313/tags/top-down/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>haskell</title>
-      <link>https://charltonaustin.com/tags/haskell/</link>
+      <title>Haskell</title>
+      <link>http://localhost:1313/tags/haskell/</link>
       <pubDate>Wed, 20 Apr 2016 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/haskell/</guid>
+      <guid>http://localhost:1313/tags/haskell/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>java</title>
-      <link>https://charltonaustin.com/tags/java/</link>
+      <title>Java</title>
+      <link>http://localhost:1313/tags/java/</link>
       <pubDate>Thu, 03 Mar 2016 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/java/</guid>
+      <guid>http://localhost:1313/tags/java/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>security</title>
-      <link>https://charltonaustin.com/tags/security/</link>
+      <title>Security</title>
+      <link>http://localhost:1313/tags/security/</link>
       <pubDate>Wed, 11 Nov 2015 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/security/</guid>
+      <guid>http://localhost:1313/tags/security/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>multi threaded</title>
-      <link>https://charltonaustin.com/tags/multi-threaded/</link>
+      <title>Multi Threaded</title>
+      <link>http://localhost:1313/tags/multi-threaded/</link>
       <pubDate>Sat, 24 Oct 2015 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/multi-threaded/</guid>
+      <guid>http://localhost:1313/tags/multi-threaded/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>eXtreme programming</title>
-      <link>https://charltonaustin.com/tags/extreme-programming/</link>
+      <title>EXtreme Programming</title>
+      <link>http://localhost:1313/tags/extreme-programming/</link>
       <pubDate>Sat, 26 Sep 2015 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/extreme-programming/</guid>
+      <guid>http://localhost:1313/tags/extreme-programming/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ruby</title>
-      <link>https://charltonaustin.com/tags/ruby/</link>
+      <title>Ruby</title>
+      <link>http://localhost:1313/tags/ruby/</link>
       <pubDate>Sun, 17 Feb 2013 09:03:54 -0400</pubDate>
-      
-      <guid>https://charltonaustin.com/tags/ruby/</guid>
+      <guid>http://localhost:1313/tags/ruby/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>
