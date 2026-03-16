@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Charlton Austin">
+		<meta name="description" content="Charlton Austin&#39;s personal website">
+		<meta name="generator" content="Hugo 0.157.0">
+		<title>Why You Should Emulate Containers in Python &middot; Charlton Austin</title>
+		<link rel="shortcut icon" href="https://charltonaustin.com/images/favicon.ico">
+		<link rel="stylesheet" href="https://charltonaustin.com/css/style.css">
+		<link rel="stylesheet" href="https://charltonaustin.com/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://charltonaustin.com/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://charltonaustin.com/index.xml" rel="alternate" type="application/rss+xml" title="Charlton Austin" />
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://charltonaustin.com/'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://charltonaustin.com/posts'>Archive</a>
+	<a href='https://charltonaustin.com/tags'>Tags</a>
+	<a href='https://charltonaustin.com/about'>About</a>
+
+	
+
+	
+	<a class="cta" href="https://charltonaustin.com/index.xml">Subscribe</a>
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Why You Should Emulate Containers in Python
+                    </h1>
+                    <h2 class="headline">
+                    Aug 13, 2020 00:00
+                    · 478 words
+                    · 3 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://charltonaustin.com/tags/development">development</a>
+                          
+                              <a href="https://charltonaustin.com/tags/python">python</a>
+                          
+                              <a href="https://charltonaustin.com/tags/coding-problems">coding problems</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-problem">The problem</a></li>
+    <li><a href="#the-solution">The solution</a></li>
+  </ul>
+</nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    <h2 id="the-problem">The problem</h2>
+<p>Say that you have a list of items and each item has a price.
+You would like to highlight the item or items that have the lowest price.
+If all of the items are the same price you wouldn&rsquo;t like to highlight any of them.
+We might have something like the following</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="font-weight:bold">import</span> <span style="font-weight:bold">sys</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">class</span> <span style="font-weight:bold">Item</span>:
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">def</span> __init__(self, name, price):
+</span></span><span style="display:flex;"><span>    self.name = name
+</span></span><span style="display:flex;"><span>    self.price = price
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>items = [Item(<span style="font-style:italic">&#34;1&#34;</span>, 1), Item(<span style="font-style:italic">&#34;2&#34;</span>, 2), ...]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>lowest_price = sys.float_info.max
+</span></span><span style="display:flex;"><span>all_equal = <span style="font-weight:bold">True</span>
+</span></span><span style="display:flex;"><span>last_price = items[0]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">for</span> item <span style="font-weight:bold">in</span> items:
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">if</span> item.price != last_price:
+</span></span><span style="display:flex;"><span>    all_equal = <span style="font-weight:bold">False</span>
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">if</span> item.price &lt; lowest_price
+</span></span><span style="display:flex;"><span>    lowest_price = item.price
+</span></span><span style="display:flex;"><span>  item.last_price = item.price
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>printable_string = <span style="font-style:italic">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">if</span> all_equal:
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">for</span> item <span style="font-weight:bold">in</span> items:
+</span></span><span style="display:flex;"><span>    printable_string += item.name + str(item.price) + <span style="font-style:italic">&#34;</span><span style="font-weight:bold;font-style:italic">\n</span><span style="font-style:italic">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">else</span>:
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">for</span> item <span style="font-weight:bold">in</span> items:
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">if</span> item.price == lowest_price:
+</span></span><span style="display:flex;"><span>      printable_string += <span style="font-style:italic">&#34;**&#34;</span> + item.name + str(item.price()) + <span style="font-style:italic">&#34;**</span><span style="font-weight:bold;font-style:italic">\n</span><span style="font-style:italic">&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">else</span>:
+</span></span><span style="display:flex;"><span>      printable_string += item.name + str(item.price()) + <span style="font-style:italic">&#34;</span><span style="font-weight:bold;font-style:italic">\n</span><span style="font-style:italic">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(printable_string.rstrip(<span style="font-style:italic">&#34;</span><span style="font-weight:bold;font-style:italic">\n</span><span style="font-style:italic">&#34;</span>))
+</span></span></code></pre></div><p>This is fine as long as our list is short.
+Imagine though that our list was incredibly long.
+You might realize that you have to traverse our items list twice.
+The first time when we are finding the smallest price and testing if all prices are the same.
+The second time when we want to print out the items.
+Given a long enough list this would be less than ideal.</p>
+<h2 id="the-solution">The solution</h2>
+<p>One way to solve this problem would be to keep track of this data at list insertion time.
+One way to do that is to emulate a container type.
+It might look something like this.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="font-weight:bold">import</span> <span style="font-weight:bold">sys</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">class</span> <span style="font-weight:bold">Item</span>:
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">def</span> __init__(self, name, price):
+</span></span><span style="display:flex;"><span>    self.name = name
+</span></span><span style="display:flex;"><span>    self.price = price
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">class</span> <span style="font-weight:bold">ItemsIterator</span>:
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">def</span> __init__(self, items):
+</span></span><span style="display:flex;"><span>    self._items = items
+</span></span><span style="display:flex;"><span>    self._index = 0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">def</span> __iter__(self):
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> self
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">def</span> __next__(self):
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">if</span> self._index &lt; len(self._items):
+</span></span><span style="display:flex;"><span>      return_value = self._items[self._index]
+</span></span><span style="display:flex;"><span>      self._index += 1
+</span></span><span style="display:flex;"><span>      <span style="font-weight:bold">return</span> return_value
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">raise</span> <span style="font-weight:bold">StopIteration</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">class</span> <span style="font-weight:bold">Items</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>    self._items = []
+</span></span><span style="display:flex;"><span>    self.lowest_price = sys.float_info.max
+</span></span><span style="display:flex;"><span>    self.all_equal = <span style="font-weight:bold">True</span>
+</span></span><span style="display:flex;"><span>    self.last_price = <span style="font-weight:bold">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">def</span> add_item(self, item):
+</span></span><span style="display:flex;"><span>    current_price = item.price
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">if</span> self.lowest_price &gt; current_price:
+</span></span><span style="display:flex;"><span>      self.lowest_price = current_price
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">if</span> self.last_price <span style="font-weight:bold">is</span> <span style="font-weight:bold">not</span> <span style="font-weight:bold">None</span> <span style="font-weight:bold">and</span> self.last_price != current_price:
+</span></span><span style="display:flex;"><span>      self.all_equal = <span style="font-weight:bold">False</span>
+</span></span><span style="display:flex;"><span>    self.last_price = current_price
+</span></span><span style="display:flex;"><span>    self._items.append(item)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">def</span> __len__(self):
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> len(self._items)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">def</span> __getitem__(self, key):
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> self._items[key]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">def</span> __setitem__(self, key, value):
+</span></span><span style="display:flex;"><span>    self._items[key] = value
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">def</span> __delitem__(self, key):
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">del</span> (self._items[key])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">def</span> __iter__(self):
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> ItemsIterator(self)
+</span></span></code></pre></div><p>Now we can rewrite our printing code to something like the following.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>items = Items()
+</span></span><span style="display:flex;"><span>items.add_item(Item(<span style="font-style:italic">&#34;1&#34;</span>, 1))
+</span></span><span style="display:flex;"><span>items.add_item(Item(<span style="font-style:italic">&#34;2&#34;</span>, 2))
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>printable_string = <span style="font-style:italic">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">if</span> items.all_equal:
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">for</span> item <span style="font-weight:bold">in</span> items:
+</span></span><span style="display:flex;"><span>    printable_string += item.name + str(item.price) + <span style="font-style:italic">&#34;</span><span style="font-weight:bold;font-style:italic">\n</span><span style="font-style:italic">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">else</span>:
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">for</span> item <span style="font-weight:bold">in</span> items:
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">if</span> item.price == items.lowest_price:
+</span></span><span style="display:flex;"><span>      printable_string += <span style="font-style:italic">&#34;**&#34;</span> + item.name + str(item.price()) + <span style="font-style:italic">&#34;**</span><span style="font-weight:bold;font-style:italic">\n</span><span style="font-style:italic">&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">else</span>:
+</span></span><span style="display:flex;"><span>      printable_string += item.name + str(item.price()) + <span style="font-style:italic">&#34;</span><span style="font-weight:bold;font-style:italic">\n</span><span style="font-style:italic">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(printable_string.rstrip(<span style="font-style:italic">&#34;</span><span style="font-weight:bold;font-style:italic">\n</span><span style="font-style:italic">&#34;</span>))
+</span></span></code></pre></div><p>Now we only have to traverse the items container exactly one time.
+Remember never optimize until you have a problem.
+Also you you can read more details about emulating containers <a href="https://docs.python.org/3/reference/datamodel.html#emulating-container-types">here</a>.
+You can read about emulating <a href="https://docs.python.org/3/reference/datamodel.html#emulating-generic-types">generic</a>, <a href="https://docs.python.org/3/reference/datamodel.html#emulating-callable-objects">callable</a>, and <a href="https://docs.python.org/3/reference/datamodel.html#emulating-numeric-types">numeric</a> types at their respective links.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcharltonaustin.com%2fposts%2fwhy-you-should-emulate-containers-in-python%2f - Why%20You%20Should%20Emulate%20Containers%20in%20Python by @charltonaustin"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+
+    
+    <a class="symbol" href="https://github.com/charltonaustin/">
+        <i class="fa fa-github fa-2x"></i>
+    </a>
+    
+    <a class="symbol" href="https://gitlab.com/charlie_tuesday_company/">
+        <i class="fa fa-gitlab fa-2x"></i>
+    </a>
+    
+    <a class="symbol" href="https://twitter.com/charltonaustin/">
+        <i class="fa fa-twitter fa-2x"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2026 <i class="fa fa-heart" aria-hidden="true"></i> Charlton Austin
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://charltonaustin.com/js/jquery-3.3.1.min.js"></script>
+<script src="https://charltonaustin.com/js/main.js"></script>
+<script src="https://charltonaustin.com/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+  
+
+
+
+
+    </body>
+</html>

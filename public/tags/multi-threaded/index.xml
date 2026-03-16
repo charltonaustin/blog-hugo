@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Multi Threaded on Charlton Austin</title>
+    <link>https://charltonaustin.com/tags/multi-threaded/</link>
+    <description>Recent content in Multi Threaded on Charlton Austin</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 24 Oct 2015 09:03:54 -0400</lastBuildDate>
+    <atom:link href="https://charltonaustin.com/tags/multi-threaded/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Debugging Multi  Threaded Applications</title>
+      <link>https://charltonaustin.com/posts/debugging-multi--threaded-applications/</link>
+      <pubDate>Sat, 24 Oct 2015 09:03:54 -0400</pubDate>
+      <guid>https://charltonaustin.com/posts/debugging-multi--threaded-applications/</guid>
+      <description>&lt;p&gt;Recently I had debug a multithreaded application with some surprising results. Seeing as this can be a particularly tricky task for people that haven&amp;rsquo;t done it before I thought  I would write about some lessons I learned from the experience.&lt;/p&gt;&#xA;&lt;h3 id=&#34;logging-logging-logging-and-more-logging&#34;&gt;logging Logging &lt;em&gt;LOGGING&lt;/em&gt; and &lt;em&gt;MORE LOGGING&lt;/em&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Log to understand the problem. This one is hard to set up retroactively, but it is well worth the effort. Strive for logs that are meaningful, and that give you checkpoints. For instance avoid putting logs in tight loops. Unless there is something you really need to see inside of the tight loop, move the log out. If you really need to log within a tight loop think about either making the log level DEBUGGING, or only logging every nth element, or doing some other logic to really only log things that you will be interested in. In multithreaded application logging can give you clues on whether or not a thread is starved or when events are happening out of order. Most of the time logs in tight loops will be unhelpful. While some people argue that you should log everything and then use other tools to sift through them I think you will save everyone a whole lot of headaches if you try and log only what you really need. True hard disk space is cheap, true you can roll your logs often to make it easier to sift through them, but at the end of the day the simpler your logs are to sift through the more likely you are to solve the problem.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

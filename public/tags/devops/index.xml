@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Devops on Charlton Austin</title>
+    <link>https://charltonaustin.com/tags/devops/</link>
+    <description>Recent content in Devops on Charlton Austin</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 08 Apr 2017 09:03:54 -0400</lastBuildDate>
+    <atom:link href="https://charltonaustin.com/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using Quay With Multiple Dockerfiles</title>
+      <link>https://charltonaustin.com/posts/using-quay-with-multiple-dockerfiles/</link>
+      <pubDate>Sat, 08 Apr 2017 09:03:54 -0400</pubDate>
+      <guid>https://charltonaustin.com/posts/using-quay-with-multiple-dockerfiles/</guid>
+      <description>&lt;h1 id=&#34;the-problem&#34;&gt;The problem&lt;/h1&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s say you have the following folder layout:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;app1/&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;app2/&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;shared-infra-resources/&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;continuous-integration/&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                      app1/&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                          app1.Dockerfile&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                      app2/&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                          app2.Dockerfile&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And you would like to build app1.Dockerfile and app2.Dockerfile in your Docker registry.&lt;/p&gt;&#xA;&lt;h1 id=&#34;the-solution&#34;&gt;The Solution&lt;/h1&gt;&#xA;&lt;p&gt;If you are using &lt;a href=&#34;https://hub.docker.com&#34;&gt;DockerHub&lt;/a&gt;.&#xA;Then you already can&amp;rsquo;t.&#xA;DockerHub doesn&amp;rsquo;t allow you to specify a context separate from your Dockerfile location.&#xA;At least they did not as of April 8, 2017.&#xA;So you can&amp;rsquo;t specify use the continuous-integration/app2/app2.Dockerfile as the Dockerfile location and the root as the context.&#xA;However, if you are using &lt;a href=&#34;https://quay.io&#34;&gt;Quay&lt;/a&gt; then you are off to a good start.&#xA;Quay has a built in build system that you can use to build your repository.&#xA;In the UI you can either upload a dockerfile or an archive and it will build it.&#xA;Via the &lt;a href=&#34;https://docs.quay.io/api/&#34;&gt;API&lt;/a&gt; you can do something very similar, you can request a build on behalf of an organization or a user by sending a post request to &lt;a href=&#34;https://quay.io/v1/repository/&#34;&gt;https://quay.io/v1/repository/&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;/&lt;!-- raw HTML omitted --&gt;/build/ .&#xA;If you look at the &lt;a href=&#34;http://docs.quay.io/api/swagger/&#34;&gt;swagger docs&lt;/a&gt; you will see you can pass in an archive url, a context, a dockerfile path, and some docker tags.&#xA;The archive url is simply a url where you can download your build files.&#xA;The context is the folder in your buildfile that the docker build will be executed from.&#xA;The dockerfile path is the location and name of the dockerfile.&#xA;Finally docker tags are arbitrary tag names that can be used to identify your build, version, or whatever other metadata you might want associated with your docker image.&#xA;The request might look something like this.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Configurator Boxen Or Things To Wrangle Your Environment</title>
+      <link>https://charltonaustin.com/posts/configurator-boxen-or-things-to-wrangle-your-environment/</link>
+      <pubDate>Sat, 19 Sep 2015 09:03:54 -0400</pubDate>
+      <guid>https://charltonaustin.com/posts/configurator-boxen-or-things-to-wrangle-your-environment/</guid>
+      <description>&lt;h3 id=&#34;the-problem&#34;&gt;The problem&lt;/h3&gt;&#xA;&lt;p&gt;One thing that I keep seeing consistently regardless of whether I&amp;rsquo;m working as a full time employee or as consultant, and that I&amp;rsquo;ve literally seen from coast to coast is developers and testers trying to simplify their local environments.  Increasingly, companies are using multiple services that allow for more module pieces of software (think micro-services).  This is nice because it can often simplify coding complexity and dependency graphs, but the flip side is that deployments can become more complex.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Problems With Cucumber And Chef</title>
+      <link>https://charltonaustin.com/posts/problems-with-cucumber-and-chef/</link>
+      <pubDate>Wed, 06 Mar 2013 09:03:54 -0400</pubDate>
+      <guid>https://charltonaustin.com/posts/problems-with-cucumber-and-chef/</guid>
+      <description>&lt;p&gt;So I&amp;rsquo;ve been working on getting some cucumber functional tests to run on a remote server lately and had tons of problems. The setup included using Electric Commander to run a gradle task, which in turn ran cucumber using jruby. It was lots of fun. Let me say.&lt;/p&gt;&#xA;&lt;p&gt;This post is basically because cucumber put out a misleading &amp;ldquo;error&amp;rdquo; which when I searched google I couldn&amp;rsquo;t get any help.  So for anyone else who finds themselves in some similar situation. Even if there is only one of you. I hope it helps. So this is what gradle was actually running.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Vagrant Chef Fun</title>
+      <link>https://charltonaustin.com/posts/vagrant-chef-fun/</link>
+      <pubDate>Wed, 27 Feb 2013 09:03:54 -0400</pubDate>
+      <guid>https://charltonaustin.com/posts/vagrant-chef-fun/</guid>
+      <description>&lt;p&gt;A couple of days ago I got a chance to see some friends of mine (Matt Urbanski and Jinwoo Baek) give a presentation on chef. It was fantastic. Afterward we had a sort of impromptu demo session on using Vagrant and Chef to get an apache server up and running. So this is going to be a quick tutorial on how to use Vagrant and Chef to get a functioning apache server up and running on a vm.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Frank Cucumber</title>
+      <link>https://charltonaustin.com/posts/frank-cucumber/</link>
+      <pubDate>Sun, 17 Feb 2013 09:03:54 -0400</pubDate>
+      <guid>https://charltonaustin.com/posts/frank-cucumber/</guid>
+      <description>&lt;p&gt;Starting my blog again. So my blog has hopelessly become out of date. Since the last time I posted I&amp;rsquo;ve started working for ThoughtWorks, gone to India, moved to San Francisco, and finally been put onto my client. Great so now what. Since things are finally starting to settle and since my thoughts have changed on maintaining a blog I&amp;rsquo;ve decided it&amp;rsquo;s time to start blogging again. Not that anyone has read anything yet. My goal is to do it once or twice a week depending on time constraints and travel. So lets get started.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

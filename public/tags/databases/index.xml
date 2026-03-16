@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Databases on Charlton Austin</title>
+    <link>https://charltonaustin.com/tags/databases/</link>
+    <description>Recent content in Databases on Charlton Austin</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 25 Mar 2020 09:03:54 -0400</lastBuildDate>
+    <atom:link href="https://charltonaustin.com/tags/databases/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Applications Integrating On The Database</title>
+      <link>https://charltonaustin.com/posts/applications-integrating-on-the-database/</link>
+      <pubDate>Wed, 25 Mar 2020 09:03:54 -0400</pubDate>
+      <guid>https://charltonaustin.com/posts/applications-integrating-on-the-database/</guid>
+      <description>&lt;h2 id=&#34;the-problem&#34;&gt;The problem&lt;/h2&gt;&#xA;&lt;p&gt;You shouldn&amp;rsquo;t do it.&#xA;You&amp;rsquo;ve read it before.&#xA;Don&amp;rsquo;t integrate applications on the database.&#xA;The advice is relatively straightforward, but it can often be difficult to understand.&#xA;My first piece of advice is that when you have a new process it should have it&amp;rsquo;s own database.&#xA;While the overhead is often real, it is minimal compared to the pain caused when you want to pull the two processes apart later.&#xA;However, I find that people often fight against having two databases from the start.&#xA;They see the immediate pain, and either don&amp;rsquo;t know (or can&amp;rsquo;t see) the pain of the future.&#xA;If they know and then discount the immediate pain, they may be overly discounting future pain.&#xA;There is a name for this sort of bias, it is called &lt;a href=&#34;https://en.wikipedia.org/wiki/Hyperbolic_discounting&#34;&gt;hyperbolic discounting&lt;/a&gt;.&#xA;Regardless, sometimes you decide that you are going to have a single database for multiple processes.&#xA;Maybe it is because recreating many data models isn&amp;rsquo;t your idea of fun.&#xA;Perhaps it is because figuring out how to broker the communication between two apps is no fun.&#xA;So, you copy the models, or you pull them into a shared location.&#xA;You allow the database to decide what consistency looks like.&#xA;This runs smoothly for months (or even years).&#xA;Then one day you realize you can&amp;rsquo;t change one application without changing the other.&#xA;You realize they are tightly coupled, practically speaking, even if they aren&amp;rsquo;t conceptually speaking.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
