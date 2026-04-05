@@ -1,6 +1,6 @@
 title: The Art of Making Trade-offs: My Experience Hiring Driven Talent over Technical Expertise
-date: 2023-05-23
-draft: true
+date: 2025-01-23
+draft: false
 description: "Learn how to strike the right balance between hiring for intelligence and drive versus technical expertise
 to build a strong and successful team. Gain valuable insights into the art of making trade-offs when it comes to hiring
 and building your team."
@@ -31,9 +31,9 @@ contributions to the company's success.
 # What's important
 
 I have also learned that technical expertise is not the only critical factor when making a hiring decision. When I hired
-people with deep technical experience but without knowing the tech stack, the company moved slower than when I hired
-Hassan and Amelia. This experience emphasized the importance of not only having technical expertise but also a deep
-understanding of the specific technologies and tools used by the company.
+people with deep technical experience but without familiarity with our specific tech stack, the company moved more
+slowly than when I hired Hassan and Amelia. This experience emphasized the importance of not only having technical
+expertise but also a deep understanding of the specific technologies and tools used by the company.
 
 # Drive for the win
 
@@ -53,8 +53,8 @@ intelligence to the specific context of the company and who are motivated to lea
 When making a hiring decision, I have learned to strike the right balance between technical expertise and other factors,
 such as drive and intelligence. Hiring individuals with deep technical knowledge is undoubtedly critical for many roles,
 but it's equally important to look for individuals who are motivated, driven, and eager to learn. In fact, if I were to
-hire again, I would hire for intelligence and drive or deep technical knowledge and drive, with the latter being less
-critical than the drive.
+hire again, I would hire for intelligence and drive or deep technical knowledge and drive, with technical knowledge
+being less critical than drive.
 
 # Finding the right balance
 
