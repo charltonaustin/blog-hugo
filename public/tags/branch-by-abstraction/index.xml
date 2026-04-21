@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Branch by Abstraction on Charlton Austin</title>
-    <link>http://localhost:1313/tags/branch-by-abstraction/</link>
+    <link>https://charltonaustin.com/tags/branch-by-abstraction/</link>
     <description>Recent content in Branch by Abstraction on Charlton Austin</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 07 May 2018 09:03:54 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/branch-by-abstraction/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://charltonaustin.com/tags/branch-by-abstraction/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Branch By Abstraction</title>
-      <link>http://localhost:1313/posts/2018_05_07_branch-by-abstraction/</link>
+      <link>https://charltonaustin.com/posts/2018_05_07_branch-by-abstraction/</link>
       <pubDate>Mon, 07 May 2018 09:03:54 -0400</pubDate>
-      <guid>http://localhost:1313/posts/2018_05_07_branch-by-abstraction/</guid>
+      <guid>https://charltonaustin.com/posts/2018_05_07_branch-by-abstraction/</guid>
       <description>&lt;h2 id=&#34;the-problem&#34;&gt;The problem&lt;/h2&gt;&#xA;&lt;p&gt;I want to write code that is consistently shared with the rest of the team, but I also want trunk based development.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-branch-by-abstraction&#34;&gt;What is branch by abstraction&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.linkedin.com/in/paulhammant/&#34;&gt;Paul Hammant&lt;/a&gt; a friend and mentor of mine,&#xA;has two great articles explaining branch by abstraction &lt;a href=&#34;https://trunkbaseddevelopment.com/branch-by-abstraction/&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;https://paulhammant.com/blog/branch_by_abstraction.html&#34;&gt;here&lt;/a&gt;.&#xA;The basic concept is pretty easy.&#xA;Instead of having long lived branches in your version control system, you simply create an abstraction that allows you to change the behavior with only a few minor changes.&#xA;As great as this concept is, there is one thing missing.  During any explanation, I find it difficult to give decent real world examples of branch by abstraction.&#xA;Usually there are a lot of diagrams and talk about concepts, but very few solid examples.&#xA;My team has been struggling with doing this in a coherent way, so here are some examples of what it might look like in the wild.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Feature Branches To Mainline</title>
-      <link>http://localhost:1313/posts/2015_10_10_feature-branches-to-mainline/</link>
+      <link>https://charltonaustin.com/posts/2015_10_10_feature-branches-to-mainline/</link>
       <pubDate>Sat, 10 Oct 2015 09:03:54 -0400</pubDate>
-      <guid>http://localhost:1313/posts/2015_10_10_feature-branches-to-mainline/</guid>
+      <guid>https://charltonaustin.com/posts/2015_10_10_feature-branches-to-mainline/</guid>
       <description>&lt;p&gt;Recently at &lt;a href=&#34;http://intentmedia.com/&#34;&gt;my current company&lt;/a&gt; my team has been struggling to move from a feature branch workflow to a mainline workflow.  I&amp;rsquo;m going to define what the feature branches and mainline workflows are. Then I&amp;rsquo;m going to talk about the costs and benefits of both models. Finally I&amp;rsquo;m going to talk about why people should use the mainline workflow.&lt;/p&gt;&#xA;&lt;h3 id=&#34;feature-branch-workflow&#34;&gt;Feature Branch Workflow&lt;/h3&gt;&#xA;&lt;p&gt;So what is the feature branch workflow (at least at IntentMedia). For my current team it consisted of someone picking up a story, then creating a new branch, doing the development work, creating a pull request, seeing if the build is green on TeamCity, getting the application checked by a quality analyst, and finally merging in with master.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Empathy on Charlton Austin</title>
-    <link>http://localhost:1313/tags/empathy/</link>
+    <link>https://charltonaustin.com/tags/empathy/</link>
     <description>Recent content in Empathy on Charlton Austin</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 04 Apr 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/empathy/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://charltonaustin.com/tags/empathy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to Be an Empathetic Leader: Strategies for Effective Leadership</title>
-      <link>http://localhost:1313/posts/2023_04_04_being-an-empathetic-leader/</link>
+      <link>https://charltonaustin.com/posts/2023_04_04_being-an-empathetic-leader/</link>
       <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2023_04_04_being-an-empathetic-leader/</guid>
+      <guid>https://charltonaustin.com/posts/2023_04_04_being-an-empathetic-leader/</guid>
       <description>&lt;p&gt;Empathy is a critical skill for any leader who wants to build a successful and sustainable organization. It enables leaders to connect with their employees on a personal level, understand their needs and concerns, and create a positive work environment that fosters engagement and productivity. In this article, we&amp;rsquo;ll explore some practical strategies for becoming a more empathetic leader.&#xA;In the Marine Corps I was always taught to know your Marines.&#xA;I believe that is because empathy can only come through understanding.&lt;/p&gt;</description>
     </item>
   </channel>

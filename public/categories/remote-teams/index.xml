@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Remote Teams on Charlton Austin</title>
-    <link>http://localhost:1313/categories/remote-teams/</link>
+    <link>https://charltonaustin.com/categories/remote-teams/</link>
     <description>Recent content in Remote Teams on Charlton Austin</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 25 Apr 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/remote-teams/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://charltonaustin.com/categories/remote-teams/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Navigating Time Zone Differences in Remote Teams</title>
-      <link>http://localhost:1313/posts/2023_04_25_navigating-time-zone-differences-in-remote-teams/</link>
+      <link>https://charltonaustin.com/posts/2023_04_25_navigating-time-zone-differences-in-remote-teams/</link>
       <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2023_04_25_navigating-time-zone-differences-in-remote-teams/</guid>
+      <guid>https://charltonaustin.com/posts/2023_04_25_navigating-time-zone-differences-in-remote-teams/</guid>
       <description>&lt;p&gt;In today&amp;rsquo;s globalized world, remote teams are becoming increasingly common. However, with team members located in different time zones, scheduling meetings and collaborations can become more difficult. In this blog post, we&amp;rsquo;ll explore some tips and strategies to help remote teams navigate time zone differences and work more effectively together, as well as some common pitfalls to avoid.&lt;/p&gt;&#xA;&lt;h1 id=&#34;what-doesnt-work&#34;&gt;What doesn&amp;rsquo;t work:&lt;/h1&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;No meetings at all: While it may seem like avoiding meetings altogether would solve the time zone issue, it can actually limit communication and collaboration within the team. Lack of regular meetings can lead to team members feeling disconnected from each other and the project.&lt;/li&gt;&#xA;&lt;li&gt;Leaving availability up to individuals: While it may be tempting to let team members decide their own schedules, this approach can lead to confusion and miscommunication. It requires a lot of discipline and empathy from every team member to ensure that their work hours align with other team members&amp;rsquo; schedules.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h1 id=&#34;what-does-work&#34;&gt;What does work:&lt;/h1&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Establish clear expectations: It&amp;rsquo;s important to establish clear expectations around availability and work schedules. Let team members know what is expected of them in terms of availability for meetings and collaboration, and make sure everyone is on the same page.&lt;/p&gt;</description>
     </item>
   </channel>

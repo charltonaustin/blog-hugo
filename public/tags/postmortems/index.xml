@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Postmortems on Charlton Austin</title>
-    <link>http://localhost:1313/tags/postmortems/</link>
+    <link>https://charltonaustin.com/tags/postmortems/</link>
     <description>Recent content in Postmortems on Charlton Austin</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 14 Jan 2019 09:03:54 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/postmortems/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://charltonaustin.com/tags/postmortems/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Blameless Postmortems</title>
-      <link>http://localhost:1313/posts/2019_01_14_blameless-postmortems/</link>
+      <link>https://charltonaustin.com/posts/2019_01_14_blameless-postmortems/</link>
       <pubDate>Mon, 14 Jan 2019 09:03:54 -0400</pubDate>
-      <guid>http://localhost:1313/posts/2019_01_14_blameless-postmortems/</guid>
+      <guid>https://charltonaustin.com/posts/2019_01_14_blameless-postmortems/</guid>
       <description>&lt;h3 id=&#34;subject&#34;&gt;Subject&lt;/h3&gt;&#xA;&lt;p&gt;Why should we have blameless postmortems?&lt;/p&gt;&#xA;&lt;h3 id=&#34;context&#34;&gt;Context&lt;/h3&gt;&#xA;&lt;p&gt;I recently read &lt;a href=&#34;https://codeascraft.com/2012/05/22/blameless-postmortems/&#34;&gt;a blog post&lt;/a&gt; about blameless postmortems from &lt;a href=&#34;https://www.etsy.com/&#34;&gt;Etsy&lt;/a&gt;.&#xA;In it there was a simple question about why software engineers shouldn&amp;rsquo;t be punished:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Why shouldn’t they be punished or reprimanded?&#xA;Because an engineer who thinks they’re going to be reprimanded are disincentivized to give the details necessary to get an understanding of the mechanism, pathology, and operation of the failure.&#xA;This lack of understanding of how the accident occurred all but guarantees that it will repeat.&#xA;If not with the original engineer, another one in the future.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Automation on Charlton Austin</title>
-    <link>http://localhost:1313/tags/automation/</link>
+    <link>https://charltonaustin.com/tags/automation/</link>
     <description>Recent content in Automation on Charlton Austin</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Wed, 26 Feb 2020 09:03:54 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://charltonaustin.com/tags/automation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Repo Scripts And Autoupdates</title>
-      <link>http://localhost:1313/posts/2020_02_26_repo-scripts-and-autoupdates/</link>
+      <link>https://charltonaustin.com/posts/2020_02_26_repo-scripts-and-autoupdates/</link>
       <pubDate>Wed, 26 Feb 2020 09:03:54 -0400</pubDate>
-      <guid>http://localhost:1313/posts/2020_02_26_repo-scripts-and-autoupdates/</guid>
+      <guid>https://charltonaustin.com/posts/2020_02_26_repo-scripts-and-autoupdates/</guid>
       <description>&lt;h2 id=&#34;the-problem&#34;&gt;The problem&lt;/h2&gt;&#xA;&lt;p&gt;You really want to make sure that unit tests are run every time someone commits.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-solution&#34;&gt;The solution&lt;/h2&gt;&#xA;&lt;p&gt;Three simple scripts.&#xA;The first should be run by all engineers that join the team.&#xA;It should do most of the installs for environment dependencies.&#xA;The second should be a pre-commit script.&#xA;This script should run your tests and anything else that you want to have happen.&#xA;The third script should be an update script.&#xA;It should be a simple script that gets run by your second script.&#xA;It should automatically update your pre-commit script.&lt;/p&gt;</description>
     </item>
   </channel>

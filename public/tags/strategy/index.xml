@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Strategy on Charlton Austin</title>
-    <link>http://localhost:1313/tags/strategy/</link>
+    <link>https://charltonaustin.com/tags/strategy/</link>
     <description>Recent content in Strategy on Charlton Austin</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 20 Nov 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/strategy/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://charltonaustin.com/tags/strategy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Dawn of the Strategic Engineer</title>
-      <link>http://localhost:1313/posts/2025_11_20_strategy_being_strategic_as_an_engineer/</link>
+      <link>https://charltonaustin.com/posts/2025_11_20_strategy_being_strategic_as_an_engineer/</link>
       <pubDate>Thu, 20 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2025_11_20_strategy_being_strategic_as_an_engineer/</guid>
+      <guid>https://charltonaustin.com/posts/2025_11_20_strategy_being_strategic_as_an_engineer/</guid>
       <description>&lt;p&gt;As the 21st century marches on, technology is no longer just influencing our lives. It is reshaping our world and the&#xA;way we work. This is especially true in the field of engineering, where AI technologies are transforming not just the&#xA;work itself, but the very role of the engineer. The introduction of advanced AI technologies has automated many aspects&#xA;of the engineering process, making tasks easier and boosting productivity. However, this shift also brings about a new&#xA;challenge for engineers: how to remain relevant and valuable in an era of rapid automation.&lt;/p&gt;</description>
     </item>
   </channel>

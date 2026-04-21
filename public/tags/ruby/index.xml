@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ruby on Charlton Austin</title>
-    <link>http://localhost:1313/tags/ruby/</link>
+    <link>https://charltonaustin.com/tags/ruby/</link>
     <description>Recent content in Ruby on Charlton Austin</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sun, 17 Feb 2013 09:03:54 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://charltonaustin.com/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Frank Cucumber</title>
-      <link>http://localhost:1313/posts/2013_02_17_frank-cucumber/</link>
+      <link>https://charltonaustin.com/posts/2013_02_17_frank-cucumber/</link>
       <pubDate>Sun, 17 Feb 2013 09:03:54 -0400</pubDate>
-      <guid>http://localhost:1313/posts/2013_02_17_frank-cucumber/</guid>
+      <guid>https://charltonaustin.com/posts/2013_02_17_frank-cucumber/</guid>
       <description>&lt;p&gt;Starting my blog again. So my blog has hopelessly become out of date. Since the last time I posted I&amp;rsquo;ve started working for ThoughtWorks, gone to India, moved to San Francisco, and finally been put onto my client. Great so now what. Since things are finally starting to settle and since my thoughts have changed on maintaining a blog I&amp;rsquo;ve decided it&amp;rsquo;s time to start blogging again. Not that anyone has read anything yet. My goal is to do it once or twice a week depending on time constraints and travel. So lets get started.&lt;/p&gt;</description>
     </item>
   </channel>
