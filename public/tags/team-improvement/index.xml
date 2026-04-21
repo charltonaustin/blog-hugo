@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Team Improvement on Charlton Austin</title>
-    <link>https://charltonaustin.com/tags/team-improvement/</link>
+    <link>http://localhost:1313/tags/team-improvement/</link>
     <description>Recent content in Team Improvement on Charlton Austin</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sun, 21 Sep 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://charltonaustin.com/tags/team-improvement/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/team-improvement/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rethinking Supervision and Support in Remote Work Environments</title>
-      <link>https://charltonaustin.com/posts/2025_09_21_rethink_remote_supervision/</link>
+      <link>http://localhost:1313/posts/2025_09_21_rethink_remote_supervision/</link>
       <pubDate>Sun, 21 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>https://charltonaustin.com/posts/2025_09_21_rethink_remote_supervision/</guid>
+      <guid>http://localhost:1313/posts/2025_09_21_rethink_remote_supervision/</guid>
       <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;As businesses continue to navigate the evolving landscape of remote work, many leaders grapple with the challenges of&#xA;supervision and support in a virtual environment. Remote workers may feel isolated and disconnected from their&#xA;colleagues, making it difficult for them to access the support they need to perform at their best. Although some argue&#xA;that remote work is&#xA;a &lt;a href=&#34;https://fortune.com/2023/05/05/openai-ceo-sam-altman-remote-work-mistake-return-to-office/&#34;&gt;failed experiment&lt;/a&gt;,&#xA;others believe that by embracing change and adopting creative strategies, there will be a persistent and growing benefit&#xA;to companies that embrace remote work.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Code Review on Charlton Austin</title>
-    <link>https://charltonaustin.com/tags/code-review/</link>
+    <link>http://localhost:1313/tags/code-review/</link>
     <description>Recent content in Code Review on Charlton Austin</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 27 Mar 2018 09:03:54 -0400</lastBuildDate>
-    <atom:link href="https://charltonaustin.com/tags/code-review/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/code-review/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pairing Vs Code Review</title>
-      <link>https://charltonaustin.com/posts/pairing-vs-code-review/</link>
+      <link>http://localhost:1313/posts/2018_03_27_pairing-vs-code-review/</link>
       <pubDate>Tue, 27 Mar 2018 09:03:54 -0400</pubDate>
-      <guid>https://charltonaustin.com/posts/pairing-vs-code-review/</guid>
+      <guid>http://localhost:1313/posts/2018_03_27_pairing-vs-code-review/</guid>
       <description>&lt;h5 id=&#34;note-this-was-written-mostly-immediately-after-i-joined-coreos-and-then-updated-this-last-week&#34;&gt;Note This was written mostly immediately after I joined CoreOS and then updated this last week.&lt;/h5&gt;&#xA;&lt;p&gt;I recently started working at &lt;a href=&#34;https://coreos.com/&#34;&gt;CoreOS&lt;/a&gt; and one thing that they do there for every change of code is a code review.&#xA;I have never had code reviews before.&#xA;I&amp;rsquo;ve mostly worked in environments where I have paired directly with people.&#xA;So I wanted to do a quick review on the differences between the two methods.&lt;/p&gt;</description>
     </item>
   </channel>

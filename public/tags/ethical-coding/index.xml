@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ethical Coding on Charlton Austin</title>
-    <link>https://charltonaustin.com/tags/ethical-coding/</link>
+    <link>http://localhost:1313/tags/ethical-coding/</link>
     <description>Recent content in Ethical Coding on Charlton Austin</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 09 Jul 2018 09:03:54 -0400</lastBuildDate>
-    <atom:link href="https://charltonaustin.com/tags/ethical-coding/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/ethical-coding/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What Does It Mean To Write Ethical Code</title>
-      <link>https://charltonaustin.com/posts/what-does-it-mean-to-write-ethical-code/</link>
+      <link>http://localhost:1313/posts/2018_07_09_what-does-it-mean-to-write-ethical-code/</link>
       <pubDate>Mon, 09 Jul 2018 09:03:54 -0400</pubDate>
-      <guid>https://charltonaustin.com/posts/what-does-it-mean-to-write-ethical-code/</guid>
+      <guid>http://localhost:1313/posts/2018_07_09_what-does-it-mean-to-write-ethical-code/</guid>
       <description>&lt;p&gt;Recently I read a report from the 2018 stack overflow survey, &lt;a href=&#34;https://insights.stackoverflow.com/survey/2018/?utm_source=Iterable&amp;amp;utm_medium=email&amp;amp;utm_campaign=dev-survey-2018-promotion&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;From the survey:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Only tiny fractions of developers say that they would write unethical code or that they have no obligation to consider the ethical implications of code, but beyond that, respondents see a lot of ethical gray.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Given the recent &lt;a href=&#34;http://money.cnn.com/2018/03/26/technology/facebook-ftc-investigation/index.html&#34;&gt;investigation&lt;/a&gt; into Facebook.&#xA;I thought it might be prudent to do a little thinking and writing about what it means to write code ethically.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,94 +2,94 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Management on Charlton Austin</title>
-    <link>https://charltonaustin.com/tags/management/</link>
+    <link>http://localhost:1313/tags/management/</link>
     <description>Recent content in Management on Charlton Austin</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sun, 21 Sep 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://charltonaustin.com/tags/management/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/management/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rethinking Supervision and Support in Remote Work Environments</title>
-      <link>https://charltonaustin.com/posts/2025_09_21_rethink_remote_supervision/</link>
+      <link>http://localhost:1313/posts/2025_09_21_rethink_remote_supervision/</link>
       <pubDate>Sun, 21 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>https://charltonaustin.com/posts/2025_09_21_rethink_remote_supervision/</guid>
+      <guid>http://localhost:1313/posts/2025_09_21_rethink_remote_supervision/</guid>
       <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;As businesses continue to navigate the evolving landscape of remote work, many leaders grapple with the challenges of&#xA;supervision and support in a virtual environment. Remote workers may feel isolated and disconnected from their&#xA;colleagues, making it difficult for them to access the support they need to perform at their best. Although some argue&#xA;that remote work is&#xA;a &lt;a href=&#34;https://fortune.com/2023/05/05/openai-ceo-sam-altman-remote-work-mistake-return-to-office/&#34;&gt;failed experiment&lt;/a&gt;,&#xA;others believe that by embracing change and adopting creative strategies, there will be a persistent and growing benefit&#xA;to companies that embrace remote work.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Points What Are They Good For</title>
-      <link>https://charltonaustin.com/posts/2023_05_09_points-what-are-they-good-for/</link>
+      <link>http://localhost:1313/posts/2023_05_09_points-what-are-they-good-for/</link>
       <pubDate>Tue, 09 May 2023 00:00:00 +0000</pubDate>
-      <guid>https://charltonaustin.com/posts/2023_05_09_points-what-are-they-good-for/</guid>
+      <guid>http://localhost:1313/posts/2023_05_09_points-what-are-they-good-for/</guid>
       <description>&lt;h1 id=&#34;should-story-points-be-tied-to-time&#34;&gt;Should Story Points Be Tied to Time&lt;/h1&gt;&#xA;&lt;p&gt;I often hear people say that story points shouldn&amp;rsquo;t be tied to time. Instead, they should be based on complexity. This can be for a variety of reasons. For instance, three reasons are cited in &lt;a href=&#34;https://rubygarage.org/blog/3-reasons-to-estimate-with-story-points&#34;&gt;this article&lt;/a&gt;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Some tasks are difficult to estimate precisely.&lt;/li&gt;&#xA;&lt;li&gt;If one developer estimates a project but another completes the task, the estimate becomes invalid. The time needed to complete a task will vary based on a developer&amp;rsquo;s level of experience.&lt;/li&gt;&#xA;&lt;li&gt;People generally underestimate obstacles they might face and consider only the best-case scenario.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Each of these reasons presents a concrete problem that should be solved. For example, some tasks are difficult to estimate, but that doesn&amp;rsquo;t mean you should avoid estimating them. Similarly, different developers may complete tasks at different rates, but that means you should work to figure out how long it will take your team, not change estimates from time to complexity-based.&lt;/p&gt;</description>
     </item>
     <item>
       <title>The Importance of Commander&#39;s Intent in Distributed Teams</title>
-      <link>https://charltonaustin.com/posts/commanders-intent-in-distributed-teams/</link>
+      <link>http://localhost:1313/posts/2023_05_02_commanders-intent-in-distributed-teams/</link>
       <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
-      <guid>https://charltonaustin.com/posts/commanders-intent-in-distributed-teams/</guid>
+      <guid>http://localhost:1313/posts/2023_05_02_commanders-intent-in-distributed-teams/</guid>
       <description>&lt;h1 id=&#34;commanders-intent&#34;&gt;Commander&amp;rsquo;s intent&lt;/h1&gt;&#xA;&lt;p&gt;In today&amp;rsquo;s world, distributed teams are becoming more and more common. With remote work becoming the norm, the ability for a team to work effectively together relies on everyone understanding the goal and working towards it as hard as possible. In this context, commander&amp;rsquo;s intent can be a powerful tool for teams to take advantage of opportunities and achieve their goals. In this post, we&amp;rsquo;ll explore the importance of commander&amp;rsquo;s intent in distributed teams, and how it can help smaller companies and startups to succeed.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Navigating Time Zone Differences in Remote Teams</title>
-      <link>https://charltonaustin.com/posts/navigating-time-zone-differences-in-remote-teams/</link>
+      <link>http://localhost:1313/posts/2023_04_25_navigating-time-zone-differences-in-remote-teams/</link>
       <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://charltonaustin.com/posts/navigating-time-zone-differences-in-remote-teams/</guid>
+      <guid>http://localhost:1313/posts/2023_04_25_navigating-time-zone-differences-in-remote-teams/</guid>
       <description>&lt;p&gt;In today&amp;rsquo;s globalized world, remote teams are becoming increasingly common. However, with team members located in different time zones, scheduling meetings and collaborations can become more difficult. In this blog post, we&amp;rsquo;ll explore some tips and strategies to help remote teams navigate time zone differences and work more effectively together, as well as some common pitfalls to avoid.&lt;/p&gt;&#xA;&lt;h1 id=&#34;what-doesnt-work&#34;&gt;What doesn&amp;rsquo;t work:&lt;/h1&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;No meetings at all: While it may seem like avoiding meetings altogether would solve the time zone issue, it can actually limit communication and collaboration within the team. Lack of regular meetings can lead to team members feeling disconnected from each other and the project.&lt;/li&gt;&#xA;&lt;li&gt;Leaving availability up to individuals: While it may be tempting to let team members decide their own schedules, this approach can lead to confusion and miscommunication. It requires a lot of discipline and empathy from every team member to ensure that their work hours align with other team members&amp;rsquo; schedules.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h1 id=&#34;what-does-work&#34;&gt;What does work:&lt;/h1&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Establish clear expectations: It&amp;rsquo;s important to establish clear expectations around availability and work schedules. Let team members know what is expected of them in terms of availability for meetings and collaboration, and make sure everyone is on the same page.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Overcoming Lack of Team Cohesion in Remote Teams</title>
-      <link>https://charltonaustin.com/posts/overcoming-lack-of-cohesion-in-remote-environments/</link>
+      <link>http://localhost:1313/posts/2023_04_18_overcoming-lack-of-cohesion-in-remote-environments/</link>
       <pubDate>Tue, 18 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://charltonaustin.com/posts/overcoming-lack-of-cohesion-in-remote-environments/</guid>
+      <guid>http://localhost:1313/posts/2023_04_18_overcoming-lack-of-cohesion-in-remote-environments/</guid>
       <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;As remote work has become increasingly popular, businesses face new challenges when it comes to fostering team cohesion. Without face-to-face interactions, building camaraderie and trust can be difficult. However, there are several strategies that can help remote teams overcome these obstacles and create an inclusive and effective work environment.&lt;/p&gt;&#xA;&lt;h2 id=&#34;encourage-teamwork-through-remote-games-and-relax-time&#34;&gt;Encourage Teamwork through Remote Games and Relax Time&lt;/h2&gt;&#xA;&lt;p&gt;One successful strategy for building team cohesion in remote teams is incorporating remote games and relaxation time during work hours. These activities allow team members to interact in a more casual setting and can help break down barriers that may exist in a purely business-focused environment. By allocating time for these activities during work hours, employees are more likely to participate and engage with their colleagues.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Communication in Remote Start-Ups</title>
-      <link>https://charltonaustin.com/posts/communication-in-remote-start-ups/</link>
+      <link>http://localhost:1313/posts/2023_04_11_communication-in-remote-start-ups/</link>
       <pubDate>Tue, 11 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://charltonaustin.com/posts/communication-in-remote-start-ups/</guid>
+      <guid>http://localhost:1313/posts/2023_04_11_communication-in-remote-start-ups/</guid>
       <description>&lt;h1 id=&#34;communication-challenges-in-a-remote-startup-tips-for-overcoming-them&#34;&gt;Communication Challenges in a Remote Startup: Tips for Overcoming Them&lt;/h1&gt;&#xA;&lt;p&gt;Remote work has become increasingly popular in recent years, but it comes with its own unique set of challenges&#xA;One of the biggest hurdles that remote startups face is communication&#xA;In this post, we&amp;rsquo;ll explore some of the common communication challenges in a remote startup and provide tips for overcoming them.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-work-on-communication-skills&#34;&gt;1. Work on Communication Skills&lt;/h2&gt;&#xA;&lt;p&gt;Communication is always more difficult in a remote environment&#xA;However, there are things you can do to combat this&#xA;While many people may suggest adding more meetings, this can actually kill productivity&#xA;Instead, focus on making sure your team knows and learns strong communication skills&#xA;This means respecting other people&amp;rsquo;s opinions, avoiding arguments, and taking on disagreements in a tactful manner&#xA;This doesn&amp;rsquo;t mean you should hide disagreements, but rather that you should approach them constructively.&lt;/p&gt;</description>
     </item>
     <item>
       <title>A Practical Guide to Productive Weekly One-on-One Meetings with Employees</title>
-      <link>https://charltonaustin.com/posts/a-weekly-one-on-one-checklist/</link>
+      <link>http://localhost:1313/posts/2023_03_28_a-weekly-one-on-one-checklist/</link>
       <pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://charltonaustin.com/posts/a-weekly-one-on-one-checklist/</guid>
+      <guid>http://localhost:1313/posts/2023_03_28_a-weekly-one-on-one-checklist/</guid>
       <description>&lt;p&gt;As a manager, it&amp;rsquo;s essential to have regular one-on-one meetings with your direct reports. These meetings allow you to stay connected with your employees, address their concerns, and give them the feedback they need to grow professionally. In this blog post, we&amp;rsquo;ll share a simple checklist to help you have effective weekly check-ins with your employees.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-checklist&#34;&gt;The Checklist:&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;How was last week?&lt;/li&gt;&#xA;&lt;li&gt;Is there anything I need to know about that I don&amp;rsquo;t know about?&lt;/li&gt;&#xA;&lt;li&gt;Are you waiting on me for anything?&lt;/li&gt;&#xA;&lt;li&gt;What can I do to make your life better?&lt;/li&gt;&#xA;&lt;li&gt;Do you have any feedback for me?&lt;/li&gt;&#xA;&lt;li&gt;Do you mind if we go over feedback for you?&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;the-reasoning&#34;&gt;The Reasoning:&lt;/h2&gt;&#xA;&lt;p&gt;Having a weekly one-on-one with your direct reports may seem time-consuming, but it&amp;rsquo;s worth it. You get to know what&amp;rsquo;s going on with your employees, address any feedback you have for them, and show them that you care about their well-being. Besides, the most crucial aspect of any company is the quality of its people, so it&amp;rsquo;s essential to spend time caring for your employees.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Failure is Inevitable</title>
-      <link>https://charltonaustin.com/posts/failure-is-inevitable/</link>
+      <link>http://localhost:1313/posts/2023_03_21_failure-is-inevitable/</link>
       <pubDate>Tue, 21 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://charltonaustin.com/posts/failure-is-inevitable/</guid>
+      <guid>http://localhost:1313/posts/2023_03_21_failure-is-inevitable/</guid>
       <description>&lt;h1 id=&#34;failure-is-inevitable&#34;&gt;Failure is Inevitable&lt;/h1&gt;&#xA;&lt;p&gt;Dealing with failure is an inevitable part of life, especially when you&amp;rsquo;re an entrepreneur.&#xA;While it can be tempting to try to avoid failure at all costs, the truth is that failure is an essential part of the learning process. By acknowledging our failures and learning from them, we can become better, more successful versions of ourselves.&lt;/p&gt;&#xA;&lt;h1 id=&#34;how-to-learn-from-it&#34;&gt;How to learn from it&lt;/h1&gt;&#xA;&lt;p&gt;In order to learn from failure, there are three things that we must do:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Bugs In Software</title>
-      <link>https://charltonaustin.com/posts/bugs-in-software/</link>
+      <link>http://localhost:1313/posts/2020_01_14_bugs-in-software/</link>
       <pubDate>Tue, 14 Jan 2020 09:03:54 -0400</pubDate>
-      <guid>https://charltonaustin.com/posts/bugs-in-software/</guid>
+      <guid>http://localhost:1313/posts/2020_01_14_bugs-in-software/</guid>
       <description>&lt;h2 id=&#34;the-architecture-of-open-source-applications&#34;&gt;The Architecture of Open Source Applications&lt;/h2&gt;&#xA;&lt;p&gt;If you haven&amp;rsquo;t seen or read &lt;a href=&#34;http://aosabook.org/en/intro1.html&#34;&gt;The Architecture of Open Source Applications&lt;/a&gt; then you are missing out.&#xA;Sure, it is a bit long.&#xA;Also, each section is written by a different writer making it slightly inconsistent.&#xA;But, there are gems throughout the book that make it worth the read.&lt;/p&gt;&#xA;&lt;h2 id=&#34;one-of-the-gems&#34;&gt;One of the gems&lt;/h2&gt;&#xA;&lt;p&gt;Here&amp;rsquo;s an example of one of the gems from the &lt;a href=&#34;http://aosabook.org/en/bdb.html&#34;&gt;Berkeley DB&lt;/a&gt; section.&lt;/p&gt;</description>
     </item>
     <item>
       <title>The Importance Of History</title>
-      <link>https://charltonaustin.com/posts/the-importance-of-history/</link>
+      <link>http://localhost:1313/posts/2019_12_10_the-importance-of-history/</link>
       <pubDate>Tue, 10 Dec 2019 09:03:54 -0400</pubDate>
-      <guid>https://charltonaustin.com/posts/the-importance-of-history/</guid>
+      <guid>http://localhost:1313/posts/2019_12_10_the-importance-of-history/</guid>
       <description>&lt;h2 id=&#34;history-what-is-it-good-for&#34;&gt;History, what is it good for?&lt;/h2&gt;&#xA;&lt;p&gt;When I interview someone I often ask, &amp;ldquo;Where did object oriented programming (OOP) come from?&amp;rdquo;&#xA;There generally isn&amp;rsquo;t a right or wrong answer to this in the interview.&#xA;You can go look up whether a particular answer is consistent with what&amp;rsquo;s &lt;a href=&#34;https://en.wikipedia.org/wiki/Object-oriented_programming&#34;&gt;on the internet&lt;/a&gt;.&#xA;However you could give several answers that would all be right.&#xA;You might say, &amp;ldquo;it was pioneered in Sketchpad.&amp;rdquo;&#xA;Or you might say, &amp;ldquo;it came out of the atom in LISP.&amp;rdquo;&#xA;Both are consistent with history.&#xA;Each lens can bring a distinct understanding of OOP.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Blameless Postmortems</title>
-      <link>https://charltonaustin.com/posts/blameless-postmortems/</link>
+      <link>http://localhost:1313/posts/2019_01_14_blameless-postmortems/</link>
       <pubDate>Mon, 14 Jan 2019 09:03:54 -0400</pubDate>
-      <guid>https://charltonaustin.com/posts/blameless-postmortems/</guid>
+      <guid>http://localhost:1313/posts/2019_01_14_blameless-postmortems/</guid>
       <description>&lt;h3 id=&#34;subject&#34;&gt;Subject&lt;/h3&gt;&#xA;&lt;p&gt;Why should we have blameless postmortems?&lt;/p&gt;&#xA;&lt;h3 id=&#34;context&#34;&gt;Context&lt;/h3&gt;&#xA;&lt;p&gt;I recently read &lt;a href=&#34;https://codeascraft.com/2012/05/22/blameless-postmortems/&#34;&gt;a blog post&lt;/a&gt; about blameless postmortems from &lt;a href=&#34;https://www.etsy.com/&#34;&gt;Etsy&lt;/a&gt;.&#xA;In it there was a simple question about why software engineers shouldn&amp;rsquo;t be punished:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Why shouldn’t they be punished or reprimanded?&#xA;Because an engineer who thinks they’re going to be reprimanded are disincentivized to give the details necessary to get an understanding of the mechanism, pathology, and operation of the failure.&#xA;This lack of understanding of how the accident occurred all but guarantees that it will repeat.&#xA;If not with the original engineer, another one in the future.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Developing Your Team</title>
-      <link>https://charltonaustin.com/posts/developing-your-team/</link>
+      <link>http://localhost:1313/posts/2018_06_04_developing-your-team/</link>
       <pubDate>Mon, 04 Jun 2018 09:03:54 -0400</pubDate>
-      <guid>https://charltonaustin.com/posts/developing-your-team/</guid>
+      <guid>http://localhost:1313/posts/2018_06_04_developing-your-team/</guid>
       <description>&lt;h3 id=&#34;the-problem&#34;&gt;The problem&lt;/h3&gt;&#xA;&lt;p&gt;You want to encourage people on your team to be the best they can be.&lt;/p&gt;&#xA;&lt;h2 id=&#34;some-thoughts&#34;&gt;Some thoughts&lt;/h2&gt;&#xA;&lt;p&gt;I&amp;rsquo;m a big reader.&#xA;So the first thing I did when I came across this problem was to start a search on Amazon.&#xA;Admittedly I only read a few books.&#xA;I&amp;rsquo;m no guru.&#xA;I don&amp;rsquo;t even think I&amp;rsquo;m that experienced.&#xA;But I do think I&amp;rsquo;ve found a few strategies that have worked so far.&#xA;I&amp;rsquo;ve also found some dead ends, therefore this blog post is as much for myself as for anyone else.&lt;/p&gt;</description>
     </item>
   </channel>

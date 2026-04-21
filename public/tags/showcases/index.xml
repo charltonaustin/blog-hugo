@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Showcases on Charlton Austin</title>
-    <link>https://charltonaustin.com/tags/showcases/</link>
+    <link>http://localhost:1313/tags/showcases/</link>
     <description>Recent content in Showcases on Charlton Austin</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sat, 27 Aug 2016 09:03:54 -0400</lastBuildDate>
-    <atom:link href="https://charltonaustin.com/tags/showcases/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/showcases/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Showcases And Why We Need Them</title>
-      <link>https://charltonaustin.com/posts/showcases-and-why-we-need-them/</link>
+      <link>http://localhost:1313/posts/2016_08_27_showcases-and-why-we-need-them/</link>
       <pubDate>Sat, 27 Aug 2016 09:03:54 -0400</pubDate>
-      <guid>https://charltonaustin.com/posts/showcases-and-why-we-need-them/</guid>
+      <guid>http://localhost:1313/posts/2016_08_27_showcases-and-why-we-need-them/</guid>
       <description>&lt;h3 id=&#34;the-problem&#34;&gt;The problem&lt;/h3&gt;&#xA;&lt;p&gt;So my students are mostly awesome.&#xA;We have come a long way.&#xA;When we started most of them had not written any JavaScript.&#xA;In the last few weeks they have been working on their final projects&#xA;You can see them &lt;a href=&#34;https://github.com/aesTechx/special-ed&#34;&gt;here&lt;/a&gt;, &lt;a href=&#34;https://github.com/tech-crunch/lets-hangout&#34;&gt;here&lt;/a&gt;, &lt;a href=&#34;https://github.com/StirTech/TeamUp&#34;&gt;here&lt;/a&gt;, and &lt;a href=&#34;https://github.com/Sportitsu/Zarad&#34;&gt;here&lt;/a&gt;.&#xA;One thing that they haven&amp;rsquo;t had a lot of experience with is how to put a whole project together.&#xA;So we broke them into team and they are coming up with their own product to show future employers.&#xA;It has been great except for one thing.&#xA;They have been having trouble prioritizing and getting out features at a regular pace.&#xA;In Dan Ariely&amp;rsquo;s book Predictably Irrational he speaks of setting short term deadlines in order to motivate people.&#xA;So I came up with a plan to help the class along.&#xA;I proposed that we have the students do showcases every few days.&#xA;They are expected to have a feature or two in their production environment for each of the showcases (one happens on Sunday and the other on Thursday).&lt;/p&gt;</description>
     </item>
   </channel>

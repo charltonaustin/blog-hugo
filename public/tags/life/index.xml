@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Life on Charlton Austin</title>
-    <link>https://charltonaustin.com/tags/life/</link>
+    <link>http://localhost:1313/tags/life/</link>
     <description>Recent content in Life on Charlton Austin</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 10 May 2016 09:03:54 -0400</lastBuildDate>
-    <atom:link href="https://charltonaustin.com/tags/life/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/life/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Quitting Finance And Trying To Give Back</title>
-      <link>https://charltonaustin.com/posts/quitting-finance-and-trying-to-give-back/</link>
+      <link>http://localhost:1313/posts/2016_05_10_quitting-finance-and-trying-to-give-back/</link>
       <pubDate>Tue, 10 May 2016 09:03:54 -0400</pubDate>
-      <guid>https://charltonaustin.com/posts/quitting-finance-and-trying-to-give-back/</guid>
+      <guid>http://localhost:1313/posts/2016_05_10_quitting-finance-and-trying-to-give-back/</guid>
       <description>&lt;p&gt;I took a leap this week and quit my job at HedgeServ to work for a non-profit called RBK. I moved (May 2016) to Jordan to help teach Syrian refugees how to write software. It&amp;rsquo;s a bit of a scary plan. I packed all of my stuff up, put it in storage and to take a short break from American corporate career business. The last time I made a decision like this was when I was 17 and full of craziness and I decided to join the military.  I wanted to get out of Texas and wasn&amp;rsquo;t ready to go to college. Being a bit older now, there is much less worry. I don&amp;rsquo;t have the butterflies that come with doing something unexpected and possibly life changing (at least not yet). There are some things that keep me up. What are people going to think about my leaving a company so shortly after joining it? HedgeServ has been very nice. I have promised I will contact them when I get back if I need work. It was hard to tell my mentor and friend Paul Hammant that I wanted to leave. But, such a good opportunity to use my skills to help those with the least rarely comes along and I couldn&amp;rsquo;t pass it up. Maybe this will be the start of a new adventure. Maybe I&amp;rsquo;ll fall in love with Jordan, or the company, or find meaning in helping people and can do this long term. For the time being the first session is only until August so I plan (at least for now) to return to NYC when I&amp;rsquo;m done. Hopefully I&amp;rsquo;ll have some cool blog posts about the what I get to teach while I&amp;rsquo;m there.&lt;/p&gt;</description>
     </item>
   </channel>
