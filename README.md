@@ -16,3 +16,4 @@ I changed this:
 `{{ .Hugo.Generator }}`
 to
 `{{ hugo.Generator }}`
+
